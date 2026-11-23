@@ -38,7 +38,12 @@ export default function ValuationForm({
   return (
     <section id="valuation" className="mx-2 sm:mx-3">
       <div className="relative overflow-hidden rounded-3xl bg-brand-navy">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_left,rgba(255,255,255,0.08),transparent_60%)]" aria-hidden />
+        <img
+          src="/images/valuation-bg.png"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover object-center"
+          aria-hidden
+        />
         <div className="container-x relative grid items-center gap-8 py-12 sm:py-16 lg:grid-cols-2 lg:gap-14">
           <div className="flex flex-col items-start gap-4 text-white">
             <Badge light>{badge}</Badge>
@@ -48,14 +53,9 @@ export default function ValuationForm({
               {POINTS.map((p) => (
                 <li
                   key={p}
-                  style={{
-                    background:
-                      'linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%) padding-box, linear-gradient(180deg, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.10) 100%) border-box',
-                    border: '1px solid transparent',
-                  }}
-                  className="inline-flex h-[48px] items-center gap-2 rounded-[30px] px-5 py-[15px] text-sm sm:text-base font-normal text-white"
+                  className="inline-flex h-[48px] items-center gap-2 rounded-[30px] px-5 py-2 text-sm sm:text-base font-normal text-white bg-[#FFFFFF0D] border border-[#FFFFFF1A]"
                 >
-                  <img src="/images/fill-checkmark.svg" alt="" className="h-5 w-5 shrink-0" />
+                  <img src="/images/fill-checkmark.svg" alt="" className="shrink-0" />
                   <span>{p}</span>
                 </li>
               ))}
