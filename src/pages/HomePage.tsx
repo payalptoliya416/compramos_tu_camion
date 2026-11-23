@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { FileText, Handshake, Phone } from 'lucide-react';
 import { IMG } from '@/data/images';
 import { SITE } from '@/data/site';
 import Hero from '@/components/sections/Hero';
@@ -61,24 +60,24 @@ export default function HomePage() {
 
       {/* Experience */}
       <section className="section-y">
-        <div className="container-x grid items-center gap-8 lg:grid-cols-[1fr_1.6fr] lg:gap-14">
-          <div className="flex flex-col items-start gap-4">
+        <div className="container-x grid items-center gap-8 lg:grid-cols-[1fr_1.6fr] lg:gap-[30px]">
+          <div className="flex flex-col items-start gap-[15px]">
             <Badge>Our story</Badge>
-            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-3xl">
+            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[40px]">
               Over 20 Years of Experience in the Automotive Sector
             </h2>
-            <p className="text-sm leading-relaxed text-slate-500">
+            <p className="text-base leading-relaxed text-[#3B3F45]">
               With over 20 years of experience in the automotive sector, we specialise in professional truck valuations. Our experience ensures a fast, reliable service.
             </p>
             <CtaButton cta={{ label: 'About Us', to: '/about-us' }} />
           </div>
-          <ul className="grid gap-4 sm:grid-cols-3">
+          <ul className="grid gap-4 sm:gap-[24px] sm:grid-cols-3">
             {MINI_CARDS.map((c) => (
-              <li key={c.title} className="overflow-hidden rounded-xl border border-slate-100 bg-white shadow-sm">
-                <Img src={c.image} alt={c.title} className="aspect-[4/3]" />
-                <div className="p-4">
-                  <h3 className="text-sm font-semibold text-brand-navy-dark">{c.title}</h3>
-                  <p className="mt-1 text-xs leading-relaxed text-slate-500">{c.text}</p>
+              <li key={c.title} className="overflow-hidden rounded-[12px] border border-[#E7E7E8] bg-white p-[10px]">
+                <Img src={c.image} alt={c.title} className="aspect-[4/3] rounded-[12px]" />
+                <div className="py-5 px-[5px]">
+                  <h3 className="text-base font-semibold text-brand-navy-dark">{c.title}</h3>
+                  <p className="mt-[10px] text-sm leading-relaxed text-[#6C6F73]">{c.text}</p>
                 </div>
               </li>
             ))}
@@ -106,10 +105,11 @@ export default function HomePage() {
         title="Sell Your Truck in Three Simple Steps"
         subtitle="Our process is designed to make selling your commercial vehicle clear and straightforward, from the first details to the final collection."
         action={{ label: 'Get a Free Valuation' }}
+        className='!pt-0'
         steps={[
-          { icon: FileText, title: 'Share Your Truck Details', text: 'Tell us your truck’s condition, make, model, registration year, mileage and current condition using our valuation form.' },
-          { icon: Phone, title: 'Receive Your Valuation', text: 'Our team reviews your vehicle details and specifications before discussing a valuation and the available next steps.' },
-          { icon: Handshake, title: 'Complete the Sale', text: 'Once you accept the offer, we coordinate the required paperwork, payment and vehicle collection arrangements.' },
+          { icon: '/images/edit.svg', title: 'Share Your Truck Details', text: 'Tell us your truck’s condition, make, model, registration year, mileage and current condition using our valuation form.' },
+          { icon: '/images/receive.svg', title: 'Receive Your Valuation', text: 'Our team reviews your vehicle details and specifications before discussing a valuation and the available next steps.' },
+          { icon: '/images/complete.svg', title: 'Complete the Sale', text: 'Once you accept the offer, we coordinate the required paperwork, payment and vehicle collection arrangements.' },
         ]}
       />
 
@@ -162,7 +162,7 @@ export default function HomePage() {
           <div className="container-x grid items-center gap-8 py-12 sm:py-16 lg:grid-cols-2 lg:gap-14">
             <div className="flex flex-col items-start gap-4 text-white">
               <Badge light>Nationwide collection</Badge>
-              <h2 className="text-2xl font-medium leading-tight sm:text-3xl">We Collect Commercial Trucks Across Spain</h2>
+              <h2 className="text-2xl font-medium leading-tight text-white sm:text-[40px] sm:leading-[40px]">We Collect Commercial Trucks Across Spain</h2>
               <p className="text-sm leading-relaxed text-white/80">
                 Selling your truck shouldn’t depend on where it’s located. We help coordinate vehicle collection across Spain, making the process easier from valuation to collection.
               </p>

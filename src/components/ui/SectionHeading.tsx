@@ -41,17 +41,17 @@ export default function SectionHeading({
 }: Props) {
   const alignCls = align === 'center' ? 'items-center text-center mx-auto' : 'items-start text-left';
   return (
-    <div className={`flex max-w-2xl flex-col gap-3 ${alignCls} ${className}`}>
+    <div className={`flex flex-col gap-3 sm:gap-[15px] ${alignCls} ${className}`}>
       {badge && <Badge light={light}>{badge}</Badge>}
       <Tag
-        className={`text-2xl font-medium leading-tight sm:text-3xl ${
+        className={`text-2xl font-medium leading-tight sm:text-[40px] sm:leading-[40px] ${
           light ? 'text-white' : 'text-brand-navy'
         }`}
       >
         {title}
       </Tag>
       {subtitle && (
-        <p className={`text-sm leading-relaxed ${light ? 'text-white/80' : 'text-slate-500'}`}>
+        <p className={` max-w-4xl text-base leading-relaxed ${light ? 'text-white/80' : 'text-[#3B3F45]'}`}>
           {subtitle}
         </p>
       )}

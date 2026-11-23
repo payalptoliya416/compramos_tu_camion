@@ -43,8 +43,8 @@ export default function ValuationForm({
         <div className="container-x relative grid items-center gap-8 py-12 sm:py-16 lg:grid-cols-2 lg:gap-14">
           <div className="flex flex-col items-start gap-4 text-white">
             <Badge light>{badge}</Badge>
-            <h2 className="text-2xl font-medium leading-tight sm:text-3xl">{title}</h2>
-            <p className="max-w-lg text-xs leading-relaxed text-white/80 sm:text-sm">{text}</p>
+            <h2 className="text-2xl font-medium leading-tight sm:text-[40px] sm:leading-[40px]">{title}</h2>
+            <p className="max-w-lg text-base leading-relaxed text-white/80">{text}</p>
             <ul className="mt-2 flex flex-col gap-3">
               {POINTS.map((p) => (
                 <li key={p} className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs">

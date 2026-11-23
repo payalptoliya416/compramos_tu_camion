@@ -12,8 +12,8 @@ export default function FinalCta() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.1),transparent_65%)]" aria-hidden />
           <div className="relative flex flex-col items-center gap-3">
             <Badge light>Get started today</Badge>
-            <h2 className="text-2xl font-medium text-white sm:text-3xl">Ready to Sell Your Truck?</h2>
-            <p className="max-w-xl text-sm text-white/80">
+            <h2 className="text-2xl font-medium leading-tight text-white sm:text-[40px] sm:leading-[40px]">Ready to Sell Your Truck?</h2>
+            <p className="max-w-xl text-base leading-relaxed text-white/80">
               Tell us about your vehicle and request a free valuation. Our team is ready to assist you.
             </p>
             <div className="mt-2 flex flex-wrap justify-center gap-3">

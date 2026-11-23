@@ -33,9 +33,9 @@ export default function SplitSection({
         />
         <div className="flex flex-col items-start gap-4">
           <Badge>{badge}</Badge>
-          <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-3xl">{title}</h2>
+          <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[40px] sm:leading-[40px]">{title}</h2>
           {paragraphs.map((p) => (
-            <p key={p} className="text-sm leading-relaxed text-slate-500">{p}</p>
+            <p key={p} className="text-base leading-relaxed text-[#3B3F45]">{p}</p>
           ))}
           {pills && (
             <div className="flex flex-wrap gap-2">

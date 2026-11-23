@@ -26,7 +26,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="absolute inset-x-0 z-40 top-6 sm:top-10 px-6 sm:px-10">
+      <header className="absolute inset-x-0 top-3 z-40 px-3 sm:top-10 sm:px-6 lg:px-10">
         <div className="relative mx-auto w-full rounded-[20px] bg-white p-3 py-3 sm:px-[30px] sm:py-[25px]">
           <div className="flex items-center justify-between gap-4">
             <Logo variant="header" />
@@ -74,18 +74,16 @@ export default function Header() {
 
       {/* Backdrop for Left Sidebar */}
       <div
-        className={`fixed inset-0 z-50 bg-black/60 backdrop-blur-sm transition-opacity duration-300 min-[1200px]:hidden ${
-          open ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
-        }`}
+        className={`fixed inset-0 z-50 bg-black/60 backdrop-blur-sm transition-opacity duration-300 min-[1200px]:hidden ${open ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
+          }`}
         onClick={() => setOpen(false)}
         aria-hidden="true"
       />
 
       {/* Left Sidebar Drawer */}
       <aside
-        className={`fixed inset-y-0 left-0 z-50 flex w-[300px] sm:w-[340px] max-w-[85vw] flex-col justify-between bg-white p-6 shadow-2xl transition-transform duration-300 ease-in-out min-[1200px]:hidden ${
-          open ? 'translate-x-0' : '-translate-x-full'
-        }`}
+        className={`fixed inset-y-0 left-0 z-50 flex w-[300px] sm:w-[340px] max-w-[85vw] flex-col justify-between bg-white p-6 shadow-2xl transition-transform duration-300 ease-in-out min-[1200px]:hidden ${open ? 'translate-x-0' : '-translate-x-full'
+          }`}
         aria-label="Mobile Navigation"
       >
         <div>
@@ -109,10 +107,9 @@ export default function Header() {
                 end
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
-                  `flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium transition-colors ${
-                    isActive
-                      ? 'bg-brand-orange/10 font-semibold text-brand-orange'
-                      : 'text-slate-800 hover:bg-slate-50 hover:text-brand-orange'
+                  `flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium transition-colors ${isActive
+                    ? 'bg-brand-orange/10 font-semibold text-brand-orange'
+                    : 'text-slate-800 hover:bg-slate-50 hover:text-brand-orange'
                   }`
                 }
               >

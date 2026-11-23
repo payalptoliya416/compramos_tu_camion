@@ -13,7 +13,7 @@ export interface FeatureItem {
 }
 
 export interface StepItem {
-  icon: LucideIcon;
+  icon: LucideIcon | string;
   title: string;
   text: string;
 }

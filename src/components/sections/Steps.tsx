@@ -38,8 +38,8 @@ export default function Steps({ badge, title, subtitle, steps, action, className
               <span className="relative z-10 flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 text-brand-orange">
                 <Icon className="h-5 w-5" />
               </span>
-              <h3 className="mt-4 text-sm font-semibold text-brand-navy-dark sm:text-base">{t}</h3>
-              <p className="mt-2 max-w-[260px] text-xs leading-relaxed text-slate-500 sm:text-[13px]">{text}</p>
+              <h3 className="mt-5 sm:mt-[25px] text-base font-medium text-brand-navy-dark sm:text-xl">{t}</h3>
+              <p className="mt-[15px] max-w-[380px] text-xs leading-relaxed text-[#3B3F45] sm:text-base">{text}</p>
             </li>
           ))}
         </ol>

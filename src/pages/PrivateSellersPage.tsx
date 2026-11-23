@@ -48,7 +48,7 @@ export default function PrivateSellersPage() {
         <div className="container-x grid gap-8 lg:grid-cols-[1fr_1.6fr] lg:gap-14">
           <div className="flex flex-col items-start gap-4">
             <Badge>Why choose us</Badge>
-            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-3xl">A More Straightforward Way to Sell Your Truck</h2>
+            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[40px] sm:leading-[40px]">A More Straightforward Way to Sell Your Truck</h2>
             <p className="text-sm leading-relaxed text-slate-500">
               Selling a commercial vehicle can involve several steps. Our team helps you understand the process and guides you through the valuation and sale.
             </p>

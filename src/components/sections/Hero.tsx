@@ -24,7 +24,7 @@ interface Props {
  */
 export default function Hero({ badge, title, text, image, primary, secondary, checks = [], breadcrumb }: Props) {
   return (
-    <section className="relative w-full p-3 sm:p-5">
+    <section className="relative w-full px-3 sm:px-5 pt-3 sm:pt-5">
       <div className="relative h-[calc(100dvh-1.5rem)] min-h-[640px] w-full overflow-hidden rounded-[20px] sm:h-[calc(100dvh-2rem)]">
         {/* Background Image */}
         <Img
