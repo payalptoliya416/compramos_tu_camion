@@ -46,7 +46,15 @@ export default function ValuationForm({
             <p className="text-base leading-relaxed text-[#E7E7E8]">{text}</p>
             <ul className="mt-2 flex flex-col gap-3">
               {POINTS.map((p) => (
-                <li key={p} className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs">
+                <li
+                  key={p}
+                  style={{
+                    background:
+                      'linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%) padding-box, linear-gradient(180deg, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.10) 100%) border-box',
+                    border: '1px solid transparent',
+                  }}
+                  className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs text-white"
+                >
                   <img src="/images/fill-checkmark.svg" alt="" className="h-4 w-4 shrink-0" />
                   {p}
                 </li>
