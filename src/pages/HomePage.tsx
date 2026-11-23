@@ -1,0 +1,181 @@
+import { Link } from 'react-router-dom';
+import { ClipboardCheck, FileText, Handshake, Phone, UserCheck, Truck } from 'lucide-react';
+import { IMG } from '@/data/images';
+import { SITE } from '@/data/site';
+import Hero from '@/components/sections/Hero';
+import FeatureGrid from '@/components/sections/FeatureGrid';
+import Steps from '@/components/sections/Steps';
+import ValuationForm from '@/components/sections/ValuationForm';
+import RecentPurchases from '@/components/sections/RecentPurchases';
+import Testimonials from '@/components/sections/Testimonials';
+import TruckCategories from '@/components/sections/TruckCategories';
+import BrandLogos from '@/components/sections/BrandLogos';
+import Faq from '@/components/sections/Faq';
+import FinalCta from '@/components/sections/FinalCta';
+import Img from '@/components/ui/Img';
+import SectionHeading, { Badge } from '@/components/ui/SectionHeading';
+import CtaButton from '@/components/ui/CtaButton';
+import { CheckInline } from '@/components/ui/CheckItem';
+import type { FaqItem } from '@/types';
+
+const MINI_CARDS = [
+  { title: 'Looking to change your truck?', text: 'Explore your options and make selling your current truck straightforward and hassle-free.', image: IMG.helpFleet },
+  { title: 'Is Your Truck Under an Embargo?', text: 'We help you understand your truck’s embargo and explore the available options for selling.', image: IMG.helpMechanical },
+  { title: 'Retiring or Leaving the Transport Business?', text: 'We make selling your truck simpler when retiring or leaving the transport business.', image: IMG.helpInherited },
+];
+
+const HELP_CARDS = [
+  { title: 'Looking to reduce your fleet?', text: 'Whether you’re adjusting your business or have more trucks than you need, we help you sell one or several vehicles through a straightforward valuation and coordinated collection.', image: IMG.helpFleet },
+  { title: 'Want to sell a truck with a mechanical fault?', text: 'Before committing to costly repairs, find out what your truck could be worth in its current condition. Tell us about the fault and we’ll assess your options.', image: IMG.helpMechanical },
+  { title: 'Inherited a truck and looking to sell it?', text: 'We understand this can be a difficult time. We help you understand the paperwork and value the truck, so you can take the next step with confidence.', image: IMG.helpInherited },
+];
+
+const FAQ: FaqItem[] = [
+  { q: 'How can I sell my used truck?', a: 'You can start by filling in our free online valuation form or calling our team directly. Share the details of your vehicle and we will guide you through the next steps.' },
+  { q: 'What information do you need to value my truck?', a: 'The make, model, registration year, mileage, transmission and body type. Photos help us prepare a more accurate offer.' },
+  { q: 'Can I sell an older truck with high mileage?', a: 'Yes. We consider trucks of different ages and mileages and assess each vehicle individually.' },
+  { q: 'Do you buy damaged or non-running trucks?', a: 'Tell us about the fault or condition and our team will review the best options for your vehicle.' },
+  { q: 'What documents are required to sell my truck?', a: 'Generally the vehicle registration certificate, technical inspection card and the owner’s identification. We confirm what applies to your case.' },
+  { q: 'How are payment and collection arranged?', a: 'Once the offer is accepted, we explain the payment terms and coordinate collection at a time that suits you.' },
+  { q: 'Do you buy trucks from companies and fleets?', a: 'Yes. We assist individual owners, transport companies and businesses selling one or several vehicles.' },
+  { q: 'Where in Spain do you offer your service?', a: 'We coordinate truck collection across Spain, from the Mediterranean coast to Andalusia and beyond.' },
+];
+
+export default function HomePage() {
+  return (
+    <>
+      <Hero
+        badge="Professional truck buyers in Spain"
+        title="Sell Your Truck Quickly, Easily and With Confidence"
+        text="Looking to sell your used truck? Get a professional valuation, straightforward support and a simple selling process from start to finish."
+        image={IMG.heroHome}
+        primary={{ label: 'Get a Free Valuation' }}
+        secondary={{ label: 'Call Us Today', href: SITE.phoneHref }}
+        checks={['Professional Valuation', 'Clear Process', 'Collection Across Spain']}
+      />
+
+      {/* Experience */}
+      <section className="section-y">
+        <div className="container-x grid items-center gap-8 lg:grid-cols-[1fr_1.6fr] lg:gap-14">
+          <div className="flex flex-col items-start gap-4">
+            <Badge>Our story</Badge>
+            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-3xl">
+              Over 20 Years of Experience in the Automotive Sector
+            </h2>
+            <p className="text-sm leading-relaxed text-slate-500">
+              With over 20 years of experience in the automotive sector, we specialise in professional truck valuations. Our experience ensures a fast, reliable service.
+            </p>
+            <CtaButton cta={{ label: 'About Us', to: '/about-us' }} />
+          </div>
+          <ul className="grid gap-4 sm:grid-cols-3">
+            {MINI_CARDS.map((c) => (
+              <li key={c.title} className="overflow-hidden rounded-xl border border-slate-100 bg-white shadow-sm">
+                <Img src={c.image} alt={c.title} className="aspect-[4/3]" />
+                <div className="p-4">
+                  <h3 className="text-sm font-semibold text-brand-navy-dark">{c.title}</h3>
+                  <p className="mt-1 text-xs leading-relaxed text-slate-500">{c.text}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <FeatureGrid
+        badge="Why choose us"
+        title="A Straightforward Way to Sell Your Truck"
+        subtitle="Selling a commercial vehicle involves more than agreeing on a price. We provide professional support to help make every step clear and manageable."
+        cols={4}
+        variant="plain"
+        items={[
+          { icon: ClipboardCheck, title: 'Professional Truck Valuation', text: 'We assess your truck’s condition, specifications and relevant details to provide a professional valuation based on the vehicle.' },
+          { icon: UserCheck, title: 'Clear and Transparent Terms', text: 'Understand the offer, selling conditions and next steps with clear communication throughout the process.' },
+          { icon: FileText, title: 'Paperwork and Documentation', text: 'We guide you through the required paperwork and administrative procedures involved in the vehicle transfer.' },
+          { icon: Truck, title: 'Collection Arrangements', text: 'We coordinate the collection process with you, helping make the final stage of selling your truck straightforward.' },
+        ]}
+        className="!pt-4"
+      />
+
+      <Steps
+        badge="How it works"
+        title="Sell Your Truck in Three Simple Steps"
+        subtitle="Our process is designed to make selling your commercial vehicle clear and straightforward, from the first details to the final collection."
+        action={{ label: 'Get a Free Valuation' }}
+        steps={[
+          { icon: FileText, title: 'Share Your Truck Details', text: 'Tell us your truck’s condition, make, model, registration year, mileage and current condition using our valuation form.' },
+          { icon: Phone, title: 'Receive Your Valuation', text: 'Our team reviews your vehicle details and specifications before discussing a valuation and the available next steps.' },
+          { icon: Handshake, title: 'Complete the Sale', text: 'Once you accept the offer, we coordinate the required paperwork, payment and vehicle collection arrangements.' },
+        ]}
+      />
+
+      <ValuationForm title="Receive A Professional Valuation For Your Truck" badge="Get your truck valued" />
+
+      <RecentPurchases
+        badge="Recent purchases"
+        title="Recently Purchased Trucks Across Spain"
+        subtitle="Explore a selection of commercial vehicles we’ve recently purchased from sellers across Spain, covering different truck types and configurations."
+      />
+
+      <Testimonials
+        badge="Customer reviews"
+        subtitle="Discover what customers have to say about their experience selling a truck with our team."
+      />
+
+      <TruckCategories
+        band
+        badge="Vehicle categories"
+        subtitle="From heavy-duty vehicles to specialised commercial trucks, we purchase a wide range of vehicles across Spain. Explore the truck categories we buy."
+        action={{ label: 'Explore Truck Type', to: '/truck-types/refrigerated-trucks' }}
+      />
+
+      <BrandLogos subtitle="We consider commercial trucks from a wide range of manufacturers. Contact our team to discuss your vehicle." />
+
+      {/* How can we help */}
+      <section className="pb-12 md:pb-16 lg:pb-20">
+        <div className="container-x">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <SectionHeading badge="Your situation, our promise" title="How can we help?" align="left" />
+            <CtaButton cta={{ label: 'I Want to Sell My Truck', to: '/get-a-free-valuation' }} />
+          </div>
+          <ul className="mt-8 grid gap-4 md:grid-cols-3">
+            {HELP_CARDS.map((c) => (
+              <li key={c.title} className="flex flex-col overflow-hidden rounded-xl border border-slate-100 bg-white shadow-sm">
+                <Img src={c.image} alt={c.title} className="aspect-[16/10]" />
+                <div className="flex flex-1 flex-col gap-2 p-4">
+                  <h3 className="text-sm font-semibold text-brand-navy-dark">{c.title}</h3>
+                  <p className="text-xs leading-relaxed text-slate-500">{c.text}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Collection across Spain */}
+      <section className="mx-2 sm:mx-3">
+        <div className="overflow-hidden rounded-3xl bg-brand-navy">
+          <div className="container-x grid items-center gap-8 py-12 sm:py-16 lg:grid-cols-2 lg:gap-14">
+            <div className="flex flex-col items-start gap-4 text-white">
+              <Badge light>Nationwide collection</Badge>
+              <h2 className="text-2xl font-medium leading-tight sm:text-3xl">We Collect Commercial Trucks Across Spain</h2>
+              <p className="text-sm leading-relaxed text-white/80">
+                Selling your truck shouldn’t depend on where it’s located. We help coordinate vehicle collection across Spain, making the process easier from valuation to collection.
+              </p>
+              <ul className="flex flex-col gap-3">
+                {['Collection coordination across Spain', 'Support with collection arrangements', 'Clear communication about the next steps', 'Assistance throughout the selling process'].map((t) => (
+                  <li key={t}><CheckInline>{t}</CheckInline></li>
+                ))}
+              </ul>
+              <p className="text-xs text-white/60">And many more locations across all Spanish provinces.</p>
+              <Link to="/collection-across-spain" className="btn-primary">Explore Our Coverage</Link>
+            </div>
+            <Img src={IMG.spainCollection} alt="Collection across Spain" className="aspect-[4/3] rounded-2xl" />
+          </div>
+        </div>
+      </section>
+
+      <Faq items={FAQ} />
+      <FinalCta />
+    </>
+  );
+}

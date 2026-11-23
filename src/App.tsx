@@ -1,0 +1,42 @@
+import { Route, Routes } from 'react-router-dom';
+import Layout from '@/components/layout/Layout';
+import HomePage from '@/pages/HomePage';
+import HowItWorksPage from '@/pages/HowItWorksPage';
+import CollectionPage from '@/pages/CollectionPage';
+import AboutPage from '@/pages/AboutPage';
+import BlogPage from '@/pages/BlogPage';
+import BusinessFleetPage from '@/pages/BusinessFleetPage';
+import DocumentsPage from '@/pages/DocumentsPage';
+import ValuationPage from '@/pages/ValuationPage';
+import MakeModelPage from '@/pages/MakeModelPage';
+import PrivateSellersPage from '@/pages/PrivateSellersPage';
+import ConcreteMixerPage from '@/pages/truck-types/ConcreteMixerPage';
+import MultiliftPage from '@/pages/truck-types/MultiliftPage';
+import ParcelDeliveryPage from '@/pages/truck-types/ParcelDeliveryPage';
+import RefrigeratedPage from '@/pages/truck-types/RefrigeratedPage';
+import Light3500Page from '@/pages/truck-types/Light3500Page';
+
+export default function App() {
+  return (
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/how-it-works" element={<HowItWorksPage />} />
+        <Route path="/collection-across-spain" element={<CollectionPage />} />
+        <Route path="/about-us" element={<AboutPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/business-fleet-sales" element={<BusinessFleetPage />} />
+        <Route path="/documents-required-to-sell-a-truck" element={<DocumentsPage />} />
+        <Route path="/get-a-free-valuation" element={<ValuationPage />} />
+        <Route path="/sell-by-make-and-model" element={<MakeModelPage />} />
+        <Route path="/private-truck-sellers" element={<PrivateSellersPage />} />
+        <Route path="/truck-types/concrete-mixer-trucks" element={<ConcreteMixerPage />} />
+        <Route path="/truck-types/multilift-hook-lift-trucks" element={<MultiliftPage />} />
+        <Route path="/truck-types/parcel-delivery-trucks" element={<ParcelDeliveryPage />} />
+        <Route path="/truck-types/refrigerated-trucks" element={<RefrigeratedPage />} />
+        <Route path="/truck-types/3500-kg-light-trucks" element={<Light3500Page />} />
+        <Route path="*" element={<HomePage />} />
+      </Route>
+    </Routes>
+  );
+}
