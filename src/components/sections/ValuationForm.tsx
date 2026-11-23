@@ -44,7 +44,7 @@ export default function ValuationForm({
             <Badge light>{badge}</Badge>
             <h2 className="text-2xl font-medium leading-tight sm:text-[40px] sm:leading-[60px]">{title}</h2>
             <p className="text-base leading-relaxed text-[#E7E7E8]">{text}</p>
-            <ul className="mt-2 flex flex-col gap-3">
+            <ul className="mt-2 flex flex-col items-start gap-3">
               {POINTS.map((p) => (
                 <li
                   key={p}
@@ -53,10 +53,10 @@ export default function ValuationForm({
                       'linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%) padding-box, linear-gradient(180deg, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.10) 100%) border-box',
                     border: '1px solid transparent',
                   }}
-                  className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs text-white"
+                  className="inline-flex h-[48px] items-center gap-2 rounded-[30px] px-5 py-[15px] text-sm sm:text-base font-normal text-white"
                 >
-                  <img src="/images/fill-checkmark.svg" alt="" className="h-4 w-4 shrink-0" />
-                  {p}
+                  <img src="/images/fill-checkmark.svg" alt="" className="h-5 w-5 shrink-0" />
+                  <span>{p}</span>
                 </li>
               ))}
             </ul>
