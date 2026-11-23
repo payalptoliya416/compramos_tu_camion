@@ -41,7 +41,11 @@ export default function FeatureGrid({
               }
             >
               <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 text-brand-orange">
-                <Icon className="h-5 w-5" />
+                {typeof Icon === 'string' ? (
+                  <img src={Icon} alt="" className="h-5 w-5 object-contain" />
+                ) : (
+                  <Icon className="h-5 w-5" />
+                )}
               </span>
               <h3 className="text-sm font-semibold text-brand-navy-dark sm:text-base">{t}</h3>
               <p className="text-xs leading-relaxed text-slate-500 sm:text-[13px]">{text}</p>

@@ -1,13 +1,12 @@
+import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import type { CtaLink } from '@/types';
 import Img from '@/components/ui/Img';
-import { Badge } from '@/components/ui/SectionHeading';
 import CtaButton from '@/components/ui/CtaButton';
-import { CheckInline } from '@/components/ui/CheckItem';
 
 interface Props {
   badge: string;
-  title: string;
+  title: ReactNode;
   text: string;
   image: string;
   primary: CtaLink;
@@ -17,62 +16,95 @@ interface Props {
   breadcrumb?: { label: string; to?: string }[];
 }
 
-/** Full-width edge-to-edge hero used across all pages */
+/**
+ * Hero Banner:
+ * - Outside container (spans screen width with matching rounded card margin)
+ * - 910px height on desktop
+ * - Trapezoid bottom notch
+ */
 export default function Hero({ badge, title, text, image, primary, secondary, checks = [], breadcrumb }: Props) {
   return (
-    <section className="relative w-full overflow-hidden bg-brand-navy-dark">
-      <Img
-        src={image}
-        className="!absolute inset-0 h-full w-full"
-        imgClassName="object-cover object-[70%_center]"
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-brand-navy-dark/95 via-brand-navy-dark/75 to-brand-navy-dark/30 max-md:from-brand-navy-dark/95 max-md:via-brand-navy-dark/85 max-md:to-brand-navy-dark/70" />
+    <section className="relative w-full p-3 sm:p-5">
+      <div className="relative h-[calc(100dvh-1.5rem)] min-h-[640px] w-full overflow-hidden rounded-[20px] sm:h-[calc(100dvh-2rem)]">
+        {/* Background Image */}
+        <Img
+          src={image}
+          className="!absolute inset-0 h-full w-full"
+          imgClassName="object-cover object-center"
+        />
 
-      <div className="container-x relative flex min-h-[480px] flex-col justify-center pb-20 pt-36 sm:min-h-[540px] sm:pt-40 lg:min-h-[600px] lg:pt-44">
-        <div className="max-w-xl">
-          <Badge light>{badge}</Badge>
-          <h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-[44px] lg:leading-[1.15]">
-            {title}
-          </h1>
-          <p className="mt-4 max-w-md text-sm leading-relaxed text-white/80 sm:text-base sm:leading-relaxed">
-            {text}
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <CtaButton cta={primary} />
-            {secondary && <CtaButton cta={secondary} variant="outline" />}
-          </div>
-          {checks.length > 0 && (
-            <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
-              {checks.map((c) => (
-                <CheckInline key={c}>{c}</CheckInline>
-              ))}
+        {/* Content - Vertically centered inside full 100vh banner */}
+        <div className="relative flex h-full flex-col justify-center items-center sm:items-start text-center sm:text-left px-6 pb-16 pt-24 sm:px-12 sm:pt-28 lg:px-20 xl:px-[160px]">
+          <div className="max-w-2xl flex flex-col items-center sm:items-start text-center sm:text-left">
+            {/* Pill Badge */}
+            <div
+              style={{ backgroundImage: `url('/images/label-bg.png')`, backgroundSize: '100% 100%' }}
+              className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2 text-xs sm:text-sm font-medium uppercase tracking-wider text-brand-orange bg-no-repeat bg-center"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-orange" />
+              <span>{badge}</span>
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-orange" />
             </div>
-          )}
+
+            {/* Title */}
+            <h1 className="mt-[15px] text-4xl font-medium leading-[1.12] tracking-tight text-white sm:text-5xl text-center sm:text-left">
+              {title}
+            </h1>
+
+            {/* Subtitle */}
+            <p className="mt-5 text-base md:text-lg leading-relaxed text-white sm:leading-relaxed text-center sm:text-left">
+              {text}
+            </p>
+
+            {/* Actions */}
+            <div className="mt-5 md:mt-[35px] flex flex-wrap items-center justify-center sm:justify-start gap-4">
+              <CtaButton cta={primary} className="!px-[30px] !py-3 md:!py-4  text-sm md:text-base md:leading-[18px] font-medium border border-brand-orange" />
+              {secondary && (
+                <CtaButton
+                  cta={secondary}
+                  variant="outline"
+                  className="!border-white !text-white hover:!bg-white/15 !px-[30px] !py-3 md:!py-4 text-sm md:text-base md:leading-[18px] font-medium"
+                />
+              )}
+            </div>
+
+            {/* Checkpoints */}
+            {checks.length > 0 && (
+              <div className="mt-5 flex flex-wrap justify-center sm:justify-start gap-x-[15px] gap-y-3">
+                {checks.map((c) => (
+                  <span key={c} className="inline-flex items-center gap-2 text-xs font-medium text-white/90 sm:text-sm">
+                    <img src="/images/rounded-checkmark.svg" alt="" className="h-[18px] w-[18px] shrink-0" />
+                    {c}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
+
+        {/* Breadcrumb if provided */}
+        {breadcrumb && (
+          <div className="absolute bottom-4 left-6 z-10 sm:left-12 lg:left-20">
+            <nav
+              aria-label="Breadcrumb"
+              className="inline-flex flex-wrap items-center gap-2 rounded-lg bg-black/40 px-3 py-1.5 text-xs text-white/80 backdrop-blur-sm"
+            >
+              {breadcrumb.map((b, i) => (
+                <span key={b.label} className="flex items-center gap-2">
+                  {i > 0 && <span aria-hidden className="text-white/40">›</span>}
+                  {b.to ? (
+                    <Link to={b.to} className="hover:text-brand-orange">
+                      {b.label}
+                    </Link>
+                  ) : (
+                    <span className="font-medium text-brand-orange">{b.label}</span>
+                  )}
+                </span>
+              ))}
+            </nav>
+          </div>
+        )}
       </div>
-
-      {/* Trapezoid bottom notch cut-out */}
-      <div
-        aria-hidden
-        className="absolute bottom-0 left-1/2 h-6 w-56 -translate-x-1/2 bg-white [clip-path:polygon(0_100%,8%_0,92%_0,100%_100%)] sm:h-8 sm:w-64"
-      />
-
-      {breadcrumb && (
-        <div className="container-x absolute bottom-3 left-0 right-0 z-10">
-          <nav aria-label="Breadcrumb" className="inline-flex flex-wrap items-center gap-2 rounded-lg bg-black/40 px-3 py-1.5 text-xs text-white/80 backdrop-blur-sm">
-            {breadcrumb.map((b, i) => (
-              <span key={b.label} className="flex items-center gap-2">
-                {i > 0 && <span aria-hidden className="text-white/40">›</span>}
-                {b.to ? (
-                  <Link to={b.to} className="hover:text-brand-orange">{b.label}</Link>
-                ) : (
-                  <span className="text-brand-orange font-medium">{b.label}</span>
-                )}
-              </span>
-            ))}
-          </nav>
-        </div>
-      )}
     </section>
   );
 }

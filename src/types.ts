@@ -7,7 +7,7 @@ export interface CtaLink {
 }
 
 export interface FeatureItem {
-  icon: LucideIcon;
+  icon: LucideIcon | string;
   title: string;
   text: string;
 }

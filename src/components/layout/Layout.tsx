@@ -13,7 +13,7 @@ function ScrollToTop() {
 
 export default function Layout() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-white">
+    <div className="relative min-h-screen overflow-x-hidden">
       <ScrollToTop />
       <Header />
       <main>

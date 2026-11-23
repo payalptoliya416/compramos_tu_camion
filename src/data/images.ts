@@ -6,11 +6,12 @@
 const p = (name: string) => `/images/${name}`;
 
 export const IMG = {
-  logo: p('logo.png'),
+  logo: p('header-logo.png'),
+  logoFooter: p('footer-logo.png'),
 
   // heroes
   heroBusiness: p('hero-business-fleet.jpg'),
-  heroHome: p('hero-home.jpg'),
+  heroHome: p('home-hero-banner.png'),
   heroHow: p('hero-how-it-works.jpg'),
   heroCollection: p('hero-collection-spain.jpg'),
   heroDocuments: p('hero-documents.jpg'),

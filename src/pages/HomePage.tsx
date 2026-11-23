@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ClipboardCheck, FileText, Handshake, Phone, UserCheck, Truck } from 'lucide-react';
+import { FileText, Handshake, Phone } from 'lucide-react';
 import { IMG } from '@/data/images';
 import { SITE } from '@/data/site';
 import Hero from '@/components/sections/Hero';
@@ -19,9 +19,9 @@ import { CheckInline } from '@/components/ui/CheckItem';
 import type { FaqItem } from '@/types';
 
 const MINI_CARDS = [
-  { title: 'Looking to change your truck?', text: 'Explore your options and make selling your current truck straightforward and hassle-free.', image: IMG.helpFleet },
-  { title: 'Is Your Truck Under an Embargo?', text: 'We help you understand your truck’s embargo and explore the available options for selling.', image: IMG.helpMechanical },
-  { title: 'Retiring or Leaving the Transport Business?', text: 'We make selling your truck simpler when retiring or leaving the transport business.', image: IMG.helpInherited },
+  { title: 'Looking to change your truck?', text: 'Explore your options and make selling your current truck straightforward and hassle-free.', image: '/images/out-story01.png' },
+  { title: 'Is Your Truck Under an Embargo?', text: 'We help you understand your truck’s embargo and explore the available options for selling.', image: '/images/out-story02.png' },
+  { title: 'Retiring or Leaving the Transport Business?', text: 'We make selling your truck simpler when retiring or leaving the transport business.', image: '/images/out-story03.png' },
 ];
 
 const HELP_CARDS = [
@@ -46,10 +46,15 @@ export default function HomePage() {
     <>
       <Hero
         badge="Professional truck buyers in Spain"
-        title="Sell Your Truck Quickly, Easily and With Confidence"
-        text="Looking to sell your used truck? Get a professional valuation, straightforward support and a simple selling process from start to finish."
+        title={
+          <>
+            Sell Your Truck Quickly, <br />
+            <span className="text-brand-orange">Easily and With Confidence</span>
+          </>
+        }
+        text="Looking to sell your commercial truck? Get a professional valuation, straightforward support and a simple selling process from start to finish."
         image={IMG.heroHome}
-        primary={{ label: 'Get a Free Valuation' }}
+        primary={{ label: 'Get a Free Valuation', to: '#valuation' }}
         secondary={{ label: 'Call Us Today', href: SITE.phoneHref }}
         checks={['Professional Valuation', 'Clear Process', 'Collection Across Spain']}
       />
@@ -88,10 +93,10 @@ export default function HomePage() {
         cols={4}
         variant="plain"
         items={[
-          { icon: ClipboardCheck, title: 'Professional Truck Valuation', text: 'We assess your truck’s condition, specifications and relevant details to provide a professional valuation based on the vehicle.' },
-          { icon: UserCheck, title: 'Clear and Transparent Terms', text: 'Understand the offer, selling conditions and next steps with clear communication throughout the process.' },
-          { icon: FileText, title: 'Paperwork and Documentation', text: 'We guide you through the required paperwork and administrative procedures involved in the vehicle transfer.' },
-          { icon: Truck, title: 'Collection Arrangements', text: 'We coordinate the collection process with you, helping make the final stage of selling your truck straightforward.' },
+          { icon: '/images/right-sign.svg', title: 'Professional Truck Valuation', text: 'We assess your truck’s condition, specifications and relevant details to provide a professional valuation based on the vehicle.' },
+          { icon: '/images/user.svg', title: 'Clear and Transparent Terms', text: 'Understand the offer, selling conditions and next steps with clear communication throughout the process.' },
+          { icon: '/images/doc.svg', title: 'Paperwork and Documentation', text: 'We guide you through the required paperwork and administrative procedures involved in the vehicle transfer.' },
+          { icon: '/images/diliver.svg', title: 'Collection Arrangements', text: 'We coordinate the collection process with you, helping make the final stage of selling your truck straightforward.' },
         ]}
         className="!pt-4"
       />

@@ -13,7 +13,7 @@ export default function Img({ src, alt = '', className = '', imgClassName = '' }
   const [failed, setFailed] = useState(false);
 
   return (
-    <div className={`relative overflow-hidden bg-slate-200 ${className}`}>
+    <div className={`relative overflow-hidden ${className}`}>
       {failed ? (
         <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-slate-200 to-slate-300 text-slate-400">
           <Truck className="h-1/4 w-1/4 min-h-6 min-w-6 max-h-16 max-w-16" strokeWidth={1.25} />

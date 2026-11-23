@@ -9,10 +9,20 @@ interface Props {
 }
 
 export function Badge({ children, light }: { children: string; light?: boolean }) {
+  if (light) {
+    return (
+      <span
+        style={{ backgroundImage: `url('/images/label-bg.png')`, backgroundSize: '100% 100%' }}
+        className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-brand-orange bg-no-repeat bg-center"
+      >
+        <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-brand-orange" />
+        <span>{children}</span>
+        <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-brand-orange" />
+      </span>
+    );
+  }
   return (
-    <span
-      className={`badge ${light ? 'border border-white/20 bg-white/5 text-brand-orange' : ''}`}
-    >
+    <span className="badge">
       <span aria-hidden>•</span>
       {children}
       <span aria-hidden>•</span>

@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="container-x pb-6 pt-24 sm:pt-28">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div className="flex max-w-xs flex-col gap-4">
-            <Logo />
+            <Logo variant="footer" />
             <p className="text-sm leading-relaxed text-white/70">{SITE.about}</p>
           </div>
 
