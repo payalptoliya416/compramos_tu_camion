@@ -30,7 +30,7 @@ export default function Hero({ badge, title, text, image, primary, secondary, ch
         <Img
           src={image}
           className="!absolute inset-0 h-full w-full"
-          imgClassName="object-cover object-center"
+          imgClassName="object-cover object-[75%_center] sm:object-center"
         />
 
         {/* Content - Vertically centered inside full 100vh banner */}
