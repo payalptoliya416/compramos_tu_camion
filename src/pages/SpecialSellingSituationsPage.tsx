@@ -196,7 +196,7 @@ export default function SpecialSellingSituationsPage() {
       <Testimonials />
 
       {/* 9. FAQ */}
-      <Faq items={FAQ_SITUATIONS} title="Frequently Asked Questions About Selling Trucks" />
+      <Faq className="!pt-0" items={FAQ_SITUATIONS} title="Frequently Asked Questions About Selling Trucks" />
 
       {/* 10. Final CTA */}
       <FinalCta />

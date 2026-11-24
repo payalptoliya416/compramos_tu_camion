@@ -7,14 +7,15 @@ import { FAQ_DEFAULT } from '@/data/site';
 interface Props {
   items?: FaqItem[];
   title?: string;
+  className?: string;
 }
 
 /** Left title + right accordion. First item open by default. */
-export default function Faq({ items = FAQ_DEFAULT, title = 'Frequently Asked Questions About Selling Trucks' }: Props) {
+export default function Faq({ items = FAQ_DEFAULT, title = 'Frequently Asked Questions About Selling Trucks', className = '' }: Props) {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="section-y">
+    <section className={`section-y ${className}`.trim()}>
       <div className="container-x grid gap-8 lg:grid-cols-[1fr_1.9fr] lg:gap-[64px]">
         <div className="flex flex-col items-start gap-3">
           <Badge>FAQs</Badge>

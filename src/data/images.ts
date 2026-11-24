@@ -47,7 +47,7 @@ export const IMG = {
   parcelMan: p('parcel-man.jpg'),
   refrigeratedFuso: p('refrigerated-fuso.jpg'),
   light3500: p('light-3500.jpg'),
-  brandsRenault: p('brands-renault.jpg'),
+  brandsRenault: p('valuation-truck.png'),
 
   // help cards (home)
   helpFleet: p('help01.png'),
