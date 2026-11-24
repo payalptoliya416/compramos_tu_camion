@@ -172,14 +172,14 @@ export default function AboutPage() {
       <section className="section-y !pt-0">
         <div className="container-x">
           <SectionHeading badge="Our specialities" title="Experience Across Different Types of Trucks" />
-          <ul className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 lg:gap-4">
+          <ul className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 lg:gap-[24px]">
             {SPECIALITIES.map((s) => (
               <li key={s.title}>
                 <Link
                   to={s.to}
-                  className="group block rounded-2xl border border-[#E7E7E8] bg-white p-2.5 sm:p-3 transition-shadow hover:shadow-md"
+                  className="group block rounded-[10px] border border-[#E7E7E8] bg-white p-2.5 sm:p-3 transition-shadow hover:shadow-md"
                 >
-                  <div className="overflow-hidden rounded-xl">
+                  <div className="overflow-hidden rounded-[8px]">
                     <img
                       src={s.image}
                       alt={s.title}
