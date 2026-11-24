@@ -9,6 +9,7 @@ interface Props {
   title?: string;
   badge?: string;
   subtitle?: string;
+  className?: string;
 }
 
 const TESTIMONIAL_ITEMS = [
@@ -54,9 +55,10 @@ export default function Testimonials({
   badge = 'Customer reviews',
   title = 'What Our Customers Say About Us',
   subtitle = 'Discover what customers have to say about their experience selling a truck with our team.',
+  className = '',
 }: Props) {
   return (
-    <section className="section-y">
+    <section className={`section-y ${className}`}>
       <div className="container-x">
         <SectionHeading badge={badge} title={title} subtitle={subtitle} />
 

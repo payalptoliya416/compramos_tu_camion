@@ -188,7 +188,7 @@ export default function BusinessFleetPage() {
       </section>
 
       <ValuationForm />
-      <Testimonials />
+      <Testimonials className="!pb-0" />
       <Faq items={FAQ} />
       <FinalCta />
     </>
