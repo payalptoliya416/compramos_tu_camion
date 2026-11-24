@@ -18,7 +18,7 @@ export default function RecentPurchases({
   band,
 }: Props) {
   const body = (
-    <section className="section-y !pb-0">
+    <section className="section-y">
       <div className="container-x">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between flex-wrap">
           <SectionHeading badge={badge} title={title} subtitle={subtitle} align="left" />

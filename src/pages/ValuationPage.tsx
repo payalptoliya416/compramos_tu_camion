@@ -1,7 +1,5 @@
 import { Camera, ClipboardList, FileText, Info, MessageCircle, Package, Settings, TrendingUp, UserCheck, Wrench } from 'lucide-react';
-import { IMG } from '@/data/images';
 import Hero from '@/components/sections/Hero';
-import SplitSection from '@/components/sections/SplitSection';
 import RecentPurchases from '@/components/sections/RecentPurchases';
 import FeatureGrid from '@/components/sections/FeatureGrid';
 import Steps from '@/components/sections/Steps';
@@ -10,6 +8,8 @@ import ValuationForm from '@/components/sections/ValuationForm';
 import Testimonials from '@/components/sections/Testimonials';
 import Faq from '@/components/sections/Faq';
 import FinalCta from '@/components/sections/FinalCta';
+import { Badge } from '@/components/ui/SectionHeading';
+import CtaButton from '@/components/ui/CtaButton';
 
 export default function ValuationPage() {
   return (
@@ -24,17 +24,45 @@ export default function ValuationPage() {
         checks={['Professional Valuation', 'No Obligation', 'Secure Selling Process']}
       />
 
-      <SplitSection
-        badge="Used truck valuation"
-        title="Find Out How Much Your Truck Is Worth"
-        paragraphs={[
-          'Understanding your truck’s value is an important first step when preparing to sell. Our team reviews the information you provide to assess your vehicle’s specifications, condition and relevant market factors.',
-          'Whether you own an individual commercial vehicle or manage a fleet, our valuation process helps you understand the next steps towards selling your truck.',
-        ]}
-        image={IMG.inspectorTruck}
-        pills={['Professional vehicle assessment', 'No-obligation valuation request', 'Clear guidance on the next steps']}
-        cta={{ label: 'Start Your Valuation' }}
-      />
+      <section className="section-y">
+        <div className="container-x grid items-center gap-8 lg:grid-cols-2 lg:gap-[53px]">
+          <div className="overflow-hidden rounded-2xl">
+            <img
+              src="/images/valuationpage-about.png"
+              alt="Find Out How Much Your Truck Is Worth"
+              className="h-auto w-full rounded-2xl object-cover"
+            />
+          </div>
+          <div className="flex flex-col items-start gap-4">
+            <Badge>Used truck valuation</Badge>
+            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[40px] xl:leading-[60px]">
+              Find Out How Much Your Truck Is Worth
+            </h2>
+            <p className="text-base leading-relaxed text-[#3B3F45]">
+              Understanding your truck’s value is an important first step when preparing to sell. Our team reviews the information you provide to assess your vehicle’s specifications, condition and relevant market factors.
+            </p>
+            <p className="text-base leading-relaxed text-[#3B3F45]">
+              Whether you own an individual commercial vehicle or manage a fleet, our valuation process helps you understand the next steps towards selling your truck.
+            </p>
+            <div className="my-1 flex flex-col items-start gap-3">
+              {[
+                'Professional vehicle assessment',
+                'No-obligation valuation request',
+                'Clear guidance on the next steps',
+              ].map((pill) => (
+                <div
+                  key={pill}
+                  className="inline-flex items-center gap-2 rounded-full bg-[#F3F3F3] px-4 py-2 text-xs font-normal text-[#3B3F45] sm:text-sm"
+                >
+                  <img src="/images/fill-checkmark.svg" alt="" className="h-4 w-4 shrink-0" />
+                  <span>{pill}</span>
+                </div>
+              ))}
+            </div>
+            <CtaButton cta={{ label: 'Start Your Valuation' }} className="mt-2" />
+          </div>
+        </div>
+      </section>
 
       <RecentPurchases band />
 
