@@ -1,4 +1,4 @@
-import { ClipboardCheck, FileText, Handshake, Phone, Truck, UserCheck } from 'lucide-react';
+import { ClipboardCheck, FileText, Truck, UserCheck } from 'lucide-react';
 import { IMG } from '@/data/images';
 import Hero from '@/components/sections/Hero';
 import Steps from '@/components/sections/Steps';
@@ -34,9 +34,9 @@ export default function HowItWorksPage() {
         title="Three Steps to Sell Your Truck"
         subtitle="From the first enquiry to collection, we make selling your truck straightforward."
         steps={[
-          { icon: FileText, title: 'Tell Us About Your Truck', text: 'Fill in our valuation form with your truck’s basic details, including its make, model, year, mileage and condition. Add a few photos to help us understand your vehicle better.' },
-          { icon: Phone, title: 'Get a Professional Offer', text: 'Our team reviews the information you provide and assesses your truck based on its specifications, condition and current market value. We’ll get in touch with you to discuss our offer.' },
-          { icon: Handshake, title: 'We Handle the Next Steps', text: 'Once you accept our offer, we’ll guide you through the required paperwork and arrange a convenient collection for your truck. Our team will support you throughout the process.' },
+          { icon: '/images/doc-blue.svg', title: 'Tell Us About Your Truck', text: 'Fill in our valuation form with your truck’s basic details, including its make, model, year, mileage and condition. Add a few photos to help us understand your vehicle better.' },
+          { icon: '/images/call.svg', title: 'Get a Professional Offer', text: 'Our team reviews the information you provide and assesses your truck based on its specifications, condition and current market value. We’ll get in touch with you to discuss our offer.' },
+          { icon: '/images/handshake-regula-blue.svg', title: 'We Handle the Next Steps', text: 'Once you accept our offer, we’ll guide you through the required paperwork and arrange a convenient collection for your truck. Our team will support you throughout the process.' },
         ]}
       />
 

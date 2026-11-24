@@ -1,4 +1,3 @@
-import { FileText, Handshake, Phone } from 'lucide-react';
 import { IMG } from '@/data/images';
 import Hero from '@/components/sections/Hero';
 import Testimonials from '@/components/sections/Testimonials';
@@ -49,9 +48,9 @@ export default function PrivateSellersPage() {
         badge="The process"
         title="Sell Your Truck in Three Simple Steps"
         steps={[
-          { icon: FileText, title: 'Share Your Truck Details', text: 'Tell us about your truck, including its make, model, registration year, and mileage. You can do this quickly online or by phone.' },
-          { icon: Phone, title: 'Receive a Valuation', text: 'Our team reviews the information you provide and contacts you to discuss your truck’s valuation and answer any questions.' },
-          { icon: Handshake, title: 'Complete the Sale', text: 'If you agree to the offer, our team will guide you through the next steps, documentation, and collection arrangements.' },
+          { icon: '/images/doc-blue.svg', title: 'Share Your Truck Details', text: 'Tell us about your truck, including its make, model, registration year, and mileage. You can do this quickly online or by phone.' },
+          { icon: '/images/call.svg', title: 'Receive a Valuation', text: 'Our team reviews the information you provide and contacts you to discuss your truck’s valuation and answer any questions.' },
+          { icon: '/images/handshake-regula-blue.svg', title: 'Complete the Sale', text: 'If you agree to the offer, our team will guide you through the next steps, documentation, and collection arrangements.' },
         ]}
       />
 
