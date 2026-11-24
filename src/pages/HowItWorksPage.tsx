@@ -63,6 +63,7 @@ export default function HowItWorksPage() {
         image="/images/help.png"
         pills={['Truck make and model', 'Registration year', 'Mileage', 'Vehicle condition', 'Mechanical issues, if any', 'Recent photographs', 'Your contact details']}
         cta={{ label: 'Get a Free Valuation' }}
+        className="!pb-0"
       />
 
       <Faq items={FAQ} />
