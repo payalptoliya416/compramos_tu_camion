@@ -55,6 +55,7 @@ export default function HomePage() {
   return (
     <>
       <Hero
+        isHome
         badge="Professional truck buyers in Spain"
         title={
           <>

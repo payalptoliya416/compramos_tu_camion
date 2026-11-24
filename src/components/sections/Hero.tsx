@@ -14,6 +14,7 @@ interface Props {
   checks?: string[];
   /** Breadcrumb trail shown under the hero (truck-type pages). */
   breadcrumb?: { label: string; to?: string }[];
+  isHome?: boolean;
 }
 
 /**
@@ -22,7 +23,7 @@ interface Props {
  * - 910px height on desktop
  * - Trapezoid bottom notch
  */
-export default function Hero({ badge, title, text, image, primary, secondary, checks = [], breadcrumb }: Props) {
+export default function Hero({ badge, title, text, image, primary, secondary, checks = [], breadcrumb, isHome = false }: Props) {
   return (
     <section className="relative w-full px-3 sm:px-5 pt-3 sm:pt-5">
       <div className="relative h-[calc(100dvh-1.5rem)] min-h-[640px] w-full overflow-hidden rounded-[20px] sm:h-[calc(100dvh-2rem)]">
@@ -53,7 +54,20 @@ export default function Hero({ badge, title, text, image, primary, secondary, ch
             </div>
 
             {/* Title */}
-            <h1 className="mt-[15px] text-4xl font-medium leading-[1.12] tracking-tight text-white sm:text-5xl text-center sm:text-left">
+            <h1
+              className={`mt-[15px] text-4xl font-medium leading-[1.12] tracking-tight sm:text-5xl text-center sm:text-left ${
+                isHome ? 'text-white' : ''
+              }`}
+              style={
+                isHome
+                  ? undefined
+                  : {
+                      background: 'radial-gradient(136.36% 136.36% at 50% 30%, #FFFFFF 0%, #737373 100%)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                    }
+              }
+            >
               {title}
             </h1>
 
