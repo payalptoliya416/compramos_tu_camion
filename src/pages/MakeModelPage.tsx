@@ -269,7 +269,7 @@ export default function MakeModelPage() {
 
       <ValuationForm />
       <Testimonials />
-      <Faq items={FAQ} />
+      <Faq className="!pt-0" items={FAQ} />
       <FinalCta />
     </>
   );
