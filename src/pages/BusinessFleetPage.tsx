@@ -42,17 +42,41 @@ export default function BusinessFleetPage() {
         cta={{ label: 'Get a Fleet Valuation' }}
       />
 
-      <FeatureGrid
-        badge="Why work with us"
-        title="Support for Your Business Truck Sales"
-        variant="surface"
-        items={[
-          { icon: Truck, title: 'Fleet-Focused Support', text: 'Guidance for businesses looking to sell one or more commercial vehicles, with dedicated support throughout the process.' },
-          { icon: BarChart3, title: 'Clear Valuation Process', text: 'A structured review of your vehicle details to help determine an appropriate offer based on relevant market considerations.' },
-          { icon: FileText, title: 'Practical Sale Coordination', text: 'Support with understanding the required documentation and discussing collection arrangements for your vehicles.' },
-        ]}
-        className="!pt-4"
-      />
+      <section className="section-y !pt-4">
+        <div className="container-x">
+          <SectionHeading badge="Why work with us" title="Support for Your Business Truck Sales" />
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                icon: '/images/fleet.svg',
+                title: 'Fleet-Focused Support',
+                text: 'Guidance for businesses looking to sell one or more commercial vehicles, with dedicated support throughout the process.',
+              },
+              {
+                icon: '/images/clear.svg',
+                title: 'Clear Valuation Process',
+                text: 'A structured review of your vehicle details to help determine an appropriate offer based on relevant market considerations.',
+              },
+              {
+                icon: '/images/practical.svg',
+                title: 'Practical Sale Coordination',
+                text: 'Support with understanding the required documentation and discussing collection arrangements for your vehicles.',
+              },
+            ].map(({ icon, title, text }) => (
+              <article
+                key={title}
+                className="flex h-full flex-col gap-4 rounded-[18px] bg-surface p-6 sm:p-[30px]"
+              >
+                <span className="flex h-[52px] w-[52px] items-center justify-center rounded-[12px] bg-white">
+                  <img src={icon} alt="" className="h-7 w-7 object-contain" />
+                </span>
+                <h3 className="mt-2 text-base font-medium text-brand-navy-dark sm:text-xl">{title}</h3>
+                <p className="text-sm leading-relaxed text-[#6C6F73] sm:text-base">{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <SplitSection
         badge="Your business, your needs"
