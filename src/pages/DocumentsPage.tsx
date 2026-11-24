@@ -183,14 +183,14 @@ export default function DocumentsPage() {
       <section className="section-y">
         <div className="container-x">
           <SectionHeading badge="Understand the process" title="From Document Review to Completing the Sale" />
-          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          <div className="mt-10 grid gap-[24px] sm:grid-cols-2">
             {PROCESS_CARDS.map(({ icon, title, text }) => (
               <article
                 key={title}
-                className="flex h-full flex-col rounded-[14px] border border-[#E7E7E8] bg-white p-6 sm:p-8"
+                className="flex h-full flex-col rounded-[14px] border border-[#E7E7E8] bg-white py-5 sm:py-[35px] px-5 sm:px-[25px]"
               >
-                <span className="flex h-[50px] w-[50px] items-center justify-center rounded-[12px] bg-[#F3F4F6]">
-                  <img src={icon} alt="" className="h-6 w-6 object-contain" />
+                <span className="flex h-[48px] w-[48px] items-center justify-center rounded-[12px] bg-[#F3F4F6] border border-[#E7E7E8]">
+                  <img src={icon} alt="" className="" />
                 </span>
                 <h3 className="mt-5 text-base sm:text-lg font-bold text-brand-navy-dark leading-snug">{title}</h3>
                 <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#3B3F45]">{text}</p>
