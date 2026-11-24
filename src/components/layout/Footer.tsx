@@ -6,7 +6,7 @@ import Logo from './Logo';
 export default function Footer() {
   return (
     <footer className="on-dark relative mx-2 mb-2 rounded-3xl bg-[#0A0F16] text-white sm:mx-3 sm:mb-3">
-      <div className="container-x pb-6 pt-24 sm:pt-[224px]">
+      <div className="container-x pb-6 pt-24 sm:pt-[230px]">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div className="flex max-w-xl flex-col gap-4">
             <Logo variant="footer" />
@@ -29,8 +29,8 @@ export default function Footer() {
           ))}
 
           <div>
-            <h3 className="mb-4 text-base font-medium">Contact</h3>
-            <ul className="space-y-3 text-sm text-white/70">
+            <h3 className="mb-[25px] text-lg leading-[18px] font-medium">Contact</h3>
+            <ul className="space-y-5 text-base text-[#E7E7E8]">
               <li className="flex items-start gap-3">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0" />
                 <a href={SITE.phoneHref} className="hover:text-brand-orange">{SITE.phone}</a>
@@ -47,8 +47,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 Compramos Tu Camion. All rights reserved.</p>
+        <div className="mt-[30px] flex flex-col gap-3 border-t border-[#3B3F45] pt-6 text-sm text-[#E7E7E8] sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Compramos Tu Camion. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white">Privacy Policy</a>
             <a href="#" className="hover:text-white">Legal Notice</a>
