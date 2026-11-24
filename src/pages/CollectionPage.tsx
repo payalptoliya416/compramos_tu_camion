@@ -1,4 +1,4 @@
-import { BookOpen, CreditCard, FileText, Search, ClipboardList, Eye, CheckCircle2, Wallet } from 'lucide-react';
+import { ClipboardList, Eye, CheckCircle2, Wallet } from 'lucide-react';
 import Hero from '@/components/sections/Hero';
 import SplitSection from '@/components/sections/SplitSection';
 import FeatureGrid from '@/components/sections/FeatureGrid';
@@ -40,10 +40,10 @@ export default function CollectionPage() {
         title="Why Sell Your Truck to Us?"
         cols={4}
         items={[
-          { icon: CreditCard, title: 'Secure Payment', text: 'Clear payment terms and a reliable transaction process, so you know exactly what to expect at every stage.' },
-          { icon: Search, title: 'Professional Valuation', text: 'An assessment based on your truck’s condition, specifications and current market value.' },
-          { icon: FileText, title: 'Paperwork Assistance', text: 'Guidance through the documentation and transfer process, helping you avoid complications.' },
-          { icon: BookOpen, title: 'Nationwide Coverage', text: 'Support for sellers across our service areas in Spain, from the Mediterranean coast to Andalusia.' },
+          { icon: '/images/payment-orang.svg', title: 'Secure Payment', text: 'Clear payment terms and a reliable transaction process, so you know exactly what to expect at every stage.' },
+          { icon: '/images/bilori.svg', title: 'Professional Valuation', text: 'An assessment based on your truck’s condition, specifications and current market value.' },
+          { icon: '/images/papperwork.svg', title: 'Paperwork Assistance', text: 'Guidance through the documentation and transfer process, helping you avoid complications.' },
+          { icon: '/images/book-blue.svg', title: 'Nationwide Coverage', text: 'Support for sellers across our service areas in Spain, from the Mediterranean coast to Andalusia.' },
         ]}
       />
 

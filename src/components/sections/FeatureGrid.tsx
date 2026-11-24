@@ -29,7 +29,7 @@ export default function FeatureGrid({
     <section className={`section-y ${className}`}>
       <div className="container-x">
         <SectionHeading badge={badge} title={title} subtitle={subtitle} />
-        <div className={`mt-10 grid gap-4 sm:gap-5 ${COLS[cols]}`}>
+        <div className={`mt-10 grid items-start gap-4 sm:gap-5 ${COLS[cols]}`}>
           {items.map(({ icon: Icon, title: t, text }, i) => (
             <article
               key={t}
