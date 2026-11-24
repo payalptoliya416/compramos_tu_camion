@@ -33,8 +33,14 @@ export default function Hero({ badge, title, text, image, primary, secondary, ch
           imgClassName="object-cover object-[75%_center] sm:object-center"
         />
 
+        {/* Responsive dark overlay for mobile/tablet text readability */}
+        <div
+          className="absolute inset-0 z-[1] bg-black/60 sm:bg-black/40 lg:hidden"
+          aria-hidden
+        />
+
         {/* Content - Vertically centered inside full 100vh banner */}
-        <div className="relative flex h-full flex-col justify-center items-center sm:items-start text-center sm:text-left px-6 pb-16 pt-24 sm:px-12 sm:pt-28 lg:px-20 xl:px-[160px]">
+        <div className="relative z-10 flex h-full flex-col justify-center items-center sm:items-start text-center sm:text-left px-6 pb-16 pt-24 sm:px-12 sm:pt-28 lg:px-20 xl:px-[160px]">
           <div className="max-w-2xl flex flex-col items-center sm:items-start text-center sm:text-left">
             {/* Pill Badge */}
             <div
@@ -57,7 +63,7 @@ export default function Hero({ badge, title, text, image, primary, secondary, ch
             </p>
 
             {/* Actions */}
-            <div className="mt-5 md:mt-[35px] flex flex-wrap items-center justify-center sm:justify-start gap-4">
+            <div className="mt-5 md:mt-[35px] flex flex-wrap items-center justify-center sm:justify-start gap-5">
               <CtaButton cta={primary} className="!px-[30px] !py-3 md:!py-4  text-sm md:text-base md:leading-[18px] font-medium border border-brand-orange" />
               {secondary && (
                 <CtaButton
