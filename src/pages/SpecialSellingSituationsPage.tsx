@@ -11,24 +11,28 @@ import type { FaqItem } from '@/types';
 
 const SITUATION_CARDS = [
   {
-    icon: '/images/out-story02.png',
-    title: 'Truck With an Embargo',
-    text: 'We help you understand the legal implications of selling a truck with an embargo, explaining how the process works and what documentation is required.',
+    icon: '/images/Retirement.svg',
+    title: 'Retirement',
+    text: 'Planning to retire from the transport industry? Explore the steps involved in selling your truck as part of your transition.',
+    btnText: 'Discuss Your Sale',
   },
   {
-    icon: '/images/help02.png',
-    title: 'Mechanical Faults & Damage',
-    text: 'Before committing to expensive repairs, assess your truck’s current market value. We provide transparent appraisals for trucks in any mechanical state.',
+    icon: '/images/business.svg',
+    title: 'Business Closure',
+    text: 'Closing or restructuring your business? Get guidance on the information needed to discuss selling your commercial vehicle.',
+    btnText: 'Explore Your Options',
   },
   {
-    icon: '/images/help03.png',
-    title: 'Inherited Commercial Vehicles',
-    text: 'Handling an inherited vehicle can be overwhelming. We guide you through the inheritance paperwork and legal requirements to sell smoothly.',
+    icon: '/images/illness.svg',
+    title: 'Illness or Personal Circumstances',
+    text: 'If health or personal circumstances make managing your truck difficult, contact our team to discuss the selling process and available support.',
+    btnText: 'Contact Our Team',
   },
   {
-    icon: '/images/out-story03.png',
-    title: 'Retirement & Fleet Downsizing',
-    text: 'Leaving the transport business or streamlining operations? We offer straightforward valuations and coordinate vehicle collections tailored to your schedule.',
+    icon: '/images/outstanding.svg',
+    title: 'Outstanding Debt or Vehicle Liens',
+    text: 'If your truck has an outstanding finance balance or lien, the available options depend on the specific circumstances. Contact our team to discuss the situation before proceeding.',
+    btnText: 'Discuss Your Situation',
   },
 ];
 
@@ -91,38 +95,38 @@ export default function SpecialSellingSituationsPage() {
         badge="A clear path forward"
         title="A Clearer Way Forward for Your Truck Sale"
         paragraphs={[
-          'Selling a commercial vehicle when facing complex conditions shouldn’t add unnecessary stress. Our team provides professional guidance and transparent valuations, helping you understand your options and move forward with peace of mind.',
+          'Selling a commercial vehicle can become more complicated when personal circumstances or business changes are involved. We help you understand the process, review your truck details, and discuss the next steps based on your situation.',
         ]}
-        image="/images/Straightforward.png"
-        cta={{ label: 'Get a Free Valuation', to: '/get-a-free-valuation' }}
+        image="/images/cleare.png"
+        cta={{ label: 'Get a truck appraisal now', to: '/get-a-free-valuation' }}
       />
 
       {/* 3. Solutions for Different Selling Situations (4 Cards) */}
-      <section className="section-y bg-surface">
+      <section className="section-y">
         <div className="container-x">
           <SectionHeading
-            badge="Solutions we offer"
+            badge="How we can help"
             title="Solutions for Different Selling Situations"
           />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {SITUATION_CARDS.map(({ icon, title, text }) => (
+            {SITUATION_CARDS.map(({ icon, title, text, btnText }) => (
               <article
                 key={title}
-                className="flex h-full flex-col justify-between rounded-[20px] border border-[#E7E7E8] bg-white p-6 shadow-sm"
+                className="flex h-full flex-col justify-between rounded-[20px] border border-[#E7E7E8] bg-white p-6 sm:p-7 shadow-sm"
               >
                 <div>
-                  <span className="flex h-[52px] w-[52px] items-center justify-center rounded-[12px] bg-[#F8F9FA] overflow-hidden">
-                    <img src={icon} alt="" className="h-full w-full object-cover" />
+                  <span className="flex h-[48px] w-[48px] items-center justify-center rounded-[12px] bg-[#F8F9FA]">
+                    <img src={icon} alt="" className="h-6 w-6 object-contain" />
                   </span>
-                  <h3 className="mt-5 text-lg font-semibold text-brand-navy-dark">{title}</h3>
+                  <h3 className="mt-5 text-base sm:text-lg font-bold text-brand-navy-dark leading-snug">{title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-[#6C6F73]">{text}</p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-[#F3F3F3]">
+                <div className="mt-8">
                   <Link
                     to="/get-a-free-valuation"
-                    className="inline-flex items-center text-sm font-medium text-brand-orange hover:underline cursor-pointer"
+                    className="inline-flex items-center justify-center rounded-full border border-brand-navy px-5 py-2.5 text-xs sm:text-sm font-medium text-brand-navy transition-colors hover:bg-brand-navy hover:text-white"
                   >
-                    Request a Valuation →
+                    {btnText}
                   </Link>
                 </div>
               </article>
@@ -134,7 +138,7 @@ export default function SpecialSellingSituationsPage() {
       {/* 4. Every Situation Deserves a Clear Explanation (Reverse SplitSection) */}
       <SplitSection
         reverse
-        badge="Clear communication"
+        badge="YOUR BUSINESS, YOUR NEEDS"
         title="Every Situation Deserves a Clear Explanation"
         paragraphs={[
           'We believe transparency is key when dealing with complex situations. Our team reviews each case individually, explaining the valuation and legal considerations so there are no surprises.',
