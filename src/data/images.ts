@@ -10,7 +10,7 @@ export const IMG = {
   logoFooter: p('footer-logo.png'),
 
   // heroes
-  heroBusiness: p('hero-business-fleet.jpg'),
+  heroBusiness: p('business-fleet-sales-banner.png'),
   heroHome: p('home-hero-banner.png'),
   privateHome: p('private-herobanner.png'),
   heroHow: p('hero-how-it-works.jpg'),
