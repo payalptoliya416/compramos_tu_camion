@@ -70,7 +70,7 @@ export default function ComparisonTable() {
           title="Why Is Selling Your Truck with Us the Smartest Choice?"
         />
 
-        <div className="mt-14 overflow-x-auto py-8">
+        <div className="mt-14 -mx-4 overflow-x-auto px-4 py-8 sm:mx-0 sm:px-0">
           <div className="relative mx-auto rounded-[18px] border border-[#E7E7E8] bg-white p-4 lg:p-5">
             <div className="grid grid-cols-[1.05fr_1.35fr_1.2fr_1.2fr] items-start gap-4 lg:gap-[35px]">
 
