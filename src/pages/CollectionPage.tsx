@@ -1,3 +1,4 @@
+import type { FaqItem } from '@/types';
 import Hero from '@/components/sections/Hero';
 import SplitSection from '@/components/sections/SplitSection';
 import FeatureGrid from '@/components/sections/FeatureGrid';
@@ -8,6 +9,25 @@ import ValuationForm from '@/components/sections/ValuationForm';
 import Testimonials from '@/components/sections/Testimonials';
 import Faq from '@/components/sections/Faq';
 import FinalCta from '@/components/sections/FinalCta';
+
+const FAQ: FaqItem[] = [
+  {
+    q: 'In which areas of Spain does compramostucamion.es offer coverage?',
+    a: 'We offer comprehensive appraisal and purchase services for commercial vehicles throughout the Iberian Peninsula (Spain) . We travel directly to any province and autonomous community, including key logistics hubs such as Madrid, Catalonia (Barcelona), Andalusia (Seville), the Valencian Community, Galicia, and the Basque Country, for free vehicle inspection and collection.\n\nOur local service eliminates the need for the carrier or company to move the heavy vehicle out of their province, managing the entire process in person at their own base or branch.',
+  },
+  {
+    q: 'Is it better to sell used trucks to specialized companies or to individuals?',
+    a: 'Selling used trucks to companies specializing in industrial sales is safer, faster, and more profitable than selling to private individuals. While selling to a private individual often involves months of waiting, haggling, the risk of non-payment, and external administrative costs, a specialized company offers an immediate technical valuation, handles 100% of the DGT (Spanish Traffic Authority) paperwork, and guarantees payment before you take possession of the truck.\n\nBy selling to a professional like compramostucamion.es , you ensure that the vehicle\'s civil liability is transferred instantly through a regulated sales contract, avoiding future claims for hidden defects, a very common problem in transactions between individuals.',
+  },
+  {
+    q: 'Is it worth using Compramostucamion to sell used trucks in my area?',
+    a: 'Yes, using compramostucamion.es \'s service in your area is worthwhile because it combines the advantages of a national network with the speed of local service. We come to your exact location to perform the physical inspection of the vehicle, eliminating mileage costs and the need to hire trailers to move the truck to a distant appraisal center.\n\nFurthermore, by understanding the export market and the demand in each autonomous community, we offer you a valuation tailored to the reality of your region, guaranteeing transparent treatment, immediate payment, and vehicle collection at no extra charge to you.',
+  },
+  {
+    q: 'How is the truck collected once the offer has been accepted in my town?',
+    a: 'Once you confirm acceptance of our binding offer and immediate payment is processed via bank transfer (or OMF), our team coordinates the collection logistics from our headquarters. We dispatch an authorized driver or a car carrier directly to your base or workshop anywhere in Spain within an agreed timeframe of 24 to 48 hours, without you having to worry about any logistical costs.',
+  },
+];
 
 export default function CollectionPage() {
   return (
@@ -67,7 +87,7 @@ export default function CollectionPage() {
 
       <ValuationForm />
       <Testimonials />
-      <Faq />
+      <Faq items={FAQ} title="Frequently asked questions about where to sell used trucks" />
       <FinalCta />
     </>
   );

@@ -39,7 +39,7 @@ export default function Faq({ items = FAQ_DEFAULT, title = 'Frequently Asked Que
                   {it.q}
                   {isOpen ? <Minus className="h-4 w-4 shrink-0 text-[#F17612]" /> : <Plus className="h-4 w-4 shrink-0 text-[#9D9FA2]" />}
                 </button>
-                {isOpen && <p className="pb-5 text-sm leading-relaxed text-[#6C6F73]">{it.a}</p>}
+                {isOpen && <p className="pb-5 text-sm leading-relaxed text-[#6C6F73] whitespace-pre-line">{it.a}</p>}
               </div>
             );
           })}
