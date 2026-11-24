@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ChevronRight, ClipboardList, Eye, MessageCircle, Search, CheckCircle2, Truck, UserCheck, Map, FileText, Zap, Award } from 'lucide-react';
+import { ChevronRight, ClipboardList, Eye, MessageCircle, Search, CheckCircle2, Zap, Award } from 'lucide-react';
 import { IMG } from '@/data/images';
 import Hero from '@/components/sections/Hero';
 import FeatureGrid from '@/components/sections/FeatureGrid';
@@ -95,7 +95,7 @@ export default function AboutPage() {
               className="h-auto w-full rounded-2xl object-cover"
             />
           </div>
-          <div className="flex flex-col items-start gap-4 lg:order-1">
+          <div className="flex flex-col items-start gap-[15px] lg:order-1">
             <Badge>Our story</Badge>
             <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[40px] xl:leading-[60px]">
               Making Truck Selling Simpler and More Transparent
@@ -106,7 +106,7 @@ export default function AboutPage() {
             <p className="text-base leading-relaxed text-[#3B3F45]">
               By combining industry experience with a professional valuation process, we aim to help sellers understand their options, receive a considered offer and move forward with greater clarity.
             </p>
-            <div className="mt-4 grid w-full grid-cols-3 border-t border-[#E7E7E8] pt-6">
+            <div className="mt-[15px] grid w-full grid-cols-3 border-t border-[#E7E7E8] pt-6">
               {STATS.map((s, idx) => (
                 <div
                   key={s.label}
@@ -132,10 +132,10 @@ export default function AboutPage() {
         title="Experience That Understands Every Truck"
         cols={4}
         items={[
-          { icon: Truck, title: 'Commercial Vehicle Knowledge', text: 'Experience evaluating different types of trucks and commercial vehicles across a wide range of makes, models and configurations.' },
-          { icon: FileText, title: 'Professional Valuations', text: 'Consideration of vehicle condition, specifications, equipment and relevant market factors when assessing each truck.' },
-          { icon: UserCheck, title: 'Individual and Fleet Sales', text: 'Support for individual truck owners, transport professionals and businesses managing fleets of commercial vehicles.' },
-          { icon: Map, title: 'Nationwide Service', text: 'Support for truck sellers across Spain, subject to the company’s service and collection arrangements for each vehicle.' },
+          { icon: '/images/diliver-orange.svg', title: 'Commercial Vehicle Knowledge', text: 'Experience evaluating different types of trucks and commercial vehicles across a wide range of makes, models and configurations.' },
+          { icon: '/images/doc-blue-checkmark.svg', title: 'Professional Valuations', text: 'Consideration of vehicle condition, specifications, equipment and relevant market factors when assessing each truck.' },
+          { icon: '/images/users-multiple.svg', title: 'Individual and Fleet Sales', text: 'Support for individual truck owners, transport professionals and businesses managing fleets of commercial vehicles.' },
+          { icon: '/images/nationwide.svg', title: 'Nationwide Service', text: 'Support for truck sellers across Spain, subject to the company’s service and collection arrangements for each vehicle.' },
         ]}
         className="!pt-4"
       />
