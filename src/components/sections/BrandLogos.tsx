@@ -22,7 +22,7 @@ const BRAND_LOGOS = [
 ];
 
 // Duplicate items so Swiper loop has enough slides with 7 per view
-const SLIDES = [...BRAND_LOGOS, ...BRAND_LOGOS];
+const SLIDES = [...BRAND_LOGOS];
 
 export default function BrandLogos({
   badge = 'Manufacturers',
