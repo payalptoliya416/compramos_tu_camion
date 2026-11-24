@@ -17,11 +17,12 @@ interface Props {
   reverse?: boolean;
   /** Extra content (e.g. stats) under the text. */
   children?: ReactNode;
+  imageClassName?: string;
 }
 
 /** Image + text block. Used across almost every page. */
 export default function SplitSection({
-  badge, title, paragraphs, image, imageAlt = '', pills, cta, reverse, children,
+  badge, title, paragraphs, image, imageAlt = '', pills, cta, reverse, children, imageClassName,
 }: Props) {
   return (
     <section className="section-y">
@@ -29,7 +30,8 @@ export default function SplitSection({
         <Img
           src={image}
           alt={imageAlt}
-          className={`aspect-[4/3] rounded-2xl shadow-sm sm:aspect-[16/10] lg:aspect-[4/3] ${reverse ? 'lg:order-2' : ''}`}
+          className={`rounded-2xl shadow-sm ${reverse ? 'lg:order-2' : ''} ${imageClassName || ''}`}
+          imgClassName="!h-auto"
         />
         <div className="flex flex-col items-start gap-4">
           <Badge>{badge}</Badge>
