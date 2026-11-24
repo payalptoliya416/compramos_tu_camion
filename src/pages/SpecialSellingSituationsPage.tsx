@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { IMG } from '@/data/images';
 import Hero from '@/components/sections/Hero';
 import SplitSection from '@/components/sections/SplitSection';
 import CtaBanner from '@/components/sections/CtaBanner';
@@ -82,7 +81,7 @@ export default function SpecialSellingSituationsPage() {
         badge="Special selling situations"
         title="Selling Your Truck in a Difficult Situation?"
         text="Whatever challenges you face — outstanding finance, mechanical faults, or legal complexities — our team is here to help you navigate the process with confidence."
-        image={IMG.privateHome}
+        image="/images/special-selling.png"
         primary={{ label: 'Get a Free Valuation' }}
         checks={['Clear Guidance', 'Expert Support', 'Fair Valuation']}
       />
