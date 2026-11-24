@@ -1,3 +1,4 @@
+import type { FaqItem } from '@/types';
 import Hero from '@/components/sections/Hero';
 import RecentPurchases from '@/components/sections/RecentPurchases';
 import FeatureGrid from '@/components/sections/FeatureGrid';
@@ -9,6 +10,37 @@ import Faq from '@/components/sections/Faq';
 import FinalCta from '@/components/sections/FinalCta';
 import { Badge } from '@/components/ui/SectionHeading';
 import CtaButton from '@/components/ui/CtaButton';
+
+const VALUATION_FAQS: FaqItem[] = [
+  {
+    q: 'How is the appraisal value of a used truck calculated in Spain?',
+    a: "The value of a used truck is determined mainly by its make and model, year of first registration, total mileage, axle configuration, Euro emissions standard (essential for driving in Low Emission Zones) and the condition of the chassis or special equipment (such as cranes or tipping systems).\n\nTo obtain an accurate valuation in Spain, we analyze the following key factors:\n\n• Euro Standard: Trucks with Euro 6 engines have a higher residual value in the domestic market due to Low Emission Zone (LEZ) restrictions.\n\n• Equipment and Bodywork: Extras such as a tipping unit, refrigeration systems or cranes with current safety certification significantly increase the vehicle's appraised value.\n\n• Chassis Configuration: 4x2 tractor units and rigid multilift trucks are currently the most sought-after and in-demand vehicles.",
+  },
+  {
+    q: 'Can I get a valuation for my truck by registration number on this website?',
+    a: "Yes. Our truck valuation service, based on registration number, analyzes your vehicle's key technical parameters—such as the year of first registration, chassis configuration, mileage, and Euro emissions standards—to provide you with an accurate estimate that reflects the true market value in Spain. No complicated paperwork or travel is required: simply complete the form with your vehicle's basic information in under two minutes to receive a firm, free, and no-obligation offer.",
+  },
+  {
+    q: 'Can you appraise a truck without taking it to a workshop?',
+    a: 'Yes. At compramostucamion.es, we calculate the value of your truck 100% digitally through our online form or by phone, saving you the trip to a garage or disrupting your work. If you accept the offer, our technical team will come directly to your truck’s location in Spain for a final physical inspection.',
+  },
+  {
+    q: 'How long does it take to receive the vehicle valuation and payment?',
+    a: 'The initial online valuation is processed in less than one hour once the technical form with photos is completed. After accepting the offer and completing the optional physical inspection, payment is made via immediate bank transfer (via OMF if necessary) before vehicle collection, guaranteeing complete financial security.\n\n• Express technical appraisal: Less than 60 minutes.\n\n• Issuance of binding offer: On the same day as the verification.\n\n• Payment and collection: We will arrange to collect the truck anywhere on the Iberian Peninsula (Spain) at no additional cost to you once the payment has been confirmed in your bank account.',
+  },
+  {
+    q: 'Can I appraise trucks of different brands on a single platform?',
+    a: 'Yes, our platform allows you to value used trucks from any manufacturer sold in Spain ( Mercedes-Benz , Volvo , Scania , MAN , DAF , Iveco , Renault Trucks , Nissan, Isuzu, etc.). We value all types of configurations: tractor units, rigid trucks, concrete mixers, tippers, and refrigerated vehicles.',
+  },
+  {
+    q: 'Which companies offer free online truck valuations?',
+    a: 'Compramostucamion.es offers a completely free, no-obligation online truck valuation service . It allows self-employed individuals, companies, and private citizens to find out the market value of their commercial vehicles in less than an hour, with complete confidentiality.',
+  },
+  {
+    q: 'What factors determine exactly how much my truck is worth when it’s appraised?',
+    a: 'To determine the value of my truck, five key factors are analyzed: the make and model, the year and registered mileage, the mechanical condition of the engine and transmission, the type of bodywork or additional equipment installed, and the validity of the mandatory documentation (ITV, tachograph and service history).',
+  },
+];
 
 export default function ValuationPage() {
   return (
@@ -109,7 +141,7 @@ export default function ValuationPage() {
 
       <ValuationForm />
       <Testimonials />
-      <Faq />
+      <Faq items={VALUATION_FAQS} title="Frequently asked questions about truck valuation" />
       <FinalCta />
     </>
   );
