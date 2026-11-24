@@ -1,6 +1,6 @@
 import SectionHeading from '@/components/ui/SectionHeading';
 
-const ROWS = [
+const FACTORS = [
   'Payment security',
   'DGT Management',
   'Speed',
@@ -14,18 +14,23 @@ const US = [
   'Competitive',
 ];
 
-const CONCESSIONAIRE = [
-  'Safe',
-  'They do it.',
-  'Media (usually several weeks)',
-  'LOW (commercial margins)',
-];
-
-const INDIVIDUALS = [
-  'Risk of scams',
-  "It's your responsibility",
-  'Leave (in some cases months)',
-  'Variable (subject to change)',
+const RIGHT_ROWS = [
+  {
+    dealer: 'Safe',
+    individual: 'Risk of scams',
+  },
+  {
+    dealer: 'They do it.',
+    individual: "It's your responsibility",
+  },
+  {
+    dealer: 'Media (usually several weeks)',
+    individual: 'Leave (in some cases months)',
+  },
+  {
+    dealer: 'Low (commercial margins)',
+    individual: 'Variable (subject to change)',
+  },
 ];
 
 function GreenCheck() {
@@ -48,7 +53,7 @@ function GreenCheck() {
   );
 }
 
-/** Comparison: We buy your truck vs concessionaire vs individuals. Scrolls sideways on small screens. */
+/** Comparison: We buy your truck vs concessionaire vs individuals. */
 export default function ComparisonTable() {
   return (
     <section className="section-y">
@@ -57,36 +62,38 @@ export default function ComparisonTable() {
           badge="Why sell directly to us?"
           title="Why Is Selling Your Truck with Us the Smartest Choice?"
         />
-        <div className="mt-14 overflow-x-auto py-6">
-          <div className="relative mx-auto min-w-[840px] max-w-[1140px] rounded-[24px] border border-[#E7E7E8] bg-white p-6 lg:p-8">
-            <div className="grid grid-cols-[1.1fr_1.35fr_1.25fr_1.25fr] items-start gap-4 lg:gap-6">
-              {/* Factors */}
-              <div className="flex flex-col overflow-hidden rounded-xl border border-[#092B55] bg-white shadow-sm">
+
+        <div className="mt-14 overflow-x-auto py-8">
+          <div className="relative mx-auto min-w-[900px] max-w-[1140px] rounded-[24px] border border-[#E7E7E8] bg-white p-6 lg:p-8">
+            <div className="grid grid-cols-[1.05fr_1.35fr_2.4fr] items-start gap-4 lg:gap-6">
+              
+              {/* Column 1: Factors */}
+              <div className="flex flex-col overflow-hidden rounded-2xl border border-[#092B55] bg-white shadow-sm">
                 <div className="flex h-[48px] items-center justify-center bg-[#092B55] text-sm font-bold text-white md:text-base">
                   Factors
                 </div>
                 <div className="divide-y divide-[#E7E7E8]">
-                  {ROWS.map((r) => (
+                  {FACTORS.map((f) => (
                     <div
-                      key={r}
-                      className="flex h-[60px] items-center px-4 text-sm font-medium text-[#092B55]"
+                      key={f}
+                      className="flex h-[64px] items-center px-4 text-sm font-medium text-[#092B55]"
                     >
-                      {r}
+                      {f}
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* We Buy Your Truck */}
-              <div className="-mt-4 -mb-4 z-10 flex flex-col overflow-hidden rounded-2xl bg-[#092B55] pb-3 shadow-2xl">
-                <div className="flex h-[64px] items-center justify-center bg-[#F17612] text-sm font-bold text-white md:text-base">
+              {/* Column 2: We Buy Your Truck (Overlapping Top & Bottom) */}
+              <div className="-mt-6 -mb-6 z-10 flex flex-col overflow-hidden rounded-2xl bg-[#092B55] pb-4 shadow-2xl">
+                <div className="flex h-[72px] items-center justify-center bg-[#F17612] text-sm font-bold text-white md:text-base">
                   We Buy Your Truck
                 </div>
                 <div className="divide-y divide-white/10">
                   {US.map((text) => (
                     <div
                       key={text}
-                      className="flex h-[60px] items-center gap-2.5 px-4 text-xs font-medium text-white sm:text-sm"
+                      className="flex h-[64px] items-center gap-2.5 px-4 text-xs font-medium text-white sm:text-sm"
                     >
                       <GreenCheck />
                       <span>{text}</span>
@@ -95,41 +102,33 @@ export default function ComparisonTable() {
                 </div>
               </div>
 
-              {/* Concessionaire */}
+              {/* Column 3: Concessionaire & Individuals (Continuous horizontal dividers) */}
               <div className="flex flex-col">
-                <div className="flex h-[48px] items-center justify-center rounded-xl bg-[#F3F3F3] text-sm font-semibold text-[#092B55] md:text-base">
-                  Concessionaire
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="flex h-[48px] items-center justify-center rounded-xl bg-[#F3F3F3] text-sm font-semibold text-[#092B55] md:text-base">
+                    Concessionaire
+                  </div>
+                  <div className="flex h-[48px] items-center justify-center rounded-xl bg-[#F3F3F3] text-sm font-semibold text-[#092B55] md:text-base">
+                    Individuals
+                  </div>
                 </div>
+
                 <div className="divide-y divide-[#E7E7E8]">
-                  {CONCESSIONAIRE.map((text) => (
-                    <div
-                      key={text}
-                      className="flex h-[60px] items-center gap-2.5 px-3 text-xs font-medium text-[#3B3F45] sm:text-sm"
-                    >
-                      <GreenCheck />
-                      <span>{text}</span>
+                  {RIGHT_ROWS.map((row, idx) => (
+                    <div key={idx} className="grid grid-cols-2 gap-4 h-[64px] items-center">
+                      <div className="flex items-center gap-2.5 px-3 text-xs font-medium text-[#092B55] sm:text-sm">
+                        <GreenCheck />
+                        <span>{row.dealer}</span>
+                      </div>
+                      <div className="flex items-center gap-2.5 px-3 text-xs font-medium text-[#092B55] sm:text-sm">
+                        <GreenCheck />
+                        <span>{row.individual}</span>
+                      </div>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Individuals */}
-              <div className="flex flex-col">
-                <div className="flex h-[48px] items-center justify-center rounded-xl bg-[#F3F3F3] text-sm font-semibold text-[#092B55] md:text-base">
-                  Individuals
-                </div>
-                <div className="divide-y divide-[#E7E7E8]">
-                  {INDIVIDUALS.map((text) => (
-                    <div
-                      key={text}
-                      className="flex h-[60px] items-center gap-2.5 px-3 text-xs font-medium text-[#3B3F45] sm:text-sm"
-                    >
-                      <GreenCheck />
-                      <span>{text}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
         </div>
