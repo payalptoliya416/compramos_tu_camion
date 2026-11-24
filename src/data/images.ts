@@ -16,7 +16,7 @@ export const IMG = {
   heroCollection: p('hero-collection-spain.jpg'),
   heroDocuments: p('hero-documents.jpg'),
   heroValuation: p('hero-valuation.jpg'),
-  heroPrivate: p('hero-private-sellers.jpg'),
+  heroPrivate: p('home-hero-banner.png'),
   heroMake: p('hero-make-model.jpg'),
   heroAbout: p('hero-about.jpg'),
   heroBlog: p('hero-blog.jpg'),

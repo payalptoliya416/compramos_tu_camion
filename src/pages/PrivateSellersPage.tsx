@@ -24,7 +24,7 @@ export default function PrivateSellersPage() {
         badge="Private truck sellers"
         title="Sell Your Truck Privately, Without the Hassle"
         text="Sell your used truck with confidence. Get a fair valuation, a straightforward selling process, and professional support from our team."
-        image={IMG.heroPrivate}
+        image={IMG.heroHome}
         primary={{ label: 'Get a Free Valuation' }}
         secondary={{ label: 'How It Works', to: '/how-it-works' }}
         checks={['No Obligation', 'Fair Valuation', 'Professional Support']}
