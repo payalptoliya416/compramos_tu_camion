@@ -25,7 +25,7 @@ export const FOOTER_COLS = [
     links: [
       { label: 'Sell Your Truck', to: '/' },
       { label: 'Business & Fleet Sales', to: '/business-fleet-sales' },
-      { label: 'Special Selling Situations', to: '/private-truck-sellers' },
+      { label: 'Special Selling Situations', to: '/special-selling-situations' },
       { label: 'Sell by Make & Model', to: '/sell-by-make-and-model' },
       { label: 'Documents Required to Sell a Truck', to: '/documents-required-to-sell-a-truck' },
     ],

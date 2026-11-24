@@ -10,6 +10,7 @@ import DocumentsPage from '@/pages/DocumentsPage';
 import ValuationPage from '@/pages/ValuationPage';
 import MakeModelPage from '@/pages/MakeModelPage';
 import PrivateSellersPage from '@/pages/PrivateSellersPage';
+import SpecialSellingSituationsPage from '@/pages/SpecialSellingSituationsPage';
 import ConcreteMixerPage from '@/pages/truck-types/ConcreteMixerPage';
 import MultiliftPage from '@/pages/truck-types/MultiliftPage';
 import ParcelDeliveryPage from '@/pages/truck-types/ParcelDeliveryPage';
@@ -32,6 +33,7 @@ export default function App() {
         <Route path="/get-a-free-valuation" element={<ValuationPage />} />
         <Route path="/sell-by-make-and-model" element={<MakeModelPage />} />
         <Route path="/private-truck-sellers" element={<PrivateSellersPage />} />
+        <Route path="/special-selling-situations" element={<SpecialSellingSituationsPage />} />
         <Route path="/truck-types/concrete-mixer-trucks" element={<ConcreteMixerPage />} />
         <Route path="/truck-types/multilift-hook-lift-trucks" element={<MultiliftPage />} />
         <Route path="/truck-types/parcel-delivery-trucks" element={<ParcelDeliveryPage />} />
