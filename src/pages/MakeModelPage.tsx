@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react';
-import { Clock, FileText, ShieldOff } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
@@ -7,7 +6,6 @@ import { IMG } from '@/data/images';
 import Hero from '@/components/sections/Hero';
 import SplitSection from '@/components/sections/SplitSection';
 import CtaBanner from '@/components/sections/CtaBanner';
-import FeatureGrid from '@/components/sections/FeatureGrid';
 import ValuationForm from '@/components/sections/ValuationForm';
 import Testimonials from '@/components/sections/Testimonials';
 import Faq from '@/components/sections/Faq';
@@ -103,6 +101,24 @@ const MODELS: { name: string; text: ReactNode; image: string }[] = [
   },
 ];
 
+const EXPERIENCE_CARDS = [
+  {
+    icon: '/images/forget.svg',
+    title: 'Immediate payment',
+    text: 'Avoid unnecessary delays in your transaction. Once the offer is accepted, we make the payment immediately , providing instant liquidity.',
+  },
+  {
+    icon: '/images/handshake-regula.svg',
+    title: 'No Guarantees',
+    text: "We buy your vehicle as is , outright . You won't have to provide any guarantees or worry about claims after the sale.",
+  },
+  {
+    icon: '/images/clock.svg',
+    title: 'Transfer within 24 hours',
+    text: 'Our specialized agency handles the change of ownership quickly and efficiently. In less than a day , your truck will be legally transferred.',
+  },
+];
+
 const FAQ: FaqItem[] = [
   { q: 'Which truck brands do you buy?', a: 'We consider trucks from a wide range of manufacturers, including Mercedes-Benz, Volvo, Scania, MAN, DAF, Renault Trucks and Iveco.' },
   { q: 'Do you buy older truck models?', a: 'Yes. We assess each truck individually based on its specifications, condition and market demand.' },
@@ -188,9 +204,9 @@ export default function MakeModelPage() {
       <section className="section-y">
         <div className="container-x">
           <SectionHeading badge="Popular models" title="The ranges and models we search for most" />
-          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-[#E7E7E8]">
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-[24px]">
             {MODELS.map((m) => (
-              <div key={m.name} className="flex flex-col lg:px-6 first:lg:pl-0 last:lg:pr-0">
+              <div key={m.name} className="flex flex-col lg:px-6">
                 <div className="overflow-hidden rounded-[12px] h-[220px] w-full">
                   <img src={m.image} alt={m.name} className="h-full w-full object-cover" />
                 </div>
@@ -209,16 +225,29 @@ export default function MakeModelPage() {
         showCall
       />
 
-      <FeatureGrid
-        badge="Extensive experience"
-        title="Extensive experience in appraising used trucks"
-        variant="surface"
-        items={[
-          { icon: FileText, title: 'Immediate payment', text: 'Avoid unnecessary delays in your transaction. Once the offer is accepted, we make the payment immediately, providing instant liquidity.' },
-          { icon: ShieldOff, title: 'No Guarantees', text: 'We buy your vehicle as is, outright. You won’t have to provide any guarantees or worry about claims after the sale.' },
-          { icon: Clock, title: 'Transfer within 24 hours', text: 'Our specialized agency handles the change of ownership quickly and efficiently. In less than a day, your truck will be legally transferred.' },
-        ]}
-      />
+      {/* Extensive experience */}
+      <section className="section-y">
+        <div className="container-x">
+          <SectionHeading
+            badge="Extensive experience"
+            title="Extensive experience in appraising used trucks"
+          />
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {EXPERIENCE_CARDS.map(({ icon, title, text }) => (
+              <article
+                key={title}
+                className="flex h-full flex-col rounded-[12px] bg-surface py-5 sm:py-[35px] px-5 sm:px-[25px]"
+              >
+                <span className="flex h-[50px] w-[50px] items-center justify-center rounded-[12px] bg-white">
+                  <img src={icon} alt="" className="" />
+                </span>
+                <h3 className="mt-5 text-base sm:text-lg font-semibold text-brand-navy-dark leading-snug">{title}</h3>
+                <p className="mt-[15px] text-sm md:text-base leading-relaxed text-[#3B3F45]">{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <ValuationForm />
       <Testimonials />
