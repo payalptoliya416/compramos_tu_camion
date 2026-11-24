@@ -1,4 +1,4 @@
-import { CheckCircle2 } from 'lucide-react';
+
 
 /** Small inline check + label, used under hero / CTA banners. */
 export function CheckInline({ children, icon }: { children: string; icon?: string }) {
