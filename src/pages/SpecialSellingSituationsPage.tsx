@@ -38,19 +38,19 @@ const SITUATION_CARDS = [
 
 const SECURITY_CARDS = [
   {
-    icon: '/images/suport-doc.svg',
-    title: 'Legal Documentation',
-    text: 'We assist with the preparation and transfer of all official documentation in full compliance with Spanish transport regulations.',
+    icon: '/images/practical.svg',
+    title: 'Forget about the DGT',
+    text: 'Selling heavy goods vehicles involves complex procedures. When you entrust the sale of your trucks to us, you can forget about the DGT (Spanish Traffic Authority), cumbersome ownership transfers, canceling liens, and sales notifications.',
   },
   {
-    icon: '/images/straitforward-rightsign.svg',
-    title: 'Clear & Fair Valuation',
-    text: 'Understand exactly how your valuation was determined, with realistic market considerations and no hidden surprises.',
+    icon: '/images/support01.svg',
+    title: 'Guaranteed Security',
+    text: 'We guarantee a secure truck sale, with immediate payment via bank transfer or your preferred method. Zero risk of non-payment, bounced checks, installment payments, or fraud.',
   },
   {
-    icon: '/images/payment.svg',
-    title: 'Prompt and Secure Payment',
-    text: 'Receive prompt payment upon agreed collection, with transparent terms confirmed before you proceed.',
+    icon: '/images/outstanding.svg',
+    title: 'Legal support',
+    text: 'We work with specialized agencies in Spain to ensure all documentation is legally compliant, giving you complete peace of mind. We stay up-to-date with all regulations.',
   },
 ];
 
@@ -112,7 +112,7 @@ export default function SpecialSellingSituationsPage() {
             {SITUATION_CARDS.map(({ icon, title, text, btnText }, i) => (
               <article
                 key={title}
-                className={`flex flex-col justify-between rounded-[12px] bg-white p-6 sm:p-[30px] lg:h-[450px] shadow-sm ${
+                className={`flex flex-col justify-between rounded-[12px] bg-white p-6 sm:p-[30px] lg:h-[450px] ${
                   i % 2 === 1 ? 'sm:mt-8 lg:mt-12' : ''
                 }`}
               >
@@ -126,7 +126,7 @@ export default function SpecialSellingSituationsPage() {
                 <div className="mt-8">
                   <Link
                     to="/get-a-free-valuation"
-                    className="inline-flex items-center justify-center rounded-full border border-brand-navy px-[30px] py-2.5 text-sm sm:text-base font-medium text-brand-navy transition-colors hover:bg-brand-navy hover:text-white"
+                    className="inline-flex items-center justify-center rounded-full border border-brand-navy px-[30px] py-[16px] text-sm sm:text-base leading-[16px] font-medium text-brand-navy transition-colors hover:bg-brand-navy hover:text-white"
                   >
                     {btnText}
                   </Link>
@@ -165,20 +165,20 @@ export default function SpecialSellingSituationsPage() {
       <section className="section-y !pt-8">
         <div className="container-x">
           <SectionHeading
-            badge="100% secure & legal"
+            badge="Secure and legal sale"
             title="Forget the Paperwork: 100% Secure and Legal Sale"
           />
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {SECURITY_CARDS.map(({ icon, title, text }) => (
               <article
                 key={title}
-                className="flex h-full flex-col rounded-[18px] bg-surface p-6 sm:p-8"
+                className="flex h-full flex-col rounded-[20px] bg-surface p-6 sm:p-8 lg:p-10"
               >
-                <span className="flex h-[52px] w-[52px] items-center justify-center rounded-[12px] bg-white">
+                <span className="flex h-[50px] w-[50px] items-center justify-center rounded-[12px] bg-white border border-[#E7E7E8]">
                   <img src={icon} alt="" className="h-6 w-6 object-contain" />
                 </span>
-                <h3 className="mt-5 text-base font-semibold text-brand-navy-dark sm:text-xl">{title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#6C6F73] sm:text-base">{text}</p>
+                <h3 className="mt-5 text-lg sm:text-xl font-bold text-brand-navy-dark">{title}</h3>
+                <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#6C6F73]">{text}</p>
               </article>
             ))}
           </div>
