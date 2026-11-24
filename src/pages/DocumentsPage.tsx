@@ -94,10 +94,10 @@ export default function DocumentsPage() {
           <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:gap-8">
             <div className="flex flex-col justify-between rounded-[16px] border border-[#E7E7E8] bg-white py-6 sm:py-8">
               <div>
-                <h3 className="text-lg sm:text-xl font-semibold text-brand-navy-dark px-4 md:px-[30px]">Document Checklist</h3>
+                <h3 className="text-lg sm:text-xl font-semibold text-brand-navy-dark px-4 md:px-5">Document Checklist</h3>
                 <ul className="mt-[15px] divide-y divide-[#E7E7E8]">
                   {CHECKLIST.map((c) => (
-                    <li key={c} className="flex items-center gap-3 py-[23px] text-sm sm:text-base 2xl:leading-[16px] text-[#3B3F45] px-4 md:px-[30px]">
+                    <li key={c} className="flex items-center gap-3 py-[23px] text-sm sm:text-base 2xl:leading-[16px] text-[#3B3F45] px-4 md:px-5">
                       <img src="/images/fill-checkmark.svg" alt="" className="h-5 w-5 shrink-0" />
                       <span>{c}</span>
                     </li>
