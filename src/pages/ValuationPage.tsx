@@ -1,4 +1,4 @@
-import { Camera, ClipboardList, FileText, Info, MessageCircle, Package, Settings, TrendingUp, UserCheck, Wrench } from 'lucide-react';
+import { Camera, ClipboardList, Info, MessageCircle, Package, Settings } from 'lucide-react';
 import Hero from '@/components/sections/Hero';
 import RecentPurchases from '@/components/sections/RecentPurchases';
 import FeatureGrid from '@/components/sections/FeatureGrid';
@@ -70,11 +70,12 @@ export default function ValuationPage() {
         badge="Why a professional valuation?"
         title="Understand Your Truck’s Value Before You Sell"
         cols={4}
+        staggered
         items={[
-          { icon: Wrench, title: 'Vehicle Condition and Equipment', text: 'Consider the vehicle’s condition, specifications and installed equipment when assessing its value.' },
-          { icon: TrendingUp, title: 'Market-Based Assessment', text: 'Review relevant market factors and the type of commercial vehicle being evaluated for a fair result.' },
-          { icon: UserCheck, title: 'Professional Guidance', text: 'Understand the information needed to assess your truck and discuss the next steps with our team.' },
-          { icon: FileText, title: 'Clear Process', text: 'Submit your vehicle details and receive guidance on how the valuation process proceeds from here.' },
+          { icon: '/images/setting.svg', title: 'Vehicle Condition and Equipment', text: 'Consider the vehicle’s condition, specifications and installed equipment when assessing its value.' },
+          { icon: '/images/market-graph.svg', title: 'Market-Based Assessment', text: 'Review relevant market factors and the type of commercial vehicle being evaluated for a fair result.' },
+          { icon: '/images/users-multiple.svg', title: 'Professional Guidance', text: 'Understand the information needed to assess your truck and discuss the next steps with our team.' },
+          { icon: '/images/doc-blue.svg', title: 'Clear Process', text: 'Submit your vehicle details and receive guidance on how the valuation process proceeds from here.' },
         ]}
       />
 
