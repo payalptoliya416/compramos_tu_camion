@@ -1,4 +1,3 @@
-import { ClipboardList, Eye, CheckCircle2, Wallet } from 'lucide-react';
 import Hero from '@/components/sections/Hero';
 import SplitSection from '@/components/sections/SplitSection';
 import FeatureGrid from '@/components/sections/FeatureGrid';
@@ -59,10 +58,10 @@ export default function CollectionPage() {
         badge="How it works"
         title="How Does Selling Your Truck Work?"
         steps={[
-          { icon: ClipboardList, title: 'Get your truck appraised', text: 'Provide the make, model, year, mileage, and other relevant vehicle information.' },
-          { icon: Eye, title: 'Specify one for an evaluation', text: 'If you accept the offer, our team will conduct a thorough evaluation of your truck at your home.' },
-          { icon: CheckCircle2, title: 'Receive a personalized offer', text: 'We will offer you a cost-effective deal tailored to the condition and potential of your truck.' },
-          { icon: Wallet, title: 'Get the best profit', text: 'You will receive immediate cash payment, and you can leave the rest of the arrangements and procedures in our hands.' },
+          { icon: '/images/edit.svg', title: 'Get your truck appraised', text: 'Provide the make, model, year, mileage, and other relevant vehicle information.' },
+          { icon: '/images/calander.svg', title: 'Specify one for an evaluation', text: 'If you accept the offer, our team will conduct a thorough evaluation of your truck at your home.' },
+          { icon: '/images/recive-dollar.svg', title: 'Receive a personalized offer', text: 'We will offer you a cost-effective deal tailored to the condition and potential of your truck.' },
+          { icon: '/images/wallet.svg', title: 'Get the best profit', text: 'You will receive immediate cash payment, and you can leave the rest of the arrangements and procedures in our hands.' },
         ]}
       />
 
