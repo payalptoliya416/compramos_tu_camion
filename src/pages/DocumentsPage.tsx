@@ -1,4 +1,3 @@
-import { Info } from 'lucide-react';
 import Hero from '@/components/sections/Hero';
 import SplitSection from '@/components/sections/SplitSection';
 import BrandLogos from '@/components/sections/BrandLogos';
@@ -18,12 +17,34 @@ const CHECKLIST = [
 ];
 
 const FAQ: FaqItem[] = [
-  { q: 'What documents are generally required to sell a truck in Spain?', a: 'You will generally need the vehicle registration certificate (Permiso de Circulación), technical inspection card (Tarjeta ITV) and identification of the registered owner. Additional documents may be required depending on the circumstances.' },
-  { q: 'Do I need the original truck documents?', a: 'Our team will confirm which originals or copies are needed for your specific case.' },
-  { q: 'Can I sell a truck if the ITV has expired?', a: 'Tell us about the situation and we will explain the available options for your vehicle.' },
-  { q: 'What documents are required if the truck belongs to a company?', a: 'Company identification, representative authorization and the vehicle documentation are usually required.' },
-  { q: 'What if I have inherited the truck?', a: 'We can help you understand the paperwork needed to transfer an inherited vehicle.' },
-  { q: 'Can I sell a truck if I have lost the Permiso de Circulación?', a: 'It is usually possible to request a duplicate. Our team can explain the steps involved.' },
+  {
+    q: 'What documents are generally required to sell a truck in Spain?',
+    a: 'You will generally need the vehicle registration certificate (Permiso de Circulación), technical inspection card (Tarjeta ITV) and valid identification of the registered owner. Additional documents may be required depending on the circumstances.',
+  },
+  {
+    q: 'Do I need the original truck documents?',
+    a: 'Original documentation is generally required to complete the transfer. If any document is missing, let us know so we can discuss the available options.',
+  },
+  {
+    q: 'Can I sell a truck if the ITV has expired?',
+    a: 'An expired ITV does not necessarily prevent you from requesting a valuation. However, it may affect how the vehicle can be transferred or moved, depending on its circumstances.',
+  },
+  {
+    q: 'What documents are required if the truck belongs to a company?',
+    a: 'You may need company identification and documentation proving that the person handling the sale is authorised to represent the company, alongside the vehicle documents.',
+  },
+  {
+    q: 'What if I have inherited the truck?',
+    a: "You may need inheritance documents and proof that the vehicle has been transferred into the appropriate owner's name. The exact requirements depend on the inheritance situation.",
+  },
+  {
+    q: 'Can I sell a truck if I have lost the Permiso de Circulación?',
+    a: 'You may need to obtain a duplicate from the relevant authority before completing the transfer. Contact us to discuss your situation.',
+  },
+  {
+    q: 'Do I need to provide a sales invoice?',
+    a: 'If the truck is owned by a company or self-employed business, an invoice may be required depending on the transaction and applicable tax requirements. The documentation should be confirmed for your specific case.',
+  },
 ];
 
 const COMPANY_DOCS_CARDS = [
@@ -134,17 +155,17 @@ export default function DocumentsPage() {
       <section className="section-y">
         <div className="container-x">
           <SectionHeading badge="For business sellers" title="Documentation for Company-Owned Trucks" />
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-[24px] sm:grid-cols-2 lg:grid-cols-3">
             {COMPANY_DOCS_CARDS.map(({ icon, title, text }) => (
               <article
                 key={title}
-                className="flex h-full flex-col rounded-[14px] border border-[#E7E7E8] bg-white p-6 sm:p-8"
+                className="flex h-full flex-col rounded-[14px] border border-[#E7E7E8] bg-white py-5 sm:py-[35px] px-5 sm:px-[25px]"
               >
-                <span className="flex h-[50px] w-[50px] items-center justify-center rounded-[12px] bg-[#F3F4F6]">
-                  <img src={icon} alt="" className="h-6 w-6 object-contain" />
+                <span className="flex h-[48px] w-[48px] items-center justify-center rounded-[12px] bg-[#F3F4F6] border border-[#E7E7E8]">
+                  <img src={icon} alt="" className="" />
                 </span>
-                <h3 className="mt-5 text-base sm:text-lg font-bold text-brand-navy-dark leading-snug">{title}</h3>
-                <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#3B3F45]">{text}</p>
+                <h3 className="mt-5 text-base sm:text-lg font-semibold text-brand-navy-dark leading-snug">{title}</h3>
+                <p className="mt-5 text-sm sm:text-base leading-relaxed text-[#3B3F45]">{text}</p>
               </article>
             ))}
           </div>
