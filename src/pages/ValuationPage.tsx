@@ -64,7 +64,7 @@ export default function ValuationPage() {
         </div>
       </section>
 
-      <RecentPurchases band />
+      <RecentPurchases band buttonVariant="dark-outline" />
 
       <FeatureGrid
         badge="Why a professional valuation?"

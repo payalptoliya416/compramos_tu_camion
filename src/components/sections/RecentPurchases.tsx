@@ -9,6 +9,7 @@ interface Props {
   title?: string;
   subtitle?: string;
   band?: boolean;
+  buttonVariant?: 'primary' | 'outline' | 'dark-outline';
 }
 
 export default function RecentPurchases({
@@ -16,6 +17,7 @@ export default function RecentPurchases({
   title = 'Truck Valuations and Purchases Across Spain',
   subtitle,
   band,
+  buttonVariant = 'primary',
 }: Props) {
   const body = (
     <section className="section-y">
@@ -24,6 +26,7 @@ export default function RecentPurchases({
           <SectionHeading badge={badge} title={title} subtitle={subtitle} align="left" />
           <CtaButton
             cta={{ label: 'I Want to Sell My Truck', to: '/get-a-free-valuation' }}
+            variant={buttonVariant}
           />
         </div>
         <ul className="mt-10 grid gap-4 sm:gap-[25px] sm:grid-cols-2 lg:grid-cols-4">

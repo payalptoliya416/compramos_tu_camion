@@ -3,13 +3,14 @@ import type { CtaLink } from '@/types';
 
 interface Props {
   cta: CtaLink;
-  variant?: 'primary' | 'outline' | 'whatsapp';
+  variant?: 'primary' | 'outline' | 'dark-outline' | 'whatsapp';
   className?: string;
 }
 
 const VARIANT = {
   primary: 'btn-primary',
   outline: 'btn-outline',
+  'dark-outline': 'btn border border-[#092B55] text-brand-navy bg-transparent hover:bg-brand-navy hover:text-white transition-colors',
   whatsapp: 'btn-whatsapp',
 } as const;
 
