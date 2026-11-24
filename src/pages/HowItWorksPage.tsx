@@ -8,11 +8,11 @@ import type { FaqItem } from '@/types';
 
 const FAQ: FaqItem[] = [
   { q: 'How long does it take to sell my truck?', a: 'The time may vary depending on your truck’s details, condition and documentation. Once we review your information, our team will guide you through the next steps.' },
-  { q: 'Is the truck valuation free?', a: 'Yes. Requesting a valuation is free and carries no obligation.' },
-  { q: 'What information do I need to provide to get a valuation?', a: 'The make, model, registration year, mileage, condition and a few photographs of your truck.' },
-  { q: 'What happens after I receive the valuation?', a: 'Our team will discuss the offer with you and explain the next steps, including paperwork and collection.' },
-  { q: 'Do I need to deliver my truck, or can you collect it?', a: 'We coordinate collection across Spain, so you do not need to deliver the truck yourself.' },
-  { q: 'When will I receive payment for my truck?', a: 'Payment terms are explained clearly before proceeding with the transaction.' },
+  { q: 'Is the truck valuation free?', a: 'Yes. You can request a free valuation without any obligation to accept our offer.' },
+  { q: 'What information do I need to provide to get a valuation?', a: 'You’ll need to share your truck’s make, model, registration year, mileage and condition. Recent photographs can also help us assess your vehicle.' },
+  { q: 'What happens after I receive the valuation?', a: 'Our team will contact you to discuss the offer. If you decide to accept it, we’ll guide you through the paperwork and arrange the collection.' },
+  { q: 'Do I need to deliver my truck, or can you collect it?', a: 'We can arrange collection at an agreed location. Contact our team to discuss the collection arrangements for your vehicle.' },
+  { q: 'When will I receive payment for my truck?', a: 'Payment arrangements will be discussed and confirmed before completing the sale. Our team will explain the process so you know what to expect.' },
 ];
 
 export default function HowItWorksPage() {
