@@ -14,7 +14,9 @@ interface Props {
 
 /** Horizontal icon steps joined by a thin orange line (stacks on mobile). */
 export default function Steps({ badge, title, subtitle, steps, action, className = '' }: Props) {
-  const colCls = steps.length === 3 ? 'md:grid-cols-3' : 'sm:grid-cols-2 lg:grid-cols-4';
+  const isThree = steps.length === 3;
+  const colCls = isThree ? 'md:grid-cols-3' : 'sm:grid-cols-2 lg:grid-cols-4';
+  const lineDisplayCls = isThree ? 'hidden md:block' : 'hidden lg:block';
   return (
     <section className={`section-y ${className}`}>
       <div className="container-x">
@@ -32,11 +34,12 @@ export default function Steps({ badge, title, subtitle, steps, action, className
               {i < steps.length - 1 && (
                 <div
                   aria-hidden
-                  className="absolute left-[calc(50%+40px)] top-[29px] hidden h-[2px] w-[calc(100%-80px)] lg:flex overflow-hidden rounded-full"
-                >
-                  <span className="h-full w-1/2 bg-brand-orange" />
-                  <span className="h-full w-1/2 bg-[#E7E7E8]" />
-                </div>
+                  className={`absolute left-[calc(50%+27px)] top-[29px] -translate-y-1/2 ${lineDisplayCls} h-[2px] w-[calc(100%-22px)] overflow-hidden`}
+                  style={{
+                    background:
+                      'linear-gradient(90deg, #F17612 0%, rgba(241, 118, 18, 0.2) 48%, #E7E7E8 52%, #E7E7E8 100%)',
+                  }}
+                />
               )}
               <span className="relative z-10 flex h-[58px] w-[58px] items-center justify-center rounded-[12px] border border-[#E7E7E8] bg-[#F8F9FA] text-brand-orange">
                 {typeof Icon === 'string' ? (
