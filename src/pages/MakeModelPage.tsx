@@ -40,12 +40,12 @@ export default function MakeModelPage() {
   return (
     <>
       <Hero
-        badge="Truck valuation by brand"
+        badge="Truck brands & models"
         title="Sell Your Truck by Make and Model"
-        text="Every truck has its own characteristics. The make, model, registration year, mileage, condition and configuration can all help inform its valuation."
-        image={IMG.heroMake}
-        primary={{ label: 'Request a Valuation' }}
-        checks={['All Major Brands', 'Professional Valuation', 'Clear Process']}
+        text="Find your truck's make and model, and get expert guidance for a fair valuation."
+        image="/images/make-modal-banner.png"
+        primary={{ label: 'Get a Free Valuation' }}
+        checks={['All Truck Brands', 'Expert Valuation', 'Easy Selling Process']}
       />
 
       <SplitSection
