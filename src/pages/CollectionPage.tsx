@@ -58,6 +58,7 @@ export default function CollectionPage() {
         badge="Why choose us"
         title="Why Sell Your Truck to Us?"
         cols={4}
+        staggered
         items={[
           { icon: '/images/payment-orang.svg', title: 'Secure Payment', text: 'Clear payment terms and a reliable transaction process, so you know exactly what to expect at every stage.' },
           { icon: '/images/bilori.svg', title: 'Professional Valuation', text: 'An assessment based on your truck’s condition, specifications and current market value.' },

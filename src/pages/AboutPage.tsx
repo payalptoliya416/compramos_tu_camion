@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ChevronRight, ClipboardList, Eye, MessageCircle, Search, CheckCircle2, Zap, Award } from 'lucide-react';
+import { ChevronRight, ClipboardList, MessageCircle, Search, CheckCircle2 } from 'lucide-react';
 import { IMG } from '@/data/images';
 import Hero from '@/components/sections/Hero';
 import FeatureGrid from '@/components/sections/FeatureGrid';
@@ -86,7 +86,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-y">
+      <section className="section-y !pt-0">
         <div className="container-x grid items-center gap-8 lg:grid-cols-2 lg:gap-[53px]">
           <div className="overflow-hidden rounded-2xl lg:order-2">
             <img
@@ -106,7 +106,7 @@ export default function AboutPage() {
             <p className="text-base leading-relaxed text-[#3B3F45]">
               By combining industry experience with a professional valuation process, we aim to help sellers understand their options, receive a considered offer and move forward with greater clarity.
             </p>
-            <div className="mt-[15px] grid w-full grid-cols-3 border-t border-[#E7E7E8] pt-6">
+            <div className="mt-[15px] grid w-full grid-cols-3 border-t border-[#E7E7E8] pt-[24px]">
               {STATS.map((s, idx) => (
                 <div
                   key={s.label}
@@ -118,7 +118,7 @@ export default function AboutPage() {
                         : 'pl-3 sm:pl-6'
                   }`}
                 >
-                  <div className="text-xl font-bold text-[#F17612] sm:text-2xl md:text-3xl">{s.value}</div>
+                  <div className="text-base font-semibold text-[#F17612] sm:text-xl md:text-2xl">{s.value}</div>
                   <div className="mt-1 text-xs text-[#6C6F73] sm:text-sm">{s.label}</div>
                 </div>
               ))}
@@ -131,13 +131,14 @@ export default function AboutPage() {
         badge="Our expertise"
         title="Experience That Understands Every Truck"
         cols={4}
+        staggered
         items={[
           { icon: '/images/diliver-orange.svg', title: 'Commercial Vehicle Knowledge', text: 'Experience evaluating different types of trucks and commercial vehicles across a wide range of makes, models and configurations.' },
           { icon: '/images/doc-blue-checkmark.svg', title: 'Professional Valuations', text: 'Consideration of vehicle condition, specifications, equipment and relevant market factors when assessing each truck.' },
           { icon: '/images/users-multiple.svg', title: 'Individual and Fleet Sales', text: 'Support for individual truck owners, transport professionals and businesses managing fleets of commercial vehicles.' },
           { icon: '/images/nationwide.svg', title: 'Nationwide Service', text: 'Support for truck sellers across Spain, subject to the company’s service and collection arrangements for each vehicle.' },
         ]}
-        className="!pt-4"
+        className=""
       />
 
       <CtaBanner
@@ -151,9 +152,9 @@ export default function AboutPage() {
         title="The Values Behind Every Truck Purchase"
         variant="surface"
         items={[
-          { icon: Eye, title: 'Absolute Transparency', text: 'We explain our valuation approach and communicate the relevant conditions clearly, helping sellers make informed decisions without surprises.' },
-          { icon: Zap, title: 'Speed and Agility', text: 'We aim to make the process efficient, coordinating communication, valuation and the next steps without unnecessary complexity or delay.' },
-          { icon: Award, title: 'Technical Professionalism', text: 'We consider each vehicle’s configuration, condition and equipment when assessing its suitability and value, not just its age or sign.' },
+          { icon: '/images/eye01.svg', title: 'Absolute Transparency', text: 'We explain our valuation approach and communicate the relevant conditions clearly, helping sellers make informed decisions without surprises.' },
+          { icon: '/images/speed.svg', title: 'Speed and Agility', text: 'We aim to make the process efficient, coordinating communication, valuation and the next steps without unnecessary complexity or delay.' },
+          { icon: '/images/professional.svg', title: 'Technical Professionalism', text: 'We consider each vehicle’s configuration, condition and equipment when assessing its suitability and value, not just its age or sign.' },
         ]}
       />
 
