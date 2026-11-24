@@ -82,8 +82,12 @@ export default function BusinessFleetPage() {
         badge="Your business, your needs"
         title="Truck Sales That Fit Your Business Needs"
         paragraphs={['Whether you are replacing older vehicles, adjusting your operations, or selling trucks you no longer require, our team can help you understand your options and the next steps.']}
-        image={IMG.warehouseAerial}
-        pills={['A clear and straightforward selling process', 'Guidance with the required documentation', 'Support throughout the appraisal and sale']}
+        image="/images/need.png"
+        pills={[
+          'A clear and straightforward selling process.',
+          'Guidance with the required documentation.',
+          'Support throughout the appraisal and sale.',
+        ]}
       />
 
       <CtaBanner

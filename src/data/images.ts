@@ -30,7 +30,7 @@ export const IMG = {
   // content
   truckBlueContainer: p('Straightforward.png'),
   truckRoad: p('truck-road.jpg'),
-  warehouseAerial: p('warehouse-aerial.jpg'),
+  warehouseAerial: p('need.png'),
   fleetWhiteRed: p('fleet-white-red.jpg'),
   fleetYellow: p('fleet-yellow.jpg'),
   handshakeTrucks: p('handshake-trucks.jpg'),

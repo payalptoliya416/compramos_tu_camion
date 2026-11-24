@@ -18,12 +18,12 @@ export function CheckInline({ children, icon }: { children: string; icon?: strin
   );
 }
 
-/** Pill with orange dot, used in split sections. */
+/** Pill with orange checkmark, used in split sections. */
 export function CheckPill({ children }: { children: string }) {
   return (
-    <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-4 py-2 text-xs text-slate-600">
-      <CheckCircle2 className="h-4 w-4 shrink-0 text-brand-orange" />
-      {children}
+    <span className="inline-flex items-center gap-2.5 rounded-full bg-[#F3F3F3] px-5 py-3 text-sm sm:text-base text-[#3B3F45]">
+      <img src="/images/fill-checkmark.svg" alt="" className="h-5 w-5 shrink-0" />
+      <span>{children}</span>
     </span>
   );
 }
