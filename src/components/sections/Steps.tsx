@@ -34,7 +34,11 @@ export default function Steps({ badge, title, subtitle, steps, action, className
               {i < steps.length - 1 && (
                 <div
                   aria-hidden
-                  className={`absolute left-1/2 top-[29px] -translate-y-1/2 ${lineDisplayCls} h-[1.5px] w-[calc(100%+24px)] bg-[#F8AD77]`}
+                  className={`absolute left-[calc(50%+29px)] top-[29px] -translate-y-1/2 ${lineDisplayCls} h-[1.5px] w-[calc(100%-34px)] overflow-hidden`}
+                  style={{
+                    background:
+                      'linear-gradient(90deg, #F17612 0%, #F17612 48%, #E7E7E8 52%, #E7E7E8 100%)',
+                  }}
                 />
               )}
               <span className="relative z-10 flex h-[58px] w-[58px] items-center justify-center rounded-[12px] border border-[#E7E7E8] bg-[#F8F9FA] text-brand-orange">

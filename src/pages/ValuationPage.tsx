@@ -77,6 +77,7 @@ export default function ValuationPage() {
           { icon: '/images/users-multiple.svg', title: 'Professional Guidance', text: 'Understand the information needed to assess your truck and discuss the next steps with our team.' },
           { icon: '/images/doc-blue.svg', title: 'Clear Process', text: 'Submit your vehicle details and receive guidance on how the valuation process proceeds from here.' },
         ]}
+        className='!pb-[50px]'
       />
 
       <Steps
