@@ -10,7 +10,8 @@ import ValuationForm from '@/components/sections/ValuationForm';
 import Testimonials from '@/components/sections/Testimonials';
 import Faq from '@/components/sections/Faq';
 import FinalCta from '@/components/sections/FinalCta';
-import SectionHeading from '@/components/ui/SectionHeading';
+import SectionHeading, { Badge } from '@/components/ui/SectionHeading';
+import CtaButton from '@/components/ui/CtaButton';
 import Img from '@/components/ui/Img';
 
 const SPECIALITIES = [
@@ -45,17 +46,46 @@ export default function AboutPage() {
         checks={['20+ Years of Experience', 'Transparent Valuation', 'Professional Support']}
       />
 
-      <SplitSection
-        badge="Who we are"
-        title="Specialists in Buying Used Trucks Across Spain"
-        paragraphs={[
-          'ComprasTuCamión.es is a Spanish company specializing in the purchase of used trucks and commercial vehicles. With more than 20 years of experience in the industry, we help private sellers, transport professionals and businesses navigate the truck-selling process with greater confidence.',
-          'Our team focuses on professional valuations, transparent communication and a straightforward process designed around each vehicle and seller’s needs.',
-        ]}
-        image={IMG.aboutTeam}
-        pills={['Professional truck valuations', 'Clear and transparent communication', 'Support with the selling process and documentation', 'Experience with a wide range of commercial vehicles']}
-        cta={{ label: 'Get a Free Valuation' }}
-      />
+      <section className="section-y">
+        <div className="container-x grid items-center gap-8 lg:grid-cols-2 lg:gap-[53px]">
+          <div className="overflow-hidden rounded-2xl">
+            <img
+              src="/images/specialist-left.png"
+              alt="Specialists in Buying Used Trucks Across Spain"
+              className="h-auto w-full rounded-2xl object-cover"
+            />
+          </div>
+          <div className="flex flex-col items-start gap-4">
+            <Badge>Who we are</Badge>
+            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[40px] xl:leading-[60px]">
+              Specialists in Buying Used Trucks Across Spain
+            </h2>
+            <p className="text-base leading-relaxed text-[#3B3F45]">
+              CompramosTuCamión.es is a Spanish company specializing in the purchase of used trucks and commercial vehicles. With more than 20 years of experience in the industry, we help private sellers, transport professionals and businesses navigate the truck-selling process with greater confidence.
+            </p>
+            <p className="text-base leading-relaxed text-[#3B3F45]">
+              Our team focuses on professional valuations, transparent communication and a straightforward process designed around each vehicle and seller’s needs.
+            </p>
+            <div className="my-1 flex flex-col items-start gap-3">
+              {[
+                'Professional truck valuations',
+                'Clear and transparent communication',
+                'Support with the selling process and documentation',
+                'Experience with a wide range of commercial vehicles',
+              ].map((pill) => (
+                <div
+                  key={pill}
+                  className="inline-flex items-center gap-2.5 rounded-full bg-[#F3F3F3] px-4 py-2 text-sm text-[#3B3F45] sm:text-base"
+                >
+                  <img src="/images/fill-checkmark.svg" alt="" className="h-4 w-4 shrink-0 sm:h-5 sm:w-5" />
+                  <span>{pill}</span>
+                </div>
+              ))}
+            </div>
+            <CtaButton cta={{ label: 'Get a Free Valuation' }} className="mt-2" />
+          </div>
+        </div>
+      </section>
 
       <SplitSection
         reverse
