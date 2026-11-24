@@ -91,34 +91,34 @@ export default function DocumentsPage() {
       <section className="section-y">
         <div className="container-x">
           <SectionHeading badge="For individual owners" title="Documents You May Need as a Private Seller" />
-          <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:gap-8">
-            <div className="flex flex-col justify-between rounded-[16px] border border-[#E7E7E8] bg-white py-6 sm:py-8">
+          <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:gap-5">
+            <div className="flex flex-col justify-between rounded-[16px] border border-[#E7E7E8] bg-white py-5">
               <div>
                 <h3 className="text-lg sm:text-xl font-semibold text-brand-navy-dark px-4 md:px-5">Document Checklist</h3>
                 <ul className="mt-[15px] divide-y divide-[#E7E7E8]">
                   {CHECKLIST.map((c) => (
-                    <li key={c} className="flex items-center gap-3 py-[23px] text-sm sm:text-base 2xl:leading-[16px] text-[#3B3F45] px-4 md:px-5">
+                    <li key={c} className="flex items-center gap-3 py-[18px] text-sm sm:text-base text-[#0A0F16] px-4 md:px-5">
                       <img src="/images/fill-checkmark.svg" alt="" className="h-5 w-5 shrink-0" />
                       <span>{c}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-              <p className="mt-6 border-t border-[#E7E7E8] pt-6 text-xs sm:text-sm leading-relaxed text-[#6C6F73]">
+              <p className="border-t border-[#E7E7E8] pt-[25px] px-5 text-sm sm:text-base leading-relaxed text-[#3B3F45]">
                 These are general document categories, not a definitive legal checklist. Precise requirements must be verified against current Spanish regulations and the specific vehicle and transaction.
               </p>
             </div>
-            <div className="flex flex-col justify-between gap-6">
-              <div className="overflow-hidden rounded-[16px] shadow-sm">
+            <div className="flex flex-col justify-between gap-5">
+              <div className="overflow-hidden rounded-[16px]">
                 <img src="/images/inidividual.png" alt="Truck drivers" className="w-full h-auto object-cover" />
               </div>
-              <div className="flex items-start gap-4 rounded-[16px] border border-[#E7E7E8] bg-white p-5 sm:p-6 shadow-sm">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#F17612] text-white">
-                  <Info className="h-6 w-6 text-white" />
+              <div className="flex items-start gap-5 rounded-[12px] border border-[#E7E7E8] bg-white p-5">
+                <span className="flex h-[58px] w-[58px] shrink-0 items-center justify-center rounded-full bg-[#F17612] text-white">
+                  <img src='/images/info.svg' className='w-auto'/>
                 </span>
                 <div>
-                  <h3 className="text-base sm:text-lg font-bold text-brand-navy-dark">Not sure what applies to you?</h3>
-                  <p className="mt-2 text-xs sm:text-sm leading-relaxed text-[#6C6F73]">
+                  <h3 className="text-base sm:text-lg font-semibold text-brand-navy-dark">Not sure what applies to you?</h3>
+                  <p className="mt-5 text-sm sm:text-base leading-relaxed text-[#3B3F45]">
                     Our team can help clarify which documents may be relevant to your specific truck and situation. Request a valuation to get started.
                   </p>
                 </div>
