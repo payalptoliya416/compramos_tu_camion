@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
 import type { FaqItem } from '@/types';
 import Hero from '@/components/sections/Hero';
 import FeatureGrid from '@/components/sections/FeatureGrid';
@@ -229,7 +228,7 @@ export default function AboutPage() {
 
       <ValuationForm />
       <Testimonials />
-      <Faq items={ABOUT_FAQS} />
+      <Faq items={ABOUT_FAQS} className="!pt-0" />
       <FinalCta />
     </>
   );
