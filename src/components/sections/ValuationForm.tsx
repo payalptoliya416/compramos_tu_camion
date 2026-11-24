@@ -160,7 +160,7 @@ export default function ValuationForm({
   };
 
   return (
-    <section id="valuation" className="mx-2 sm:mx-3">
+    <section id="valuation" className="px-3 sm:px-5">
       <div className="relative overflow-hidden rounded-3xl bg-brand-navy">
         <img
           src="/images/valuation-bg.png"
@@ -168,12 +168,12 @@ export default function ValuationForm({
           className="absolute inset-0 h-full w-full object-cover object-center"
           aria-hidden
         />
-        <div className="container-x relative grid items-center gap-8 py-12 sm:py-16 lg:grid-cols-2 lg:gap-14">
+        <div className="container-x relative grid items-center gap-8 py-10 sm:py-16 lg:grid-cols-2 lg:gap-8 xl:gap-14">
           {/* Left Column: Info & Points */}
           <div className="flex flex-col items-start gap-4 text-white">
             <Badge light>{badge}</Badge>
-            <h2 className="text-2xl font-medium leading-tight sm:text-[40px] sm:leading-[60px]">{title}</h2>
-            <p className="text-base leading-relaxed text-[#E7E7E8]">{text}</p>
+            <h2 className="text-2xl font-medium leading-tight sm:text-[32px] sm:leading-[44px] xl:text-[40px] xl:leading-[56px]">{title}</h2>
+            <p className="text-sm lg:text-base leading-relaxed text-[#E7E7E8]">{text}</p>
             <ul className="mt-2 flex flex-col items-start gap-3">
               {POINTS.map((p) => (
                 <li
@@ -188,7 +188,7 @@ export default function ValuationForm({
           </div>
 
           {/* Right Column: Multi-Step Card */}
-          <div className="mx-auto w-full max-w-xl rounded-[18px] bg-white py-[55px] px-[30px] lg:max-w-none border-[10px] border-[#F3F3F3]">
+          <div className="mx-auto w-full max-w-xl rounded-[18px] bg-white py-8 px-5 sm:py-[45px] sm:px-[26px] xl:py-[55px] xl:px-[30px] lg:max-w-none border-[6px] sm:border-[8px] xl:border-[10px] border-[#F3F3F3]">
             {/* Header: Badge & Indicator Pills */}
             <div className="mb-[15px] flex items-center justify-between">
               <button

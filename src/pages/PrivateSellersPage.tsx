@@ -36,7 +36,7 @@ export default function PrivateSellersPage() {
         badge="Private truck sellers"
         title="Sell Your Truck Privately, Without the Hassle"
         text="Sell your used truck with confidence. Get a fair valuation, a straightforward selling process, and professional support from our team."
-        image={IMG.heroHome}
+        image={IMG.privateHome}
         primary={{ label: 'Get a Free Valuation' }}
         secondary={{ label: 'How It Works', to: '/how-it-works' }}
         checks={['No Obligation', 'Fair Valuation', 'Professional Support']}
@@ -57,10 +57,10 @@ export default function PrivateSellersPage() {
 
       {/* More straightforward way */}
       <section className="section-y !pt-0">
-        <div className="container-x grid gap-8 lg:grid-cols-[1.1fr_2.4fr] lg:gap-12 xl:gap-16 items-start">
+        <div className="container-x grid gap-8 lg:grid-cols-[1.1fr_2.4fr] lg:gap-8 xl:gap-12 items-start">
           <div className="flex flex-col items-start">
             <Badge>Why choose us</Badge>
-            <h2 className="mt-3 text-2xl font-medium leading-[1.15] text-brand-navy sm:text-[38px] lg:text-[40px]">
+            <h2 className="mt-3 text-2xl font-medium leading-[1.15] text-brand-navy sm:text-[32px] xl:text-[40px]">
               A More Straightforward Way to Sell Your Truck
             </h2>
             <p className="mt-4 text-base leading-relaxed text-[#6C6F73]">
@@ -68,14 +68,14 @@ export default function PrivateSellersPage() {
             </p>
             <CtaButton cta={{ label: 'Get a Free Valuation', to: '/get-a-free-valuation' }} className="mt-6 self-start" />
           </div>
-          <ul className="grid gap-6 sm:grid-cols-3 sm:gap-6 lg:gap-8">
+          <ul className="grid gap-4 sm:grid-cols-3 sm:gap-4 xl:gap-5">
             {WHY.map(({ icon, title, text }) => (
-              <li key={title} className="flex flex-col items-start text-left">
+              <li key={title} className="flex flex-col items-start text-left p-4 sm:p-5 xl:p-[30px]">
                 <span className="flex h-[58px] w-[58px] items-center justify-center rounded-[14px] border border-[#E7E7E8] bg-[#F8F9FA]">
-                  <img src={icon} alt="" className="h-6 w-6 object-contain" />
+                  <img src={icon} alt="" className="" />
                 </span>
-                <h3 className="mt-5 text-base font-semibold text-brand-navy-dark sm:text-lg">{title}</h3>
-                <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-[#6C6F73]">{text}</p>
+                <h3 className="mt-5 text-base font-medium text-brand-navy-dark sm:text-lg">{title}</h3>
+                <p className="mt-2.5 text-sm sm:text-base leading-relaxed text-[#6C6F73]">{text}</p>
               </li>
             ))}
           </ul>

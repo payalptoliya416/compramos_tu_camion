@@ -244,12 +244,9 @@ body {
     padding-right: 1.5rem;
   }
   @media (min-width: 1024px) {
-    max-width: 1120px;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  @media (min-width: 1536px) {
-    max-width: 1440px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 1184px;
   }
 }
 

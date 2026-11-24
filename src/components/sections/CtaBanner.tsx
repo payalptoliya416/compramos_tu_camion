@@ -21,7 +21,7 @@ export default function CtaBanner({
   badge, title, text, primary = { label: 'Get a Free Valuation' }, showCall, checks = DEFAULT_CHECKS,
 }: Props) {
   return (
-    <section className="mx-2 sm:mx-3">
+    <section className="px-3 sm:px-5">
       <div className="relative overflow-hidden rounded-3xl bg-brand-navy">
         <img
           src="/images/started-bg.png"
