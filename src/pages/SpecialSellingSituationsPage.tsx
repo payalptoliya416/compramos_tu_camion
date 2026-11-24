@@ -56,24 +56,28 @@ const SECURITY_CARDS = [
 
 const FAQ_SITUATIONS: FaqItem[] = [
   {
-    q: 'Can I sell a truck that has an active embargo?',
-    a: 'Yes, it is often possible. Our team evaluates the situation and explains the legal steps required to settle or handle the embargo during the sale.',
+    q: 'Can I sell a truck with mechanical problems?',
+    a: 'Yes. You can contact us even if your truck has mechanical faults. Share details of the problem and its current condition so we can assess it.',
   },
   {
-    q: 'Can I sell a truck with serious mechanical failure or accident damage?',
-    a: 'Yes. We purchase trucks regardless of their mechanical condition, whether running or non-running, with fair valuations based on their current state.',
+    q: 'Can I sell a truck that is under an embargo?',
+    a: 'It depends on the legal and administrative circumstances. An embargo may affect the transfer or sale of the vehicle. Contact us with the relevant details so the situation can be reviewed before proceeding.',
   },
   {
-    q: 'What documents are required to sell an inherited truck?',
-    a: 'You will need proof of inheritance, the vehicle registration documents, and identification. Our team will guide you through the exact paperwork required in Spain.',
+    q: 'Can I sell an inherited truck?',
+    a: 'Yes, provided the necessary inheritance and ownership documentation is in order. The required paperwork may depend on your specific circumstances.',
   },
   {
-    q: 'Is there any obligation when requesting a valuation?',
-    a: 'No. All our valuations are completely free and without any obligation. You are free to review the offer and decide.',
+    q: 'Can I sell my truck if I am retiring from the transport business?',
+    a: 'Yes. Whether you are retiring or closing your business, we can help you explore the sale of one or more trucks.',
   },
   {
-    q: 'How does collection work if the truck cannot be driven?',
-    a: 'We coordinate vehicle collection across Spain using specialized transport, arranged at a time that suits you.',
+    q: 'Can I sell a truck that is no longer in working condition?',
+    a: 'You can submit its details for assessment. Tell us whether the truck is damaged, not running or has been out of use.',
+  },
+  {
+    q: "What if I don't have all the truck documents?",
+    a: 'Let us know which documents are missing. We can explain what information may be needed, although the sale cannot be completed until the required documentation is available.',
   },
 ];
 
@@ -192,7 +196,7 @@ export default function SpecialSellingSituationsPage() {
       <Testimonials />
 
       {/* 9. FAQ */}
-      <Faq items={FAQ_SITUATIONS} title="Frequently Asked Questions About Difficult Situations" />
+      <Faq items={FAQ_SITUATIONS} title="Frequently Asked Questions About Selling Trucks" />
 
       {/* 10. Final CTA */}
       <FinalCta />
