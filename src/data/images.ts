@@ -54,14 +54,14 @@ export const IMG = {
   helpInherited: p('help-inherited.jpg'),
 
   // categories
-  catTractor: p('cat-tractor.jpg'),
-  catRigid: p('cat-rigid.jpg'),
-  catRefrigerated: p('cat-refrigerated.jpg'),
-  catTipper: p('cat-tipper.jpg'),
-  catCrane: p('cat-crane.jpg'),
-  catFlatbed: p('cat-flatbed.jpg'),
-  catTanker: p('cat-tanker.jpg'),
-  catOther: p('cat-other.jpg'),
+  catTractor: p('truck01.png'),
+  catRigid: p('truck02.png'),
+  catRefrigerated: p('truck03.png'),
+  catTipper: p('truck04.png'),
+  catCrane: p('truck05.png'),
+  catFlatbed: p('truck06.png'),
+  catTanker: p('truck07.png'),
+  catOther: p('truck08.png'),
 
   // recent purchases
   buyTractor: p('purchase01.png'),

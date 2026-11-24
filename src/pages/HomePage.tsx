@@ -138,7 +138,7 @@ export default function HomePage() {
       {/* How can we help */}
       <section className="pb-12 md:pb-16 lg:pb-20">
         <div className="container-x">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <SectionHeading badge="Your situation, our promise" title="How can we help?" align="left" />
             <CtaButton cta={{ label: 'I Want to Sell My Truck', to: '/get-a-free-valuation' }} />
           </div>

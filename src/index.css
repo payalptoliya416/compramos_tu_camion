@@ -313,17 +313,19 @@ body {
   color: var(--color-brand-orange);
 }
 
-/* Swiper Testimonials Pagination */
-.testimonials-swiper .swiper-pagination {
+/* Swiper Testimonials & Brand Logos Pagination */
+.testimonials-swiper .swiper-pagination,
+.brand-logos-swiper .swiper-pagination {
   position: static !important;
-  margin-top: 2rem !important;
+  margin-top: 20px !important;
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
   gap: 6px !important;
 }
 
-.testimonials-swiper .swiper-pagination-bullet {
+.testimonials-swiper .swiper-pagination-bullet,
+.brand-logos-swiper .swiper-pagination-bullet {
   width: 8px !important;
   height: 8px !important;
   border-radius: 9999px !important;
@@ -334,7 +336,8 @@ body {
   cursor: pointer !important;
 }
 
-.testimonials-swiper .swiper-pagination-bullet-active {
+.testimonials-swiper .swiper-pagination-bullet-active,
+.brand-logos-swiper .swiper-pagination-bullet-active {
   width: 24px !important;
   height: 8px !important;
   background-color: var(--color-brand-orange, #F17612) !important;

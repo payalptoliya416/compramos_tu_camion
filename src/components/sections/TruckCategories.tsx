@@ -25,21 +25,21 @@ export default function TruckCategories({
     <section className="section-y">
       <div className="container-x">
         {action ? (
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <SectionHeading badge={badge} title={title} subtitle={subtitle} align="left" />
             <CtaButton cta={action} />
           </div>
         ) : (
           <SectionHeading badge={badge} title={title} subtitle={subtitle} />
         )}
-        <ul className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+        <ul className="mt-10 grid grid-cols-2 gap-3 sm:gap-[24px] lg:grid-cols-4">
           {CATEGORIES.map((c) => (
             <li key={c.title}>
-              <Link to={c.to} className="group relative block aspect-[4/3] overflow-hidden rounded-xl">
+              <Link to={c.to} className="group relative block aspect-[4/3] overflow-hidden rounded-[12px]">
                 <Img src={c.image} alt={c.title} className="h-full w-full" imgClassName="transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4">
-                  <h3 className="text-sm font-semibold text-white sm:text-base">{c.title}</h3>
+                <div className="absolute inset-x-0 bottom-0 p-3 sm:p-5">
+                  <h3 className="text-base font-bold text-white sm:text-lg">{c.title}</h3>
                 </div>
               </Link>
             </li>

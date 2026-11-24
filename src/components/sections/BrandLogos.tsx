@@ -1,5 +1,8 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
 import SectionHeading from '@/components/ui/SectionHeading';
-import { BRANDS } from '@/data/site';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 interface Props {
   badge?: string;
@@ -8,7 +11,19 @@ interface Props {
   band?: boolean;
 }
 
-/** Manufacturer row. Replace the text with real logo images when exported. */
+const BRAND_LOGOS = [
+  { name: 'Mercedes-Benz', image: '/images/logo01.png' },
+  { name: 'Scania', image: '/images/logo02.png' },
+  { name: 'Volvo', image: '/images/logo03.png' },
+  { name: 'DAF', image: '/images/logo04.png' },
+  { name: 'MAN', image: '/images/logo05.png' },
+  { name: 'IVECO', image: '/images/logo06.png' },
+  { name: 'Renault', image: '/images/logo07.png' },
+];
+
+// Duplicate items so Swiper loop has enough slides with 7 per view
+const SLIDES = [...BRAND_LOGOS, ...BRAND_LOGOS];
+
 export default function BrandLogos({
   badge = 'Manufacturers',
   title = 'We Buy Trucks From Leading Manufacturers',
@@ -19,22 +34,39 @@ export default function BrandLogos({
     <section className="section-y">
       <div className="container-x">
         <SectionHeading badge={badge} title={title} subtitle={subtitle} />
-        <ul className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">
-          {BRANDS.map((b) => (
-            <li
-              key={b}
-              className="flex h-20 items-center justify-center rounded-xl border border-slate-100 bg-white px-3 text-center font-heading text-sm font-semibold tracking-wide text-slate-500 shadow-sm"
-            >
-              {b}
-            </li>
-          ))}
-        </ul>
-        <div className="mt-5 flex justify-center gap-1.5" aria-hidden>
-          <span className="h-1.5 w-5 rounded-full bg-brand-orange" />
-          {[0, 1, 2].map((i) => <span key={i} className="h-1.5 w-1.5 rounded-full bg-slate-300" />)}
+
+        <div className="mt-8">
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            slidesPerView={2}
+            spaceBetween={14}
+            loop={true}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            pagination={{ clickable: true }}
+            breakpoints={{
+              480: { slidesPerView: 3, spaceBetween: 16 },
+              640: { slidesPerView: 4, spaceBetween: 18 },
+              768: { slidesPerView: 5, spaceBetween: 20 },
+              1024: { slidesPerView: 7, spaceBetween: 20 },
+            }}
+            className="brand-logos-swiper !pb-2"
+          >
+            {SLIDES.map((b, i) => (
+              <SwiperSlide key={`${b.name}-${i}`}>
+                <div className="flex h-24 sm:h-28 items-center justify-center rounded-2xl border border-[#E7E7E8] bg-white p-4 shadow-sm transition-all hover:shadow-md">
+                  <img
+                    src={b.image}
+                    alt={b.name}
+                    className="max-h-12 sm:max-h-14 w-auto max-w-[85%] object-contain"
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>
   );
+
   return band ? <div className="mx-2 rounded-3xl bg-surface sm:mx-3">{body}</div> : body;
 }
