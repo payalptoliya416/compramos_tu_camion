@@ -24,7 +24,6 @@ export default function RecentPurchases({
           <SectionHeading badge={badge} title={title} subtitle={subtitle} align="left" />
           <CtaButton
             cta={{ label: 'I Want to Sell My Truck', to: '/get-a-free-valuation' }}
-            className="!border !border-brand-navy-dark !bg-white !text-brand-navy-dark hover:!bg-slate-50"
           />
         </div>
         <ul className="mt-10 grid gap-4 sm:gap-[25px] sm:grid-cols-2 lg:grid-cols-4">

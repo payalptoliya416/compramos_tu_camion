@@ -30,17 +30,17 @@ const CITIES = [
 ];
 
 const getInputClass = (hasError?: boolean) =>
-  `w-full rounded-xl border bg-white px-3.5 py-3 text-xs sm:text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none focus:ring-1 transition-colors ${
+  `w-full rounded-[8px] border bg-white px-[15px] py-[15px] text-xs text-[#6B8098] placeholder:text-[#6B8098] focus:outline-none focus:ring-1 transition-colors ${
     hasError
       ? 'border-red-500 focus:border-red-500 focus:ring-red-500 bg-red-50/20'
-      : 'border-slate-200 focus:border-brand-orange focus:ring-brand-orange'
+      : 'border-[#E6E9ED] focus:border-brand-orange focus:ring-brand-orange'
   }`;
 
 const getSelectClass = (hasError?: boolean) =>
-  `w-full appearance-none rounded-xl border bg-white px-3.5 py-3 pr-10 text-xs sm:text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none focus:ring-1 bg-[url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2364748B%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22m6%209%206%206%206-6%22%2F%3E%3C%2Fsvg%3E")] bg-[length:14px_14px] bg-[right_14px_center] bg-no-repeat cursor-pointer transition-colors ${
+  `w-full appearance-none rounded-[8px] border bg-white px-[15px] py-[15px] pr-10 text-xs text-[#6B8098] placeholder:text-slate-400 focus:outline-none focus:ring-1 bg-[url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2364748B%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22m6%209%206%206%206-6%22%2F%3E%3C%2Fsvg%3E")] bg-[length:14px_14px] bg-[right_14px_center] bg-no-repeat cursor-pointer transition-colors ${
     hasError
       ? 'border-red-500 focus:border-red-500 focus:ring-red-500 bg-red-50/20'
-      : 'border-slate-200 focus:border-brand-orange focus:ring-brand-orange'
+      : 'border-[#E6E9ED] focus:border-brand-orange focus:ring-brand-orange'
   }`;
 
 function Field({
@@ -57,10 +57,10 @@ function Field({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col gap-1.5 text-xs font-semibold text-brand-navy">
+    <div className="flex flex-col gap-1.5 text-xs font-medium text-[#082B54]">
       <span className="flex items-center gap-1">
         <span>{label}</span>
-        {required && <span className="text-brand-orange">*</span>}
+      {required && <span className="text-[#F17612]">*</span>}
         {info && (
           <span
             title={info}
@@ -188,15 +188,15 @@ export default function ValuationForm({
           </div>
 
           {/* Right Column: Multi-Step Card */}
-          <div className="mx-auto w-full max-w-xl rounded-3xl bg-white p-6 shadow-xl sm:p-8 lg:max-w-none">
+          <div className="mx-auto w-full max-w-xl rounded-[18px] bg-white py-[55px] px-[30px] lg:max-w-none border-[10px] border-[#F3F3F3]">
             {/* Header: Badge & Indicator Pills */}
-            <div className="mb-2 flex items-center justify-between">
+            <div className="mb-[15px] flex items-center justify-between">
               <button
                 type="button"
                 onClick={() => {
                   if (step === 2) setStep(1);
                 }}
-                className={`inline-flex items-center gap-1.5 rounded-full bg-[#FFF1EB] px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-orange transition-all ${
+                className={`inline-flex items-center gap-1.5 rounded-full bg-[#F176120D] px-[15px] py-[10px] text-sm font-medium uppercase tracking-wider text-brand-orange transition-all ${
                   step === 2 ? 'cursor-pointer hover:bg-brand-orange/20' : ''
                 }`}
                 title={step === 2 ? 'Click to go back to Step 1' : undefined}
@@ -210,8 +210,8 @@ export default function ValuationForm({
                 <button
                   type="button"
                   onClick={() => setStep(1)}
-                  className={`h-2.5 w-8 rounded-full transition-all cursor-pointer ${
-                    step === 1 ? 'bg-brand-orange shadow-sm' : 'bg-slate-200 hover:bg-slate-300'
+                  className={`h-[12px] w-[25px] rounded-full transition-all cursor-pointer ${
+                    step === 1 ? 'bg-brand-orange' : 'bg-slate-200 hover:bg-slate-300'
                   }`}
                   title="Go to Step 1: Truck Details"
                   aria-label="Step 1"
@@ -223,8 +223,8 @@ export default function ValuationForm({
                       setStep(2);
                     }
                   }}
-                  className={`h-2.5 w-8 rounded-full transition-all cursor-pointer ${
-                    step === 2 ? 'bg-brand-orange shadow-sm' : 'bg-slate-200 hover:bg-slate-300'
+                  className={`h-[12px] w-[25px] rounded-full transition-all cursor-pointer ${
+                    step === 2 ? 'bg-brand-orange' : 'bg-slate-200 hover:bg-slate-300'
                   }`}
                   title="Go to Step 2: Contact Details"
                   aria-label="Step 2"
@@ -234,14 +234,14 @@ export default function ValuationForm({
 
             {/* Form Title */}
             <div className="flex items-center justify-between">
-              <h3 className="mt-3 text-2xl font-bold text-brand-navy">
+              <h3 className="text-[26px] font-semibold text-[#092B55]">
                 {step === 1 ? 'Truck Details' : 'Contact Details'}
               </h3>
               {step === 2 && (
                 <button
                   type="button"
                   onClick={() => setStep(1)}
-                  className="mt-3 text-xs font-semibold text-brand-orange hover:underline cursor-pointer"
+                  className="text-xs font-semibold text-brand-orange hover:underline cursor-pointer"
                 >
                   ← Back to Step 1
                 </button>
@@ -250,7 +250,7 @@ export default function ValuationForm({
 
             {/* Form Steps */}
             {step === 1 ? (
-              <form onSubmit={handleNext} noValidate className="mt-6 grid gap-4 sm:grid-cols-2">
+              <form onSubmit={handleNext} noValidate className="mt-10 grid gap-5 sm:grid-cols-2">
                 <Field label="Make" required error={errors.make}>
                   <select
                     value={formData.make}
@@ -327,17 +327,17 @@ export default function ValuationForm({
                   </select>
                 </Field>
 
-                <div className="flex justify-center pt-4 sm:col-span-2">
+                <div className="flex justify-center pt-[15px] sm:col-span-2">
                   <button
                     type="submit"
-                    className="rounded-full bg-brand-orange px-10 py-3.5 text-sm sm:text-base font-semibold text-white shadow-md hover:bg-brand-orange-dark transition-colors cursor-pointer"
+                    className="rounded-full bg-brand-orange px-[54px] py-4 text-sm sm:text-lg font-medium leading-[18px] text-white hover:bg-brand-orange-dark transition-colors cursor-pointer"
                   >
                     Next Step
                   </button>
                 </div>
               </form>
             ) : (
-              <form onSubmit={handleSubmit} noValidate className="mt-6 grid gap-4 sm:grid-cols-2">
+              <form onSubmit={handleSubmit} noValidate className="mt-6 grid gap-5 sm:grid-cols-2">
                 <div className="sm:col-span-2">
                   <Field label="Full name" required error={errors.fullName}>
                     <input
@@ -397,7 +397,7 @@ export default function ValuationForm({
                   <span>Photo upload</span>
                   <div
                     onClick={() => fileInputRef.current?.click()}
-                    className="flex min-h-[148px] flex-1 cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-200 bg-[#F9FAFB] p-4 text-center transition-colors hover:border-brand-orange hover:bg-white"
+                    className="flex min-h-[168px] flex-1 cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-200 bg-[#F9FAFB] p-[30px] text-center transition-colors hover:border-brand-orange hover:bg-white"
                   >
                     <input
                       ref={fileInputRef}
@@ -420,19 +420,19 @@ export default function ValuationForm({
                       strokeWidth="1.8"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="text-slate-400"
+                      className="text-[#6C6F73]"
                     >
                       <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" />
                       <path d="M12 12v9" />
                       <path d="m16 16-4-4-4 4" />
                     </svg>
-                    <p className="mt-2 text-xs font-semibold text-brand-navy">
+                    <p className="mt-[11px] text-xs font-medium text-[#0A0F16]">
                       {filesCount > 0 ? `${filesCount} file(s) selected` : 'Choose a file or drag & drop it here'}
                     </p>
-                    <p className="text-[10px] text-slate-400">JPEG, and PNG formats, up to 50MB</p>
+                    <p className="text-[10px] text-[#9D9FA2]">JPEG, and PNG formats, up to 50MB</p>
                     <button
                       type="button"
-                      className="mt-2 rounded-full border border-brand-orange px-4 py-1 text-xs font-medium text-brand-orange hover:bg-brand-orange/5"
+                      className="mt-[15px] rounded-full border border-brand-orange px-4 [15px] py-[9px] text-xs font-medium text-brand-orange hover:bg-brand-orange/5"
                     >
                       Browse File
                     </button>
@@ -445,7 +445,7 @@ export default function ValuationForm({
                     rows={5}
                     value={formData.damages}
                     onChange={(e) => handleChange('damages', e.target.value)}
-                    className="w-full flex-1 resize-none rounded-xl border border-slate-200 bg-white p-3 text-xs sm:text-sm text-slate-700 placeholder:text-slate-400 focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange min-h-[148px]"
+                    className="w-full flex-1 resize-none rounded-[8px] border border-[#E6E9ED] bg-white p-[15px] text-xs text-[#6B8098] placeholder:text-[#6B8098] focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange min-h-[148px]"
                     placeholder="Provide an explanation for the damage."
                   />
                 </div>
@@ -453,7 +453,7 @@ export default function ValuationForm({
                 <div className="flex justify-center pt-4 sm:col-span-2">
                   <button
                     type="submit"
-                    className="rounded-full bg-brand-orange px-10 py-3.5 text-sm sm:text-base font-semibold text-white shadow-md hover:bg-brand-orange-dark transition-colors cursor-pointer"
+                    className="rounded-full bg-brand-orange px-[54px] py-4 text-sm sm:text-lg leading-[18px] font-medium text-white hover:bg-brand-orange-dark transition-colors cursor-pointer"
                   >
                     Request My Valuation
                   </button>
