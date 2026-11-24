@@ -15,12 +15,14 @@ import MultiliftPage from '@/pages/truck-types/MultiliftPage';
 import ParcelDeliveryPage from '@/pages/truck-types/ParcelDeliveryPage';
 import RefrigeratedPage from '@/pages/truck-types/RefrigeratedPage';
 import Light3500Page from '@/pages/truck-types/Light3500Page';
+import ThankYouPage from '@/pages/ThankYouPage';
 
 export default function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<HomePage />} />
+        <Route path="/thank-you" element={<ThankYouPage />} />
         <Route path="/how-it-works" element={<HowItWorksPage />} />
         <Route path="/collection-across-spain" element={<CollectionPage />} />
         <Route path="/about-us" element={<AboutPage />} />
