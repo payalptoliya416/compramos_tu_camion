@@ -1,4 +1,4 @@
-import { BarChart3, ClipboardCheck, Eye, FileText, Handshake, MapPin, Phone, ShieldCheck, UserCheck } from 'lucide-react';
+import { BarChart3, ClipboardCheck, FileText, Handshake, MapPin, Phone } from 'lucide-react';
 import { IMG } from '@/data/images';
 import Hero from '@/components/sections/Hero';
 import Testimonials from '@/components/sections/Testimonials';
@@ -12,9 +12,21 @@ import { Badge } from '@/components/ui/SectionHeading';
 import CtaButton from '@/components/ui/CtaButton';
 
 const WHY = [
-  { icon: UserCheck, title: 'Professional Guidance', text: 'Our experienced team is available to answer your questions and explain each step of the selling process clearly.' },
-  { icon: Eye, title: 'Clear and Transparent Process', text: 'We explain how valuations are made and what to expect so there are no surprises during the sale.' },
-  { icon: ShieldCheck, title: 'Support With the Sale', text: 'From initial valuation to final collection, we are available to support you throughout the entire selling journey.' },
+  {
+    icon: '/images/user01.svg',
+    title: 'Professional Guidance',
+    text: 'Our experienced team is available to answer your questions and explain each step of the selling process clearly.',
+  },
+  {
+    icon: '/images/eye01.svg',
+    title: 'Clear and Transparent Process',
+    text: 'We explain how valuations are made and what to expect so there are no surprises during the sale.',
+  },
+  {
+    icon: '/images/support01.svg',
+    title: 'Support With the Sale',
+    text: 'From initial valuation to final collection, we are available to support you throughout the entire selling journey.',
+  },
 ];
 
 export default function PrivateSellersPage() {
@@ -44,24 +56,26 @@ export default function PrivateSellersPage() {
       />
 
       {/* More straightforward way */}
-      <section className="pb-12 md:pb-16 lg:pb-20">
-        <div className="container-x grid gap-8 lg:grid-cols-[1fr_1.6fr] lg:gap-14">
-          <div className="flex flex-col items-start gap-4">
+      <section className="section-y">
+        <div className="container-x grid gap-8 lg:grid-cols-[1.1fr_2.4fr] lg:gap-12 xl:gap-16 items-start">
+          <div className="flex flex-col items-start">
             <Badge>Why choose us</Badge>
-            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[40px] sm:leading-[40px]">A More Straightforward Way to Sell Your Truck</h2>
-            <p className="text-sm leading-relaxed text-slate-500">
+            <h2 className="mt-3 text-2xl font-medium leading-[1.15] text-brand-navy sm:text-[38px] lg:text-[40px]">
+              A More Straightforward Way to Sell Your Truck
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-[#6C6F73]">
               Selling a commercial vehicle can involve several steps. Our team helps you understand the process and guides you through the valuation and sale.
             </p>
-            <CtaButton cta={{ label: 'Get a Free Valuation' }} />
+            <CtaButton cta={{ label: 'Get a Free Valuation', to: '/get-a-free-valuation' }} className="mt-6 self-start" />
           </div>
-          <ul className="grid gap-5 sm:grid-cols-3">
-            {WHY.map(({ icon: Icon, title, text }) => (
-              <li key={title} className="flex flex-col gap-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 text-brand-orange">
-                  <Icon className="h-5 w-5" />
+          <ul className="grid gap-6 sm:grid-cols-3 sm:gap-6 lg:gap-8">
+            {WHY.map(({ icon, title, text }) => (
+              <li key={title} className="flex flex-col items-start text-left">
+                <span className="flex h-[58px] w-[58px] items-center justify-center rounded-[14px] border border-[#E7E7E8] bg-[#F8F9FA]">
+                  <img src={icon} alt="" className="h-6 w-6 object-contain" />
                 </span>
-                <h3 className="text-sm font-semibold text-brand-navy-dark">{title}</h3>
-                <p className="text-xs leading-relaxed text-slate-500">{text}</p>
+                <h3 className="mt-5 text-base font-semibold text-brand-navy-dark sm:text-lg">{title}</h3>
+                <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-[#6C6F73]">{text}</p>
               </li>
             ))}
           </ul>
