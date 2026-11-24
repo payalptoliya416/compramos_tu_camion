@@ -49,7 +49,7 @@ export default function Steps({ badge, title, subtitle, steps, action, className
                 )}
               </span>
               <h3 className="mt-5 sm:mt-[25px] text-lg font-medium text-brand-navy-dark sm:text-xl">{t}</h3>
-              <p className="mt-[15px] max-w-[400px] text-sm leading-relaxed text-[#3B3F45] sm:text-base">{text}</p>
+              <p className="mt-[15px] max-w-[420px] text-sm leading-relaxed text-[#3B3F45] sm:text-base">{text}</p>
             </li>
           ))}
         </ol>
