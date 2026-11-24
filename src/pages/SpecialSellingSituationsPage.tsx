@@ -80,10 +80,10 @@ export default function SpecialSellingSituationsPage() {
       <Hero
         badge="Special selling situations"
         title="Selling Your Truck in a Difficult Situation?"
-        text="Whatever challenges you face — outstanding finance, mechanical faults, or legal complexities — our team is here to help you navigate the process with confidence."
+        text="Facing a difficult situation? Get professional guidance to sell your truck with confidence."
         image="/images/special-selling.png"
         primary={{ label: 'Get a Free Valuation' }}
-        checks={['Clear Guidance', 'Expert Support', 'Fair Valuation']}
+        checks={['Flexible Solutions', 'Expert Guidance', 'Hassle-Free Process']}
       />
 
       {/* 2. A Clearer Way Forward */}
