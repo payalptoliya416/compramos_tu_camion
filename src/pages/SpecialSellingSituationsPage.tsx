@@ -38,12 +38,12 @@ const SITUATION_CARDS = [
 
 const SECURITY_CARDS = [
   {
-    icon: '/images/practical.svg',
+    icon: '/images/forget.svg',
     title: 'Forget about the DGT',
     text: 'Selling heavy goods vehicles involves complex procedures. When you entrust the sale of your trucks to us, you can forget about the DGT (Spanish Traffic Authority), cumbersome ownership transfers, canceling liens, and sales notifications.',
   },
   {
-    icon: '/images/support01.svg',
+    icon: '/images/security.svg',
     title: 'Guaranteed Security',
     text: 'We guarantee a secure truck sale, with immediate payment via bank transfer or your preferred method. Zero risk of non-payment, bounced checks, installment payments, or fraud.',
   },
@@ -102,7 +102,7 @@ export default function SpecialSellingSituationsPage() {
       />
 
       {/* 3. Solutions for Different Selling Situations (4 Cards) */}
-      <section className="section-y bg-surface sm:!pb-[140px] lg:!pb-[160px]">
+      <section className="section-y bg-surface !pb-[110px]">
         <div className="container-x">
           <SectionHeading
             badge="How we can help"
@@ -162,7 +162,7 @@ export default function SpecialSellingSituationsPage() {
       />
 
       {/* 6. Forget the Paperwork: 100% Secure and Legal Sale */}
-      <section className="section-y !pt-8">
+      <section className="section-y">
         <div className="container-x">
           <SectionHeading
             badge="Secure and legal sale"
@@ -172,12 +172,12 @@ export default function SpecialSellingSituationsPage() {
             {SECURITY_CARDS.map(({ icon, title, text }) => (
               <article
                 key={title}
-                className="flex h-full flex-col rounded-[20px] bg-surface p-6 sm:p-8 lg:p-10"
+                className="flex h-full flex-col rounded-[12px] bg-surface py-5 sm:py-[35px] px-5 sm:px-[25px]"
               >
-                <span className="flex h-[50px] w-[50px] items-center justify-center rounded-[12px] bg-white border border-[#E7E7E8]">
+                <span className="flex h-[50px] w-[50px] items-center justify-center rounded-[12px] bg-white">
                   <img src={icon} alt="" className="h-6 w-6 object-contain" />
                 </span>
-                <h3 className="mt-5 text-lg sm:text-xl font-bold text-brand-navy-dark">{title}</h3>
+                <h3 className="mt-5 text-lg sm:text-xl font-semibold text-brand-navy-dark">{title}</h3>
                 <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#6C6F73]">{text}</p>
               </article>
             ))}
