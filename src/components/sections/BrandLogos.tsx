@@ -39,7 +39,7 @@ export default function BrandLogos({
           <Swiper
             modules={[Pagination, Autoplay]}
             slidesPerView={2}
-            spaceBetween={14}
+            spaceBetween={16}
             loop={true}
             autoplay={{ delay: 3000, disableOnInteraction: false }}
             pagination={{ clickable: true }}
@@ -53,7 +53,7 @@ export default function BrandLogos({
           >
             {SLIDES.map((b, i) => (
               <SwiperSlide key={`${b.name}-${i}`}>
-                <div className="flex h-24 sm:h-28 items-center justify-center rounded-2xl border border-[#E7E7E8] bg-white p-4 shadow-sm transition-all hover:shadow-md">
+                <div className="flex h-24 sm:h-[142px] items-center justify-center rounded-[12px] border border-[#E7E7E8] bg-white p-4 transition-all hover:shadow-md">
                   <img
                     src={b.image}
                     alt={b.name}

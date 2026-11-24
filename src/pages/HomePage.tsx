@@ -14,7 +14,6 @@ import FinalCta from '@/components/sections/FinalCta';
 import Img from '@/components/ui/Img';
 import SectionHeading, { Badge } from '@/components/ui/SectionHeading';
 import CtaButton from '@/components/ui/CtaButton';
-import { CheckInline } from '@/components/ui/CheckItem';
 import type { FaqItem } from '@/types';
 
 const MINI_CARDS = [
@@ -144,11 +143,11 @@ export default function HomePage() {
           </div>
           <ul className="mt-8 grid gap-4 md:grid-cols-3">
             {HELP_CARDS.map((c) => (
-              <li key={c.title} className="flex flex-col overflow-hidden rounded-xl border border-slate-100 bg-white shadow-sm">
+              <li key={c.title} className="flex flex-col overflow-hidden rounded-[12px] border border-[#E7E7E8] bg-white">
                 <Img src={c.image} alt={c.title} className="aspect-[16/10]" />
-                <div className="flex flex-1 flex-col gap-2 p-4">
-                  <h3 className="text-sm font-semibold text-brand-navy-dark">{c.title}</h3>
-                  <p className="text-xs leading-relaxed text-slate-500">{c.text}</p>
+                <div className="flex flex-1 flex-col gap-[10px] p-[25px]">
+                  <h3 className="text-sm sm:text-base font-semibold text-[#0A0F16]">{c.title}</h3>
+                  <p className="text-sm leading-relaxed text-[#6C6F73]">{c.text}</p>
                 </div>
               </li>
             ))}
@@ -158,23 +157,55 @@ export default function HomePage() {
 
       {/* Collection across Spain */}
       <section className="mx-2 sm:mx-3">
-        <div className="overflow-hidden rounded-3xl bg-brand-navy">
-          <div className="container-x grid items-center gap-8 py-12 sm:py-16 lg:grid-cols-2 lg:gap-14">
-            <div className="flex flex-col items-start gap-4 text-white">
+        <div className="relative overflow-hidden rounded-3xl bg-[#071324] min-h-[580px] lg:min-h-[640px] flex items-center">
+          {/* Background image */}
+          <img
+            src="/images/collection-bg.png"
+            alt="Collection across Spain"
+            className="absolute inset-0 h-full w-full object-cover object-[75%_center] lg:object-center"
+          />
+
+          {/* Left subtle dark gradient overlay for optimal text contrast across all screen sizes */}
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-[#071324] via-[#071324]/90 to-transparent sm:w-4/5 lg:w-3/5"
+            aria-hidden
+          />
+
+          <div className="container-x relative z-10 py-12 sm:py-16 lg:py-20">
+            <div className="flex max-w-xl flex-col items-start gap-4 text-white">
               <Badge light>Nationwide collection</Badge>
-              <h2 className="text-2xl font-medium leading-tight text-white sm:text-[40px] sm:leading-[40px]">We Collect Commercial Trucks Across Spain</h2>
-              <p className="text-sm leading-relaxed text-white/80">
+              <h2 className="text-2xl font-medium leading-tight text-white sm:text-[40px] sm:leading-[48px]">
+                We Collect Commercial Trucks Across Spain
+              </h2>
+              <p className="text-sm sm:text-base leading-relaxed text-[#E7E7E8]">
                 Selling your truck shouldn’t depend on where it’s located. We help coordinate vehicle collection across Spain, making the process easier from valuation to collection.
               </p>
-              <ul className="flex flex-col gap-3">
-                {['Collection coordination across Spain', 'Support with collection arrangements', 'Clear communication about the next steps', 'Assistance throughout the selling process'].map((t) => (
-                  <li key={t}><CheckInline>{t}</CheckInline></li>
+              <ul className="mt-2 flex flex-col items-start gap-3">
+                {[
+                  'Collection coordination across Spain',
+                  'Support with collection arrangements',
+                  'Clear communication about the next steps',
+                  'Assistance throughout the selling process',
+                ].map((t) => (
+                  <li
+                    key={t}
+                    className="inline-flex items-center gap-2.5 rounded-[30px] bg-white/[0.08] border border-white/[0.15] px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-normal text-white backdrop-blur-[2px]"
+                  >
+                    <img src="/images/fill-checkmark.svg" alt="" className="h-4 w-4 shrink-0" />
+                    <span>{t}</span>
+                  </li>
                 ))}
               </ul>
-              <p className="text-xs text-white/60">And many more locations across all Spanish provinces.</p>
-              <Link to="/collection-across-spain" className="btn-primary">Explore Our Coverage</Link>
+              <p className="mt-1 text-xs sm:text-sm text-[#CBD5E1]">
+                And many more locations across all Spanish provinces.
+              </p>
+              <Link
+                to="/collection-across-spain"
+                className="btn-primary mt-2 self-start !px-[30px] !py-3.5 text-sm sm:text-base font-medium"
+              >
+                Explore Our Coverage
+              </Link>
             </div>
-            <Img src={IMG.spainCollection} alt="Collection across Spain" className="aspect-[4/3] rounded-2xl" />
           </div>
         </div>
       </section>

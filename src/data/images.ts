@@ -49,9 +49,9 @@ export const IMG = {
   brandsRenault: p('brands-renault.jpg'),
 
   // help cards (home)
-  helpFleet: p('help-fleet.jpg'),
-  helpMechanical: p('help-mechanical.jpg'),
-  helpInherited: p('help-inherited.jpg'),
+  helpFleet: p('help01.png'),
+  helpMechanical: p('help02.png'),
+  helpInherited: p('help03.png'),
 
   // categories
   catTractor: p('truck01.png'),

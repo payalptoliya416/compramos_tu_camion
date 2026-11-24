@@ -15,11 +15,11 @@ export default function Faq({ items = FAQ_DEFAULT, title = 'Frequently Asked Que
 
   return (
     <section className="section-y">
-      <div className="container-x grid gap-8 lg:grid-cols-[1fr_1.9fr] lg:gap-16">
+      <div className="container-x grid gap-8 lg:grid-cols-[1fr_1.9fr] lg:gap-[64px]">
         <div className="flex flex-col items-start gap-3">
           <Badge>FAQs</Badge>
-          <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[40px] sm:leading-[40px]">{title}</h2>
-          <p className="max-w-xs text-base leading-relaxed text-[#3B3F45]">
+          <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[42px] sm:leading-[52px]">{title}</h2>
+          <p className="max-w-md text-base leading-relaxed text-[#3B3F45]">
             Can’t find the answer you’re looking for? Our team is available to answer any questions about selling your truck.
           </p>
         </div>
