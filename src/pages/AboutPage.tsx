@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { ChevronRight, ClipboardList, Eye, MessageCircle, Search, CheckCircle2, Truck, UserCheck, Map, FileText, Zap, Award } from 'lucide-react';
 import { IMG } from '@/data/images';
 import Hero from '@/components/sections/Hero';
-import SplitSection from '@/components/sections/SplitSection';
 import FeatureGrid from '@/components/sections/FeatureGrid';
 import CtaBanner from '@/components/sections/CtaBanner';
 import Steps from '@/components/sections/Steps';
@@ -87,25 +86,46 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <SplitSection
-        reverse
-        badge="Our story"
-        title="Making Truck Selling Simpler and More Transparent"
-        paragraphs={[
-          'Selling a used truck can involve complicated decisions, time-consuming paperwork and uncertainty about its value. ComprasTuCamión.es was built around a clear objective: to make the process more straightforward for truck owners, independent transport professionals and logistics companies.',
-          'By combining industry experience with a professional valuation process, we help sellers understand their options, receive a considered offer and move forward with greater clarity.',
-        ]}
-        image={IMG.aboutTruck}
-      >
-        <dl className="mt-2 grid w-full grid-cols-3 gap-4 border-t border-slate-200 pt-5">
-          {STATS.map((s) => (
-            <div key={s.label}>
-              <dt className="text-xl font-semibold text-brand-orange sm:text-2xl">{s.value}</dt>
-              <dd className="text-[11px] text-slate-500">{s.label}</dd>
+      <section className="section-y">
+        <div className="container-x grid items-center gap-8 lg:grid-cols-2 lg:gap-[53px]">
+          <div className="overflow-hidden rounded-2xl lg:order-2">
+            <img
+              src="/images/makieing-truck.png"
+              alt="Making Truck Selling Simpler and More Transparent"
+              className="h-auto w-full rounded-2xl object-cover"
+            />
+          </div>
+          <div className="flex flex-col items-start gap-4 lg:order-1">
+            <Badge>Our story</Badge>
+            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[40px] xl:leading-[60px]">
+              Making Truck Selling Simpler and More Transparent
+            </h2>
+            <p className="text-base leading-relaxed text-[#3B3F45]">
+              Selling a used truck can involve complicated decisions, time-consuming paperwork and uncertainty about its value. CompramosTuCamión.es was built around a clear objective: to make the process more straightforward for truck owners, independent transport professionals and logistics companies.
+            </p>
+            <p className="text-base leading-relaxed text-[#3B3F45]">
+              By combining industry experience with a professional valuation process, we aim to help sellers understand their options, receive a considered offer and move forward with greater clarity.
+            </p>
+            <div className="mt-4 grid w-full grid-cols-3 border-t border-[#E7E7E8] pt-6">
+              {STATS.map((s, idx) => (
+                <div
+                  key={s.label}
+                  className={`relative ${
+                    idx === 0
+                      ? 'pr-3 sm:pr-6 after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:h-10 after:w-[1px] after:bg-[#E7E7E8]'
+                      : idx === 1
+                        ? 'px-3 sm:px-6 after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:h-10 after:w-[1px] after:bg-[#E7E7E8]'
+                        : 'pl-3 sm:pl-6'
+                  }`}
+                >
+                  <div className="text-xl font-bold text-[#F17612] sm:text-2xl md:text-3xl">{s.value}</div>
+                  <div className="mt-1 text-xs text-[#6C6F73] sm:text-sm">{s.label}</div>
+                </div>
+              ))}
             </div>
-          ))}
-        </dl>
-      </SplitSection>
+          </div>
+        </div>
+      </section>
 
       <FeatureGrid
         badge="Our expertise"
