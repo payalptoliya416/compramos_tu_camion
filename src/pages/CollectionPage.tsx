@@ -18,7 +18,7 @@ export default function CollectionPage() {
         badge="Our coverage"
         title="Where Do We Buy Used Trucks in Spain?"
         text="Professional truck buying services across Spain, backed by more than 20 years of experience."
-        image={IMG.heroCollection}
+        image="/images/collection-banner.png"
         primary={{ label: 'Get a Truck Valuation' }}
         checks={['Nationwide Coverage', 'Professional Valuation', 'Trusted Truck Buyers']}
       />
