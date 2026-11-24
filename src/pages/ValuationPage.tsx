@@ -1,4 +1,4 @@
-import { Camera, ClipboardList, Info, MessageCircle, Package, Settings } from 'lucide-react';
+import { Camera, Package, Settings } from 'lucide-react';
 import Hero from '@/components/sections/Hero';
 import RecentPurchases from '@/components/sections/RecentPurchases';
 import FeatureGrid from '@/components/sections/FeatureGrid';
@@ -44,7 +44,7 @@ export default function ValuationPage() {
             <p className="text-base leading-relaxed text-[#3B3F45]">
               Whether you own an individual commercial vehicle or manage a fleet, our valuation process helps you understand the next steps towards selling your truck.
             </p>
-            <div className="my-1 flex flex-col items-start gap-3">
+            <div className="my-1 flex flex-col items-start gap-[15px]">
               {[
                 'Professional vehicle assessment',
                 'No-obligation valuation request',
@@ -52,9 +52,9 @@ export default function ValuationPage() {
               ].map((pill) => (
                 <div
                   key={pill}
-                  className="inline-flex items-center gap-2 rounded-full bg-[#F3F3F3] px-4 py-2 text-xs font-normal text-[#3B3F45] sm:text-sm"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#F3F3F3] px-5 py-4 text-xs font-normal text-[#3B3F45] sm:text-base"
                 >
-                  <img src="/images/fill-checkmark.svg" alt="" className="h-4 w-4 shrink-0" />
+                  <img src="/images/fill-checkmark.svg" alt="" className="shrink-0" />
                   <span>{pill}</span>
                 </div>
               ))}
@@ -83,10 +83,10 @@ export default function ValuationPage() {
         badge="Our valuation process"
         title="How Does Our Truck Valuation Work?"
         steps={[
-          { icon: ClipboardList, title: 'Provide the Basic Details', text: 'Enter the make, model, registration year, mileage and other essential vehicle information.' },
-          { icon: Info, title: 'Add Vehicle Information', text: 'Describe the truck’s condition, fuel type, equipment and any relevant details. Upload photographs where possible.' },
-          { icon: Settings, title: 'Professional Assessment', text: 'Our team reviews the information submitted and evaluates the vehicle based on its specifications, condition and market factors.' },
-          { icon: MessageCircle, title: 'Discuss the Next Steps', text: 'We communicate the assessment and explain the available next steps for selling your truck.' },
+          { icon: '/images/doc.svg', title: 'Provide the Basic Details', text: 'Enter the make, model, registration year, mileage and other essential vehicle information.' },
+          { icon: '/images/info-blue.svg', title: 'Add Vehicle Information', text: 'Describe the truck’s condition, fuel type, equipment and any relevant details. Upload photographs where possible.' },
+          { icon: '/images/bilori-blue.svg', title: 'Professional Assessment', text: 'Our team reviews the information submitted and evaluates the vehicle based on its specifications, condition and market factors.' },
+          { icon: '/images/chat-blue.svg', title: 'Discuss the Next Steps', text: 'We communicate the assessment and explain the available next steps for selling your truck.' },
         ]}
       />
 
