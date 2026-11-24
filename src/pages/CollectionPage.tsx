@@ -1,5 +1,4 @@
 import { BookOpen, CreditCard, FileText, Search, ClipboardList, Eye, CheckCircle2, Wallet } from 'lucide-react';
-import { IMG } from '@/data/images';
 import Hero from '@/components/sections/Hero';
 import SplitSection from '@/components/sections/SplitSection';
 import FeatureGrid from '@/components/sections/FeatureGrid';
@@ -28,10 +27,10 @@ export default function CollectionPage() {
         badge="Our service area"
         title="Where to Sell Your Used Truck with Confidence"
         paragraphs={[
-          'ComprasTuCamión.es provides a professional, transparent truck-buying service across the main regions of Spain. We offer straightforward valuations based on the actual condition, specifications and market value of your vehicle.',
+          'CompramosTuCamión.es provides a professional, transparent truck-buying service across the main regions of Spain. We offer straightforward valuations based on the actual condition, specifications and market value of your vehicle.',
           'Whether you are a private seller, a business owner or managing a fleet, our team is ready to guide you through the process from first contact to final transfer. No unnecessary delays, no hidden conditions.',
         ]}
-        image={IMG.truckRoad}
+        image="/images/collection-right.png"
         cta={{ label: 'Get a Free Valuation' }}
       />
 
