@@ -1,4 +1,3 @@
-import { IMG } from '@/data/images';
 import Hero from '@/components/sections/Hero';
 import Steps from '@/components/sections/Steps';
 import FeatureGrid from '@/components/sections/FeatureGrid';
@@ -38,7 +37,7 @@ export default function HowItWorksPage() {
           { icon: '/images/handshake-regula-blue.svg', title: 'We Handle the Next Steps', text: 'Once you accept our offer, we’ll guide you through the required paperwork and arrange a convenient collection for your truck. Our team will support you throughout the process.' },
         ]}
       />
-
+  <div className="mx-2 rounded-3xl bg-surface sm:mx-3">
       <FeatureGrid
         badge="Sell with confidence"
         title="A Straightforward Way to Sell Your Truck"
@@ -51,15 +50,15 @@ export default function HowItWorksPage() {
           { icon: '/images/doc.svg', title: 'Paperwork and Documentation', text: 'We guide you through the required paperwork and administrative procedures involved in the vehicle transfer.' },
           { icon: '/images/diliver.svg', title: 'Collection Arrangements', text: 'We coordinate the collection process with you, helping make the final stage of selling your truck straightforward.' },
         ]}
-        className='!p-0'
       />
+  </div>
 
       <SplitSection
         reverse
         badge="Get started"
         title="Help Us Understand Your Truck"
         paragraphs={['To provide a more accurate valuation, share as much information as possible about your vehicle.']}
-        image={IMG.taxPapers}
+        image="/images/help.png"
         pills={['Truck make and model', 'Registration year', 'Mileage', 'Vehicle condition', 'Mechanical issues, if any', 'Recent photographs', 'Your contact details']}
         cta={{ label: 'Get a Free Valuation' }}
       />
