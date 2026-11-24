@@ -25,7 +25,7 @@ export default function SplitSection({
 }: Props) {
   return (
     <section className="section-y">
-      <div className="container-x grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
+      <div className="container-x grid items-center gap-8 lg:grid-cols-2 lg:gap-[53px]">
         <Img
           src={image}
           alt={imageAlt}

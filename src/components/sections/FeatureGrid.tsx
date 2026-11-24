@@ -36,8 +36,8 @@ export default function FeatureGrid({
                 variant === 'plain'
                   ? 'flex flex-col gap-5 p-2'
                   : variant === 'surface'
-                    ? 'flex flex-col gap-3 rounded-xl bg-surface p-5 sm:p-6'
-                    : 'flex flex-col gap-3 rounded-xl border border-slate-100 bg-white p-5 shadow-sm sm:p-6'
+                    ? 'flex flex-col gap-3 rounded-[12px] bg-surface py-5 sm:py-[35px] px-5 sm:px-[25px]'
+                    : 'flex flex-col gap-3 rounded-[12px] border border-slate-100 bg-white p-5 shadow-sm sm:p-6'
               } ${i % 2 === 1 ? 'sm:mt-10 lg:mt-12' : ''}`}
             >
               <span className="flex h-[58px] w-[58px] items-center justify-center rounded-[12px] border-2 border-[#E7E7E8] bg-[#F3F3F3] text-brand-orange">
