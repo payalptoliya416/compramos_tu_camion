@@ -21,8 +21,8 @@ export function CheckInline({ children, icon }: { children: string; icon?: strin
 /** Pill with orange checkmark, used in split sections. */
 export function CheckPill({ children }: { children: string }) {
   return (
-    <span className="inline-flex items-center gap-2.5 rounded-full bg-[#F3F3F3] px-5 py-3 text-sm sm:text-base text-[#3B3F45]">
-      <img src="/images/fill-checkmark.svg" alt="" className="h-5 w-5 shrink-0" />
+    <span className="inline-flex items-center gap-2 rounded-full bg-[#F3F3F3] px-5 py-3 text-sm sm:text-base text-[#3B3F45] border border-[#E7E7E8]">
+      <img src="/images/fill-checkmark.svg" alt="" className="shrink-0" />
       <span>{children}</span>
     </span>
   );
