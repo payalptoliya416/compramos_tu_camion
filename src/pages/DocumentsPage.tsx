@@ -1,8 +1,7 @@
-import { FileCheck2, Gauge, PenLine, ScrollText, Info } from 'lucide-react';
+import { Info } from 'lucide-react';
 import Hero from '@/components/sections/Hero';
 import SplitSection from '@/components/sections/SplitSection';
 import BrandLogos from '@/components/sections/BrandLogos';
-import FeatureGrid from '@/components/sections/FeatureGrid';
 import CtaBanner from '@/components/sections/CtaBanner';
 import ValuationForm from '@/components/sections/ValuationForm';
 import Faq from '@/components/sections/Faq';
@@ -45,6 +44,29 @@ const COMPANY_DOCS_CARDS = [
   },
 ];
 
+const PROCESS_CARDS = [
+  {
+    icon: '/images/doc-blue-checkmark.svg',
+    title: 'Identity and Ownership Validation',
+    text: "Verify the seller's and buyer's identities using the required DNI/NIE or company CIF and power of attorney. Confirm vehicle ownership and check for encumbrances that could prevent a valid sale.",
+  },
+  {
+    icon: '/images/right-sign.svg',
+    title: 'Technical and Tachograph Certification',
+    text: "Ensure the e-ITV reflects approved modifications and verify the tachograph's latest biennial inspection certificate. Defective seals or expired inspections may delay the transfer and lead to penalties.",
+  },
+  {
+    icon: '/images/diliver-orange.svg',
+    title: 'REAT and LOTT Compliance',
+    text: 'Verify that the MDL or MDP Transport Card is correctly registered with the REAT and check for outstanding penalties under the LOTT to support a smooth ownership transfer.',
+  },
+  {
+    icon: '/images/edit.svg',
+    title: 'Secure Contract and Notification of Sale',
+    text: 'Sign a detailed purchase agreement covering the delivery time and emissions declaration. Complete the Notification of Sale to inform the authorities that you are no longer responsible for the truck.',
+  },
+];
+
 export default function DocumentsPage() {
   return (
     <>
@@ -72,10 +94,10 @@ export default function DocumentsPage() {
           <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:gap-8">
             <div className="flex flex-col justify-between rounded-[16px] border border-[#E7E7E8] bg-white py-6 sm:py-8">
               <div>
-                <h3 className="text-lg sm:text-xl font-semibold text-brand-navy-dark">Document Checklist</h3>
+                <h3 className="text-lg sm:text-xl font-semibold text-brand-navy-dark px-4 md:px-[30px]">Document Checklist</h3>
                 <ul className="mt-[15px] divide-y divide-[#E7E7E8]">
                   {CHECKLIST.map((c) => (
-                    <li key={c} className="flex items-center gap-3.5 py-4 first:pt-2 last:pb-2 text-sm sm:text-base font-normal text-[#3B3F45]">
+                    <li key={c} className="flex items-center gap-3 py-[23px] text-sm sm:text-base 2xl:leading-[16px] text-[#3B3F45] px-4 md:px-[30px]">
                       <img src="/images/fill-checkmark.svg" alt="" className="h-5 w-5 shrink-0" />
                       <span>{c}</span>
                     </li>
@@ -136,17 +158,26 @@ export default function DocumentsPage() {
         showCall
       />
 
-      <FeatureGrid
-        badge="Understand the process"
-        title="From Document Review to Completing the Sale"
-        cols={2}
-        items={[
-          { icon: FileCheck2, title: 'Identity and Ownership Validation', text: 'Verify the seller’s and buyer’s identities using the required DNI/NIE or company CIF. Confirm vehicle ownership and check for encumbrances that could prevent a valid sale.' },
-          { icon: Gauge, title: 'Technical and Tachograph Certification', text: 'Ensure the e-ITV reflects approved modifications and verify the tachograph’s latest biennial inspection certificate. Defective seals or expired inspections may delay the transfer and lead to penalties.' },
-          { icon: ScrollText, title: 'REAT and LOTT Compliance', text: 'Verify that the MDL or MDP Transport Card is correctly registered with the REAT and check for outstanding penalties under the LOTT to support a smooth ownership transfer.' },
-          { icon: PenLine, title: 'Secure Contract and Notification of Sale', text: 'Sign a detailed purchase agreement covering the delivery time and emissions declaration. Complete the Notification of Sale to inform the authorities that you are no longer responsible for the truck.' },
-        ]}
-      />
+      {/* Understand the process */}
+      <section className="section-y">
+        <div className="container-x">
+          <SectionHeading badge="Understand the process" title="From Document Review to Completing the Sale" />
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+            {PROCESS_CARDS.map(({ icon, title, text }) => (
+              <article
+                key={title}
+                className="flex h-full flex-col rounded-[14px] border border-[#E7E7E8] bg-white p-6 sm:p-8"
+              >
+                <span className="flex h-[50px] w-[50px] items-center justify-center rounded-[12px] bg-[#F3F4F6]">
+                  <img src={icon} alt="" className="h-6 w-6 object-contain" />
+                </span>
+                <h3 className="mt-5 text-base sm:text-lg font-bold text-brand-navy-dark leading-snug">{title}</h3>
+                <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#3B3F45]">{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <ValuationForm />
       <Faq items={FAQ} />
