@@ -112,7 +112,7 @@ export default function SpecialSellingSituationsPage() {
             {SITUATION_CARDS.map(({ icon, title, text, btnText }, i) => (
               <article
                 key={title}
-                className={`flex h-full flex-col justify-between rounded-[20px] border border-[#E7E7E8] bg-white p-6 sm:p-7 shadow-sm ${
+                className={`flex h-full flex-col justify-between rounded-[12px] bg-white p-6 sm:p-[30px] ${
                   i % 2 === 1 ? 'sm:mt-8 lg:mt-12' : ''
                 }`}
               >
