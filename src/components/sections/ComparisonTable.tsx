@@ -48,6 +48,18 @@ function GreenCheck() {
   );
 }
 
+function renderCellText(text: string, isLight = false) {
+  const match = text.match(/^(.*?)\s*(\(.*?\))$/);
+  if (match) {
+    return (
+      <span>
+        {match[1]} <span className={`text-[11px] sm:text-xs font-normal ${isLight ? 'text-white/80' : 'text-[#6C6F73]'}`}>{match[2]}</span>
+      </span>
+    );
+  }
+  return <span>{text}</span>;
+}
+
 /** Comparison: We buy your truck vs concessionaire vs individuals. */
 export default function ComparisonTable() {
   return (
@@ -91,7 +103,7 @@ export default function ComparisonTable() {
                       className="flex py-[30px] items-center gap-[11px] px-[15px] text-sm font-medium text-white sm:text-base"
                     >
                       <GreenCheck />
-                      <span>{text}</span>
+                      {renderCellText(text, true)}
                     </div>
                   ))}
                 </div>
@@ -99,17 +111,17 @@ export default function ComparisonTable() {
 
               {/* Column 3: Concessionaire */}
               <div className="flex flex-col">
-                <div className="flex py-5 items-center justify-center rounded-[14px] bg-[#F3F3F3] text-base font-semibold text-[#0A0F16] md:text-lg">
+                <div className="flex py-5 items-center justify-center rounded-[14px] bg-[#F3F3F3] text-base font-semibold text-[#0A0F16] md:text-lg md:leading-[18px]">
                   Concessionaire
                 </div>
                 <div className="divide-y divide-[#E7E7E8]">
                   {DEALER.map((text) => (
                     <div
                       key={text}
-                      className="flex py-[30px] items-center gap-[11px] px-[15px] text-sm font-medium text-[#092B55] sm:text-base"
+                      className="flex py-[22px] items-center gap-[11px] px-[15px] text-sm font-medium text-[#092B55] sm:text-base"
                     >
                       <GreenCheck />
-                      <span>{text}</span>
+                      {renderCellText(text)}
                     </div>
                   ))}
                 </div>
@@ -117,17 +129,17 @@ export default function ComparisonTable() {
 
               {/* Column 4: Individuals */}
               <div className="flex flex-col">
-                <div className="flex py-5 items-center justify-center rounded-[14px] bg-[#F3F3F3] text-base font-semibold text-[#0A0F16] md:text-lg">
+                <div className="flex py-5 items-center justify-center rounded-[14px] bg-[#F3F3F3] text-base font-semibold text-[#0A0F16] md:text-lg md:leading-[18px]">
                   Individuals
                 </div>
                 <div className="divide-y divide-[#E7E7E8]">
                   {PRIVATE.map((text) => (
                     <div
                       key={text}
-                      className="flex py-[30px] items-center gap-[11px] px-[15px] text-sm font-medium text-[#092B55] sm:text-base"
+                      className="flex py-[22px] items-center gap-[11px] px-[15px] text-sm font-medium text-[#092B55] sm:text-base"
                     >
                       <GreenCheck />
-                      <span>{text}</span>
+                      {renderCellText(text)}
                     </div>
                   ))}
                 </div>
