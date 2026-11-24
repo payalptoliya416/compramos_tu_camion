@@ -28,7 +28,7 @@ export const IMG = {
   hero3500: p('hero-3500kg.jpg'),
 
   // content
-  truckBlueContainer: p('truck-blue-container.jpg'),
+  truckBlueContainer: p('Straightforward.png'),
   truckRoad: p('truck-road.jpg'),
   warehouseAerial: p('warehouse-aerial.jpg'),
   fleetWhiteRed: p('fleet-white-red.jpg'),
