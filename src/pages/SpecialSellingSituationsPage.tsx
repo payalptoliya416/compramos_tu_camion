@@ -102,17 +102,19 @@ export default function SpecialSellingSituationsPage() {
       />
 
       {/* 3. Solutions for Different Selling Situations (4 Cards) */}
-      <section className="section-y">
+      <section className="section-y bg-surface">
         <div className="container-x">
           <SectionHeading
             badge="How we can help"
             title="Solutions for Different Selling Situations"
           />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {SITUATION_CARDS.map(({ icon, title, text, btnText }) => (
+            {SITUATION_CARDS.map(({ icon, title, text, btnText }, i) => (
               <article
                 key={title}
-                className="flex h-full flex-col justify-between rounded-[20px] border border-[#E7E7E8] bg-white p-6 sm:p-7 shadow-sm"
+                className={`flex h-full flex-col justify-between rounded-[20px] border border-[#E7E7E8] bg-white p-6 sm:p-7 shadow-sm ${
+                  i % 2 === 1 ? 'sm:mt-8 lg:mt-12' : ''
+                }`}
               >
                 <div>
                   <span className="flex h-[48px] w-[48px] items-center justify-center rounded-[12px] bg-[#F8F9FA]">
@@ -141,13 +143,13 @@ export default function SpecialSellingSituationsPage() {
         badge="YOUR BUSINESS, YOUR NEEDS"
         title="Every Situation Deserves a Clear Explanation"
         paragraphs={[
-          'We believe transparency is key when dealing with complex situations. Our team reviews each case individually, explaining the valuation and legal considerations so there are no surprises.',
+          'You do not need to know every step before contacting us. Share the basic details of your truck and explain your circumstances. Our team can help you understand the information needed to assess your request.',
         ]}
-        image="/images/need.png"
+        image="/images/need02.png"
         pills={[
-          'No-obligation valuation and consultation.',
-          'Guidance on legal and transfer paperwork.',
-          'Support throughout the entire selling journey.',
+          'Explain your circumstances to our team.',
+          'Understand the information needed for your valuation.',
+          'Discuss the documentation and next steps for your situation.',
         ]}
       />
 
