@@ -102,31 +102,31 @@ export default function SpecialSellingSituationsPage() {
       />
 
       {/* 3. Solutions for Different Selling Situations (4 Cards) */}
-      <section className="section-y bg-surface">
+      <section className="section-y bg-surface sm:!pb-[140px] lg:!pb-[160px]">
         <div className="container-x">
           <SectionHeading
             badge="How we can help"
             title="Solutions for Different Selling Situations"
           />
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-[24px] sm:grid-cols-2 lg:grid-cols-4">
             {SITUATION_CARDS.map(({ icon, title, text, btnText }, i) => (
               <article
                 key={title}
-                className={`flex h-full flex-col justify-between rounded-[12px] bg-white p-6 sm:p-[30px] ${
+                className={`flex flex-col justify-between rounded-[12px] bg-white p-6 sm:p-[30px] lg:h-[450px] shadow-sm ${
                   i % 2 === 1 ? 'sm:mt-8 lg:mt-12' : ''
                 }`}
               >
                 <div>
-                  <span className="flex h-[48px] w-[48px] items-center justify-center rounded-[12px] bg-[#F8F9FA]">
-                    <img src={icon} alt="" className="h-6 w-6 object-contain" />
+                  <span className="flex h-[58px] w-[58px] items-center justify-center rounded-[12px] bg-[#F3F3F3] border border-[#E7E7E8]">
+                    <img src={icon} alt="" className="" />
                   </span>
-                  <h3 className="mt-5 text-base sm:text-lg font-bold text-brand-navy-dark leading-snug">{title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-[#6C6F73]">{text}</p>
+                  <h3 className="mt-5 text-base sm:text-lg font-semibold text-brand-navy-dark leading-snug">{title}</h3>
+                  <p className="mt-[15px] text-sm md:text-base leading-relaxed text-[#3B3F45]">{text}</p>
                 </div>
                 <div className="mt-8">
                   <Link
                     to="/get-a-free-valuation"
-                    className="inline-flex items-center justify-center rounded-full border border-brand-navy px-5 py-2.5 text-xs sm:text-sm font-medium text-brand-navy transition-colors hover:bg-brand-navy hover:text-white"
+                    className="inline-flex items-center justify-center rounded-full border border-brand-navy px-[30px] py-2.5 text-sm sm:text-base font-medium text-brand-navy transition-colors hover:bg-brand-navy hover:text-white"
                   >
                     {btnText}
                   </Link>
