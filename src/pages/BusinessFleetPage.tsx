@@ -1,4 +1,4 @@
-import { BarChart3, ClipboardCheck, FileText, Handshake, Truck } from 'lucide-react';
+import { BarChart3, ClipboardCheck, Handshake } from 'lucide-react';
 import { IMG } from '@/data/images';
 import Hero from '@/components/sections/Hero';
 import SplitSection from '@/components/sections/SplitSection';
