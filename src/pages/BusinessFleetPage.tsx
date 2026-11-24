@@ -101,17 +101,35 @@ export default function BusinessFleetPage() {
       <section className="section-y">
         <div className="container-x">
           <SectionHeading badge="Sale of used trucks" title="Sale of used trucks for companies" />
-          <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:items-start">
-            <Img src={IMG.fleetWhiteRed} alt="Used company trucks" className="aspect-[4/3] rounded-2xl lg:aspect-auto lg:h-full lg:min-h-[320px]" />
-            <div className="flex flex-col gap-4">
-              <p className="text-xs leading-relaxed text-slate-500 sm:text-sm">
-                In the business sector, truck sales are a strategic decision. Companies seek a fast and efficient process.
-              </p>
-              <p className="text-xs leading-relaxed text-slate-500 sm:text-sm">
-                We understand that time is money. That’s why we’ve optimized every step so that selling used trucks doesn’t interfere with your business operations. Simplify your fleet management.
-              </p>
-              <p className="text-xs font-semibold text-brand-navy-dark sm:text-sm">We buy your trucks, regardless of make, model, or condition.</p>
-              <Img src={IMG.fleetYellow} alt="Fleet of trucks" className="aspect-[16/9] rounded-2xl" />
+          <div className="mt-10 grid gap-8 lg:grid-cols-2 lg:items-stretch">
+            <div className="overflow-hidden rounded-[20px]">
+              <Img
+                src="/images/sale01.png"
+                alt="Used company trucks"
+                className="h-full w-full min-h-[320px] rounded-[20px]"
+                imgClassName="h-full w-full object-cover rounded-[20px]"
+              />
+            </div>
+            <div className="flex flex-col justify-between gap-6">
+              <div className="flex flex-col gap-4 text-sm sm:text-base leading-relaxed text-[#6C6F73]">
+                <p>
+                  In the business sector, truck sales are a strategic decision. Companies seek a fast and efficient process.
+                </p>
+                <p>
+                  We understand that time is money. That’s why we’ve optimized every step so that selling used trucks doesn’t interfere with your business operations. Simplify your fleet management.
+                </p>
+                <p className="font-semibold text-brand-navy-dark">
+                  We buy your trucks, regardless of make, model, or condition.
+                </p>
+              </div>
+              <div className="overflow-hidden rounded-[20px]">
+                <Img
+                  src="/images/sale02.png"
+                  alt="Fleet of trucks"
+                  className="w-full aspect-[16/9] rounded-[20px]"
+                  imgClassName="h-full w-full object-cover rounded-[20px]"
+                />
+              </div>
             </div>
           </div>
         </div>
