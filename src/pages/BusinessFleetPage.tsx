@@ -1,4 +1,3 @@
-import { BarChart3, ClipboardCheck, Handshake } from 'lucide-react';
 import { IMG } from '@/data/images';
 import Hero from '@/components/sections/Hero';
 import SplitSection from '@/components/sections/SplitSection';
@@ -101,7 +100,7 @@ export default function BusinessFleetPage() {
       <section className="section-y">
         <div className="container-x">
           <SectionHeading badge="Sale of used trucks" title="Sale of used trucks for companies" />
-          <div className="mt-10 grid gap-8 lg:grid-cols-2 lg:items-stretch">
+          <div className="mt-10 grid gap-[30px] lg:grid-cols-2 lg:items-stretch">
             <div className="overflow-hidden rounded-[20px]">
               <Img
                 src="/images/sale01.png"
@@ -111,7 +110,7 @@ export default function BusinessFleetPage() {
               />
             </div>
             <div className="flex flex-col justify-between gap-6">
-              <div className="flex flex-col gap-4 text-sm sm:text-base leading-relaxed text-[#6C6F73]">
+              <div className="flex flex-col gap-4 text-sm sm:text-base leading-relaxed text-[#3B3F45]">
                 <p>
                   In the business sector, truck sales are a strategic decision. Companies seek a fast and efficient process.
                 </p>
@@ -135,16 +134,41 @@ export default function BusinessFleetPage() {
         </div>
       </section>
 
-      <FeatureGrid
-        badge="A clearer selling process"
-        title="Make Your Next Fleet Sale Simpler"
-        items={[
-          { icon: BarChart3, title: 'Fair Valuation', text: 'The offer is reviewed in relation to the vehicle details and relevant market considerations to provide an appropriate assessment.' },
-          { icon: ClipboardCheck, title: 'Straightforward Process', text: 'Understand the information required and the steps involved in progressing a sale, with clear guidance at each stage.' },
-          { icon: Handshake, title: 'Payment and Documentation', text: 'Receive clear information about the agreed sale terms and required paperwork before proceeding with the transaction.' },
-        ]}
-        className="!pt-0"
-      />
+      <section className="section-y !pt-0">
+        <div className="container-x">
+          <SectionHeading badge="A clearer selling process" title="Make Your Next Fleet Sale Simpler" />
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                icon: '/images/fair-color.svg',
+                title: 'Fair Valuation',
+                text: 'The offer is reviewed in relation to the vehicle details and relevant market considerations to provide an appropriate assessment.',
+              },
+              {
+                icon: '/images/right-process.svg',
+                title: 'Straightforward Process',
+                text: 'Understand the information required and the steps involved in progressing a sale, with clear guidance at each stage.',
+              },
+              {
+                icon: '/images/payment.svg',
+                title: 'Payment and Documentation',
+                text: 'Receive clear information about the agreed sale terms and required paperwork before proceeding with the transaction.',
+              },
+            ].map(({ icon, title, text }) => (
+              <article
+                key={title}
+                className="flex h-full flex-col rounded-[18px] border border-[#E7E7E8] bg-white p-6 sm:p-8 shadow-sm"
+              >
+                <span className="flex h-[52px] w-[52px] items-center justify-center rounded-[12px] bg-[#F8F9FA]">
+                  <img src={icon} alt="" className="h-6 w-6 object-contain" />
+                </span>
+                <h3 className="mt-5 text-base font-semibold text-brand-navy-dark sm:text-xl">{title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-[#6C6F73] sm:text-base">{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <ValuationForm />
       <Testimonials />
