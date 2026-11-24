@@ -330,7 +330,7 @@ export default function ValuationForm({
                 <div className="flex justify-center pt-[15px] sm:col-span-2">
                   <button
                     type="submit"
-                    className="rounded-full bg-brand-orange px-[54px] py-4 text-sm sm:text-lg font-medium leading-[18px] text-white hover:bg-brand-orange-dark transition-colors cursor-pointer"
+                    className="rounded-full bg-brand-orange px-6 lg:px-10 xl:px-[54px] py-4 text-sm sm:text-lg font-medium leading-[18px] text-white hover:bg-brand-orange-dark transition-colors cursor-pointer"
                   >
                     Next Step
                   </button>
@@ -453,7 +453,7 @@ export default function ValuationForm({
                 <div className="flex justify-center pt-4 sm:col-span-2">
                   <button
                     type="submit"
-                    className="rounded-full bg-brand-orange px-[54px] py-4 text-sm sm:text-lg leading-[18px] font-medium text-white hover:bg-brand-orange-dark transition-colors cursor-pointer"
+                    className="rounded-full bg-brand-orange px-6 lg:px-10 xl:px-[54px] py-4 text-sm sm:text-lg leading-[18px] font-medium text-white hover:bg-brand-orange-dark transition-colors cursor-pointer"
                   >
                     Request My Valuation
                   </button>

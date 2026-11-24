@@ -214,7 +214,7 @@ export default function HomePage() {
               </p>
               <Link
                 to="/collection-across-spain"
-                className="btn-primary mt-2 self-start !px-[30px] !py-3.5 text-sm sm:text-base leading-[16px] font-medium"
+                className="btn-primary mt-2 self-start px-4 lg:!px-[30px] !py-3.5 text-sm sm:text-base leading-[16px] font-medium"
               >
                 Explore Our Coverage
               </Link>
