@@ -14,23 +14,18 @@ const US = [
   'Competitive',
 ];
 
-const RIGHT_ROWS = [
-  {
-    dealer: 'Safe',
-    individual: 'Risk of scams',
-  },
-  {
-    dealer: 'They do it.',
-    individual: "It's your responsibility",
-  },
-  {
-    dealer: 'Media (usually several weeks)',
-    individual: 'Leave (in some cases months)',
-  },
-  {
-    dealer: 'Low (commercial margins)',
-    individual: 'Variable (subject to change)',
-  },
+const DEALER = [
+  'Safe',
+  'They do it.',
+  'Media (usually several weeks)',
+  'Low (commercial margins)',
+];
+
+const PRIVATE = [
+  'Risk of scams',
+  "It's your responsibility",
+  'Leave (in some cases months)',
+  'Variable (subject to change)',
 ];
 
 function GreenCheck() {
@@ -65,7 +60,7 @@ export default function ComparisonTable() {
 
         <div className="mt-14 overflow-x-auto py-8">
           <div className="relative mx-auto rounded-[18px] border border-[#E7E7E8] bg-white p-4 lg:p-5">
-            <div className="grid grid-cols-[1.05fr_1.35fr_2.4fr] items-start gap-4 lg:gap-[35px]">
+            <div className="grid grid-cols-[1.05fr_1.35fr_1.2fr_1.2fr] items-start gap-4 lg:gap-[35px]">
 
               {/* Column 1: Factors */}
               <div className="flex flex-col overflow-hidden rounded-2xl border border-[#092B55] bg-white shadow-sm">
@@ -85,7 +80,7 @@ export default function ComparisonTable() {
               </div>
 
               {/* Column 2: We Buy Your Truck (Overlapping Top & Bottom) */}
-              <div className="-mt-6 -mb-6 z-10 flex flex-col overflow-hidden rounded-[14px] bg-[#092B55] p-[10px] shadow-2xl">
+              <div className="-mt-6 -mb-6 z-10 flex flex-col overflow-hidden rounded-[14px] bg-[#092B55] p-[10px]">
                 <div className="flex py-[22px] items-center justify-center bg-[#F17612] text-lg font-semibold text-white md:text-xl rounded-[14px]">
                   We Buy Your Truck
                 </div>
@@ -102,28 +97,37 @@ export default function ComparisonTable() {
                 </div>
               </div>
 
-              {/* Column 3: Concessionaire & Individuals (Continuous horizontal dividers) */}
+              {/* Column 3: Concessionaire */}
               <div className="flex flex-col">
-                <div className="grid grid-cols-2 gap-[30px]">
-                  <div className="flex py-5 items-center justify-center rounded-[14px] bg-[#F3F3F3] text-base font-semibold text-[#0A0F16] md:text-lg">
-                    Concessionaire
-                  </div>
-                  <div className="flex py-5 items-center justify-center rounded-[14px] bg-[#F3F3F3] text-base font-semibold text-[#0A0F16] md:text-lg">
-                    Individuals
-                  </div>
+                <div className="flex py-5 items-center justify-center rounded-[14px] bg-[#F3F3F3] text-base font-semibold text-[#0A0F16] md:text-lg">
+                  Concessionaire
                 </div>
-
                 <div className="divide-y divide-[#E7E7E8]">
-                  {RIGHT_ROWS.map((row, idx) => (
-                    <div key={idx} className="grid grid-cols-2 gap-4 h-[64px] items-center">
-                      <div className="flex items-center gap-2.5 px-3 text-xs font-medium text-[#092B55] sm:text-sm">
-                        <GreenCheck />
-                        <span>{row.dealer}</span>
-                      </div>
-                      <div className="flex items-center gap-2.5 px-3 text-xs font-medium text-[#092B55] sm:text-sm">
-                        <GreenCheck />
-                        <span>{row.individual}</span>
-                      </div>
+                  {DEALER.map((text) => (
+                    <div
+                      key={text}
+                      className="flex py-[30px] items-center gap-[11px] px-[15px] text-sm font-medium text-[#092B55] sm:text-base"
+                    >
+                      <GreenCheck />
+                      <span>{text}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Column 4: Individuals */}
+              <div className="flex flex-col">
+                <div className="flex py-5 items-center justify-center rounded-[14px] bg-[#F3F3F3] text-base font-semibold text-[#0A0F16] md:text-lg">
+                  Individuals
+                </div>
+                <div className="divide-y divide-[#E7E7E8]">
+                  {PRIVATE.map((text) => (
+                    <div
+                      key={text}
+                      className="flex py-[30px] items-center gap-[11px] px-[15px] text-sm font-medium text-[#092B55] sm:text-base"
+                    >
+                      <GreenCheck />
+                      <span>{text}</span>
                     </div>
                   ))}
                 </div>
