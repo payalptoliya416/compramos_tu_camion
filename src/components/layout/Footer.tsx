@@ -5,8 +5,8 @@ import Logo from './Logo';
 
 export default function Footer() {
   return (
-    <footer className="on-dark relative mx-2 mb-2 rounded-3xl bg-brand-navy-dark text-white sm:mx-3 sm:mb-3">
-      <div className="container-x pb-6 pt-24 sm:pt-28">
+    <footer className="on-dark relative mx-2 mb-2 rounded-3xl bg-[#0A0F16] text-white sm:mx-3 sm:mb-3">
+      <div className="container-x pb-6 pt-24 sm:pt-[224px]">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div className="flex max-w-xs flex-col gap-4">
             <Logo variant="footer" />

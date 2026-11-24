@@ -23,8 +23,13 @@ export default function CtaBanner({
   return (
     <section className="mx-2 sm:mx-3">
       <div className="relative overflow-hidden rounded-3xl bg-brand-navy">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.08),transparent_60%)]" aria-hidden />
-        <div className="container-x relative flex flex-col items-center gap-4 py-12 text-center sm:py-14">
+        <img
+          src="/images/cta-bg.png"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover object-center"
+          aria-hidden
+        />
+        <div className="container-x relative z-10 flex flex-col items-center gap-4 py-12 text-center sm:py-14">
           <Badge light>{badge}</Badge>
           <h2 className="max-w-2xl text-2xl font-medium leading-tight text-white sm:text-[40px] sm:leading-[40px]">{title}</h2>
           <p className="max-w-xl text-base leading-relaxed text-white/80">{text}</p>

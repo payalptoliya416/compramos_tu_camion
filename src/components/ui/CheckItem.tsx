@@ -3,7 +3,7 @@ import { CheckCircle2 } from 'lucide-react';
 /** Small inline check + label, used under hero / CTA banners. */
 export function CheckInline({ children }: { children: string }) {
   return (
-    <span className="inline-flex items-center gap-2 text-xs text-white/80 sm:text-sm">
+    <span className="inline-flex items-center gap-2 text-sm text-white sm:text-base">
       <img src="/images/rounded-checkmark.svg" alt="" className="h-[18px] w-[18px] shrink-0" />
       {children}
     </span>

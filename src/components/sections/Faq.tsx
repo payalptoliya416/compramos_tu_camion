@@ -24,7 +24,7 @@ export default function Faq({ items = FAQ_DEFAULT, title = 'Frequently Asked Que
           </p>
         </div>
 
-        <div className="divide-y divide-slate-200 border-y border-slate-200">
+        <div className="divide-y divide-[#E7E7E8] border-y border-[#E7E7E8]">
           {items.map((it, i) => {
             const isOpen = open === i;
             return (
@@ -33,12 +33,12 @@ export default function Faq({ items = FAQ_DEFAULT, title = 'Frequently Asked Que
                   type="button"
                   aria-expanded={isOpen}
                   onClick={() => setOpen(isOpen ? null : i)}
-                  className="flex w-full items-center justify-between gap-4 py-4 text-left text-sm font-medium text-brand-navy-dark"
+                  className="flex w-full items-center justify-between gap-4 py-5 text-left text-base leading-[16px] font-medium text-[#3B3F45] cursor-pointer"
                 >
                   {it.q}
-                  {isOpen ? <Minus className="h-4 w-4 shrink-0 text-slate-400" /> : <Plus className="h-4 w-4 shrink-0 text-slate-400" />}
+                  {isOpen ? <Minus className="h-4 w-4 shrink-0 text-[#F17612]" /> : <Plus className="h-4 w-4 shrink-0 text-[#9D9FA2]" />}
                 </button>
-                {isOpen && <p className="pb-4 text-xs leading-relaxed text-slate-500">{it.a}</p>}
+                {isOpen && <p className="pb-5 text-sm leading-relaxed text-[#6C6F73]">{it.a}</p>}
               </div>
             );
           })}
