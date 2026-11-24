@@ -24,15 +24,15 @@ export default function CtaBanner({
     <section className="mx-2 sm:mx-3">
       <div className="relative overflow-hidden rounded-3xl bg-brand-navy">
         <img
-          src="/images/cta-bg.png"
+          src="/images/started-bg.png"
           alt=""
           className="absolute inset-0 h-full w-full object-cover object-center"
           aria-hidden
         />
-        <div className="container-x relative z-10 flex flex-col items-center gap-4 py-12 text-center sm:py-14">
+        <div className="container-x relative z-10 flex flex-col items-center gap-4 py-12 text-center sm:py-[80px]">
           <Badge light>{badge}</Badge>
-          <h2 className="max-w-2xl text-2xl font-medium leading-tight text-white sm:text-[40px] sm:leading-[40px]">{title}</h2>
-          <p className="max-w-xl text-base leading-relaxed text-white/80">{text}</p>
+          <h2 className="max-w-3xl text-2xl font-medium leading-tight text-white sm:text-[40px] sm:leading-[40px]">{title}</h2>
+          <p className="max-w-2xl text-base leading-relaxed text-white/80">{text}</p>
           <div className="mt-2 flex flex-wrap justify-center gap-3">
             <CtaButton cta={primary} />
             {showCall && (
