@@ -1,4 +1,3 @@
-import { Camera, Package, Settings } from 'lucide-react';
 import Hero from '@/components/sections/Hero';
 import RecentPurchases from '@/components/sections/RecentPurchases';
 import FeatureGrid from '@/components/sections/FeatureGrid';
@@ -102,9 +101,9 @@ export default function ValuationPage() {
         title="Help Us Understand Your Truck’s Value"
         variant="surface"
         items={[
-          { icon: Package, title: 'Accurate Vehicle Details', text: 'Provide the make, model, registration year and mileage for the most accurate assessment of your vehicle.' },
-          { icon: Settings, title: 'Condition and Equipment', text: 'Describe the vehicle’s current condition and any specialist equipment, modifications or installed accessories.' },
-          { icon: Camera, title: 'Clear Photographs', text: 'Upload useful photographs showing the truck’s exterior, interior and relevant equipment.' },
+          { icon: '/images/accurate.svg', title: 'Accurate Vehicle Details', text: 'Provide the make, model, registration year and mileage for the most accurate assessment of your vehicle.' },
+          { icon: '/images/setting01.svg', title: 'Condition and Equipment', text: 'Describe the vehicle’s current condition and any specialist equipment, modifications or installed accessories.' },
+          { icon: '/images/camero.svg', title: 'Clear Photographs', text: 'Upload useful photographs showing the truck’s exterior, interior and relevant equipment.' },
         ]}
       />
 
