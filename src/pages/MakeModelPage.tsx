@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { Clock, FileText, ShieldOff } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -12,7 +13,6 @@ import Testimonials from '@/components/sections/Testimonials';
 import Faq from '@/components/sections/Faq';
 import FinalCta from '@/components/sections/FinalCta';
 import SectionHeading from '@/components/ui/SectionHeading';
-import Img from '@/components/ui/Img';
 import type { FaqItem } from '@/types';
 import 'swiper/css';
 
@@ -61,11 +61,46 @@ const MAKES = [
   },
 ];
 
-const MODELS = [
-  { name: 'Volvo FH 500', text: 'It’s the undisputed leader on long-distance routes thanks to its reliability, fuel-saving system and 500 hp engine make it the model we’re looking for most.', image: IMG.modelVolvo },
-  { name: 'Mercedes Actros', text: 'This range stands out for its cutting-edge technology, optimized aerodynamics, and driver assistance systems. These are large vehicles with guaranteed resale value, and we assure you of a highly profitable price.', image: IMG.modelActros },
-  { name: 'Scania V8', text: 'The legendary V8 engine is unique for its extreme power. Its exclusivity and performance under demanding conditions mean that our valuation is always high.', image: IMG.modelScania },
-  { name: 'DAF XF', text: 'A highly valued range. The spaciousness of its cab is its biggest competitive advantage. The most sought-after models for valuation are the DAF XF 480 and the DAF XF 530.', image: IMG.modelDaf },
+const MODELS: { name: string; text: ReactNode; image: string }[] = [
+  {
+    name: 'Volvo FH 500',
+    image: '/images/popuplar01.png',
+    text: (
+      <>
+        It’s the undisputed leader on long-distance routes thanks to its reliability. Its fuel-saving system and 500 hp engine make it{' '}
+        <strong className="font-semibold text-brand-navy-dark">the model we’re looking for most.</strong>
+      </>
+    ),
+  },
+  {
+    name: 'Mercedes Actros',
+    image: '/images/popuplar02.png',
+    text: (
+      <>
+        This range stands out for its cutting-edge technology, optimized aerodynamics, and driver assistance systems. These are large vehicles with guaranteed resale value, and{' '}
+        <strong className="font-semibold text-brand-navy-dark">we assure you of a highly profitable price .</strong>
+      </>
+    ),
+  },
+  {
+    name: 'Scania V8',
+    image: '/images/popuplar03.png',
+    text: (
+      <>
+        The legendary V8 engine is unique for its extreme power. Its exclusivity and performance under demanding conditions ensure that our{' '}
+        <strong className="font-semibold text-brand-navy-dark">valuation is always high.</strong>
+      </>
+    ),
+  },
+  {
+    name: 'DAF XF',
+    image: '/images/popuplar04.png',
+    text: (
+      <>
+        <strong className="font-semibold text-brand-navy-dark">A highly valued range.</strong> The spaciousness of its cab is its biggest competitive advantage. The most sought-after models for valuation are the DAF XF 480 and the DAF XF 530.
+      </>
+    ),
+  },
 ];
 
 const FAQ: FaqItem[] = [
@@ -106,14 +141,14 @@ export default function MakeModelPage() {
           </div>
           <div className="relative mt-10 px-4 sm:px-6">
             {/* Blur/fade gradients on both sides */}
-            <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-12 sm:w-24 lg:w-36 bg-gradient-to-r from-surface to-transparent" />
-            <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-12 sm:w-24 lg:w-36 bg-gradient-to-l from-surface to-transparent" />
+            <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-12 sm:w-24 lg:w-[400px] bg-gradient-to-r from-surface to-transparent" />
+            <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-12 sm:w-24 lg:w-[400px] bg-gradient-to-l from-surface to-transparent" />
 
             <Swiper
               modules={[Autoplay]}
               autoplay={{ delay: 3500, disableOnInteraction: false }}
               loop={true}
-              spaceBetween={24}
+              spaceBetween={30}
               slidesPerView={1.2}
               breakpoints={{
                 480: { slidesPerView: 1.5, spaceBetween: 20 },
@@ -125,18 +160,18 @@ export default function MakeModelPage() {
             >
               {MAKES.map((m) => (
                 <SwiperSlide key={m.name} className="h-auto">
-                  <article className="flex h-full flex-col items-center justify-between rounded-[16px] bg-white p-6 sm:p-[30px] text-center shadow-sm min-h-[380px]">
+                  <article className="flex h-full flex-col items-center justify-between rounded-[12px] bg-white py-5 sm:py-[35px] px-5 sm:px-[25px] text-center min-h-[402px]">
                     <div className="flex flex-col items-center">
-                      <span className="flex h-[72px] w-[72px] sm:h-[80px] sm:w-[80px] items-center justify-center rounded-[14px] bg-[#F8F9FA] border border-[#E7E7E8] p-3">
+                      <span className="flex h-[72px] w-[72px] sm:h-[110px] sm:w-[110px] items-center justify-center rounded-[14px] bg-[#F3F4F6]">
                         <img src={m.logo} alt={m.name} className="max-h-full max-w-full object-contain" />
                       </span>
-                      <h3 className="mt-5 text-lg sm:text-xl font-bold text-brand-navy-dark leading-snug">{m.name}</h3>
-                      <p className="mt-3 text-sm md:text-base leading-relaxed text-[#3B3F45]">{m.text}</p>
+                      <h3 className="mt-5 md:mt-[25px] text-lg sm:text-xl font-semibold text-brand-navy-dark leading-snug">{m.name}</h3>
+                      <p className="mt-3 text-sm md:text-base leading-relaxed text-[#6B7280]">{m.text}</p>
                     </div>
                     <div className="mt-6 w-full">
                       <Link
                         to="/get-a-free-valuation"
-                        className="inline-flex items-center justify-center rounded-full border border-brand-navy px-6 py-2.5 text-sm font-medium text-brand-navy transition-colors hover:bg-brand-navy hover:text-white"
+                        className="inline-flex items-center justify-center rounded-full border border-brand-navy px-[30px] py-[16px] text-base leading-[16px] font-medium text-brand-navy transition-colors hover:bg-brand-navy hover:text-white"
                       >
                         {m.cta}
                       </Link>
@@ -153,17 +188,17 @@ export default function MakeModelPage() {
       <section className="section-y">
         <div className="container-x">
           <SectionHeading badge="Popular models" title="The ranges and models we search for most" />
-          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-[#E7E7E8]">
             {MODELS.map((m) => (
-              <li key={m.name} className="overflow-hidden rounded-xl border border-slate-100 bg-white shadow-sm">
-                <Img src={m.image} alt={m.name} className="aspect-[4/3]" />
-                <div className="p-4">
-                  <h3 className="text-sm font-semibold text-brand-navy-dark">{m.name}</h3>
-                  <p className="mt-2 text-xs leading-relaxed text-slate-500">{m.text}</p>
+              <div key={m.name} className="flex flex-col lg:px-6 first:lg:pl-0 last:lg:pr-0">
+                <div className="overflow-hidden rounded-[12px] h-[220px] w-full">
+                  <img src={m.image} alt={m.name} className="h-full w-full object-cover" />
                 </div>
-              </li>
+                <h3 className="mt-5 text-lg font-bold text-brand-navy-dark sm:text-xl leading-snug">{m.name}</h3>
+                <p className="mt-3 text-sm md:text-base leading-relaxed text-[#3B3F45]">{m.text}</p>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
