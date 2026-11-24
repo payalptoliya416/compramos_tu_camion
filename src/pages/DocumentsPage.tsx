@@ -45,7 +45,7 @@ export default function DocumentsPage() {
         badge="Prepare for your sale"
         title="Get Your Truck Sale Documents Ready"
         paragraphs={['The documents required for a truck sale depend on the vehicle, ownership, seller type, and individual circumstances. Understanding the requirements early can help you prepare for the next steps.']}
-        image={IMG.documentsHand}
+        image="/images/prepare.png"
         cta={{ label: 'Start Your Valuation' }}
       />
 
