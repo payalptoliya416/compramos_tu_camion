@@ -1,8 +1,9 @@
-import { useRef, useState } from 'react';
-import { Quote, Star } from 'lucide-react';
-import { TESTIMONIALS } from '@/data/site';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
+import { Star } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
-import Img from '@/components/ui/Img';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 interface Props {
   title?: string;
@@ -10,56 +11,113 @@ interface Props {
   subtitle?: string;
 }
 
-/** Grid on desktop, swipeable snap carousel with dots on mobile. */
+const TESTIMONIAL_ITEMS = [
+  {
+    text: 'The process was very straightforward. They assessed my truck quickly and the whole transaction was handled professionally.',
+    name: 'Annette Black',
+    city: 'Valencia',
+    avatar: '/images/client01.png',
+  },
+  {
+    text: 'I needed to sell my refrigerated truck urgently and they helped me through the whole process efficiently. Highly recommended.',
+    name: 'Leslie Alexander',
+    city: 'Madrid',
+    avatar: '/images/client02.png',
+  },
+  {
+    text: 'The process is very simple. I entered the license plate number, received a valuation, and sold my car the same day. Very professional.',
+    name: 'Esther Howard',
+    city: 'Sevilla',
+    avatar: '/images/client03.png',
+  },
+  {
+    text: 'The process was very straightforward. They assessed my truck quickly and the whole transaction was handled professionally.',
+    name: 'Annette Black',
+    city: 'Valencia',
+    avatar: '/images/client01.png',
+  },
+  {
+    text: 'I needed to sell my refrigerated truck urgently and they helped me through the whole process efficiently. Highly recommended.',
+    name: 'Leslie Alexander',
+    city: 'Madrid',
+    avatar: '/images/client02.png',
+  },
+  {
+    text: 'The process is very simple. I entered the license plate number, received a valuation, and sold my car the same day. Very professional.',
+    name: 'Esther Howard',
+    city: 'Sevilla',
+    avatar: '/images/client03.png',
+  },
+];
+
 export default function Testimonials({
-  badge = 'Trusted by truck owners',
+  badge = 'Customer reviews',
   title = 'What Our Customers Say About Us',
-  subtitle,
+  subtitle = 'Discover what customers have to say about their experience selling a truck with our team.',
 }: Props) {
-  const ref = useRef<HTMLUListElement>(null);
-  const [active, setActive] = useState(0);
-
-  const onScroll = () => {
-    const el = ref.current;
-    if (!el) return;
-    setActive(Math.round(el.scrollLeft / (el.scrollWidth / TESTIMONIALS.length)));
-  };
-
   return (
     <section className="section-y">
       <div className="container-x">
         <SectionHeading badge={badge} title={title} subtitle={subtitle} />
-        <ul
-          ref={ref}
-          onScroll={onScroll}
-          className="-mx-4 mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 [scrollbar-width:none] md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 [&::-webkit-scrollbar]:hidden"
-        >
-          {TESTIMONIALS.map((t) => (
-            <li
-              key={t.name}
-              className="flex w-[85%] shrink-0 snap-center flex-col gap-4 rounded-xl border border-slate-100 bg-white p-5 shadow-sm sm:w-[60%] md:w-auto"
-            >
-              <div className="flex items-center justify-between">
-                <Quote className="h-7 w-7 text-slate-200" />
-                <div className="flex gap-0.5 text-yellow-400" aria-label="5 out of 5 stars">
-                  {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-3.5 w-3.5 fill-current" />)}
-                </div>
-              </div>
-              <p className="flex-1 text-xs italic leading-relaxed text-slate-500 sm:text-[13px]">“{t.text}”</p>
-              <div className="flex items-center gap-3">
-                <Img src={t.avatar} alt={t.name} className="h-9 w-9 rounded-full" />
-                <div className="leading-tight">
-                  <p className="text-sm font-medium text-brand-navy-dark">{t.name}</p>
-                  <p className="text-xs text-slate-400">{t.city}</p>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
-        <div className="mt-4 flex justify-center gap-1.5 md:hidden" aria-hidden>
-          {TESTIMONIALS.map((t, i) => (
-            <span key={t.name} className={`h-1.5 rounded-full transition-all ${i === active ? 'w-5 bg-brand-orange' : 'w-1.5 bg-slate-300'}`} />
-          ))}
+
+        <div className="mt-10">
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            slidesPerView={1}
+            spaceBetween={20}
+            loop={true}
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            pagination={{
+              clickable: true,
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 24,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+            }}
+            className="testimonials-swiper !pb-2"
+          >
+            {TESTIMONIAL_ITEMS.map((t, idx) => (
+              <SwiperSlide key={idx} className="!h-auto">
+                <article className="flex h-full flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-6 sm:p-7 shadow-sm transition-all hover:shadow-md">
+                  <div>
+                    {/* Top Row: Invert Quote Image & Stars */}
+                    <div className="flex items-center justify-between">
+                      <img src="/images/invert.png" alt="" className="h-6 w-auto object-contain" />
+                      <div className="flex gap-1 text-[#FBBF24]" aria-label="5 out of 5 stars">
+                        {Array.from({ length: 5 }).map((_, i) => (
+                          <Star key={i} className="h-4 w-4 fill-[#FBBF24] text-[#FBBF24]" />
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Review Text */}
+                    <p className="mt-5 text-sm sm:text-base leading-relaxed text-[#3B3F45] italic">
+                      “{t.text}”
+                    </p>
+                  </div>
+
+                  {/* Customer Info */}
+                  <div className="mt-8 flex items-center gap-3 pt-2">
+                    <img
+                      src={t.avatar}
+                      alt={t.name}
+                      className="h-11 w-11 rounded-full object-cover border border-slate-100"
+                    />
+                    <div>
+                      <h4 className="text-sm sm:text-base font-bold text-brand-navy">{t.name}</h4>
+                      <p className="text-xs text-[#6C6F73]">{t.city}</p>
+                    </div>
+                  </div>
+                </article>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>

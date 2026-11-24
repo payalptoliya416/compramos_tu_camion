@@ -40,7 +40,6 @@ export default function TruckCategories({
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4">
                   <h3 className="text-sm font-semibold text-white sm:text-base">{c.title}</h3>
-                  <p className="mt-0.5 hidden text-[11px] leading-snug text-white/70 sm:line-clamp-2 sm:block">{c.text}</p>
                 </div>
               </Link>
             </li>
