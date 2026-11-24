@@ -36,7 +36,7 @@ export default function DocumentsPage() {
         badge="Selling documentation"
         title="Know Which Documents You Need to Sell Your Truck"
         text="Prepare the right documents to sell your truck with confidence. Follow our guide to understand the paperwork required for a smooth sale."
-        image={IMG.heroDocuments}
+        image="/images/documents-banner.png"
         primary={{ label: 'Get a Truck Valuation' }}
         checks={['Document Checklist', 'Professional Guidance', 'Smooth Selling Process']}
       />
