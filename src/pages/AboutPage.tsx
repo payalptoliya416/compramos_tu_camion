@@ -215,10 +215,10 @@ export default function AboutPage() {
                     />
                   </div>
                   <div className="mt-[15px] flex items-center justify-between gap-2">
-                    <span className="text-xs sm:text-base font-medium text-[#082B54]">
+                    <span className="text-xs sm:text-base lg:leading-[16px] font-medium text-[#082B54]">
                       {s.title}
                     </span>
-                    <ChevronRight className="h-4 w-4 shrink-0 text-black" />
+                    <img src="/images/right-errow.svg" alt="" />
                   </div>
                 </Link>
               </li>
