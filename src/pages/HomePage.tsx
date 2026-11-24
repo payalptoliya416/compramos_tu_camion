@@ -29,14 +29,26 @@ const HELP_CARDS = [
 ];
 
 const FAQ: FaqItem[] = [
-  { q: 'How can I sell my used truck?', a: 'You can start by filling in our free online valuation form or calling our team directly. Share the details of your vehicle and we will guide you through the next steps.' },
-  { q: 'What information do you need to value my truck?', a: 'The make, model, registration year, mileage, transmission and body type. Photos help us prepare a more accurate offer.' },
-  { q: 'Can I sell an older truck with high mileage?', a: 'Yes. We consider trucks of different ages and mileages and assess each vehicle individually.' },
-  { q: 'Do you buy damaged or non-running trucks?', a: 'Tell us about the fault or condition and our team will review the best options for your vehicle.' },
-  { q: 'What documents are required to sell my truck?', a: 'Generally the vehicle registration certificate, technical inspection card and the owner’s identification. We confirm what applies to your case.' },
-  { q: 'How are payment and collection arranged?', a: 'Once the offer is accepted, we explain the payment terms and coordinate collection at a time that suits you.' },
-  { q: 'Do you buy trucks from companies and fleets?', a: 'Yes. We assist individual owners, transport companies and businesses selling one or several vehicles.' },
-  { q: 'Where in Spain do you offer your service?', a: 'We coordinate truck collection across Spain, from the Mediterranean coast to Andalusia and beyond.' },
+  {
+    q: 'What factors increase or decrease the price of a used truck in the appraisal?',
+    a: 'The price of a used truck is primarily determined by the make and model (premium and reliable brands, such as Scania or Volvo, tend to hold their value better); the actual mileage relative to its age ; and its overall condition . Rigorous and documented maintenance, along with good mechanical and aesthetic condition, will significantly increase the final valuation.',
+  },
+  {
+    q: 'Is the online valuation the final offer or subject to review after seeing the truck?',
+    a: 'The initial valuation you receive online is a provisional offer based on the information you provided . While it is our official offer, it is always subject to review and confirmation in person. Upon inspecting the truck, if we detect any undisclosed mechanical issues (such as gearbox problems, engine oil leaks, or a worn clutch), the final price we pay for your truck will be adjusted downwards to reflect the cost of these repairs.',
+  },
+  {
+    q: 'If the truck is insured, what happens to the truck insurance after the sale?',
+    a: 'Once the purchase is finalized, truck insurance is no longer required, as our company has fleet insurance that covers the vehicle from the time of acquisition and throughout its transport. The current owner must cancel their insurance policy with their company. We will provide the transfer and purchase documentation within 24 hours.',
+  },
+  {
+    q: 'What is the maximum acceptable mileage and year of manufacture for selling a used truck?',
+    a: 'We buy your truck without strict mileage or year of manufacture limits. Thanks to our business of buying and selling commercial vehicles, we buy your truck regardless of mileage, as the overall condition and operational capability of the vehicle are more important than the number of kilometers driven.',
+  },
+  {
+    q: 'When is payment made: upon signing, upon delivery of the truck, or after collection?',
+    a: 'Full payment of the agreed amount is made immediately after the vehicle is collected . Once our team has inspected the truck and confirmed its condition and documentation, the bank transfer or other agreed payment method is processed.',
+  },
 ];
 
 export default function HomePage() {
