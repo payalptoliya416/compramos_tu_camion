@@ -11,12 +11,30 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import type { FaqItem } from '@/types';
 
 const FAQ: FaqItem[] = [
-  { q: 'Can I sell multiple trucks at once?', a: 'Yes. We can assess multiple trucks as part of a single enquiry. Share your fleet details with us, and our team will review your request.' },
-  { q: 'Do you buy trucks from transport companies and businesses?', a: 'Yes. We assist transport companies, operators and businesses selling commercial vehicles.' },
-  { q: 'Can I sell only part of my fleet?', a: 'Yes. You can sell the vehicles you no longer need and keep the rest of your fleet.' },
-  { q: 'How is the value of a fleet calculated?', a: 'Each truck is reviewed individually based on its specifications, condition and market considerations.' },
-  { q: 'Can you arrange collection for multiple trucks?', a: 'Yes. We coordinate collection arrangements across Spain, including for several vehicles.' },
-  { q: 'Do I need to prepare each truck before selling?', a: 'No special preparation is required. Our team will explain what information and documents are helpful.' },
+  {
+    q: 'Can I sell multiple trucks at once?',
+    a: 'Yes. We can assess multiple trucks as part of a single enquiry. Share your fleet details with us, and our team will review your requirements.',
+  },
+  {
+    q: 'Do you buy trucks from transport companies and businesses?',
+    a: 'Yes. We work with transport companies, logistics businesses, fleet operators and other commercial businesses looking to sell their trucks.',
+  },
+  {
+    q: 'Can I sell only part of my fleet?',
+    a: "Yes. You don't need to sell your entire fleet. We can assess individual vehicles or selected trucks based on your needs.",
+  },
+  {
+    q: 'How is the value of a fleet calculated?',
+    a: 'Each truck is assessed based on its make, model, age, mileage, condition and current market value. The number of vehicles and their specifications are also considered.',
+  },
+  {
+    q: 'Can you arrange collection for multiple trucks?',
+    a: 'We can coordinate collection arrangements for multiple vehicles. The details and schedule can be discussed with our team.',
+  },
+  {
+    q: 'Do I need to prepare each truck before selling?',
+    a: 'Not necessarily. Share the current condition and available details of each vehicle so we can assess your fleet and discuss the next steps.',
+  },
 ];
 
 export default function BusinessFleetPage() {
@@ -43,7 +61,7 @@ export default function BusinessFleetPage() {
       <section className="section-y !pt-4">
         <div className="container-x">
           <SectionHeading badge="Why work with us" title="Support for Your Business Truck Sales" />
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-[24px] sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 icon: '/images/fleet.svg',
@@ -136,7 +154,7 @@ export default function BusinessFleetPage() {
       <section className="section-y !pt-0">
         <div className="container-x">
           <SectionHeading badge="A clearer selling process" title="Make Your Next Fleet Sale Simpler" />
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-[24px] sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 icon: '/images/fair-color.svg',
@@ -156,7 +174,7 @@ export default function BusinessFleetPage() {
             ].map(({ icon, title, text }) => (
               <article
                 key={title}
-                className="flex h-full flex-col rounded-[18px] border border-[#E7E7E8] bg-white p-6 sm:p-8 shadow-sm"
+                className="flex h-full flex-col rounded-[18px] border border-[#E7E7E8] bg-white py-5 sm:py-[35px] px-5 sm:px-[25px]"
               >
                 <span className="flex h-[52px] w-[52px] items-center justify-center rounded-[12px] bg-[#F8F9FA]">
                   <img src={icon} alt="" className="h-6 w-6 object-contain" />
