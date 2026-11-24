@@ -39,7 +39,7 @@ export default function Hero({ badge, title, text, image, primary, secondary, ch
             {/* Pill Badge */}
             <div
               style={{ backgroundImage: `url('/images/label-bg.png')`, backgroundSize: '100% 100%' }}
-              className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2 text-xs sm:text-sm font-medium uppercase tracking-wider text-brand-orange bg-no-repeat bg-center"
+              className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2 text-xs sm:text-sm leading-[14px] font-medium uppercase tracking-wider text-brand-orange bg-no-repeat bg-center"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-brand-orange" />
               <span>{badge}</span>

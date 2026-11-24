@@ -33,7 +33,7 @@ export default function Faq({ items = FAQ_DEFAULT, title = 'Frequently Asked Que
                   type="button"
                   aria-expanded={isOpen}
                   onClick={() => setOpen(isOpen ? null : i)}
-                  className="flex w-full items-center justify-between gap-4 py-5 text-left text-base leading-[16px] font-medium text-[#3B3F45] cursor-pointer"
+                  className="flex w-full items-center justify-between gap-4 py-5 text-left text-base xl:leading-[16px] font-medium text-[#3B3F45] cursor-pointer"
                 >
                   {it.q}
                   {isOpen ? <Minus className="h-4 w-4 shrink-0 text-[#F17612]" /> : <Plus className="h-4 w-4 shrink-0 text-[#9D9FA2]" />}

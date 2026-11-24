@@ -172,9 +172,9 @@ export default function HomePage() {
           />
 
           <div className="container-x relative z-10 py-12 sm:py-16 lg:py-20">
-            <div className="flex max-w-xl flex-col items-start gap-4 text-white">
+            <div className="flex max-w-[630px] flex-col items-start gap-5 text-white">
               <Badge light>Nationwide collection</Badge>
-              <h2 className="text-2xl font-medium leading-tight text-white sm:text-[40px] sm:leading-[48px]">
+              <h2 className="text-2xl font-medium leading-tight text-white sm:text-[40px] sm:leading-[60px]">
                 We Collect Commercial Trucks Across Spain
               </h2>
               <p className="text-sm sm:text-base leading-relaxed text-[#E7E7E8]">
@@ -189,19 +189,19 @@ export default function HomePage() {
                 ].map((t) => (
                   <li
                     key={t}
-                    className="inline-flex items-center gap-2.5 rounded-[30px] bg-white/[0.08] border border-white/[0.15] px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-normal text-white backdrop-blur-[2px]"
+                    className="inline-flex items-center gap-2.5 rounded-[30px] bg-white/[0.08] border border-white/[0.15] px-4 sm:px-5 py-2.5 text-sm sm:text-base font-normal text-white backdrop-blur-[2px]"
                   >
                     <img src="/images/fill-checkmark.svg" alt="" className="h-4 w-4 shrink-0" />
                     <span>{t}</span>
                   </li>
                 ))}
               </ul>
-              <p className="mt-1 text-xs sm:text-sm text-[#CBD5E1]">
+              <p className="mt-1 text-sm sm:text-base text-[#E7E7E8]">
                 And many more locations across all Spanish provinces.
               </p>
               <Link
                 to="/collection-across-spain"
-                className="btn-primary mt-2 self-start !px-[30px] !py-3.5 text-sm sm:text-base font-medium"
+                className="btn-primary mt-2 self-start !px-[30px] !py-3.5 text-sm sm:text-base leading-[16px] font-medium"
               >
                 Explore Our Coverage
               </Link>

@@ -48,8 +48,8 @@ export default function Footer() {
         </div>
 
         <div className="mt-[30px] flex flex-col gap-3 border-t border-[#3B3F45] pt-6 text-sm text-[#E7E7E8] sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Compramos Tu Camion. All rights reserved.</p>
-          <div className="flex gap-6">
+          <p className='text-center sm:text-left'>© {new Date().getFullYear()} Compramos Tu Camion. All rights reserved.</p>
+          <div className="flex gap-6 justify-center sm:justify-normal">
             <a href="#" className="hover:text-white">Privacy Policy</a>
             <a href="#" className="hover:text-white">Legal Notice</a>
             <a href="#" className="hover:text-white">Cookie Policy</a>
