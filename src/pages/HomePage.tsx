@@ -136,6 +136,7 @@ export default function HomePage() {
       <Testimonials
         badge="Customer reviews"
         subtitle="Discover what customers have to say about their experience selling a truck with our team."
+        className="!pt-0"
       />
 
       <TruckCategories
