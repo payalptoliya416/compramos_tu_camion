@@ -12,6 +12,7 @@ export const IMG = {
   // heroes
   heroBusiness: p('hero-business-fleet.jpg'),
   heroHome: p('home-hero-banner.png'),
+  privateHome: p('private-herobanner.png'),
   heroHow: p('hero-how-it-works.jpg'),
   heroCollection: p('hero-collection-spain.jpg'),
   heroDocuments: p('hero-documents.jpg'),

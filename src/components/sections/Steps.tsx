@@ -21,7 +21,7 @@ export default function Steps({ badge, title, subtitle, steps, action, className
     <section className={`section-y ${className}`}>
       <div className="container-x">
         {action ? (
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between flex-wrap">
             <SectionHeading badge={badge} title={title} subtitle={subtitle} align="left" />
             <CtaButton cta={action} />
           </div>
@@ -48,8 +48,8 @@ export default function Steps({ badge, title, subtitle, steps, action, className
                   <Icon className="h-6 w-6" />
                 )}
               </span>
-              <h3 className="mt-5 sm:mt-[25px] text-base font-medium text-brand-navy-dark sm:text-xl">{t}</h3>
-              <p className="mt-[15px] max-w-[380px] text-xs leading-relaxed text-[#3B3F45] sm:text-base">{text}</p>
+              <h3 className="mt-5 sm:mt-[25px] text-lg font-medium text-brand-navy-dark sm:text-xl">{t}</h3>
+              <p className="mt-[15px] max-w-[380px] text-sm leading-relaxed text-[#3B3F45] sm:text-base">{text}</p>
             </li>
           ))}
         </ol>

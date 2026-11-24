@@ -97,21 +97,21 @@ export default function Testimonials({
                     </div>
 
                     {/* Review Text */}
-                    <p className="mt-6 text-base sm:text-lg leading-relaxed text-[#6C6F73] italic">
+                    <p className="mt-6 text-sm lg:text-base xl:text-lg leading-relaxed text-[#6C6F73] italic">
                       “{t.text}”
                     </p>
                   </div>
 
                   {/* Customer Info */}
-                  <div className="mt-10 flex items-center gap-[10px]">
+                  <div className="mt-6 xl:mt-10 flex items-center gap-[10px]">
                     <img
                       src={t.avatar}
                       alt={t.name}
                       className="h-11 w-11 rounded-full object-cover"
                     />
                     <div>
-                      <h4 className="text-base sm:text-xl text-[#092B55]">{t.name}</h4>
-                      <p className="text-lg text-[#6C6F73]">{t.city}</p>
+                      <h4 className="text-base xl:text-xl text-[#092B55]">{t.name}</h4>
+                      <p className="text-base xl:text-lg text-[#6C6F73]">{t.city}</p>
                     </div>
                   </div>
                 </article>

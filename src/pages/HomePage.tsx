@@ -137,7 +137,7 @@ export default function HomePage() {
       {/* How can we help */}
       <section className="pb-12 md:pb-16 lg:pb-20">
         <div className="container-x">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between flex-wrap">
             <SectionHeading badge="Your situation, our promise" title="How can we help?" align="left" />
             <CtaButton cta={{ label: 'I Want to Sell My Truck', to: '/get-a-free-valuation' }} />
           </div>
@@ -145,7 +145,7 @@ export default function HomePage() {
             {HELP_CARDS.map((c) => (
               <li key={c.title} className="flex flex-col overflow-hidden rounded-[12px] border border-[#E7E7E8] bg-white">
                 <Img src={c.image} alt={c.title} className="aspect-[16/10]" />
-                <div className="flex flex-1 flex-col gap-[10px] p-[25px]">
+                <div className="flex flex-1 flex-col gap-[10px] p-5 md:p-[25px]">
                   <h3 className="text-sm sm:text-base font-semibold text-[#0A0F16]">{c.title}</h3>
                   <p className="text-sm leading-relaxed text-[#6C6F73]">{c.text}</p>
                 </div>

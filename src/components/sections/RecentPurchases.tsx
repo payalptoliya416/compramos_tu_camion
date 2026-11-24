@@ -20,7 +20,7 @@ export default function RecentPurchases({
   const body = (
     <section className="section-y !pb-0">
       <div className="container-x">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between flex-wrap">
           <SectionHeading badge={badge} title={title} subtitle={subtitle} align="left" />
           <CtaButton
             cta={{ label: 'I Want to Sell My Truck', to: '/get-a-free-valuation' }}

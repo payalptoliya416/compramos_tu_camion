@@ -49,7 +49,7 @@ export default function FeatureGrid({
               </span>
               <h3 className="text-base font-medium text-brand-navy-dark sm:text-xl">{t}</h3>
               <p className="text-sm leading-relaxed text-[#3B3F45] sm:text-base">{text}</p>
-              {variant === 'plain' && <span className="mt-1 h-0.5 w-6 bg-brand-orange" />}
+              {variant === 'plain' && <span className="mt-1 h-0.5 w-[32px] bg-brand-orange" />}
             </article>
           ))}
         </div>

@@ -25,14 +25,14 @@ export default function TruckCategories({
     <section className="section-y">
       <div className="container-x">
         {action ? (
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between flex-wrap">
             <SectionHeading badge={badge} title={title} subtitle={subtitle} align="left" />
             <CtaButton cta={action} />
           </div>
         ) : (
           <SectionHeading badge={badge} title={title} subtitle={subtitle} />
         )}
-        <ul className="mt-10 grid grid-cols-2 gap-3 sm:gap-[24px] lg:grid-cols-4">
+        <ul className="mt-10 grid grid-cols-1 gap-3 sm:gap-[24px] lg:grid-cols-4">
           {CATEGORIES.map((c) => (
             <li key={c.title}>
               <Link to={c.to} className="group relative block aspect-[4/3] overflow-hidden rounded-[12px]">

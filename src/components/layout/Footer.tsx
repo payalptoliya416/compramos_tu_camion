@@ -10,13 +10,13 @@ export default function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div className="flex max-w-xl flex-col gap-4">
             <Logo variant="footer" />
-            <p className="text-base leading-relaxed text-[#E7E7E8]">{SITE.about}</p>
+            <p className="text-sm md:text-base leading-relaxed text-[#E7E7E8]">{SITE.about}</p>
           </div>
 
           {FOOTER_COLS.map((col) => (
             <div key={col.title}>
-              <h3 className="mb-[25px] text-lg leading-[18px] font-medium">{col.title}</h3>
-              <ul className="space-y-5 text-base text-[#E7E7E8]">
+              <h3 className="mb-[25px] text-base md:text-lg leading-[18px] font-medium">{col.title}</h3>
+              <ul className="space-y-3 sm:space-y-5 text-sm md:text-base text-[#E7E7E8]">
                 {col.links.map((l) => (
                   <li key={l.label}>
                     <Link to={l.to} className="hover:text-brand-orange">
@@ -29,8 +29,8 @@ export default function Footer() {
           ))}
 
           <div>
-            <h3 className="mb-[25px] text-lg leading-[18px] font-medium">Contact</h3>
-            <ul className="space-y-5 text-base text-[#E7E7E8]">
+            <h3 className="mb-[25px]  text-base md:text-lg leading-[18px] font-medium">Contact</h3>
+            <ul className="space-y-3 sm:space-y-5 text-sm sm:text-base text-[#E7E7E8]">
               <li className="flex items-start gap-3">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0" />
                 <a href={SITE.phoneHref} className="hover:text-brand-orange">{SITE.phone}</a>
@@ -49,7 +49,7 @@ export default function Footer() {
 
         <div className="mt-[30px] flex flex-col gap-3 border-t border-[#3B3F45] pt-6 text-sm text-[#E7E7E8] sm:flex-row sm:items-center sm:justify-between">
           <p className='text-center sm:text-left'>© {new Date().getFullYear()} Compramos Tu Camion. All rights reserved.</p>
-          <div className="flex gap-6 justify-center sm:justify-normal">
+          <div className="flex gap-3 lg:gap-6 justify-center sm:justify-normal flex-wrap">
             <a href="#" className="hover:text-white">Privacy Policy</a>
             <a href="#" className="hover:text-white">Legal Notice</a>
             <a href="#" className="hover:text-white">Cookie Policy</a>

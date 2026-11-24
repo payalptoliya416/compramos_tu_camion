@@ -70,7 +70,7 @@ export default function PrivateSellersPage() {
           </div>
           <ul className="grid gap-4 sm:grid-cols-3 sm:gap-4 xl:gap-5">
             {WHY.map(({ icon, title, text }) => (
-              <li key={title} className="flex flex-col items-start text-left p-4 sm:p-5 xl:p-[30px]">
+              <li key={title} className="flex flex-col items-start text-left sm:px-2 xl:px-[30px] py-4 sm:py-5 xl:py-[30px]">
                 <span className="flex h-[58px] w-[58px] items-center justify-center rounded-[14px] border border-[#E7E7E8] bg-[#F8F9FA]">
                   <img src={icon} alt="" className="" />
                 </span>
