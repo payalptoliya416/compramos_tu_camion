@@ -1,8 +1,9 @@
+import { useState, useRef } from 'react';
+import type { Swiper as SwiperType } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import SectionHeading from '@/components/ui/SectionHeading';
 import 'swiper/css';
-import 'swiper/css/pagination';
 
 interface Props {
   badge?: string;
@@ -30,6 +31,10 @@ export default function BrandLogos({
   subtitle,
   band,
 }: Props) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const swiperRef = useRef<SwiperType | null>(null);
+  const DOTS_COUNT = 4;
+
   const body = (
     <section className="section-y">
       <div className="container-x">
@@ -37,19 +42,24 @@ export default function BrandLogos({
 
         <div className="mt-8">
           <Swiper
-            modules={[Pagination, Autoplay]}
+            modules={[Autoplay]}
             slidesPerView={2}
             spaceBetween={16}
             loop={true}
             autoplay={{ delay: 3000, disableOnInteraction: false }}
-            pagination={{ clickable: true }}
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+            onSlideChange={(swiper) => {
+              setActiveIndex(Math.floor((swiper.realIndex % 7) / 2) % DOTS_COUNT);
+            }}
             breakpoints={{
               480: { slidesPerView: 3, spaceBetween: 16 },
               640: { slidesPerView: 4, spaceBetween: 18 },
               768: { slidesPerView: 5, spaceBetween: 20 },
               1024: { slidesPerView: 7, spaceBetween: 20 },
             }}
-            className="brand-logos-swiper !pb-2"
+            className="brand-logos-swiper"
           >
             {SLIDES.map((b, i) => (
               <SwiperSlide key={`${b.name}-${i}`}>
@@ -63,6 +73,26 @@ export default function BrandLogos({
               </SwiperSlide>
             ))}
           </Swiper>
+
+          {/* Clean 4 pagination dots matching Figma */}
+          <div className="mt-5 flex items-center justify-center gap-1.5">
+            {Array.from({ length: DOTS_COUNT }).map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                aria-label={`Go to slide ${i + 1}`}
+                onClick={() => {
+                  setActiveIndex(i);
+                  swiperRef.current?.slideToLoop(i * 2);
+                }}
+                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                  activeIndex === i
+                    ? 'w-6 bg-[#F17612]'
+                    : 'w-2 bg-[#CBD5E1] hover:bg-slate-400'
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
