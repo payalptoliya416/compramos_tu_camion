@@ -1,5 +1,7 @@
 import { Clock, FileText, ShieldOff } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
 import { IMG } from '@/data/images';
 import Hero from '@/components/sections/Hero';
 import SplitSection from '@/components/sections/SplitSection';
@@ -12,12 +14,51 @@ import FinalCta from '@/components/sections/FinalCta';
 import SectionHeading from '@/components/ui/SectionHeading';
 import Img from '@/components/ui/Img';
 import type { FaqItem } from '@/types';
+import 'swiper/css';
 
 const MAKES = [
-  { name: 'MAN', text: 'We analyse the strength of its chassis and engine efficiency to provide you with an appraisal that reflects its true capabilities.', cta: 'Selling MAN truck' },
-  { name: 'Renault Trucks', text: 'Their balance between cost and performance makes their acquisition our priority. A trusted pillar across the Spanish transport sector.', cta: 'Selling Renault truck' },
-  { name: 'DAF', text: 'DAF’s comfort and fuel efficiency are highly valuable assets. Share your vehicle’s details with us to understand the conditions.', cta: 'Explore Models' },
-  { name: 'Volvo', text: 'We value its innovative technology, ensuring you get a competitive offer.', cta: 'Explore Models' },
+  {
+    logo: '/images/logo05.png',
+    name: 'MAN',
+    text: 'We analyse the strength of its chassis and engine efficiency to provide you with an appraisal that reflects its true capabilities.',
+    cta: 'Selling MAN truck',
+  },
+  {
+    logo: '/images/logo07.png',
+    name: 'Renault Trucks',
+    text: 'Their balance between cost and performance makes their acquisition our priority. A trusted pillar across the Spanish transport sector.',
+    cta: 'Selling Renault truck',
+  },
+  {
+    logo: '/images/logo04.png',
+    name: 'DAF',
+    text: "DAF's comfort and fuel efficiency are highly valuable assets. Share your vehicle's details with our team to understand its valuation.",
+    cta: 'Explore Models',
+  },
+  {
+    logo: '/images/logo03.png',
+    name: 'Volvo',
+    text: 'We value its innovative efficiency technology, ensuring you get a competitive offer.',
+    cta: 'Explore Models',
+  },
+  {
+    logo: '/images/logo01.png',
+    name: 'Mercedes-Benz',
+    text: 'Renowned for cutting-edge engineering, fuel efficiency, and high resale value across European transport routes.',
+    cta: 'Selling Mercedes truck',
+  },
+  {
+    logo: '/images/logo02.png',
+    name: 'Scania',
+    text: 'Famous for legendary V8 power, driver comfort, and reliability under the most demanding transport conditions.',
+    cta: 'Selling Scania truck',
+  },
+  {
+    logo: '/images/logo06.png',
+    name: 'IVECO',
+    text: 'A practical, robust, and versatile choice offering high payload capacity and cost-effective performance.',
+    cta: 'Explore Models',
+  },
 ];
 
 const MODELS = [
@@ -62,20 +103,48 @@ export default function MakeModelPage() {
         <section className="section-y">
           <div className="container-x">
             <SectionHeading badge="Explore truck brands" title="Find Your Truck Manufacturer" />
-            <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          </div>
+          <div className="relative mt-10 px-4 sm:px-6">
+            {/* Blur/fade gradients on both sides */}
+            <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-12 sm:w-24 lg:w-36 bg-gradient-to-r from-surface to-transparent" />
+            <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-12 sm:w-24 lg:w-36 bg-gradient-to-l from-surface to-transparent" />
+
+            <Swiper
+              modules={[Autoplay]}
+              autoplay={{ delay: 3500, disableOnInteraction: false }}
+              loop={true}
+              spaceBetween={24}
+              slidesPerView={1.2}
+              breakpoints={{
+                480: { slidesPerView: 1.5, spaceBetween: 20 },
+                640: { slidesPerView: 2.2, spaceBetween: 24 },
+                1024: { slidesPerView: 3.2, spaceBetween: 24 },
+                1280: { slidesPerView: 4, spaceBetween: 24 },
+              }}
+              className="!py-2"
+            >
               {MAKES.map((m) => (
-                <li key={m.name} className="flex flex-col items-center gap-3 rounded-xl bg-white p-5 text-center shadow-sm">
-                  <span className="flex h-14 w-14 items-center justify-center rounded-lg border border-slate-100 bg-slate-50 font-heading text-xs font-bold text-slate-500">
-                    {m.name.split(' ')[0]}
-                  </span>
-                  <h3 className="text-sm font-semibold text-brand-navy-dark">{m.name}</h3>
-                  <p className="flex-1 text-xs leading-relaxed text-slate-500">{m.text}</p>
-                  <Link to="/get-a-free-valuation" className="btn mt-2 w-full border border-brand-navy/40 !py-2 text-xs text-brand-navy hover:bg-brand-navy hover:text-white">
-                    {m.cta}
-                  </Link>
-                </li>
+                <SwiperSlide key={m.name} className="h-auto">
+                  <article className="flex h-full flex-col items-center justify-between rounded-[16px] bg-white p-6 sm:p-[30px] text-center shadow-sm min-h-[380px]">
+                    <div className="flex flex-col items-center">
+                      <span className="flex h-[72px] w-[72px] sm:h-[80px] sm:w-[80px] items-center justify-center rounded-[14px] bg-[#F8F9FA] border border-[#E7E7E8] p-3">
+                        <img src={m.logo} alt={m.name} className="max-h-full max-w-full object-contain" />
+                      </span>
+                      <h3 className="mt-5 text-lg sm:text-xl font-bold text-brand-navy-dark leading-snug">{m.name}</h3>
+                      <p className="mt-3 text-sm md:text-base leading-relaxed text-[#3B3F45]">{m.text}</p>
+                    </div>
+                    <div className="mt-6 w-full">
+                      <Link
+                        to="/get-a-free-valuation"
+                        className="inline-flex items-center justify-center rounded-full border border-brand-navy px-6 py-2.5 text-sm font-medium text-brand-navy transition-colors hover:bg-brand-navy hover:text-white"
+                      >
+                        {m.cta}
+                      </Link>
+                    </div>
+                  </article>
+                </SwiperSlide>
               ))}
-            </ul>
+            </Swiper>
           </div>
         </section>
       </div>
