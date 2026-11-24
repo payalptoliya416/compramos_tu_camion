@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
+import type { FaqItem } from '@/types';
 import Hero from '@/components/sections/Hero';
 import FeatureGrid from '@/components/sections/FeatureGrid';
 import CtaBanner from '@/components/sections/CtaBanner';
@@ -28,6 +29,33 @@ const STATS = [
   { value: '20+', label: 'Years of Experience' },
   { value: 'Spain', label: 'Nationwide Coverage' },
   { value: 'All', label: 'Types of Trucks' },
+];
+
+const ABOUT_FAQS: FaqItem[] = [
+  {
+    q: 'If I fill out the form, will I be obligated to accept the offered payment?',
+    a: "No, filling out the form does not commit you to accepting our offer for your truck. In fact, thanks to our personalized service, you can negotiate the price for your truck honestly and transparently . If we don't reach an agreement, don't worry, your information will not be stored.",
+  },
+  {
+    q: 'If the truck is in a remote area or has breakdowns, does that change the price or the costs I will incur?',
+    a: 'If the truck is located a great distance from our facilities (for example, thousands of kilometers away) and/or requires special towing services due to a breakdown, these logistical costs increase significantly. Since these are direct operating expenses for our company, the purchase price will be adjusted to reflect and absorb these higher collection and transport costs.',
+  },
+  {
+    q: 'Is the price contingent on the truck\'s "current condition"? Can they lower it if they find undeclared damage?',
+    a: 'Our offer is based on the expectation of normal condition for its age and mileage. If, during the on-site inspection, serious and undisclosed defects are detected that affect its functionality or safety, such as a chassis with deep corrosion, worn tires, significant oil leaks, or major mechanical failures , a price adjustment will be made.',
+  },
+  {
+    q: 'Am I released from future liabilities (e.g., breakdowns, fines, outstanding road tax) from the moment of signing?',
+    a: 'Yes, you are exempt from future liability for breakdowns, malfunctions, or damage to the truck from the moment the purchase is finalized and ownership is transferred. Regarding administrative responsibilities (fines, road tax), our company assumes ownership of the vehicle immediately. However, it is your responsibility as the seller to pay any outstanding road tax for the current year.',
+  },
+  {
+    q: 'How is the change of ownership handled if the truck was purchased on credit (leasing or renting)?',
+    a: 'For trucks acquired through leasing or renting , it is essential to cancel the lien before transferring ownership. The process involves two key steps:\n\n1. Request the Payment Letter: The seller must request the "Total Payment Letter" from the financial institution (the leasing or renting company) to settle the outstanding credit.\n2. Registration and Cancellation: Once the debt has been settled, the cancellation of the charge must be processed in the Registry of Movable Property (RBM).',
+  },
+  {
+    q: 'Can I sell them a truck for parts? Am I still liable? Do I need to make sure they register it?',
+    a: 'We do not buy trucks intended solely for parts. Our business focuses on acquiring complete, functional vehicles, or those with repairable faults. If you wish to sell a truck only for parts or scrap, we recommend contacting a vehicle dismantling facility or Authorized Treatment Center (ATC) directly.',
+  },
 ];
 
 export default function AboutPage() {
@@ -177,7 +205,7 @@ export default function AboutPage() {
               <li key={s.title}>
                 <Link
                   to={s.to}
-                  className="group block rounded-[10px] border border-[#E7E7E8] bg-white p-2.5 sm:p-3 transition-shadow hover:shadow-md"
+                  className="group block rounded-[10px] border border-[#E7E7E8] bg-white p-3 sm:p-[15px] transition-shadow hover:shadow-md"
                 >
                   <div className="overflow-hidden rounded-[8px]">
                     <img
@@ -186,11 +214,11 @@ export default function AboutPage() {
                       className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <div className="mt-2.5 flex items-center justify-between gap-2 px-1 pb-0.5">
-                    <span className="text-xs sm:text-sm font-semibold text-brand-navy-dark">
+                  <div className="mt-[15px] flex items-center justify-between gap-2">
+                    <span className="text-xs sm:text-base font-medium text-[#082B54]">
                       {s.title}
                     </span>
-                    <ChevronRight className="h-4 w-4 shrink-0 text-brand-navy-dark" />
+                    <ChevronRight className="h-4 w-4 shrink-0 text-black" />
                   </div>
                 </Link>
               </li>
@@ -201,7 +229,7 @@ export default function AboutPage() {
 
       <ValuationForm />
       <Testimonials />
-      <Faq />
+      <Faq items={ABOUT_FAQS} />
       <FinalCta />
     </>
   );
