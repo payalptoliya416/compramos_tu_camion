@@ -30,7 +30,7 @@ export default function SplitSection({
         <Img
           src={image}
           alt={imageAlt}
-          className={`rounded-2xl shadow-sm ${reverse ? 'lg:order-2' : ''} ${imageClassName || ''}`}
+          className={`rounded-2xl ${reverse ? 'lg:order-2' : ''} ${imageClassName || ''}`}
           imgClassName="!h-auto"
         />
         <div className="flex flex-col items-start gap-4">

@@ -1,5 +1,4 @@
-import { Building2, FileCheck2, FileText, Gauge, PenLine, UserCheck, CheckCircle2, ScrollText, Info } from 'lucide-react';
-import { IMG } from '@/data/images';
+import { FileCheck2, Gauge, PenLine, ScrollText, Info } from 'lucide-react';
 import Hero from '@/components/sections/Hero';
 import SplitSection from '@/components/sections/SplitSection';
 import BrandLogos from '@/components/sections/BrandLogos';
@@ -9,7 +8,6 @@ import ValuationForm from '@/components/sections/ValuationForm';
 import Faq from '@/components/sections/Faq';
 import FinalCta from '@/components/sections/FinalCta';
 import SectionHeading from '@/components/ui/SectionHeading';
-import Img from '@/components/ui/Img';
 import type { FaqItem } from '@/types';
 
 const CHECKLIST = [
@@ -27,6 +25,24 @@ const FAQ: FaqItem[] = [
   { q: 'What documents are required if the truck belongs to a company?', a: 'Company identification, representative authorization and the vehicle documentation are usually required.' },
   { q: 'What if I have inherited the truck?', a: 'We can help you understand the paperwork needed to transfer an inherited vehicle.' },
   { q: 'Can I sell a truck if I have lost the Permiso de Circulación?', a: 'It is usually possible to request a duplicate. Our team can explain the steps involved.' },
+];
+
+const COMPANY_DOCS_CARDS = [
+  {
+    icon: '/images/business.svg',
+    title: 'Company and Ownership Information',
+    text: 'Business identification and ownership records relating to the vehicle being sold. The specific documents may vary depending on the company structure and registration.',
+  },
+  {
+    icon: '/images/user01.svg',
+    title: 'Representative Identification or Authorization',
+    text: 'Where the sale is handled by a representative, relevant identification or authorization documentation may be required to confirm they are acting on behalf of the company.',
+  },
+  {
+    icon: '/images/doc-blue.svg',
+    title: 'Vehicle and Sale Documentation',
+    text: 'The vehicle registration, technical documents, and sale paperwork must correctly reflect the company ownership and vehicle details relevant to the transaction.',
+  },
 ];
 
 export default function DocumentsPage() {
@@ -50,32 +66,37 @@ export default function DocumentsPage() {
       />
 
       {/* Private sellers checklist */}
-      <section className="pb-12 md:pb-16 lg:pb-20">
+      <section className="section-y">
         <div className="container-x">
           <SectionHeading badge="For individual owners" title="Documents You May Need as a Private Seller" />
-          <div className="mt-10 grid gap-5 lg:grid-cols-2">
-            <div className="rounded-xl border border-slate-100 bg-white p-5 shadow-sm sm:p-6">
-              <h3 className="text-sm font-semibold text-brand-navy-dark">Document Checklist</h3>
-              <ul className="mt-4 flex flex-col gap-3">
-                {CHECKLIST.map((c) => (
-                  <li key={c} className="flex items-start gap-3 text-xs text-slate-600">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-orange" /> {c}
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-5 border-t border-slate-100 pt-4 text-[11px] leading-relaxed text-slate-400">
+          <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:gap-8">
+            <div className="flex flex-col justify-between rounded-[16px] border border-[#E7E7E8] bg-white py-6 sm:py-8">
+              <div>
+                <h3 className="text-lg sm:text-xl font-semibold text-brand-navy-dark">Document Checklist</h3>
+                <ul className="mt-[15px] divide-y divide-[#E7E7E8]">
+                  {CHECKLIST.map((c) => (
+                    <li key={c} className="flex items-center gap-3.5 py-4 first:pt-2 last:pb-2 text-sm sm:text-base font-normal text-[#3B3F45]">
+                      <img src="/images/fill-checkmark.svg" alt="" className="h-5 w-5 shrink-0" />
+                      <span>{c}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <p className="mt-6 border-t border-[#E7E7E8] pt-6 text-xs sm:text-sm leading-relaxed text-[#6C6F73]">
                 These are general document categories, not a definitive legal checklist. Precise requirements must be verified against current Spanish regulations and the specific vehicle and transaction.
               </p>
             </div>
-            <div className="flex flex-col gap-4">
-              <Img src={IMG.documentsTrucks} alt="Truck owners" className="aspect-[16/9] rounded-xl" />
-              <div className="flex items-start gap-3 rounded-xl border border-slate-100 bg-white p-4 shadow-sm">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-orange/10 text-brand-orange">
-                  <Info className="h-4 w-4" />
+            <div className="flex flex-col justify-between gap-6">
+              <div className="overflow-hidden rounded-[16px] shadow-sm">
+                <img src="/images/inidividual.png" alt="Truck drivers" className="w-full h-auto object-cover" />
+              </div>
+              <div className="flex items-start gap-4 rounded-[16px] border border-[#E7E7E8] bg-white p-5 sm:p-6 shadow-sm">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#F17612] text-white">
+                  <Info className="h-6 w-6 text-white" />
                 </span>
                 <div>
-                  <h3 className="text-sm font-semibold text-brand-navy-dark">Not sure what applies to you?</h3>
-                  <p className="mt-1 text-xs leading-relaxed text-slate-500">
+                  <h3 className="text-base sm:text-lg font-bold text-brand-navy-dark">Not sure what applies to you?</h3>
+                  <p className="mt-2 text-xs sm:text-sm leading-relaxed text-[#6C6F73]">
                     Our team can help clarify which documents may be relevant to your specific truck and situation. Request a valuation to get started.
                   </p>
                 </div>
@@ -87,15 +108,26 @@ export default function DocumentsPage() {
 
       <BrandLogos band />
 
-      <FeatureGrid
-        badge="For business sellers"
-        title="Documentation for Company-Owned Trucks"
-        items={[
-          { icon: Building2, title: 'Company and Ownership Information', text: 'Business identification and ownership records relating to the vehicle being sold. The specific documents may vary depending on the company structure and registration.' },
-          { icon: UserCheck, title: 'Representative Identification or Authorization', text: 'Where the sale is handled by a representative, relevant identification or authorization documentation may be required to confirm they are acting on behalf of the company.' },
-          { icon: FileText, title: 'Vehicle and Sale Documentation', text: 'The vehicle registration, technical documents, and sale paperwork must correctly reflect the company ownership and vehicle details relevant to the transaction.' },
-        ]}
-      />
+      {/* Documentation for Company-Owned Trucks */}
+      <section className="section-y">
+        <div className="container-x">
+          <SectionHeading badge="For business sellers" title="Documentation for Company-Owned Trucks" />
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {COMPANY_DOCS_CARDS.map(({ icon, title, text }) => (
+              <article
+                key={title}
+                className="flex h-full flex-col rounded-[14px] border border-[#E7E7E8] bg-white p-6 sm:p-8"
+              >
+                <span className="flex h-[50px] w-[50px] items-center justify-center rounded-[12px] bg-[#F3F4F6]">
+                  <img src={icon} alt="" className="h-6 w-6 object-contain" />
+                </span>
+                <h3 className="mt-5 text-base sm:text-lg font-bold text-brand-navy-dark leading-snug">{title}</h3>
+                <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#3B3F45]">{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <CtaBanner
         badge="Ready to get started?"
