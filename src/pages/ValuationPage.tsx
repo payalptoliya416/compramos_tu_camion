@@ -141,7 +141,7 @@ export default function ValuationPage() {
 
       <ValuationForm />
       <Testimonials />
-      <Faq items={VALUATION_FAQS} title="Frequently asked questions about truck valuation" />
+      <Faq items={VALUATION_FAQS} title="Frequently asked questions about truck valuation" className="!pt-0" />
       <FinalCta />
     </>
   );
