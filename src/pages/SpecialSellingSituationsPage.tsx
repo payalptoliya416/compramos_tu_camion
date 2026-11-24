@@ -7,8 +7,7 @@ import ValuationForm from '@/components/sections/ValuationForm';
 import Testimonials from '@/components/sections/Testimonials';
 import Faq from '@/components/sections/Faq';
 import FinalCta from '@/components/sections/FinalCta';
-import SectionHeading, { Badge } from '@/components/ui/SectionHeading';
-import CtaButton from '@/components/ui/CtaButton';
+import SectionHeading from '@/components/ui/SectionHeading';
 import type { FaqItem } from '@/types';
 
 const SITUATION_CARDS = [
