@@ -1,4 +1,4 @@
-import { BarChart3, ClipboardCheck, FileText, Handshake, MapPin, Phone } from 'lucide-react';
+import { FileText, Handshake, Phone } from 'lucide-react';
 import { IMG } from '@/data/images';
 import Hero from '@/components/sections/Hero';
 import Testimonials from '@/components/sections/Testimonials';
@@ -94,10 +94,10 @@ export default function PrivateSellersPage() {
         cols={4}
         variant="plain"
         items={[
-          { icon: BarChart3, title: 'Fair Truck Valuation', text: 'Receive an offer based on your truck’s details and market considerations.' },
-          { icon: ClipboardCheck, title: 'Straightforward Process', text: 'Understand the next steps without unnecessary complications or delays.' },
-          { icon: FileText, title: 'Paperwork Support', text: 'Get guidance with the documentation needed for the sale of your vehicle.' },
-          { icon: MapPin, title: 'Convenient Collection', text: 'Discuss collection arrangements with our team at a time that suits you.' },
+          { icon: '/images/fair.svg', title: 'Fair Truck Valuation', text: 'Receive an offer based on your truck’s details and market considerations.' },
+          { icon: '/images/straitforward-rightsign.svg', title: 'Straightforward Process', text: 'Understand the next steps without unnecessary complications or delays.' },
+          { icon: '/images/suport-doc.svg', title: 'Paperwork Support', text: 'Get guidance with the documentation needed for the sale of your vehicle.' },
+          { icon: '/images/locaton.svg', title: 'Convenient Collection', text: 'Discuss collection arrangements with our team at a time that suits you.' },
         ]}
       />
 

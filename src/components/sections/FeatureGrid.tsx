@@ -42,7 +42,7 @@ export default function FeatureGrid({
             >
               <span className="flex h-[58px] w-[58px] items-center justify-center rounded-[12px] border-2 border-[#E7E7E8] bg-[#F3F3F3] text-brand-orange">
                 {typeof Icon === 'string' ? (
-                  <img src={Icon} alt="" className="" />
+                  <img src={Icon} alt="" className="h-6 w-6 object-contain" />
                 ) : (
                   <Icon className="h-5 w-5" />
                 )}
