@@ -13,6 +13,7 @@ interface Props {
   /** grey background band behind the whole section */
   band?: boolean;
   className?: string;
+  iconBg?: string;
 }
 
 const COLS = {
@@ -22,7 +23,7 @@ const COLS = {
 } as const;
 
 export default function FeatureGrid({
-  badge, title, subtitle, items, cols = 3, variant = 'card', band, className = '',
+  badge, title, subtitle, items, cols = 3, variant = 'card', band, className = '', iconBg,
 }: Props) {
   const inner = (
     <section className={`section-y ${className}`}>
@@ -40,7 +41,7 @@ export default function FeatureGrid({
                     : 'flex flex-col gap-3 rounded-[12px] border border-slate-100 bg-white p-5 shadow-sm sm:p-6'
               } ${i % 2 === 1 ? 'sm:mt-10 lg:mt-12' : ''}`}
             >
-              <span className="flex h-[58px] w-[58px] items-center justify-center rounded-[12px] border-2 border-[#E7E7E8] bg-[#F3F3F3] text-brand-orange">
+              <span className={`flex h-[58px] w-[58px] items-center justify-center rounded-[12px] border-2 border-[#E7E7E8] ${iconBg || 'bg-[#F3F3F3]'} text-brand-orange`}>
                 {typeof Icon === 'string' ? (
                   <img src={Icon} alt="" className="h-6 w-6 object-contain" />
                 ) : (

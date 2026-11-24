@@ -39,11 +39,13 @@ export default function HowItWorksPage() {
       />
   <div className="mx-2 rounded-3xl bg-surface sm:mx-3">
       <FeatureGrid
+        band
         badge="Sell with confidence"
         title="A Straightforward Way to Sell Your Truck"
         subtitle="We focus on making every step clear, convenient and professional, so you know what to expect from the beginning."
         cols={4}
         variant="plain"
+        iconBg="bg-white"
         items={[
           { icon: '/images/right-sign.svg', title: 'Professional Truck Valuation', text: 'We assess your truck’s condition, specifications and relevant details to provide a professional valuation based on the vehicle.' },
           { icon: '/images/user.svg', title: 'Clear and Transparent Terms', text: 'Understand the offer, selling conditions and next steps with clear communication throughout the process.' },
