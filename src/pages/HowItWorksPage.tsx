@@ -24,7 +24,7 @@ export default function HowItWorksPage() {
         badge="Simple and transparent process"
         title="Sell Your Truck in 3 Simple Steps"
         text="Selling your truck doesn’t have to be complicated. Share your truck details, receive a professional valuation and complete the sale with support from our team."
-        image={IMG.heroHow}
+        image="/images/how-work-banner.png"
         primary={{ label: 'Get a Free Valuation' }}
         checks={['No Obligation', 'Fast Process', 'Anywhere in Spain']}
       />

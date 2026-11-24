@@ -43,13 +43,13 @@ export default function Steps({ badge, title, subtitle, steps, action, className
               )}
               <span className="relative z-10 flex h-[58px] w-[58px] items-center justify-center rounded-[12px] border border-[#E7E7E8] bg-[#F8F9FA] text-brand-orange">
                 {typeof Icon === 'string' ? (
-                  <img src={Icon} alt="" className="h-6 w-6 object-contain" />
+                  <img src={Icon} alt="" className="" />
                 ) : (
                   <Icon className="h-6 w-6" />
                 )}
               </span>
               <h3 className="mt-5 sm:mt-[25px] text-lg font-medium text-brand-navy-dark sm:text-xl">{t}</h3>
-              <p className="mt-[15px] max-w-[380px] text-sm leading-relaxed text-[#3B3F45] sm:text-base">{text}</p>
+              <p className="mt-[15px] max-w-[400px] text-sm leading-relaxed text-[#3B3F45] sm:text-base">{text}</p>
             </li>
           ))}
         </ol>
