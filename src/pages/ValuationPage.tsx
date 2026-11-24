@@ -18,7 +18,7 @@ export default function ValuationPage() {
         badge="Professional truck valuation"
         title="How Much Is Your Truck Worth?"
         text="Get a professional valuation for your used truck and take the next step towards selling it with confidence."
-        image={IMG.heroValuation}
+        image="/images/get-free-valuation-banner.png"
         primary={{ label: 'Get a Free Valuation' }}
         secondary={{ label: 'How It Works', to: '/how-it-works' }}
         checks={['Professional Valuation', 'No Obligation', 'Secure Selling Process']}

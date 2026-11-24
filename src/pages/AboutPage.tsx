@@ -111,7 +111,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-y !pt-0">
+      <section className="section-y !py-0">
         <div className="container-x grid items-center gap-8 lg:grid-cols-2 lg:gap-[53px]">
           <div className="overflow-hidden rounded-2xl lg:order-2">
             <img
