@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
-import { IMG } from '@/data/images';
 import Hero from '@/components/sections/Hero';
 import FeatureGrid from '@/components/sections/FeatureGrid';
 import CtaBanner from '@/components/sections/CtaBanner';
@@ -11,19 +10,18 @@ import Faq from '@/components/sections/Faq';
 import FinalCta from '@/components/sections/FinalCta';
 import SectionHeading, { Badge } from '@/components/ui/SectionHeading';
 import CtaButton from '@/components/ui/CtaButton';
-import Img from '@/components/ui/Img';
 
 const SPECIALITIES = [
-  { title: 'Crane Trucks', image: IMG.catCrane, to: '/truck-types/multilift-hook-lift-trucks' },
-  { title: 'Dump Trucks', image: IMG.catTipper, to: '/truck-types/concrete-mixer-trucks' },
-  { title: 'Multilift / Hook-Lift', image: IMG.multiliftBlue, to: '/truck-types/multilift-hook-lift-trucks' },
-  { title: 'Cement Mixer Trucks', image: IMG.concreteBlue, to: '/truck-types/concrete-mixer-trucks' },
-  { title: 'Tankers', image: IMG.catTanker, to: '/truck-types/refrigerated-trucks' },
-  { title: 'Tractor Units', image: IMG.catTractor, to: '/truck-types/refrigerated-trucks' },
-  { title: 'Refrigerated Trucks', image: IMG.catRefrigerated, to: '/truck-types/refrigerated-trucks' },
-  { title: 'Tipper Trucks', image: IMG.catRigid, to: '/truck-types/concrete-mixer-trucks' },
-  { title: 'Parcel Delivery Trucks', image: IMG.parcelMan, to: '/truck-types/parcel-delivery-trucks' },
-  { title: '3,500 kg Light Trucks', image: IMG.light3500, to: '/truck-types/3500-kg-light-trucks' },
+  { title: 'Crane Trucks', image: '/images/specialiti01.png', to: '/truck-types/multilift-hook-lift-trucks' },
+  { title: 'Dump Trucks', image: '/images/specialiti02.png', to: '/truck-types/concrete-mixer-trucks' },
+  { title: 'Multilift / Hook-Lift', image: '/images/specialiti03.png', to: '/truck-types/multilift-hook-lift-trucks' },
+  { title: 'Cement Mixer Trucks', image: '/images/specialiti05.png', to: '/truck-types/concrete-mixer-trucks' },
+  { title: 'Tankers', image: '/images/specialiti06.png', to: '/truck-types/refrigerated-trucks' },
+  { title: 'Tractor Units', image: '/images/specialiti07.png', to: '/truck-types/refrigerated-trucks' },
+  { title: 'Refrigerated Trucks', image: '/images/specialiti08.png', to: '/truck-types/refrigerated-trucks' },
+  { title: 'Tipper Trucks', image: '/images/specialiti09.png', to: '/truck-types/concrete-mixer-trucks' },
+  { title: 'Parcel Delivery Trucks', image: '/images/specialiti10.png', to: '/truck-types/parcel-delivery-trucks' },
+  { title: '3,500 kg Trucks', image: '/images/specialiti11.png', to: '/truck-types/3500-kg-light-trucks' },
 ];
 
 const STATS = [
@@ -171,17 +169,28 @@ export default function AboutPage() {
       />
 
       {/* Specialities */}
-      <section className="pb-12 md:pb-16 lg:pb-20">
+      <section className="section-y !pt-0">
         <div className="container-x">
           <SectionHeading badge="Our specialities" title="Experience Across Different Types of Trucks" />
-          <ul className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+          <ul className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 lg:gap-4">
             {SPECIALITIES.map((s) => (
               <li key={s.title}>
-                <Link to={s.to} className="group block overflow-hidden rounded-xl border border-slate-100 bg-white shadow-sm">
-                  <Img src={s.image} alt={s.title} className="aspect-[4/3]" imgClassName="transition-transform duration-500 group-hover:scale-105" />
-                  <div className="flex items-center justify-between gap-2 px-3 py-2.5 text-xs font-medium text-brand-navy-dark">
-                    {s.title}
-                    <ChevronRight className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+                <Link
+                  to={s.to}
+                  className="group block rounded-2xl border border-[#E7E7E8] bg-white p-2.5 sm:p-3 transition-shadow hover:shadow-md"
+                >
+                  <div className="overflow-hidden rounded-xl">
+                    <img
+                      src={s.image}
+                      alt={s.title}
+                      className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="mt-2.5 flex items-center justify-between gap-2 px-1 pb-0.5">
+                    <span className="text-xs sm:text-sm font-semibold text-brand-navy-dark">
+                      {s.title}
+                    </span>
+                    <ChevronRight className="h-4 w-4 shrink-0 text-brand-navy-dark" />
                   </div>
                 </Link>
               </li>

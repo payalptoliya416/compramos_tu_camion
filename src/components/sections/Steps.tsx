@@ -28,7 +28,7 @@ export default function Steps({ badge, title, subtitle, steps, action, className
         ) : (
           <SectionHeading badge={badge} title={title} subtitle={subtitle} />
         )}
-        <ol className={`relative mt-10 grid gap-8 ${colCls}`}>
+        <ol className={`relative mt-10 grid gap-[24px] ${colCls}`}>
           {steps.map(({ icon: Icon, title: t, text }, i) => (
             <li key={t} className="relative flex flex-col items-center text-center">
               {i < steps.length - 1 && (
