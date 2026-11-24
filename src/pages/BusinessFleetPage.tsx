@@ -1,7 +1,6 @@
 import { IMG } from '@/data/images';
 import Hero from '@/components/sections/Hero';
 import SplitSection from '@/components/sections/SplitSection';
-import FeatureGrid from '@/components/sections/FeatureGrid';
 import CtaBanner from '@/components/sections/CtaBanner';
 import ValuationForm from '@/components/sections/ValuationForm';
 import Testimonials from '@/components/sections/Testimonials';
@@ -110,14 +109,14 @@ export default function BusinessFleetPage() {
               />
             </div>
             <div className="flex flex-col justify-between gap-6">
-              <div className="flex flex-col gap-4 text-sm sm:text-base leading-relaxed text-[#3B3F45]">
+              <div className="flex flex-col gap-[15px] text-sm sm:text-base leading-relaxed text-[#3B3F45]">
                 <p>
                   In the business sector, truck sales are a strategic decision. Companies seek a fast and efficient process.
                 </p>
                 <p>
                   We understand that time is money. That’s why we’ve optimized every step so that selling used trucks doesn’t interfere with your business operations. Simplify your fleet management.
                 </p>
-                <p className="font-semibold text-brand-navy-dark">
+                <p className="font-semibold text-[#3B3F45]">
                   We buy your trucks, regardless of make, model, or condition.
                 </p>
               </div>
