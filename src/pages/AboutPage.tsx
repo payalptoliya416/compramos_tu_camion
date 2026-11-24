@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ChevronRight, ClipboardList, MessageCircle, Search, CheckCircle2 } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { IMG } from '@/data/images';
 import Hero from '@/components/sections/Hero';
 import FeatureGrid from '@/components/sections/FeatureGrid';
@@ -161,11 +161,12 @@ export default function AboutPage() {
       <Steps
         badge="Our process"
         title="A Clear Process from Valuation to Sale"
+        className="!pt-0"
         steps={[
-          { icon: ClipboardList, title: 'Tell Us About Your Truck', text: 'Share the make, model, year, mileage, condition and relevant photographs of your truck.' },
-          { icon: Search, title: 'Receive a Professional Assessment', text: 'Our team reviews the information provided to evaluate the vehicle and prepare a suitable offer.' },
-          { icon: MessageCircle, title: 'Review the Offer', text: 'Discuss the offer and clarify the conditions and next steps before making your decision.' },
-          { icon: CheckCircle2, title: 'Complete the Sale', text: 'Once the offer is accepted, coordinate the required documentation, payment and collection arrangements.' },
+          { icon: '/images/doc.svg', title: 'Tell Us About Your Truck', text: 'Share the make, model, year, mileage, condition and relevant photographs of your vehicle.' },
+          { icon: '/images/bilori.svg', title: 'Receive a Professional Assessment', text: 'Our team reviews the information provided to evaluate the vehicle and prepare a suitable offer.' },
+          { icon: '/images/chat.svg', title: 'Review the Offer', text: 'Discuss the offer and clarify the conditions and next steps before making your decision.' },
+          { icon: '/images/checkmark-blue-half.svg', title: 'Complete the Sale', text: 'Once the offer is accepted, coordinate the required documentation, payment and collection arrangements.' },
         ]}
       />
 
