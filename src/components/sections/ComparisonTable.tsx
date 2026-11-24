@@ -70,8 +70,8 @@ export default function ComparisonTable() {
           title="Why Is Selling Your Truck with Us the Smartest Choice?"
         />
 
-        <div className="mt-14 -mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0">
-          <div className="relative mx-auto w-[960px] min-w-[960px] rounded-[18px] border border-[#E7E7E8] bg-white p-4 lg:w-full lg:min-w-0 lg:p-5">
+        <div className="mt-8 -mx-4 overflow-x-auto px-4 py-12 sm:-mx-6 sm:px-6 sm:py-14 lg:mx-0 lg:px-0 lg:py-14">
+          <div className="relative mx-auto w-[960px] min-w-[960px] rounded-[24px] border border-[#E7E7E8] bg-white p-5 lg:w-full lg:min-w-0 lg:p-7 shadow-sm">
             <div className="grid grid-cols-[1.05fr_1.35fr_1.2fr_1.2fr] items-start gap-4 lg:gap-[30px]">
               
               {/* Column 1: Factors */}
@@ -92,7 +92,7 @@ export default function ComparisonTable() {
               </div>
 
               {/* Column 2: We Buy Your Truck (Overlapping Top & Bottom) */}
-              <div className="-mt-6 -mb-6 z-10 flex flex-col overflow-hidden rounded-[14px] bg-[#092B55] p-[10px] pb-5">
+              <div className="-mt-9 -mb-9 z-10 flex flex-col rounded-[16px] bg-[#092B55] p-2.5 pb-6 shadow-[0_16px_36px_rgba(9,43,85,0.28)] border border-[#092B55]">
                 <div className="flex h-[66px] items-center justify-center rounded-[12px] bg-[#F17612] text-lg font-semibold text-white md:text-xl">
                   We Buy Your Truck
                 </div>
