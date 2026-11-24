@@ -175,10 +175,10 @@ export default function SpecialSellingSituationsPage() {
                 className="flex h-full flex-col rounded-[12px] bg-surface py-5 sm:py-[35px] px-5 sm:px-[25px]"
               >
                 <span className="flex h-[50px] w-[50px] items-center justify-center rounded-[12px] bg-white">
-                  <img src={icon} alt="" className="h-6 w-6 object-contain" />
+                  <img src={icon} alt="" className="" />
                 </span>
-                <h3 className="mt-5 text-lg sm:text-xl font-semibold text-brand-navy-dark">{title}</h3>
-                <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#6C6F73]">{text}</p>
+                <h3 className="mt-5 text-base sm:text-lg font-semibold text-brand-navy-dark leading-snug">{title}</h3>
+                <p className="mt-[15px] text-sm md:text-base leading-relaxed text-[#3B3F45]">{text}</p>
               </article>
             ))}
           </div>
