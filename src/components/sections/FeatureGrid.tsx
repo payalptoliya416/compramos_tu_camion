@@ -38,17 +38,17 @@ export default function FeatureGrid({
                   ? 'flex flex-col gap-5 p-2'
                   : variant === 'surface'
                     ? 'flex flex-col gap-3 rounded-[12px] bg-surface py-5 sm:py-[35px] px-5 sm:px-[25px]'
-                    : 'flex flex-col gap-3 rounded-[12px] border border-slate-100 bg-white p-5 shadow-sm sm:p-6'
+                    : 'flex flex-col gap-3 rounded-[12px] border border-[#E7E7E8] bg-white py-5 sm:py-[35px] px-5 sm:px-[25px]'
               } ${i % 2 === 1 ? 'sm:mt-10 lg:mt-12' : ''}`}
             >
               <span className={`flex h-[58px] w-[58px] items-center justify-center rounded-[12px] border-2 border-[#E7E7E8] ${iconBg || 'bg-[#F3F3F3]'} text-brand-orange`}>
                 {typeof Icon === 'string' ? (
-                  <img src={Icon} alt="" className="h-6 w-6 object-contain" />
+                  <img src={Icon} alt="" className="" />
                 ) : (
                   <Icon className="h-5 w-5" />
                 )}
               </span>
-              <h3 className="text-base font-medium text-brand-navy-dark sm:text-xl">{t}</h3>
+              <h3 className="text-base font-semibold text-brand-navy-dark sm:text-xl">{t}</h3>
               <p className="text-sm leading-relaxed text-[#3B3F45] sm:text-base">{text}</p>
               {variant === 'plain' && <span className="mt-1 h-0.5 w-[32px] bg-brand-orange" />}
             </article>

@@ -64,19 +64,19 @@ export default function ComparisonTable() {
         />
 
         <div className="mt-14 overflow-x-auto py-8">
-          <div className="relative mx-auto min-w-[900px] max-w-[1140px] rounded-[24px] border border-[#E7E7E8] bg-white p-6 lg:p-8">
-            <div className="grid grid-cols-[1.05fr_1.35fr_2.4fr] items-start gap-4 lg:gap-6">
-              
+          <div className="relative mx-auto rounded-[18px] border border-[#E7E7E8] bg-white p-4 lg:p-5">
+            <div className="grid grid-cols-[1.05fr_1.35fr_2.4fr] items-start gap-4 lg:gap-[35px]">
+
               {/* Column 1: Factors */}
               <div className="flex flex-col overflow-hidden rounded-2xl border border-[#092B55] bg-white shadow-sm">
-                <div className="flex h-[48px] items-center justify-center bg-[#092B55] text-sm font-bold text-white md:text-base">
+                <div className="flex py-5 items-center justify-center bg-[#092B55] text-base font-semibold text-white md:text-lg md:leading-[18px] rounded-[14px]">
                   Factors
                 </div>
                 <div className="divide-y divide-[#E7E7E8]">
                   {FACTORS.map((f) => (
                     <div
                       key={f}
-                      className="flex h-[64px] items-center px-4 text-sm font-medium text-[#092B55]"
+                      className="flex py-[22px] items-center px-4 text-base font-medium text-[#092B55]"
                     >
                       {f}
                     </div>
@@ -85,15 +85,15 @@ export default function ComparisonTable() {
               </div>
 
               {/* Column 2: We Buy Your Truck (Overlapping Top & Bottom) */}
-              <div className="-mt-6 -mb-6 z-10 flex flex-col overflow-hidden rounded-2xl bg-[#092B55] pb-4 shadow-2xl">
-                <div className="flex h-[72px] items-center justify-center bg-[#F17612] text-sm font-bold text-white md:text-base">
+              <div className="-mt-6 -mb-6 z-10 flex flex-col overflow-hidden rounded-[14px] bg-[#092B55] p-[10px] shadow-2xl">
+                <div className="flex py-[22px] items-center justify-center bg-[#F17612] text-lg font-semibold text-white md:text-xl rounded-[14px]">
                   We Buy Your Truck
                 </div>
-                <div className="divide-y divide-white/10">
+                <div className="divide-y divide-white/20">
                   {US.map((text) => (
                     <div
                       key={text}
-                      className="flex h-[64px] items-center gap-2.5 px-4 text-xs font-medium text-white sm:text-sm"
+                      className="flex py-[30px] items-center gap-[11px] px-[15px] text-sm font-medium text-white sm:text-base"
                     >
                       <GreenCheck />
                       <span>{text}</span>
@@ -104,11 +104,11 @@ export default function ComparisonTable() {
 
               {/* Column 3: Concessionaire & Individuals (Continuous horizontal dividers) */}
               <div className="flex flex-col">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="flex h-[48px] items-center justify-center rounded-xl bg-[#F3F3F3] text-sm font-semibold text-[#092B55] md:text-base">
+                <div className="grid grid-cols-2 gap-[30px]">
+                  <div className="flex py-5 items-center justify-center rounded-[14px] bg-[#F3F3F3] text-base font-semibold text-[#0A0F16] md:text-lg">
                     Concessionaire
                   </div>
-                  <div className="flex h-[48px] items-center justify-center rounded-xl bg-[#F3F3F3] text-sm font-semibold text-[#092B55] md:text-base">
+                  <div className="flex py-5 items-center justify-center rounded-[14px] bg-[#F3F3F3] text-base font-semibold text-[#0A0F16] md:text-lg">
                     Individuals
                   </div>
                 </div>
