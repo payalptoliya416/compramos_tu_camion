@@ -1,4 +1,3 @@
-import { ClipboardCheck, FileText, Truck, UserCheck } from 'lucide-react';
 import { IMG } from '@/data/images';
 import Hero from '@/components/sections/Hero';
 import Steps from '@/components/sections/Steps';
@@ -41,18 +40,18 @@ export default function HowItWorksPage() {
       />
 
       <FeatureGrid
-        band
         badge="Sell with confidence"
         title="A Straightforward Way to Sell Your Truck"
         subtitle="We focus on making every step clear, convenient and professional, so you know what to expect from the beginning."
         cols={4}
         variant="plain"
         items={[
-          { icon: ClipboardCheck, title: 'Professional Truck Valuation', text: 'We assess your truck’s condition, specifications and relevant details to provide a professional valuation based on the vehicle.' },
-          { icon: UserCheck, title: 'Clear and Transparent Terms', text: 'Understand the offer, selling conditions and next steps with clear communication throughout the process.' },
-          { icon: FileText, title: 'Paperwork and Documentation', text: 'We guide you through the required paperwork and administrative procedures involved in the vehicle transfer.' },
-          { icon: Truck, title: 'Collection Arrangements', text: 'We coordinate the collection process with you, helping make the final stage of selling your truck straightforward.' },
+          { icon: '/images/right-sign.svg', title: 'Professional Truck Valuation', text: 'We assess your truck’s condition, specifications and relevant details to provide a professional valuation based on the vehicle.' },
+          { icon: '/images/user.svg', title: 'Clear and Transparent Terms', text: 'Understand the offer, selling conditions and next steps with clear communication throughout the process.' },
+          { icon: '/images/doc.svg', title: 'Paperwork and Documentation', text: 'We guide you through the required paperwork and administrative procedures involved in the vehicle transfer.' },
+          { icon: '/images/diliver.svg', title: 'Collection Arrangements', text: 'We coordinate the collection process with you, helping make the final stage of selling your truck straightforward.' },
         ]}
+        className='!p-0'
       />
 
       <SplitSection
