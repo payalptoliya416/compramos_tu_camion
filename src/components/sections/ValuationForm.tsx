@@ -29,25 +29,35 @@ const CITIES = [
   'Other',
 ];
 
-const inputField =
-  'w-full rounded-xl border border-slate-200 bg-white px-3.5 py-3 text-xs sm:text-sm text-slate-700 placeholder:text-slate-400 focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange transition-colors';
+const getInputClass = (hasError?: boolean) =>
+  `w-full rounded-xl border bg-white px-3.5 py-3 text-xs sm:text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none focus:ring-1 transition-colors ${
+    hasError
+      ? 'border-red-500 focus:border-red-500 focus:ring-red-500 bg-red-50/20'
+      : 'border-slate-200 focus:border-brand-orange focus:ring-brand-orange'
+  }`;
 
-const selectField =
-  'w-full appearance-none rounded-xl border border-slate-200 bg-white px-3.5 py-3 pr-10 text-xs sm:text-sm text-slate-700 placeholder:text-slate-400 focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange bg-[url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2364748B%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22m6%209%206%206%206-6%22%2F%3E%3C%2Fsvg%3E")] bg-[length:14px_14px] bg-[right_14px_center] bg-no-repeat cursor-pointer transition-colors';
+const getSelectClass = (hasError?: boolean) =>
+  `w-full appearance-none rounded-xl border bg-white px-3.5 py-3 pr-10 text-xs sm:text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none focus:ring-1 bg-[url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2364748B%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22m6%209%206%206%206-6%22%2F%3E%3C%2Fsvg%3E")] bg-[length:14px_14px] bg-[right_14px_center] bg-no-repeat cursor-pointer transition-colors ${
+    hasError
+      ? 'border-red-500 focus:border-red-500 focus:ring-red-500 bg-red-50/20'
+      : 'border-slate-200 focus:border-brand-orange focus:ring-brand-orange'
+  }`;
 
 function Field({
   label,
   required,
   info,
+  error,
   children,
 }: {
   label: string;
   required?: boolean;
   info?: string;
+  error?: string;
   children: React.ReactNode;
 }) {
   return (
-    <label className="flex flex-col gap-1.5 text-xs font-semibold text-brand-navy">
+    <div className="flex flex-col gap-1.5 text-xs font-semibold text-brand-navy">
       <span className="flex items-center gap-1">
         <span>{label}</span>
         {required && <span className="text-brand-orange">*</span>}
@@ -61,7 +71,8 @@ function Field({
         )}
       </span>
       {children}
-    </label>
+      {error && <span className="text-[11px] font-normal text-red-500">{error}</span>}
+    </div>
   );
 }
 
@@ -76,14 +87,76 @@ export default function ValuationForm({
   const fileInputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
+  const [formData, setFormData] = useState({
+    // Step 1
+    make: '',
+    model: '',
+    year: '',
+    mileage: '',
+    transmission: '',
+    basculante: '',
+    // Step 2
+    fullName: '',
+    email: '',
+    phone: '',
+    city: '',
+    minPrice: '',
+    damages: '',
+  });
+
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const handleChange = (name: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (errors[name]) {
+      setErrors((prev) => {
+        const copy = { ...prev };
+        delete copy[name];
+        return copy;
+      });
+    }
+  };
+
+  const validateStep1 = () => {
+    const newErrors: Record<string, string> = {};
+    if (!formData.make) newErrors.make = 'Please select a truck brand';
+    if (!formData.model.trim()) newErrors.model = 'Please enter truck model';
+    if (!formData.year) newErrors.year = 'Please select registration year';
+    if (!formData.mileage.trim()) newErrors.mileage = 'Please enter mileage';
+    if (!formData.transmission) newErrors.transmission = 'Please select transmission';
+    if (!formData.basculante) newErrors.basculante = 'Please select an option';
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const validateStep2 = () => {
+    const newErrors: Record<string, string> = {};
+    if (!formData.fullName.trim()) newErrors.fullName = 'Please enter your full name';
+    if (!formData.email.trim()) {
+      newErrors.email = 'Please enter your email';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+    if (!formData.phone.trim()) newErrors.phone = 'Please enter your phone number';
+    if (!formData.city) newErrors.city = 'Please select your city';
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleNext = (e: FormEvent) => {
     e.preventDefault();
-    setStep(2);
+    if (validateStep1()) {
+      setStep(2);
+    }
   };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    navigate('/thank-you');
+    if (validateStep2()) {
+      navigate('/thank-you');
+    }
   };
 
   return (
@@ -118,26 +191,72 @@ export default function ValuationForm({
           <div className="mx-auto w-full max-w-xl rounded-3xl bg-white p-6 shadow-xl sm:p-8 lg:max-w-none">
             {/* Header: Badge & Indicator Pills */}
             <div className="mb-2 flex items-center justify-between">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FFF1EB] px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-orange">
+              <button
+                type="button"
+                onClick={() => {
+                  if (step === 2) setStep(1);
+                }}
+                className={`inline-flex items-center gap-1.5 rounded-full bg-[#FFF1EB] px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-orange transition-all ${
+                  step === 2 ? 'cursor-pointer hover:bg-brand-orange/20' : ''
+                }`}
+                title={step === 2 ? 'Click to go back to Step 1' : undefined}
+              >
                 <span className="h-1.5 w-1.5 rounded-full bg-brand-orange" />
                 STEP {step}
-              </span>
-              <div className="flex gap-2" aria-hidden>
-                <span className={`h-2 w-7 rounded-full transition-colors ${step === 1 ? 'bg-brand-orange' : 'bg-slate-200'}`} />
-                <span className={`h-2 w-7 rounded-full transition-colors ${step === 2 ? 'bg-brand-orange' : 'bg-slate-200'}`} />
+              </button>
+
+              {/* Clickable Step Indicator Pills */}
+              <div className="flex items-center gap-2" aria-label="Form steps">
+                <button
+                  type="button"
+                  onClick={() => setStep(1)}
+                  className={`h-2.5 w-8 rounded-full transition-all cursor-pointer ${
+                    step === 1 ? 'bg-brand-orange shadow-sm' : 'bg-slate-200 hover:bg-slate-300'
+                  }`}
+                  title="Go to Step 1: Truck Details"
+                  aria-label="Step 1"
+                />
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (validateStep1()) {
+                      setStep(2);
+                    }
+                  }}
+                  className={`h-2.5 w-8 rounded-full transition-all cursor-pointer ${
+                    step === 2 ? 'bg-brand-orange shadow-sm' : 'bg-slate-200 hover:bg-slate-300'
+                  }`}
+                  title="Go to Step 2: Contact Details"
+                  aria-label="Step 2"
+                />
               </div>
             </div>
 
             {/* Form Title */}
-            <h3 className="mt-3 text-2xl font-bold text-brand-navy">
-              {step === 1 ? 'Truck Details' : 'Contact Details'}
-            </h3>
+            <div className="flex items-center justify-between">
+              <h3 className="mt-3 text-2xl font-bold text-brand-navy">
+                {step === 1 ? 'Truck Details' : 'Contact Details'}
+              </h3>
+              {step === 2 && (
+                <button
+                  type="button"
+                  onClick={() => setStep(1)}
+                  className="mt-3 text-xs font-semibold text-brand-orange hover:underline cursor-pointer"
+                >
+                  ← Back to Step 1
+                </button>
+              )}
+            </div>
 
             {/* Form Steps */}
             {step === 1 ? (
-              <form onSubmit={handleNext} className="mt-6 grid gap-4 sm:grid-cols-2">
-                <Field label="Make" required>
-                  <select required className={selectField} defaultValue="">
+              <form onSubmit={handleNext} noValidate className="mt-6 grid gap-4 sm:grid-cols-2">
+                <Field label="Make" required error={errors.make}>
+                  <select
+                    value={formData.make}
+                    onChange={(e) => handleChange('make', e.target.value)}
+                    className={getSelectClass(Boolean(errors.make))}
+                  >
                     <option value="" disabled>Enter truck brand (e.g., Volvo, Scania)</option>
                     <option value="Volvo">Volvo</option>
                     <option value="Scania">Scania</option>
@@ -150,12 +269,22 @@ export default function ValuationForm({
                   </select>
                 </Field>
 
-                <Field label="Model" required>
-                  <input required className={inputField} placeholder="Enter truck model (e.g., FH 500, R450)" />
+                <Field label="Model" required error={errors.model}>
+                  <input
+                    type="text"
+                    value={formData.model}
+                    onChange={(e) => handleChange('model', e.target.value)}
+                    className={getInputClass(Boolean(errors.model))}
+                    placeholder="Enter truck model (e.g., FH 500, R450)"
+                  />
                 </Field>
 
-                <Field label="Registration Year" required>
-                  <select required className={selectField} defaultValue="">
+                <Field label="Registration Year" required error={errors.year}>
+                  <select
+                    value={formData.year}
+                    onChange={(e) => handleChange('year', e.target.value)}
+                    className={getSelectClass(Boolean(errors.year))}
+                  >
                     <option value="" disabled>e.g., 2022</option>
                     {YEARS.map((y) => (
                       <option key={y} value={y}>{y}</option>
@@ -163,20 +292,35 @@ export default function ValuationForm({
                   </select>
                 </Field>
 
-                <Field label="Mileage (km)" required>
-                  <input required inputMode="numeric" className={inputField} placeholder="e.g., 150,000 km" />
+                <Field label="Mileage (km)" required error={errors.mileage}>
+                  <input
+                    type="text"
+                    inputMode="numeric"
+                    value={formData.mileage}
+                    onChange={(e) => handleChange('mileage', e.target.value)}
+                    className={getInputClass(Boolean(errors.mileage))}
+                    placeholder="e.g., 150,000 km"
+                  />
                 </Field>
 
-                <Field label="Transmission" required>
-                  <select required className={selectField} defaultValue="">
+                <Field label="Transmission" required error={errors.transmission}>
+                  <select
+                    value={formData.transmission}
+                    onChange={(e) => handleChange('transmission', e.target.value)}
+                    className={getSelectClass(Boolean(errors.transmission))}
+                  >
                     <option value="" disabled>Select option</option>
                     <option value="Manual">Manual</option>
                     <option value="Automatic">Automatic</option>
                   </select>
                 </Field>
 
-                <Field label="Basculante (Tipper)" required>
-                  <select required className={selectField} defaultValue="">
+                <Field label="Basculante (Tipper)" required error={errors.basculante}>
+                  <select
+                    value={formData.basculante}
+                    onChange={(e) => handleChange('basculante', e.target.value)}
+                    className={getSelectClass(Boolean(errors.basculante))}
+                  >
                     <option value="" disabled>Select option</option>
                     <option value="Sí">Sí</option>
                     <option value="No">No</option>
@@ -186,30 +330,52 @@ export default function ValuationForm({
                 <div className="flex justify-center pt-4 sm:col-span-2">
                   <button
                     type="submit"
-                    className="rounded-full bg-brand-orange px-10 py-3.5 text-sm sm:text-base font-semibold text-white shadow-md hover:bg-brand-orange-dark transition-colors"
+                    className="rounded-full bg-brand-orange px-10 py-3.5 text-sm sm:text-base font-semibold text-white shadow-md hover:bg-brand-orange-dark transition-colors cursor-pointer"
                   >
                     Next Step
                   </button>
                 </div>
               </form>
             ) : (
-              <form onSubmit={handleSubmit} className="mt-6 grid gap-4 sm:grid-cols-2">
+              <form onSubmit={handleSubmit} noValidate className="mt-6 grid gap-4 sm:grid-cols-2">
                 <div className="sm:col-span-2">
-                  <Field label="Full name">
-                    <input required className={inputField} placeholder="Enter your full name" />
+                  <Field label="Full name" required error={errors.fullName}>
+                    <input
+                      type="text"
+                      value={formData.fullName}
+                      onChange={(e) => handleChange('fullName', e.target.value)}
+                      className={getInputClass(Boolean(errors.fullName))}
+                      placeholder="Enter your full name"
+                    />
                   </Field>
                 </div>
 
-                <Field label="Email">
-                  <input required type="email" className={inputField} placeholder="Enter your email" />
+                <Field label="Email" required error={errors.email}>
+                  <input
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => handleChange('email', e.target.value)}
+                    className={getInputClass(Boolean(errors.email))}
+                    placeholder="Enter your email"
+                  />
                 </Field>
 
-                <Field label="Phone Number">
-                  <input required type="tel" className={inputField} placeholder="Enter your phone number" />
+                <Field label="Phone Number" required error={errors.phone}>
+                  <input
+                    type="tel"
+                    value={formData.phone}
+                    onChange={(e) => handleChange('phone', e.target.value)}
+                    className={getInputClass(Boolean(errors.phone))}
+                    placeholder="Enter your phone number"
+                  />
                 </Field>
 
-                <Field label="City">
-                  <select required className={selectField} defaultValue="">
+                <Field label="City" required error={errors.city}>
+                  <select
+                    value={formData.city}
+                    onChange={(e) => handleChange('city', e.target.value)}
+                    className={getSelectClass(Boolean(errors.city))}
+                  >
                     <option value="" disabled>Select your city</option>
                     {CITIES.map((c) => (
                       <option key={c} value={c}>{c}</option>
@@ -218,7 +384,13 @@ export default function ValuationForm({
                 </Field>
 
                 <Field label="Minimum price" info="Estimated minimum price in EUR">
-                  <input type="text" className={inputField} placeholder="Enter minimum price" />
+                  <input
+                    type="text"
+                    value={formData.minPrice}
+                    onChange={(e) => handleChange('minPrice', e.target.value)}
+                    className={getInputClass(false)}
+                    placeholder="Enter minimum price"
+                  />
                 </Field>
 
                 <div className="flex flex-col gap-1.5 text-xs font-semibold text-brand-navy">
@@ -271,6 +443,8 @@ export default function ValuationForm({
                   <span>Any damages?</span>
                   <textarea
                     rows={5}
+                    value={formData.damages}
+                    onChange={(e) => handleChange('damages', e.target.value)}
                     className="w-full flex-1 resize-none rounded-xl border border-slate-200 bg-white p-3 text-xs sm:text-sm text-slate-700 placeholder:text-slate-400 focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange min-h-[148px]"
                     placeholder="Provide an explanation for the damage."
                   />
@@ -279,7 +453,7 @@ export default function ValuationForm({
                 <div className="flex justify-center pt-4 sm:col-span-2">
                   <button
                     type="submit"
-                    className="rounded-full bg-brand-orange px-10 py-3.5 text-sm sm:text-base font-semibold text-white shadow-md hover:bg-brand-orange-dark transition-colors"
+                    className="rounded-full bg-brand-orange px-10 py-3.5 text-sm sm:text-base font-semibold text-white shadow-md hover:bg-brand-orange-dark transition-colors cursor-pointer"
                   >
                     Request My Valuation
                   </button>

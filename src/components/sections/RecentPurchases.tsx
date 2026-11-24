@@ -18,7 +18,7 @@ export default function RecentPurchases({
   band,
 }: Props) {
   const body = (
-    <section className="section-y">
+    <section className="section-y !pb-0">
       <div className="container-x">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading badge={badge} title={title} subtitle={subtitle} align="left" />
@@ -38,7 +38,7 @@ export default function RecentPurchases({
               <div className="p-5">
                 <p className="mb-[10px] text-xs text-[#6C6F73]">{p.brand}</p>
                 <h3 className="text-sm font-semibold text-brand-navy-dark">{p.title}</h3>
-                <p className="mt-1 flex items-center gap-1 text-[11px] text-slate-400">
+                <p className="mt-1 flex items-center gap-1 text-xs text-[#6C6F73]">
                   <MapPin className="h-3 w-3 text-brand-orange" /> {p.place}
                 </p>
               </div>

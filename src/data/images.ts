@@ -64,10 +64,10 @@ export const IMG = {
   catOther: p('cat-other.jpg'),
 
   // recent purchases
-  buyTractor: p('buy-tractor.jpg'),
-  buyActros: p('buy-actros.jpg'),
-  buyRefrigerated: p('buy-refrigerated.jpg'),
-  buyTipper: p('buy-tipper.jpg'),
+  buyTractor: p('purchase01.png'),
+  buyActros: p('purchase02.png'),
+  buyRefrigerated: p('purchase03.png'),
+  buyTipper: p('purchase04.png'),
 
   // popular models
   modelVolvo: p('model-volvo.jpg'),
