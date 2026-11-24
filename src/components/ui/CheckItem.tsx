@@ -1,10 +1,18 @@
 import { CheckCircle2 } from 'lucide-react';
 
 /** Small inline check + label, used under hero / CTA banners. */
-export function CheckInline({ children }: { children: string }) {
+export function CheckInline({ children, icon }: { children: string; icon?: string }) {
+  const iconSrc = icon || (
+    children.toLowerCase().includes('personalis') || children.toLowerCase().includes('personaliz')
+      ? '/images/personalise.svg'
+      : children.toLowerCase().includes('nationwide') || children.toLowerCase().includes('enquir')
+        ? '/images/location-orange.svg'
+        : '/images/rounded-checkmark.svg'
+  );
+
   return (
     <span className="inline-flex items-center gap-2 text-sm text-white sm:text-base">
-      <img src="/images/rounded-checkmark.svg" alt="" className="h-[18px] w-[18px] shrink-0" />
+      <img src={iconSrc} alt="" className="h-[18px] w-[18px] shrink-0" />
       {children}
     </span>
   );

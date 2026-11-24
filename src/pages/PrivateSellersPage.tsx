@@ -56,7 +56,7 @@ export default function PrivateSellersPage() {
       />
 
       {/* More straightforward way */}
-      <section className="section-y">
+      <section className="section-y !pt-0">
         <div className="container-x grid gap-8 lg:grid-cols-[1.1fr_2.4fr] lg:gap-12 xl:gap-16 items-start">
           <div className="flex flex-col items-start">
             <Badge>Why choose us</Badge>
@@ -99,6 +99,7 @@ export default function PrivateSellersPage() {
           { icon: '/images/suport-doc.svg', title: 'Paperwork Support', text: 'Get guidance with the documentation needed for the sale of your vehicle.' },
           { icon: '/images/locaton.svg', title: 'Convenient Collection', text: 'Discuss collection arrangements with our team at a time that suits you.' },
         ]}
+        className='!pb-0'
       />
 
       <Faq />
