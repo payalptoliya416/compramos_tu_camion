@@ -36,10 +36,10 @@ export default function AboutPage() {
   return (
     <>
       <Hero
-        badge="About ComprasTuCamión"
+        badge="About CompramosTuCamión"
         title="Your Trusted Partner in Used Truck Buying"
         text="With over 20 years of experience, we help truck owners sell with confidence through transparent valuations and professional support."
-        image={IMG.heroAbout}
+        image="/images/about-banner.png"
         primary={{ label: 'Sell Your Truck' }}
         secondary={{ label: 'Explore Our Story', to: '/how-it-works' }}
         checks={['20+ Years of Experience', 'Transparent Valuation', 'Professional Support']}
