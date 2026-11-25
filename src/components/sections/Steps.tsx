@@ -21,7 +21,7 @@ export default function Steps({ badge, title, subtitle, steps, action, className
     <section className={`section-y ${className}`}>
       <div className="container-x">
         {action ? (
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between flex-wrap">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between flex-wrap">
             <SectionHeading badge={badge} title={title} subtitle={subtitle} align="left" />
             <CtaButton cta={action} />
           </div>

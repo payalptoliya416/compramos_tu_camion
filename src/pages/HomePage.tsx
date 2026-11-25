@@ -86,7 +86,7 @@ export default function HomePage() {
           <ul className="grid gap-4 sm:gap-[24px] sm:grid-cols-3">
             {MINI_CARDS.map((c) => (
               <li key={c.title} className="overflow-hidden rounded-[12px] border border-[#E7E7E8] bg-white p-[10px]">
-                <Img src={c.image} alt={c.title} className="aspect-[4/3] rounded-[12px]" />
+                <Img src={c.image} alt={c.title} className="rounded-[12px]" />
                 <div className="py-5 px-[5px]">
                   <h3 className="text-base font-semibold text-brand-navy-dark">{c.title}</h3>
                   <p className="mt-[10px] text-sm leading-relaxed text-[#6C6F73]">{c.text}</p>

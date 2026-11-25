@@ -25,8 +25,8 @@ interface Props {
  */
 export default function Hero({ badge, title, text, image, primary, secondary, checks = [], breadcrumb, isHome = false }: Props) {
   return (
-    <section className="relative w-full px-3 sm:px-5 pt-3 sm:pt-5">
-      <div className="relative h-[calc(100dvh-1.5rem)] min-h-[640px] w-full overflow-hidden rounded-[20px] sm:h-[calc(100dvh-2rem)]">
+    <section className="relative w-full px-2.5 sm:px-5 pt-2.5 sm:pt-5">
+      <div className="relative min-h-[calc(100dvh-1.5rem)] h-auto sm:h-[calc(100dvh-2rem)] sm:min-h-[640px] w-full overflow-hidden rounded-[20px]">
         {/* Background Image */}
         <Img
           src={image}
@@ -40,13 +40,13 @@ export default function Hero({ badge, title, text, image, primary, secondary, ch
           aria-hidden
         />
 
-        {/* Content - Vertically centered inside full 100vh banner */}
-        <div className="relative z-10 flex h-full flex-col justify-center items-center sm:items-start text-center sm:text-left px-6 pb-16 pt-24 sm:px-12 sm:pt-28 lg:px-20 xl:px-[160px]">
+        {/* Content - Vertically centered inside full 100vh banner on desktop, start-aligned with header clearance on mobile */}
+        <div className="relative z-10 flex h-full flex-col justify-start sm:justify-center items-center sm:items-start text-center sm:text-left px-4 xs:px-6 pb-12 pt-[105px] sm:px-12 sm:pb-16 sm:pt-28 lg:px-20 xl:px-[160px]">
           <div className="max-w-2xl flex flex-col items-center sm:items-start text-center sm:text-left">
             {/* Pill Badge */}
             <div
               style={{ backgroundImage: `url('/images/label-bg.png')`, backgroundSize: '100% 100%' }}
-              className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2 text-xs sm:text-sm leading-[14px] font-medium uppercase tracking-wider text-brand-orange bg-no-repeat bg-center"
+              className="inline-flex items-center justify-center gap-2 rounded-full px-4 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm leading-[14px] font-medium uppercase tracking-wider text-brand-orange bg-no-repeat bg-center"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-brand-orange" />
               <span>{badge}</span>
@@ -55,7 +55,7 @@ export default function Hero({ badge, title, text, image, primary, secondary, ch
 
             {/* Title */}
             <h1
-              className={`mt-[15px] text-4xl font-medium leading-[1.12] tracking-tight sm:text-5xl text-center sm:text-left ${
+              className={`mt-3 sm:mt-[15px] text-[28px] xs:text-4xl sm:text-5xl font-medium leading-[1.18] sm:leading-[1.12] tracking-tight text-center sm:text-left ${
                 isHome ? 'text-white' : ''
               }`}
               style={
@@ -72,13 +72,13 @@ export default function Hero({ badge, title, text, image, primary, secondary, ch
             </h1>
 
             {/* Subtitle */}
-            <p className="mt-5 text-base md:text-lg leading-relaxed text-white sm:leading-relaxed text-center sm:text-left">
+            <p className="mt-3.5 sm:mt-5 text-sm sm:text-base md:text-lg leading-relaxed text-white sm:leading-relaxed text-center sm:text-left font-light">
               {text}
             </p>
 
             {/* Actions */}
-            <div className="mt-5 md:mt-[35px] flex flex-wrap items-center justify-center sm:justify-start gap-5">
-              <CtaButton cta={primary} className="px-4 lg:!px-[30px] !py-3 md:!py-4  text-sm md:text-base md:leading-[18px] font-medium border border-brand-orange" />
+            <div className="mt-5 md:mt-[35px] flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-5">
+              <CtaButton cta={primary} className="px-4 lg:!px-[30px] !py-3 md:!py-4 text-sm md:text-base md:leading-[18px] font-medium border border-brand-orange" />
               {secondary && (
                 <CtaButton
                   cta={secondary}
@@ -90,10 +90,10 @@ export default function Hero({ badge, title, text, image, primary, secondary, ch
 
             {/* Checkpoints */}
             {checks.length > 0 && (
-              <div className="mt-5 flex flex-wrap justify-center sm:justify-start gap-x-[15px] gap-y-3">
+              <div className="mt-4 sm:mt-5 flex flex-wrap justify-center sm:justify-start gap-x-3 sm:gap-x-[15px] gap-y-2 sm:gap-y-3">
                 {checks.map((c) => (
-                  <span key={c} className="inline-flex items-center gap-2 text-xs font-medium text-white/90 sm:text-sm">
-                    <img src="/images/rounded-checkmark.svg" alt="" className="h-[18px] w-[18px] shrink-0" />
+                  <span key={c} className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-base text-white">
+                    <img src="/images/rounded-checkmark.svg" alt="" className="h-[16px] w-[16px] sm:h-[18px] sm:w-[18px] shrink-0" />
                     {c}
                   </span>
                 ))}
