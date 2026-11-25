@@ -64,8 +64,8 @@ export const TESTIMONIALS = [
 ];
 
 export const CATEGORIES = [
-  { title: 'Tractor Units', text: 'Long-haul and regional tractor units from all major manufacturers.', image: IMG.catTractor, to: '/truck-types/refrigerated-trucks' },
-  { title: 'Rigid Trucks', text: 'Urban and regional rigid trucks in all configurations.', image: IMG.catRigid, to: '/truck-types/parcel-delivery-trucks' },
+  { title: 'Tractor Units', text: 'Long-haul and regional tractor units from all major manufacturers.', image: IMG.catTractor, to: '/truck-types/tractor-units' },
+  { title: 'Rigid Trucks', text: 'Urban and regional rigid trucks in all configurations.', image: IMG.catRigid, to: '/truck-types/rigid-trucks' },
   { title: 'Refrigerated Trucks', text: 'Temperature-controlled vehicles for food and pharmaceutical transport.', image: IMG.catRefrigerated, to: '/truck-types/refrigerated-trucks' },
   { title: 'Tipper Trucks', text: 'Construction and aggregates tipper trucks of all capacities.', image: IMG.catTipper, to: '/truck-types/concrete-mixer-trucks' },
   { title: 'Crane Trucks', text: 'Truck-mounted cranes and specialist lifting vehicles.', image: IMG.catCrane, to: '/truck-types/multilift-hook-lift-trucks' },
