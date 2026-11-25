@@ -75,6 +75,21 @@ export default function TruckMountedCranePage() {
             text: 'Once the offer is accepted, coordinate the required paperwork, payment and vehicle collection arrangements.',
           },
         ],
+        faqTitle: 'Frequently Asked Questions About Selling Trucks',
+        faq: [
+          {
+            q: 'Do they buy crane trucks with debts, liens, or retention of title?',
+            a: 'We can purchase your crane truck even if it has a recorded lien, handling the necessary paperwork during the purchase. However, we do not buy vehicles with an active retention of title ; this financial encumbrance must be cancelled in the Movable Property Registry before finalizing the sale.',
+          },
+          {
+            q: "Is it a problem if the truck doesn't have up-to-date crane safety inspections?",
+            a: "No, it's not a problem at all. Although current safety inspections of the crane are required to work on a construction site, they are not necessary for selling the commercial vehicle to us. We acquire the crane truck as is, handling all the transfer procedures with the DGT (Spanish Traffic Authority) in a completely legal manner, even if the ITV (Spanish MOT) has expired.",
+          },
+          {
+            q: 'Which brands of boom cranes interest you most and what tonnages do you buy?',
+            a: 'We purchase trucks equipped with cranes from all the major brands on the Spanish market , such as Palfinger, Fassi, Hiab, PM, HMF, and Amco Veba, among others. Regarding tonnage, we acquire everything from light trucks with small cranes behind the cab for material distribution, to heavy-duty 3- or 4-axle trucks with large cranes, and even cranes mounted on the back of the bed or heavy-duty self-loading trucks.',
+          },
+        ],
       }}
     />
   );

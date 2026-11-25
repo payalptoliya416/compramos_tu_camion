@@ -41,7 +41,7 @@ const TAB_DATA: Record<'lifting' | 'construction' | 'transport', TruckCard[]> = 
       text: 'Sell a tipper truck fitted with a crane, with specialist assessment, paperwork support and collection across Spain.',
       image: '/images/lifting03.png',
       buttonText: 'Sell Tipper with Crane',
-      to: '/truck-types/concrete-mixer-trucks',
+      to: '/truck-types/tipper-trucks-with-crane',
     },
     {
       title: '3,500 kg Light Trucks',
