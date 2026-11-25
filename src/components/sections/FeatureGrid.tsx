@@ -40,7 +40,7 @@ export default function FeatureGrid({
                   ? 'flex flex-col gap-5 p-2'
                   : variant === 'surface'
                     ? 'flex flex-col h-full gap-3 rounded-[12px] bg-surface py-5 sm:py-[35px] px-5 sm:px-[25px]'
-                    : 'flex flex-col h-full gap-3 rounded-[12px] border border-[#E7E7E8] bg-white py-5 sm:py-[35px] px-5 sm:px-[25px]'
+                    : 'flex flex-col h-full gap-3 rounded-[12px] border border-[#E7E7E8] bg-white pt-5 !pb-2 sm:pt-[35px] px-5 sm:px-[25px]'
               } ${isStaggered && i % 2 === 1 ? 'sm:mt-10 lg:mt-12' : ''}`}
             >
               <span className={`flex h-[58px] w-[58px] items-center justify-center rounded-[12px] border-2 border-[#E7E7E8] ${iconBg || (variant === 'surface' ? 'bg-white' : 'bg-[#F3F3F3]')} text-brand-orange`}>

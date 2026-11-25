@@ -12,6 +12,7 @@ import FinalCta from '@/components/sections/FinalCta';
 
 export interface TruckTypeConfig {
   name: string; // e.g. "Concrete Mixer Truck"
+  heroTitle?: string;
   crumb: string; // breadcrumb label
   heroBadge: string;
   heroImage: string;
@@ -23,13 +24,17 @@ export interface TruckTypeConfig {
   pills: string[];
   whyBadge?: string;
   whyTitle: string;
-  why: { title: string; text: string }[];
+  why: { title: string; text: string; icon?: any }[];
+  staggeredWhy?: boolean;
+  showCategoryDescription?: boolean;
+  categoriesClassName?: string;
   ctaTitle: string;
   ctaText: string;
   ctaChecks?: string[];
   processTitle: string;
-  steps: { title: string; text: string }[];
+  steps: { title: string; text: string; icon?: any }[];
   faq?: FaqItem[];
+  faqTitle?: string;
 }
 
 const WHY_ICONS = [ShieldCheck, MessageSquare, FileSignature, Users];
@@ -41,12 +46,12 @@ export default function TruckTypePage({ c }: { c: TruckTypeConfig }) {
     <>
       <Hero
         badge={c.heroBadge}
-        title={`Sell Your ${c.name} with Confidence`}
+        title={c.heroTitle ?? `Sell Your ${c.name} with Confidence`}
         text={c.heroText}
         image={c.heroImage}
         primary={{ label: 'Get a Truck Valuation' }}
         checks={['All Truck Types', 'Expert Valuation', 'Professional Support']}
-        breadcrumb={[{ label: 'Home', to: '/' }, { label: 'Truck Types' }, { label: c.crumb }]}
+        breadcrumb={[{ label: 'Home', to: '/' }, { label: 'Truck Types', to: '/truck-types' }, { label: c.crumb }]}
       />
 
       <SplitSection
@@ -62,11 +67,15 @@ export default function TruckTypePage({ c }: { c: TruckTypeConfig }) {
         badge={c.whyBadge ?? 'Why sell with us'}
         title={c.whyTitle}
         cols={4}
-        items={c.why.map((w, i) => ({ icon: WHY_ICONS[i % 4], ...w }))}
+        items={c.why.map((w, i) => ({ icon: w.icon ?? WHY_ICONS[i % 4], ...w }))}
         className="!pt-0"
+        staggered={c.staggeredWhy}
       />
 
-      <TruckCategories />
+      <TruckCategories
+        showDescription={c.showCategoryDescription}
+        className={c.categoriesClassName}
+      />
 
       <div className="mt-4">
         <CtaBanner
@@ -80,11 +89,11 @@ export default function TruckTypePage({ c }: { c: TruckTypeConfig }) {
       <Steps
         badge="Our valuation process"
         title={c.processTitle}
-        steps={c.steps.map((s, i) => ({ icon: STEP_ICONS[i % 4], ...s }))}
+        steps={c.steps.map((s, i) => ({ ...s, icon: s.icon ?? STEP_ICONS[i % 4] }))}
       />
 
       <ValuationForm />
-      <Faq items={c.faq} />
+      <Faq items={c.faq} title={c.faqTitle} />
       <FinalCta />
     </>
   );

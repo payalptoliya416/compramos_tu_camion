@@ -27,7 +27,7 @@ const TAB_DATA: Record<'lifting' | 'construction' | 'transport', TruckCard[]> = 
       text: 'Sell your crane truck quickly with a professional valuation, secure payment and help with the paperwork.',
       image: '/images/lifting01.png',
       buttonText: 'Sell Urgently',
-      to: '/get-a-free-valuation',
+      to: '/truck-types/urgent-crane-truck-sale',
     },
     {
       title: 'Truck-Mounted Crane',

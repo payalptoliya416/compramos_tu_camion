@@ -13,6 +13,7 @@ import PrivateSellersPage from '@/pages/PrivateSellersPage';
 import SpecialSellingSituationsPage from '@/pages/SpecialSellingSituationsPage';
 import TruckTypesOverviewPage from '@/pages/TruckTypesOverviewPage';
 import ConcreteMixerPage from '@/pages/truck-types/ConcreteMixerPage';
+import UrgentCraneTruckPage from '@/pages/truck-types/UrgentCraneTruckPage';
 import MultiliftPage from '@/pages/truck-types/MultiliftPage';
 import ParcelDeliveryPage from '@/pages/truck-types/ParcelDeliveryPage';
 import RefrigeratedPage from '@/pages/truck-types/RefrigeratedPage';
@@ -28,7 +29,6 @@ export default function App() {
         <Route path="/how-it-works" element={<HowItWorksPage />} />
         <Route path="/collection-across-spain" element={<CollectionPage />} />
         <Route path="/about-us" element={<AboutPage />} />
-        <Route path="/blog" element={<BlogPage />} />
         <Route path="/business-fleet-sales" element={<BusinessFleetPage />} />
         <Route path="/documents-required-to-sell-a-truck" element={<DocumentsPage />} />
         <Route path="/get-a-free-valuation" element={<ValuationPage />} />
@@ -36,12 +36,15 @@ export default function App() {
         <Route path="/private-truck-sellers" element={<PrivateSellersPage />} />
         <Route path="/special-selling-situations" element={<SpecialSellingSituationsPage />} />
         <Route path="/truck-types" element={<TruckTypesOverviewPage />} />
-        <Route path="/types-of-trucks" element={<TruckTypesOverviewPage />} />
+
         <Route path="/truck-types/concrete-mixer-trucks" element={<ConcreteMixerPage />} />
+        <Route path="/truck-types/urgent-crane-truck-sale" element={<UrgentCraneTruckPage />} />
+        <Route path="/truck-types/crane-trucks" element={<UrgentCraneTruckPage />} />
         <Route path="/truck-types/multilift-hook-lift-trucks" element={<MultiliftPage />} />
         <Route path="/truck-types/parcel-delivery-trucks" element={<ParcelDeliveryPage />} />
         <Route path="/truck-types/refrigerated-trucks" element={<RefrigeratedPage />} />
         <Route path="/truck-types/3500-kg-light-trucks" element={<Light3500Page />} />
+        <Route path="/blog" element={<BlogPage />} />
         <Route path="*" element={<HomePage />} />
       </Route>
     </Routes>

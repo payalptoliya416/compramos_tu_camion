@@ -101,30 +101,32 @@ export default function Hero({ badge, title, text, image, primary, secondary, ch
             )}
           </div>
         </div>
-
-        {/* Breadcrumb if provided */}
-        {breadcrumb && (
-          <div className="absolute bottom-4 left-6 z-10 sm:left-12 lg:left-20">
-            <nav
-              aria-label="Breadcrumb"
-              className="inline-flex flex-wrap items-center gap-2 rounded-lg bg-black/40 px-3 py-1.5 text-xs text-white/80 backdrop-blur-sm"
-            >
-              {breadcrumb.map((b, i) => (
-                <span key={b.label} className="flex items-center gap-2">
-                  {i > 0 && <span aria-hidden className="text-white/40">›</span>}
-                  {b.to ? (
-                    <Link to={b.to} className="hover:text-brand-orange">
-                      {b.label}
-                    </Link>
-                  ) : (
-                    <span className="font-medium text-brand-orange">{b.label}</span>
-                  )}
-                </span>
-              ))}
-            </nav>
-          </div>
-        )}
       </div>
+
+      {/* Breadcrumb if provided - placed below the hero section */}
+      {breadcrumb && (
+        <div className="mt-4 px-3 sm:px-6 lg:px-10">
+          <nav
+            aria-label="Breadcrumb"
+            className="inline-flex flex-wrap items-center gap-2 text-xs sm:text-sm text-[#6C6F73]"
+          >
+            {breadcrumb.map((b, i) => (
+              <span key={b.label} className="flex items-center gap-2">
+                {i > 0 && <span aria-hidden className="text-[#9D9FA2]">›</span>}
+                {b.to ? (
+                  <Link to={b.to} className="transition-colors hover:text-brand-orange">
+                    {b.label}
+                  </Link>
+                ) : (
+                  <span className="rounded-lg border border-[#E7E7E8] bg-white px-2.5 py-1 font-medium text-brand-orange shadow-sm">
+                    {b.label}
+                  </span>
+                )}
+              </span>
+            ))}
+          </nav>
+        </div>
+      )}
     </section>
   );
 }
