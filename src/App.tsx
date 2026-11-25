@@ -22,6 +22,7 @@ import UsedDumpTruckPage from '@/pages/truck-types/UsedDumpTruckPage';
 import MultiliftPage from '@/pages/truck-types/MultiliftPage';
 import ParcelDeliveryPage from '@/pages/truck-types/ParcelDeliveryPage';
 import RefrigeratedPage from '@/pages/truck-types/RefrigeratedPage';
+import TaulinerPage from '@/pages/truck-types/TaulinerPage';
 import Light3500Page from '@/pages/truck-types/Light3500Page';
 import ThankYouPage from '@/pages/ThankYouPage';
 
@@ -51,8 +52,10 @@ export default function App() {
         <Route path="/truck-types/multilift-hook-lift-trucks" element={<MultiliftPage />} />
         <Route path="/truck-types/concrete-mixer-trucks" element={<ConcreteMixerPage />} />
         <Route path="/truck-types/tanker-trucks" element={<TankerTruckPage />} />
+        
         <Route path="/truck-types/tractor-units" element={<RigidTractorTruckPage />} />
         <Route path="/truck-types/refrigerated-trucks" element={<RefrigeratedPage />} />
+        <Route path="/truck-types/tauliner-and-curtainsider-trucks" element={<TaulinerPage />} />
 
         <Route path="/truck-types/parcel-delivery-trucks" element={<ParcelDeliveryPage />} />
         <Route path="/blog" element={<BlogPage />} />
