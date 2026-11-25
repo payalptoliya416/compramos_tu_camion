@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
 import Hero from '@/components/sections/Hero';
 import ValuationForm from '@/components/sections/ValuationForm';
 import Testimonials from '@/components/sections/Testimonials';
@@ -237,33 +236,30 @@ export default function TruckTypesOverviewPage() {
               <button
                 type="button"
                 onClick={() => setActiveTab('lifting')}
-                className={`flex-1 w-full sm:w-[310px] sm:max-w-[310px] h-12 sm:h-14 flex items-center justify-center rounded-full text-sm sm:text-base font-medium transition-all cursor-pointer ${
-                  activeTab === 'lifting'
-                    ? 'bg-brand-orange text-white'
-                    : 'bg-[#F4F5F7] text-[#3B3F45] hover:bg-[#E9EBEF] hover:text-brand-navy'
-                }`}
+                className={`flex-1 w-full sm:w-[310px] sm:max-w-[310px] px-4 h-12 sm:h-14 flex items-center justify-center rounded-full text-sm sm:text-base font-medium transition-all cursor-pointer ${activeTab === 'lifting'
+                  ? 'bg-brand-orange text-white'
+                  : 'bg-[#F4F5F7] text-[#3B3F45] hover:bg-[#E9EBEF] hover:text-brand-navy'
+                  }`}
               >
                 Lifting & Crane
               </button>
               <button
                 type="button"
                 onClick={() => setActiveTab('construction')}
-                className={`flex-1 w-full sm:w-[310px] sm:max-w-[310px] h-12 sm:h-14 flex items-center justify-center rounded-full text-sm sm:text-base font-medium transition-all cursor-pointer ${
-                  activeTab === 'construction'
-                    ? 'bg-brand-orange text-white'
-                    : 'bg-[#F4F5F7] text-[#3B3F45] hover:bg-[#E9EBEF] hover:text-brand-navy'
-                }`}
+                className={`flex-1 w-full sm:w-[310px] sm:max-w-[310px] px-4 h-12 sm:h-14 flex items-center justify-center rounded-full text-sm sm:text-base font-medium transition-all cursor-pointer ${activeTab === 'construction'
+                  ? 'bg-brand-orange text-white'
+                  : 'bg-[#F4F5F7] text-[#3B3F45] hover:bg-[#E9EBEF] hover:text-brand-navy'
+                  }`}
               >
                 Construction & Industrial
               </button>
               <button
                 type="button"
                 onClick={() => setActiveTab('transport')}
-                className={`flex-1 w-full sm:w-[310px] sm:max-w-[310px] h-12 sm:h-14 flex items-center justify-center rounded-full text-sm sm:text-base font-medium transition-all cursor-pointer ${
-                  activeTab === 'transport'
-                    ? 'bg-brand-orange text-white'
-                    : 'bg-[#F4F5F7] text-[#3B3F45] hover:bg-[#E9EBEF] hover:text-brand-navy'
-                }`}
+                className={`flex-1 w-full sm:w-[310px] sm:max-w-[310px] px-4 h-12 sm:h-14 flex items-center justify-center rounded-full text-sm sm:text-base font-medium transition-all cursor-pointer ${activeTab === 'transport'
+                  ? 'bg-brand-orange text-white'
+                  : 'bg-[#F4F5F7] text-[#3B3F45] hover:bg-[#E9EBEF] hover:text-brand-navy'
+                  }`}
               >
                 Transport & Distribution
               </button>
@@ -307,49 +303,43 @@ export default function TruckTypesOverviewPage() {
         </div>
       </section>
 
-      {/* 4. Explore Specific Truck Types (10 Grid) */}
+      {/* 4. Explore Specific Truck Types (10 Grid - matching AboutPage UI) */}
       <section className="section-y">
         <div className="container-x">
-          <SectionHeading
-            badge="Browse all types"
-            title="Explore Specific Truck Types"
-            subtitle="Browse individual vehicle categories to see our comprehensive buying criteria."
-          />
-          <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
-            {SPECIFIC_TRUCK_TYPES.map((t) => (
-              <Link
-                key={t.title}
-                to={t.to}
-                className="group flex flex-col justify-between rounded-[14px] border border-[#E7E7E8] bg-white p-3 sm:p-3.5 transition-all hover:border-brand-orange hover:shadow-md"
-              >
-                <div className="overflow-hidden rounded-[10px] aspect-[4/3] w-full bg-slate-100">
-                  <Img
-                    src={t.image}
-                    alt={t.title}
-                    className="h-full w-full"
-                    imgClassName="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <div className="mt-3 flex items-center justify-between gap-2">
-                  <h3 className="text-xs sm:text-sm font-semibold text-brand-navy-dark group-hover:text-brand-orange transition-colors truncate">
-                    {t.title}
-                  </h3>
-                  <ArrowRight className="h-4 w-4 shrink-0 text-slate-400 group-hover:text-brand-orange group-hover:translate-x-0.5 transition-all" />
-                </div>
-              </Link>
+          <SectionHeading badge="Find your vehicle" title="Explore Specific Truck Types" />
+          <ul className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 lg:gap-[24px]">
+            {SPECIFIC_TRUCK_TYPES.map((s) => (
+              <li key={s.title}>
+                <Link
+                  to={s.to}
+                  className="group block rounded-[10px] border border-[#E7E7E8] bg-white p-3 sm:p-[15px] transition-shadow hover:shadow-md"
+                >
+                  <div className="overflow-hidden rounded-[8px]">
+                    <img
+                      src={s.image}
+                      alt={s.title}
+                      className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="mt-[15px] flex items-center justify-between gap-2">
+                    <span className="text-xs sm:text-base lg:leading-[16px] font-medium text-[#082B54]">
+                      {s.title}
+                    </span>
+                    <img src="/images/right-errow.svg" alt="" />
+                  </div>
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
       {/* 5. Banner: Need Help Identifying Your Truck? */}
       <CtaBanner
-        badge="Expert assistance"
+        badge="Ready to get started?"
         title="Need Help Identifying Your Truck?"
-        text="Not sure which category or body type your commercial vehicle falls into? Share your registration number and a few photos - our specialists will identify it and provide a valuation."
+        text="Not sure which category matches your vehicle? Contact our team or request a valuation to discuss your truck’s details."
         primary={{ label: 'Get a Free Valuation', to: '#valuation' }}
-        showCall
-        checks={['Free Expert Valuation', 'Personalised Guidance', 'Nationwide Coverage']}
       />
 
       {/* 6. How Do We Value Your Truck? */}
