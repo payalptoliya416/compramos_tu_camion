@@ -53,7 +53,7 @@ function renderCellText(text: string, isLight = false) {
   if (match) {
     return (
       <span className="leading-snug">
-        {match[1]} <span className={`text-[11px] sm:text-xs font-normal ${isLight ? 'text-white/80' : 'text-[#6C6F73]'}`}>{match[2]}</span>
+        {match[1]} <span className={`text-[11px] sm:text-xs font-normal ${isLight ? 'text-white' : 'text-[#092B55]'}`}>{match[2]}</span>
       </span>
     );
   }
@@ -71,19 +71,19 @@ export default function ComparisonTable() {
         />
 
         <div className="mt-8 -mx-4 overflow-x-auto px-4 py-12 sm:-mx-6 sm:px-6 sm:py-14 lg:mx-0 lg:px-0 lg:py-14">
-          <div className="relative mx-auto w-[960px] min-w-[960px] rounded-[24px] border border-[#E7E7E8] bg-white p-5 lg:w-full lg:min-w-0 lg:p-7 shadow-sm">
-            <div className="grid grid-cols-[1.05fr_1.35fr_1.2fr_1.2fr] items-start gap-4 lg:gap-[30px]">
+          <div className="relative mx-auto w-[960px] min-w-[960px] rounded-[18px] border border-[#E7E7E8] bg-white p-5 lg:w-full lg:min-w-0 lg:p-5">
+            <div className="grid grid-cols-[1.05fr_1.35fr_1.2fr_1.2fr] items-start gap-4 2xl:gap-[30px]">
               
               {/* Column 1: Factors */}
-              <div className="flex flex-col overflow-hidden rounded-2xl border border-[#092B55] bg-white">
-                <div className="flex h-[56px] items-center justify-center bg-[#092B55] text-base font-semibold text-white md:text-lg">
+              <div className="flex flex-col overflow-hidden rounded-[14px] border border-[#092B55] bg-white">
+                <div className="flex py-4 xl:py-5 items-center rounded-[14px] justify-center bg-[#092B55] text-base font-semibold text-white xl:text-lg">
                   Factors
                 </div>
                 <div className="divide-y divide-[#E7E7E8]">
                   {FACTORS.map((f) => (
                     <div
                       key={f}
-                      className="flex h-[72px] items-center px-4 text-sm font-medium text-[#092B55] sm:text-base"
+                      className="flex py-5 xl:py-[24px] items-center px-2 xl:px-4 text-sm font-medium text-[#092B55] sxlm:text-base"
                     >
                       {f}
                     </div>
@@ -92,15 +92,15 @@ export default function ComparisonTable() {
               </div>
 
               {/* Column 2: We Buy Your Truck (Overlapping Top & Bottom) */}
-              <div className="-mt-9 -mb-9 z-10 flex flex-col rounded-[16px] bg-[#092B55] p-2.5 pb-6 shadow-[0_16px_36px_rgba(9,43,85,0.28)] border border-[#092B55]">
-                <div className="flex h-[66px] items-center justify-center rounded-[12px] bg-[#F17612] text-lg font-semibold text-white md:text-xl">
+              <div className="-mt-9 -mb-9 z-10 flex flex-col rounded-[16px] bg-[#092B55] p-2.5 pb-6 border border-[#092B55]">
+                <div className="flex py-5 xl:py-[22px] items-center justify-center rounded-[12px] bg-[#F17612] text-lg font-semibold text-white xl:text-xl">
                   We Buy Your Truck
                 </div>
                 <div className="divide-y divide-white/20">
                   {US.map((text) => (
                     <div
                       key={text}
-                      className="flex h-[72px] items-center gap-2.5 px-3.5 text-sm font-medium text-white sm:text-base"
+                      className="flex py-6 xl:py-[28px] last:pb-0 xl:last:pb-[35px] items-center gap-2.5 px-1 xl:px-3.5 text-sm font-medium text-white xl:text-base"
                     >
                       <GreenCheck />
                       {renderCellText(text, true)}
@@ -111,14 +111,14 @@ export default function ComparisonTable() {
 
               {/* Column 3: Concessionaire */}
               <div className="flex flex-col">
-                <div className="flex h-[56px] items-center justify-center rounded-[14px] bg-[#F3F3F3] text-base font-semibold text-[#0A0F16] md:text-lg">
+                <div className="flex py-4 xl:py-5 items-center justify-center rounded-[14px] bg-[#F3F3F3] text-base font-semibold text-[#0A0F16] xl:text-lg">
                   Concessionaire
                 </div>
                 <div className="divide-y divide-[#E7E7E8]">
                   {DEALER.map((text) => (
                     <div
                       key={text}
-                      className="flex h-[72px] items-center gap-2.5 px-3 text-sm font-medium text-[#092B55] sm:text-base"
+                      className="flex py-5 xl:py-[24px] last:pb-0 items-center gap-2.5 px-1 xl:px-3 text-sm font-medium text-[#092B55] xl:text-base"
                     >
                       <GreenCheck />
                       {renderCellText(text)}
@@ -129,14 +129,14 @@ export default function ComparisonTable() {
 
               {/* Column 4: Individuals */}
               <div className="flex flex-col">
-                <div className="flex h-[56px] items-center justify-center rounded-[14px] bg-[#F3F3F3] text-base font-semibold text-[#0A0F16] md:text-lg">
+                <div className="flex py-4 xl:py-5 items-center justify-center rounded-[14px] bg-[#F3F3F3] text-base font-semibold text-[#0A0F16] xl:text-lg">
                   Individuals
                 </div>
                 <div className="divide-y divide-[#E7E7E8]">
                   {PRIVATE.map((text) => (
                     <div
                       key={text}
-                      className="flex h-[72px] items-center gap-2.5 px-3 text-sm font-medium text-[#092B55] sm:text-base"
+                      className="flex py-5 xl:py-[24px] last:pb-0 items-center gap-2.5 px-1 xl:px-3 text-sm font-medium text-[#092B55] xl:text-base"
                     >
                       <GreenCheck />
                       {renderCellText(text)}
