@@ -103,6 +103,7 @@ export default function HomePage() {
         subtitle="Selling a commercial vehicle involves more than agreeing on a price. We provide professional support to help make every step clear and manageable."
         cols={4}
         variant="plain"
+        staggered
         items={[
           { icon: '/images/right-sign.svg', title: 'Professional Truck Valuation', text: 'We assess your truck’s condition, specifications and relevant details to provide a professional valuation based on the vehicle.' },
           { icon: '/images/user.svg', title: 'Clear and Transparent Terms', text: 'Understand the offer, selling conditions and next steps with clear communication throughout the process.' },
