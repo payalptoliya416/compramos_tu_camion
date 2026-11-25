@@ -28,8 +28,10 @@ export interface TruckTypeConfig {
   staggeredWhy?: boolean;
   showCategoryDescription?: boolean;
   categoriesClassName?: string;
+  categoriesBadge?: string;
   ctaTitle: string;
   ctaText: string;
+  ctaBadge?: string;
   ctaChecks?: string[];
   processTitle: string;
   steps: { title: string; text: string; icon?: any }[];
@@ -73,13 +75,14 @@ export default function TruckTypePage({ c }: { c: TruckTypeConfig }) {
       />
 
       <TruckCategories
+        badge={c.categoriesBadge}
         showDescription={c.showCategoryDescription}
         className={c.categoriesClassName}
       />
 
       <div className="mt-4">
         <CtaBanner
-          badge="Ready to sell your truck?"
+          badge={c.ctaBadge ?? "Ready to sell your truck?"}
           title={c.ctaTitle}
           text={c.ctaText}
           checks={c.ctaChecks ?? ['Professional Valuation', 'Documentation Support', 'Individual and Fleet Sales']}
