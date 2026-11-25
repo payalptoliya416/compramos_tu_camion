@@ -67,7 +67,7 @@ export default function BrandLogos({
                   <img
                     src={b.image}
                     alt={b.name}
-                    className="max-h-12 sm:max-h-14 w-auto max-w-[85%] object-contain"
+                    className=""
                   />
                 </div>
               </SwiperSlide>

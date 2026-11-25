@@ -36,10 +36,10 @@ export default function App() {
         <Route path="/business-fleet-sales" element={<BusinessFleetPage />} />
         <Route path="/special-selling-situations" element={<SpecialSellingSituationsPage />} />
         <Route path="/sell-by-make-and-model" element={<MakeModelPage />} />
+        <Route path="/documents-required-to-sell-a-truck" element={<DocumentsPage />} />
         <Route path="/how-it-works" element={<HowItWorksPage />} />
         <Route path="/collection-across-spain" element={<CollectionPage />} />
         <Route path="/about-us" element={<AboutPage />} />
-        <Route path="/documents-required-to-sell-a-truck" element={<DocumentsPage />} />
         <Route path="/get-a-free-valuation" element={<ValuationPage />} />
         <Route path="/truck-types" element={<TruckTypesOverviewPage />} />
 

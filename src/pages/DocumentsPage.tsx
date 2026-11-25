@@ -109,7 +109,7 @@ export default function DocumentsPage() {
       />
 
       {/* Private sellers checklist */}
-      <section className="section-y">
+      <section className="section-y !pt-0">
         <div className="container-x">
           <SectionHeading badge="For individual owners" title="Documents You May Need as a Private Seller" />
           <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:gap-5">
