@@ -188,9 +188,9 @@ export default function ValuationForm({
           </div>
 
           {/* Right Column: Multi-Step Card */}
-          <div className="mx-auto w-full max-w-xl rounded-[18px] bg-white py-8 px-5 sm:py-[45px] sm:px-[26px] xl:py-[55px] xl:px-[30px] lg:max-w-none border-[6px] sm:border-[8px] xl:border-[10px] border-[#F3F3F3]">
+          <div className="mx-auto w-full max-w-xl rounded-[18px] bg-white py-8 px-3 sm:px-5 sm:py-[45px] lg:px-[26px] xl:py-[55px] xl:px-[30px] lg:max-w-none border-[6px] sm:border-[8px] xl:border-[10px] border-[#F3F3F3]">
             {/* Header: Badge & Indicator Pills */}
-            <div className="mb-[15px] flex items-center justify-between">
+            <div className="mb-[15px] flex items-center justify-between flex-wrap">
               <button
                 type="button"
                 onClick={() => {
@@ -233,7 +233,7 @@ export default function ValuationForm({
             </div>
 
             {/* Form Title */}
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between flex-wrap">
               <h3 className="text-[26px] font-semibold text-[#092B55]">
                 {step === 1 ? 'Truck Details' : 'Contact Details'}
               </h3>
