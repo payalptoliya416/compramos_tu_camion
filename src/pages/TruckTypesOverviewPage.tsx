@@ -130,32 +130,38 @@ const SPECIFIC_TRUCK_TYPES = [
 // Valuation factors
 const VALUATION_FACTORS = [
   {
-    title: 'Condition & Mileage',
-    text: 'Mechanical state, engine health, service history, cab interior, tyres and structural state all play a direct role in determining maximum market value.',
+    icon: '/images/questionmark.svg',
+    title: 'No Need to Know Everything',
+    text: 'You can start by sharing the basic information you have about your truck. Our team can review the details with you.',
   },
   {
-    title: 'Market Demand',
-    text: 'Current supply and demand trends across Spain and European secondary markets for your specific vehicle configuration and bodywork.',
+    icon: '/images/graph-chart.svg',
+    title: 'A Clearer Valuation',
+    text: 'The make, model, year, mileage, equipment, and vehicle condition can help inform the appraisal.',
   },
   {
-    title: 'Complete Documentation',
-    text: 'Having technical inspection records (ITV), registration certificates and maintenance logs ready guarantees the fastest transfer and best valuation.',
+    icon: '/images/star.svg',
+    title: 'A Competitive Offer',
+    text: "The valuation considers the truck's characteristics and relevant market factors. Final offers depend on the individual vehicle and its condition.",
   },
 ];
 
 // Straightforward steps
 const STRAIGHTFORWARD_STEPS = [
   {
-    title: 'Enter Your Truck Details',
-    text: 'Fill in our quick online form with your truck’s make, model, year, mileage and photos in just two minutes.',
+    icon: '/images/doc-blue.svg',
+    title: 'Share Your Truck Details',
+    text: 'Provide the make, model, year, mileage, and other relevant vehicle information.',
   },
   {
-    title: 'Receive a Fair Offer',
-    text: 'Our appraisal specialists review the data and present a transparent, competitive offer promptly.',
+    icon: '/images/bilori-orange.svg',
+    title: 'Request a Valuation',
+    text: 'Our team reviews the information provided and follows up about your request.',
   },
   {
-    title: 'Payment & Free Collection',
-    text: 'Accept our offer and we arrange convenient nationwide collection and transfer payment promptly.',
+    icon: '/images/handshake-regula-blue.svg',
+    title: 'Discuss the Sale',
+    text: 'If you wish to proceed, discuss the offer, documentation, and arrangements for the transaction.',
   },
 ];
 
@@ -211,7 +217,7 @@ export default function TruckTypesOverviewPage() {
           </div>
           <div className="flex flex-col items-start gap-4">
             <Badge>Find your truck category</Badge>
-            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[40px] xl:leading-[52px]">
+            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[40px] xl:leading-[40px]">
               Every Truck Has Its Own Category
             </h2>
             <p className="text-base leading-relaxed text-[#3B3F45]">
@@ -344,81 +350,82 @@ export default function TruckTypesOverviewPage() {
 
       {/* 6. How Do We Value Your Truck? */}
       <section className="section-y">
-        <div className="container-x grid items-center gap-8 lg:grid-cols-2 lg:gap-[53px]">
-          <div className="overflow-hidden rounded-2xl">
-            <Img
-              src="/images/how-value-truck.png"
-              alt="How we value your truck"
-              className="w-full h-auto rounded-2xl"
-              imgClassName="w-full object-cover rounded-2xl"
-            />
-          </div>
+        <div className="container-x grid items-center gap-5 lg:grid-cols-2 lg:gap-[30px]">
           <div className="flex flex-col items-start gap-4">
-            <Badge>Valuation factors</Badge>
-            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[40px] xl:leading-[52px]">
+            <Badge>Understanding your vehicle</Badge>
+            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[40px] xl:leading-[40px]">
               How Do We Value Your Truck?
             </h2>
             <p className="text-base leading-relaxed text-[#3B3F45]">
-              When assessing your truck, our team considers key factors to arrive at an accurate and competitive market valuation.
+              Different trucks have different configurations and uses. Sharing accurate vehicle details helps our team understand your truck and review your valuation request.
             </p>
-            <div className="mt-4 flex flex-col gap-4 w-full">
-              {VALUATION_FACTORS.map((f, i) => (
-                <div
-                  key={f.title}
-                  className="flex items-start gap-4 rounded-[14px] border border-[#E7E7E8] bg-white p-4 sm:p-5 transition-all hover:border-brand-orange/40 hover:shadow-sm"
-                >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-orange text-white font-bold text-sm sm:text-base">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <div>
-                    <h3 className="text-base sm:text-lg font-semibold text-brand-navy-dark leading-snug">
-                      {f.title}
-                    </h3>
-                    <p className="mt-1 text-sm leading-relaxed text-[#6C6F73]">
-                      {f.text}
-                    </p>
-                  </div>
-                </div>
-              ))}
+            <div className="mt-2 w-full overflow-hidden rounded-[12px]">
+              <Img
+                src="/images/competitive.png"
+                alt="How Do We Value Your Truck?"
+                className="w-full h-auto rounded-2xl"
+                imgClassName="w-full object-cover rounded-[12px]"
+              />
             </div>
+          </div>
+
+          <div className="flex flex-col gap-4 sm:gap-5 w-full">
+            {VALUATION_FACTORS.map((f) => (
+              <div
+                key={f.title}
+                className="flex items-start gap-4 sm:gap-5 rounded-[12px] bg-[#F3F3F3] p-5 transition-all hover:shadow-sm"
+              >
+                <span className="flex h-12 w-12 sm:h-[58px] sm:w-[58px] shrink-0 items-center justify-center rounded-full bg-brand-orange text-white">
+                  <img src={f.icon} alt="" className="" />
+                </span>
+                <div>
+                  <h3 className="text-lg sm:text-xl font-medium text-brand-navy-dark leading-snug">
+                    {f.title}
+                  </h3>
+                  <p className="mt-5 text-sm sm:text-base leading-relaxed text-[#3B3F45]">
+                    {f.text}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* 7. Selling Your Truck Can Be Straightforward (3 Steps) */}
-      <section className="section-y bg-surface">
+      <section className="section-y !pt-0">
         <div className="container-x">
           <SectionHeading
-            badge="Selling process"
+            badge="Simple steps"
             title="Selling Your Truck Can Be Straightforward"
-            subtitle="From initial enquiry to handover, we make every step simple and transparent."
           />
-          <div className="relative mt-10 grid gap-[24px] md:grid-cols-3">
-            {STRAIGHTFORWARD_STEPS.map((s, i) => (
-              <div key={s.title} className="relative flex flex-col items-center text-center">
-                {i < 2 && (
+          <ol className="relative mt-10 grid gap-[24px] md:grid-cols-3">
+            {STRAIGHTFORWARD_STEPS.map(({ icon, title, text }, i) => (
+              <li key={title} className="relative flex flex-col items-center text-center">
+                {i < STRAIGHTFORWARD_STEPS.length - 1 && (
                   <div
                     aria-hidden
                     className="absolute left-[calc(50%+29px)] top-[29px] -translate-y-1/2 hidden md:block h-[1.5px] w-[calc(100%-34px)] overflow-hidden"
                     style={{
-                      background: 'linear-gradient(90deg, #F17612 0%, #F17612 48%, #E7E7E8 52%, #E7E7E8 100%)',
+                      background:
+                        'linear-gradient(90deg, #F17612 0%, #F17612 48%, #E7E7E8 52%, #E7E7E8 100%)',
                     }}
                   />
                 )}
-                <span className="relative z-10 flex h-[58px] w-[58px] items-center justify-center rounded-[12px] border border-[#E7E7E8] bg-white text-brand-orange font-bold text-base">
-                  {String(i + 1).padStart(2, '0')}
+                <span className="relative z-10 flex h-[58px] w-[58px] items-center justify-center rounded-[12px] border border-[#E7E7E8] bg-[#F3F3F3] text-brand-orange">
+                  <img src={icon} alt="" className="" />
                 </span>
                 <h3 className="mt-5 sm:mt-[25px] text-lg font-medium text-brand-navy-dark sm:text-xl">
-                  {s.title}
+                  {title}
                 </h3>
-                <p className="mt-[15px] max-w-[420px] text-sm leading-relaxed text-[#3B3F45] sm:text-base">
-                  {s.text}
+                <p className="mt-[15px] max-w-[450px] text-sm leading-relaxed text-[#3B3F45] sm:text-base">
+                  {text}
                 </p>
-              </div>
+              </li>
             ))}
-          </div>
+          </ol>
           <div className="mt-10 flex justify-center">
-            <CtaButton cta={{ label: 'Start Your Valuation', to: '#valuation' }} />
+            <CtaButton cta={{ label: 'Get a Truck Valuation', to: '#valuation' }} />
           </div>
         </div>
       </section>
@@ -430,7 +437,7 @@ export default function TruckTypesOverviewPage() {
       <Testimonials />
 
       {/* 10. FAQs */}
-      <Faq items={FAQ_ITEMS} />
+      <Faq items={FAQ_ITEMS} className='pt-0' />
 
       {/* 11. Final CTA */}
       <FinalCta />

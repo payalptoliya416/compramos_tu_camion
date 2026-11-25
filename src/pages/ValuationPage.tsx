@@ -117,7 +117,7 @@ export default function ValuationPage() {
         steps={[
           { icon: '/images/doc.svg', title: 'Provide the Basic Details', text: 'Enter the make, model, registration year, mileage and other essential vehicle information.' },
           { icon: '/images/info-blue.svg', title: 'Add Vehicle Information', text: 'Describe the truck’s condition, fuel type, equipment and any relevant details. Upload photographs where possible.' },
-          { icon: '/images/bilori-blue.svg', title: 'Professional Assessment', text: 'Our team reviews the information submitted and evaluates the vehicle based on its specifications, condition and market factors.' },
+          { icon: '/images/bilori-orange.svg', title: 'Professional Assessment', text: 'Our team reviews the information submitted and evaluates the vehicle based on its specifications, condition and market factors.' },
           { icon: '/images/chat-blue.svg', title: 'Discuss the Next Steps', text: 'We communicate the assessment and explain the available next steps for selling your truck.' },
         ]}
       />
