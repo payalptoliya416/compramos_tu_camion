@@ -340,7 +340,7 @@ body {
 
 .testimonials-swiper .swiper-pagination-bullet-active,
 .brand-logos-swiper .swiper-pagination-bullet-active {
-  width: 24px !important;
+  width: 16px !important;
   height: 8px !important;
   background-color: var(--color-brand-orange, #F17612) !important;
   border-radius: 9999px !important;

@@ -31,6 +31,7 @@ export default function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<HomePage />} />
+        <Route path="/private-truck-sellers" element={<PrivateSellersPage />} />
         <Route path="/thank-you" element={<ThankYouPage />} />
         <Route path="/how-it-works" element={<HowItWorksPage />} />
         <Route path="/collection-across-spain" element={<CollectionPage />} />
@@ -39,7 +40,6 @@ export default function App() {
         <Route path="/documents-required-to-sell-a-truck" element={<DocumentsPage />} />
         <Route path="/get-a-free-valuation" element={<ValuationPage />} />
         <Route path="/sell-by-make-and-model" element={<MakeModelPage />} />
-        <Route path="/private-truck-sellers" element={<PrivateSellersPage />} />
         <Route path="/special-selling-situations" element={<SpecialSellingSituationsPage />} />
         <Route path="/truck-types" element={<TruckTypesOverviewPage />} />
 
@@ -52,7 +52,7 @@ export default function App() {
         <Route path="/truck-types/multilift-hook-lift-trucks" element={<MultiliftPage />} />
         <Route path="/truck-types/concrete-mixer-trucks" element={<ConcreteMixerPage />} />
         <Route path="/truck-types/tanker-trucks" element={<TankerTruckPage />} />
-        
+
         <Route path="/truck-types/tractor-units" element={<RigidTractorTruckPage />} />
         <Route path="/truck-types/refrigerated-trucks" element={<RefrigeratedPage />} />
         <Route path="/truck-types/tauliner-and-curtainsider-trucks" element={<TaulinerPage />} />
