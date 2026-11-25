@@ -37,7 +37,7 @@ export default function RecentPurchases({
                 <span className="absolute left-[10px] top-[10px] rounded-full bg-[#0A0F16] px-[10px] py-[6px] text-[10px] leading-[10px] text-white">{p.year}</span>
                 <span className="absolute right-[10px] top-[10px] rounded-full bg-brand-orange px-[10px] py-[6px] text-[10px] leading-[10px] text-white">{p.tag}</span>
               </div>
-              <div className="p-5">
+              <div className="p-3 md:p-5">
                 <p className="mb-[10px] text-xs text-[#6C6F73]">{p.brand}</p>
                 <h3 className="text-sm font-semibold text-brand-navy-dark">{p.title}</h3>
                 <p className="mt-1 flex items-center gap-1 text-xs text-[#6C6F73]">

@@ -36,7 +36,7 @@ export default function SplitSection({
         />
         <div className="flex flex-col items-start gap-4">
           <Badge>{badge}</Badge>
-          <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[40px] xl:leading-[60px]">{title}</h2>
+          <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[34px] xl:text-[40px] xl:leading-[60px]">{title}</h2>
           {paragraphs.map((p) => (
             <p key={p} className="text-base leading-relaxed text-[#3B3F45]">{p}</p>
           ))}

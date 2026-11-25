@@ -58,7 +58,7 @@ export default function BusinessFleetPage() {
         cta={{ label: 'Get a Fleet Valuation' }}
       />
 
-      <section className="section-y !pt-4">
+      <section className="section-y">
         <div className="container-x">
           <SectionHeading badge="Why work with us" title="Support for Your Business Truck Sales" />
           <div className="mt-10 grid gap-[24px] sm:grid-cols-2 lg:grid-cols-3">

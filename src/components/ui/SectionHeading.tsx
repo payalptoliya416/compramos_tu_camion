@@ -44,7 +44,7 @@ export default function SectionHeading({
     <div className={`flex flex-col gap-3 sm:gap-[15px] ${alignCls} ${className}`}>
       {badge && <Badge light={light}>{badge}</Badge>}
       <Tag
-        className={`text-2xl font-medium leading-tight sm:text-[40px] sm:leading-[40px] ${
+        className={`text-2xl font-medium leading-tight sm:text-[34px] xl:text-[40px] sm:leading-[40px] ${
           light ? 'text-white' : 'text-brand-navy'
         }`}
       >

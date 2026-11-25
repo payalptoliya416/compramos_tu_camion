@@ -217,7 +217,7 @@ export default function TruckTypesOverviewPage() {
           </div>
           <div className="flex flex-col items-start gap-4">
             <Badge>Find your truck category</Badge>
-            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[40px] xl:leading-[40px]">
+            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[34px] xl:text-[40px] xl:leading-[40px]">
               Every Truck Has Its Own Category
             </h2>
             <p className="text-base leading-relaxed text-[#3B3F45]">
@@ -353,7 +353,7 @@ export default function TruckTypesOverviewPage() {
         <div className="container-x grid items-center gap-5 lg:grid-cols-2 lg:gap-[30px]">
           <div className="flex flex-col items-start gap-4">
             <Badge>Understanding your vehicle</Badge>
-            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[40px] xl:leading-[40px]">
+            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[34px] xl:text-[40px] xl:leading-[40px]">
               How Do We Value Your Truck?
             </h2>
             <p className="text-base leading-relaxed text-[#3B3F45]">

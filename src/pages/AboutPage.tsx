@@ -81,7 +81,7 @@ export default function AboutPage() {
           </div>
           <div className="flex flex-col items-start gap-4">
             <Badge>Who we are</Badge>
-            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[40px] xl:leading-[60px]">
+            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[34px] xl:text-[40px] xl:leading-[60px]">
               Specialists in Buying Used Trucks Across Spain
             </h2>
             <p className="text-base leading-relaxed text-[#3B3F45]">
@@ -122,7 +122,7 @@ export default function AboutPage() {
           </div>
           <div className="flex flex-col items-start gap-[15px] lg:order-1">
             <Badge>Our story</Badge>
-            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[40px] xl:leading-[60px]">
+            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[34px] xl:text-[40px] xl:leading-[60px]">
               Making Truck Selling Simpler and More Transparent
             </h2>
             <p className="text-base leading-relaxed text-[#3B3F45]">

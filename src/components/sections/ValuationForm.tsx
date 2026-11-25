@@ -327,7 +327,7 @@ export default function ValuationForm({
                   </select>
                 </Field>
 
-                <div className="flex justify-center pt-[15px] sm:col-span-2">
+                <div className="flex justify-center pt-2 sm:pt-[15px] sm:col-span-2">
                   <button
                     type="submit"
                     className="rounded-full bg-brand-orange px-6 lg:px-10 xl:px-[54px] py-4 text-sm sm:text-lg font-medium leading-[18px] text-white hover:bg-brand-orange-dark transition-colors cursor-pointer"
@@ -395,47 +395,49 @@ export default function ValuationForm({
 
                 <div className="flex flex-col gap-1.5 text-xs font-semibold text-brand-navy">
                   <span>Photo upload</span>
-                  <div
-                    onClick={() => fileInputRef.current?.click()}
-                    className="flex min-h-[168px] flex-1 cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-200 bg-[#F9FAFB] p-[30px] text-center transition-colors hover:border-brand-orange hover:bg-white"
-                  >
-                    <input
-                      ref={fileInputRef}
-                      type="file"
-                      multiple
-                      accept="image/png,image/jpeg"
-                      className="hidden"
-                      onChange={(e) => {
-                        if (e.target.files && e.target.files.length > 0) {
-                          setFilesCount(e.target.files.length);
-                        }
-                      }}
-                    />
-                    <svg
-                      width="28"
-                      height="28"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="text-[#6C6F73]"
+                  <div className="flex flex-1 rounded-xl border border-[#E6E9ED] bg-white p-2.5 sm:p-3">
+                    <div
+                      onClick={() => fileInputRef.current?.click()}
+                      className="flex min-h-[168px] w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-[#D1D5DB] bg-[#F9FAFB] p-5 text-center transition-colors hover:border-brand-orange hover:bg-white"
                     >
-                      <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" />
-                      <path d="M12 12v9" />
-                      <path d="m16 16-4-4-4 4" />
-                    </svg>
-                    <p className="mt-[11px] text-xs font-medium text-[#0A0F16]">
-                      {filesCount > 0 ? `${filesCount} file(s) selected` : 'Choose a file or drag & drop it here'}
-                    </p>
-                    <p className="text-[10px] text-[#9D9FA2]">JPEG, and PNG formats, up to 50MB</p>
-                    <button
-                      type="button"
-                      className="mt-[15px] rounded-full border border-brand-orange px-4 [15px] py-[9px] text-xs font-medium text-brand-orange hover:bg-brand-orange/5"
-                    >
-                      Browse File
-                    </button>
+                      <input
+                        ref={fileInputRef}
+                        type="file"
+                        multiple
+                        accept="image/png,image/jpeg"
+                        className="hidden"
+                        onChange={(e) => {
+                          if (e.target.files && e.target.files.length > 0) {
+                            setFilesCount(e.target.files.length);
+                          }
+                        }}
+                      />
+                      <svg
+                        width="28"
+                        height="28"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="text-[#6C6F73]"
+                      >
+                        <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" />
+                        <path d="M12 12v9" />
+                        <path d="m16 16-4-4-4 4" />
+                      </svg>
+                      <p className="mt-[11px] text-xs font-semibold text-[#0A0F16]">
+                        {filesCount > 0 ? `${filesCount} file(s) selected` : 'Choose a file or drag & drop it here'}
+                      </p>
+                      <p className="mt-1 text-[10px] text-[#9D9FA2]">JPEG, and PNG formats, up to 50MB</p>
+                      <button
+                        type="button"
+                        className="mt-[15px] rounded-full border border-brand-orange px-5 py-2 text-xs font-medium text-brand-orange hover:bg-brand-orange/5"
+                      >
+                        Browse File
+                      </button>
+                    </div>
                   </div>
                 </div>
 
@@ -445,7 +447,7 @@ export default function ValuationForm({
                     rows={5}
                     value={formData.damages}
                     onChange={(e) => handleChange('damages', e.target.value)}
-                    className="w-full flex-1 resize-none rounded-[8px] border border-[#E6E9ED] bg-white p-[15px] text-xs text-[#6B8098] placeholder:text-[#6B8098] focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange min-h-[148px]"
+                    className="w-full flex-1 resize-none rounded-xl border border-[#E6E9ED] bg-white p-[15px] text-xs text-[#6B8098] placeholder:text-[#6B8098] focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange min-h-[148px]"
                     placeholder="Provide an explanation for the damage."
                   />
                 </div>

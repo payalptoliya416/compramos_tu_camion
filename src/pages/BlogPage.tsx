@@ -38,7 +38,7 @@ export default function BlogPage() {
         <div className="container-x grid gap-5 lg:grid-cols-[1fr_300px] lg:gap-[36px] 2xl:grid-cols-[1fr_380px]">
           <div className='order-2 lg:order-1'>
             <Badge>Latest articles</Badge>
-            <h2 className="mb-6 mt-3 text-2xl font-medium leading-tight text-brand-navy sm:text-[40px] sm:leading-[40px]">Explore Our Latest Guides</h2>
+            <h2 className="mb-6 mt-3 text-2xl font-medium leading-tight text-brand-navy sm:text-[34px] xl:text-[40px] sm:leading-[40px]">Explore Our Latest Guides</h2>
 
             {filtered.length === 0 ? (
               <p className="rounded-xl bg-slate-50 p-6 text-sm text-slate-500">No articles match your search.</p>

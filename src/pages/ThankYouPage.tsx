@@ -15,7 +15,7 @@ export default function ThankYouPage() {
       />
         </div>
 
-        <h1 className="mt-[47px] text-2xl font-medium text-[#092B55] sm:text-[40px]">
+        <h1 className="mt-[47px] text-2xl font-medium text-[#092B55] sm:text-[34px] xl:text-[40px]">
           One Step Closer To Selling Your Truck!
         </h1>
 

@@ -26,20 +26,19 @@ interface Props {
 export default function Hero({ badge, title, text, image, primary, secondary, checks = [], breadcrumb, isHome = false }: Props) {
   return (
     <section className="relative w-full px-2.5 sm:px-5 pt-2.5 sm:pt-5">
-      <div className="relative min-h-[calc(100dvh-1.5rem)] h-auto sm:h-[calc(100dvh-2rem)] sm:min-h-[640px] w-full overflow-hidden rounded-[20px]">
+      <div className="relative min-h-[calc(100dvh-1.5rem)] h-auto sm:h-[calc(100dvh-2rem)] sm:min-h-[640px] sm:max-h-[910px] w-full overflow-hidden rounded-[20px]">
         {/* Background Image */}
         <Img
           src={image}
           className="!absolute inset-0 h-full w-full"
-          imgClassName="object-cover object-[75%_center] sm:object-center"
+          imgClassName="object-cover object-[75%_bottom] sm:object-bottom"
         />
 
         {/* Responsive dark overlay for mobile/tablet text readability */}
-        <div
-          className="absolute inset-0 z-[1] bg-black/60 sm:bg-black/40 lg:hidden"
-          aria-hidden
-        />
-
+      <div
+  className="absolute inset-0 z-[1] bg-[linear-gradient(to_bottom,rgba(0,0,0,0.5)_0%,rgba(0,0,0,0.3)_85%,rgba(255,255,255,0.08)_100%)] sm:hidden"
+  aria-hidden
+/>
         {/* Content - Vertically centered inside full 100vh banner on desktop, start-aligned with header clearance on mobile */}
         <div className="relative z-10 flex h-full flex-col justify-start sm:justify-center items-center sm:items-start text-center sm:text-left px-4 xs:px-6 pb-12 pt-[105px] sm:px-12 sm:pb-16 sm:pt-28 lg:px-20 xl:px-[160px]">
           <div className="max-w-2xl flex flex-col items-center sm:items-start text-center sm:text-left">
