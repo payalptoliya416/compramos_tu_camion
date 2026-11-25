@@ -52,9 +52,9 @@ export default function App() {
         <Route path="/truck-types/concrete-mixer-trucks" element={<ConcreteMixerPage />} />
         <Route path="/truck-types/tanker-trucks" element={<TankerTruckPage />} />
         <Route path="/truck-types/tractor-units" element={<RigidTractorTruckPage />} />
+        <Route path="/truck-types/refrigerated-trucks" element={<RefrigeratedPage />} />
 
         <Route path="/truck-types/parcel-delivery-trucks" element={<ParcelDeliveryPage />} />
-        <Route path="/truck-types/refrigerated-trucks" element={<RefrigeratedPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="*" element={<HomePage />} />
       </Route>
