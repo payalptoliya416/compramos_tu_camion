@@ -76,7 +76,7 @@ export default function UrgentCraneTruckPage() {
             text: 'Once the offer is accepted, coordinate the required paperwork, payment and vehicle collection arrangements.',
           },
         ],
-        faqTitle: 'Frequently Asked Questions About the Urgent Sale of Crane Trucks',
+        faqTitle: 'Frequently Asked Questions About Selling Trucks',
         faq: [
           {
             q: 'How long does it take to close a sale if I put "I\'m selling a crane truck urgently"?',

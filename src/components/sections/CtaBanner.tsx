@@ -31,8 +31,8 @@ export default function CtaBanner({
         />
         <div className="container-x relative z-10 flex flex-col items-center gap-4 py-12 text-center sm:py-[80px]">
           <Badge light>{badge}</Badge>
-          <h2 className="max-w-3xl text-2xl font-medium leading-tight text-white sm:text-[40px] sm:leading-[40px]">{title}</h2>
-          <p className="max-w-2xl text-base leading-relaxed text-white/80">{text}</p>
+          <h2 className="max-w-full text-2xl font-medium leading-tight text-white sm:text-[40px] sm:leading-[40px]">{title}</h2>
+          <p className="max-w-3xl text-base leading-relaxed text-[#E7E7E8]">{text}</p>
           <div className="mt-2 flex flex-wrap justify-center gap-3">
             <CtaButton cta={primary} />
             {showCall && (

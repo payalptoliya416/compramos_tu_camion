@@ -14,6 +14,7 @@ import SpecialSellingSituationsPage from '@/pages/SpecialSellingSituationsPage';
 import TruckTypesOverviewPage from '@/pages/TruckTypesOverviewPage';
 import ConcreteMixerPage from '@/pages/truck-types/ConcreteMixerPage';
 import UrgentCraneTruckPage from '@/pages/truck-types/UrgentCraneTruckPage';
+import TruckMountedCranePage from '@/pages/truck-types/TruckMountedCranePage';
 import MultiliftPage from '@/pages/truck-types/MultiliftPage';
 import ParcelDeliveryPage from '@/pages/truck-types/ParcelDeliveryPage';
 import RefrigeratedPage from '@/pages/truck-types/RefrigeratedPage';
@@ -40,6 +41,8 @@ export default function App() {
         <Route path="/truck-types/concrete-mixer-trucks" element={<ConcreteMixerPage />} />
         <Route path="/truck-types/urgent-crane-truck-sale" element={<UrgentCraneTruckPage />} />
         <Route path="/truck-types/crane-trucks" element={<UrgentCraneTruckPage />} />
+        <Route path="/truck-types/truck-mounted-cranes" element={<TruckMountedCranePage />} />
+        <Route path="/truck-types/truck-mounted-crane" element={<TruckMountedCranePage />} />
         <Route path="/truck-types/multilift-hook-lift-trucks" element={<MultiliftPage />} />
         <Route path="/truck-types/parcel-delivery-trucks" element={<ParcelDeliveryPage />} />
         <Route path="/truck-types/refrigerated-trucks" element={<RefrigeratedPage />} />

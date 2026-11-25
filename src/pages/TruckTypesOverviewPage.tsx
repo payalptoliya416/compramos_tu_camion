@@ -34,7 +34,7 @@ const TAB_DATA: Record<'lifting' | 'construction' | 'transport', TruckCard[]> = 
       text: 'Get a specialist valuation for trucks with loading cranes, including different crane brands and configurations.',
       image: '/images/lifting02.png',
       buttonText: 'Sell Crane Truck',
-      to: '/truck-types/multilift-hook-lift-trucks',
+      to: '/truck-types/truck-mounted-cranes',
     },
     {
       title: 'Tipper Truck with Crane',
