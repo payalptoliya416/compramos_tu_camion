@@ -40,7 +40,7 @@ export default function Hero({ badge, title, text, image, primary, secondary, ch
   aria-hidden
 />
         {/* Content - Vertically centered inside full 100vh banner on desktop, start-aligned with header clearance on mobile */}
-        <div className="relative z-10 flex h-full flex-col justify-start sm:justify-center items-center sm:items-start text-center sm:text-left px-4 xs:px-6 pb-12 pt-[105px] sm:px-12 sm:pb-16 sm:pt-28 lg:px-20 xl:px-[160px]">
+        <div className="relative z-10 flex sm:h-full flex-col justify-start sm:justify-center items-center sm:items-start text-center sm:text-left px-4 xs:px-6 pb-12 pt-[105px] sm:px-12 sm:pb-16 sm:pt-28 lg:px-20 xl:px-[160px] h-[100dvh]">
           <div className="max-w-2xl flex flex-col items-center sm:items-start text-center sm:text-left">
             {/* Pill Badge */}
             <div
