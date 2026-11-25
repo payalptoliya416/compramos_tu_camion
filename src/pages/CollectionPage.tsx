@@ -88,7 +88,7 @@ export default function CollectionPage() {
 
       <ValuationForm />
       <Testimonials />
-      <Faq items={FAQ} title="Frequently asked questions about where to sell used trucks" />
+      <Faq className="!pt-0" items={FAQ} title="Frequently asked questions about where to sell used trucks" />
       <FinalCta />
     </>
   );
