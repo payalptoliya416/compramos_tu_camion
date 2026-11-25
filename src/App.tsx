@@ -39,17 +39,15 @@ export default function App() {
         <Route path="/special-selling-situations" element={<SpecialSellingSituationsPage />} />
         <Route path="/truck-types" element={<TruckTypesOverviewPage />} />
 
-        <Route path="/truck-types/concrete-mixer-trucks" element={<ConcreteMixerPage />} />
         <Route path="/truck-types/urgent-crane-truck-sale" element={<UrgentCraneTruckPage />} />
-        <Route path="/truck-types/crane-trucks" element={<UrgentCraneTruckPage />} />
         <Route path="/truck-types/truck-mounted-cranes" element={<TruckMountedCranePage />} />
-        <Route path="/truck-types/truck-mounted-crane" element={<TruckMountedCranePage />} />
         <Route path="/truck-types/tipper-trucks-with-crane" element={<TipperCraneTruckPage />} />
-        <Route path="/truck-types/tipper-truck-with-crane" element={<TipperCraneTruckPage />} />
+        <Route path="/truck-types/3500-kg-light-trucks" element={<Light3500Page />} />
+
+        <Route path="/truck-types/concrete-mixer-trucks" element={<ConcreteMixerPage />} />
         <Route path="/truck-types/multilift-hook-lift-trucks" element={<MultiliftPage />} />
         <Route path="/truck-types/parcel-delivery-trucks" element={<ParcelDeliveryPage />} />
         <Route path="/truck-types/refrigerated-trucks" element={<RefrigeratedPage />} />
-        <Route path="/truck-types/3500-kg-light-trucks" element={<Light3500Page />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="*" element={<HomePage />} />
       </Route>
