@@ -52,7 +52,7 @@ const TESTIMONIAL_ITEMS = [
 ];
 
 export default function Testimonials({
-  badge = 'Customer reviews',
+  badge = 'Trusted by truck owners',
   title = 'What Our Customers Say About Us',
   subtitle = 'Discover what customers have to say about their experience selling a truck with our team.',
   className = '',
