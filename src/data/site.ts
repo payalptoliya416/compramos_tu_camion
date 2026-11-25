@@ -70,7 +70,7 @@ export const CATEGORIES = [
   { title: 'Tipper Trucks', text: 'Construction and aggregates tipper trucks of all capacities.', image: IMG.catTipper, to: '/truck-types/concrete-mixer-trucks' },
   { title: 'Crane Trucks', text: 'Truck-mounted cranes and specialist lifting vehicles.', image: IMG.catCrane, to: '/truck-types/multilift-hook-lift-trucks' },
   { title: 'Flatbed Trucks', text: 'Platform and flatbed trucks for oversize and general loads.', image: IMG.catFlatbed, to: '/truck-types/3500-kg-light-trucks' },
-  { title: 'Tanker Trucks', text: 'Fuel, chemical and liquid tanker vehicles.', image: IMG.catTanker, to: '/truck-types/refrigerated-trucks' },
+  { title: 'Tanker Trucks', text: 'Fuel, chemical and liquid tanker vehicles.', image: IMG.catTanker, to: '/truck-types/tanker-trucks' },
   { title: 'Other Commercial', text: 'Other heavy commercial vehicles and specialist equipment.', image: IMG.catOther, to: '/truck-types/parcel-delivery-trucks' },
 ];
 
