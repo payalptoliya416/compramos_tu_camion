@@ -37,7 +37,7 @@ export default function Steps({ badge, title, subtitle, steps, action, className
                   className={`absolute left-[calc(50%+29px)] top-[29px] -translate-y-1/2 ${lineDisplayCls} h-[1.5px] w-[calc(100%-34px)] overflow-hidden`}
                   style={{
                     background:
-                      'linear-gradient(90deg, #F17612 0%, #F17612 48%, #E7E7E8 52%, #E7E7E8 100%)',
+                      'linear-gradient(90deg, #E7E7E8 0%, #F17612 48%, #E7E7E8 52%, #E7E7E8 100%)',
                   }}
                 />
               )}
