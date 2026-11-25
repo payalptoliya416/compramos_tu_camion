@@ -44,6 +44,7 @@ export default function HowItWorksPage() {
         title="A Straightforward Way to Sell Your Truck"
         subtitle="We focus on making every step clear, convenient and professional, so you know what to expect from the beginning."
         cols={4}
+        staggered
         variant="plain"
         iconBg="bg-white"
         items={[
