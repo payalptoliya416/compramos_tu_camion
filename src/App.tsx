@@ -31,12 +31,12 @@ export default function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<HomePage />} />
-        <Route path="/private-truck-sellers" element={<PrivateSellersPage />} />
         <Route path="/thank-you" element={<ThankYouPage />} />
+        <Route path="/private-truck-sellers" element={<PrivateSellersPage />} />
+        <Route path="/business-fleet-sales" element={<BusinessFleetPage />} />
         <Route path="/how-it-works" element={<HowItWorksPage />} />
         <Route path="/collection-across-spain" element={<CollectionPage />} />
         <Route path="/about-us" element={<AboutPage />} />
-        <Route path="/business-fleet-sales" element={<BusinessFleetPage />} />
         <Route path="/documents-required-to-sell-a-truck" element={<DocumentsPage />} />
         <Route path="/get-a-free-valuation" element={<ValuationPage />} />
         <Route path="/sell-by-make-and-model" element={<MakeModelPage />} />

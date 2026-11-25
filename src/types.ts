@@ -1,4 +1,5 @@
 import type { LucideIcon } from 'lucide-react';
+import type { ReactNode } from 'react';
 
 export interface CtaLink {
   label: string;
@@ -20,5 +21,5 @@ export interface StepItem {
 
 export interface FaqItem {
   q: string;
-  a: string;
+  a: ReactNode;
 }

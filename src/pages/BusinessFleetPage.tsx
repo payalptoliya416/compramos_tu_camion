@@ -58,7 +58,7 @@ export default function BusinessFleetPage() {
         cta={{ label: 'Get a Fleet Valuation' }}
       />
 
-      <section className="section-y">
+      <section className="section-y !py-0">
         <div className="container-x">
           <SectionHeading badge="Why work with us" title="Support for Your Business Truck Sales" />
           <div className="mt-10 grid gap-[24px] sm:grid-cols-2 lg:grid-cols-3">
@@ -176,7 +176,7 @@ export default function BusinessFleetPage() {
                 key={title}
                 className="flex h-full flex-col rounded-[18px] border border-[#E7E7E8] bg-white py-5 sm:py-[35px] px-5 sm:px-[25px]"
               >
-                <span className="flex h-[52px] w-[52px] items-center justify-center rounded-[12px] bg-[#F8F9FA]">
+                <span className="flex h-[52px] w-[52px] items-center justify-center rounded-[12px] bg-[#F3F3F3] border border-[#E7E7E8]">
                   <img src={icon} alt="" className="h-6 w-6 object-contain" />
                 </span>
                 <h3 className="mt-5 text-base font-semibold text-brand-navy-dark sm:text-xl">{title}</h3>
