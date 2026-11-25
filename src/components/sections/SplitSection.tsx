@@ -19,15 +19,17 @@ interface Props {
   children?: ReactNode;
   imageClassName?: string;
   className?: string;
+  gapClassName?: string;
 }
 
 /** Image + text block. Used across almost every page. */
 export default function SplitSection({
   badge, title, paragraphs, image, imageAlt = '', pills, cta, reverse, children, imageClassName, className = '',
+  gapClassName = 'lg:gap-[53px]',
 }: Props) {
   return (
     <section className={`section-y ${className}`.trim()}>
-      <div className="container-x grid items-center gap-8 lg:grid-cols-2 lg:gap-[53px]">
+      <div className={`container-x grid items-center gap-8 lg:grid-cols-2 ${gapClassName}`}>
         <Img
           src={image}
           alt={imageAlt}

@@ -18,6 +18,7 @@ export default function UrgentCraneTruckPage() {
           'Whether you’re selling a single crane truck or updating your commercial fleet, we provide guidance on the selling process and required documentation.',
         ],
         splitImage: '/images/urgentpage-left.png',
+        splitGapClassName: 'lg:gap-[35px]',
         pills: [
           'Professional vehicle assessment',
           'Support for individual sellers and businesses',

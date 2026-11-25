@@ -168,24 +168,32 @@ const STRAIGHTFORWARD_STEPS = [
 // FAQs
 const FAQ_ITEMS: FaqItem[] = [
   {
-    q: 'Which categories of trucks do you buy?',
-    a: 'We buy all categories of commercial vehicles across Spain, including rigid trucks, articulated tractor units, refrigerated bodies, tippers, crane trucks, multilift hook loaders, parcel delivery vans and 3,500 kg light commercials.',
+    q: 'What types of trucks do you buy?',
+    a: 'We buy a wide range of commercial vehicles, including tractor units, rigid trucks, tipper trucks, crane trucks, tankers, concrete mixer trucks and other specialist vehicles.',
   },
   {
-    q: 'Do you buy specialized or modified trucks?',
-    a: 'Yes, we evaluate all types of custom and specialized equipment including mounted hydraulic cranes, tipping systems, cooling units, tail lifts and concrete mixers.',
+    q: 'Do you buy trucks of all makes and models?',
+    a: 'We consider trucks from different manufacturers, makes and models. Each vehicle is assessed individually based on its specifications, condition and market value.',
   },
   {
-    q: 'Can I sell an entire commercial fleet or multiple categories at once?',
-    a: 'Yes, we manage both single-truck sales and complete fleet liquidations across multiple vehicle categories with coordinated valuation and nationwide collection.',
+    q: 'Can I sell an old or high-mileage truck?',
+    a: 'Yes. We consider older trucks and vehicles with high mileage. Their age and mileage are taken into account during the valuation.',
   },
   {
-    q: 'How do you calculate the valuation for different truck types?',
-    a: 'Our appraisal process considers the make, model, year, mileage, engine condition, chassis integrity, specialized equipment condition, and current Spanish and European secondary market demand.',
+    q: 'Do you buy trucks with mechanical faults or damage?',
+    a: 'Yes. You can submit details of trucks with mechanical problems or damage. We assess each vehicle based on its current condition.',
   },
   {
-    q: 'Do you handle the vehicle transfer and administrative paperwork for specialized vehicles?',
-    a: 'Yes, we manage the complete DGT ownership transfer, cancellation of liens/embargos if applicable, and all required administrative documentation.',
+    q: "How is my truck's value calculated?",
+    a: "We consider factors such as the truck's make, model, age, mileage, specifications, overall condition and current market demand.",
+  },
+  {
+    q: 'Can I sell more than one type of truck in a single enquiry?',
+    a: 'Yes. You can submit details of multiple trucks, even if they belong to different categories. Our team will review each vehicle individually.',
+  },
+  {
+    q: 'How do I get an offer for my truck?',
+    a: "Complete our online valuation form with your truck's details and photographs. Our team will review the information and contact you to discuss a potential offer.",
   },
 ];
 
@@ -206,7 +214,7 @@ export default function TruckTypesOverviewPage() {
 
       {/* 2. Split Section: Every Truck Has Its Own Category */}
       <section className="section-y">
-        <div className="container-x grid items-center gap-8 lg:grid-cols-2 lg:gap-[53px]">
+        <div className="container-x grid items-center gap-8 lg:grid-cols-2 lg:gap-[35px]">
           <div className="overflow-hidden rounded-2xl">
             <Img
               src="/images/everytruck.png"

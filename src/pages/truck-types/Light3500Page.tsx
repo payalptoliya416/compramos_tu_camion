@@ -18,6 +18,7 @@ export default function Light3500Page() {
           'Whether you are selling an individual commercial vehicle or updating your business fleet, we help simplify the selling process with guidance on the required paperwork.',
         ],
         splitImage: '/images/3500kg-left.png',
+        splitGapClassName: 'lg:gap-[35px]',
         pills: [
           'Professional vehicle assessment',
           'Support for individual sellers and businesses',

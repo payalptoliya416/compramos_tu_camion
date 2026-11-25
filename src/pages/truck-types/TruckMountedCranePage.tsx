@@ -18,6 +18,7 @@ export default function TruckMountedCranePage() {
           'Whether you are selling an individual crane truck or updating your commercial fleet, we help simplify the selling process with guidance on the required paperwork.',
         ],
         splitImage: '/images/truck-mount-left.png',
+        splitGapClassName: 'lg:gap-[35px]',
         pills: [
           'Professional vehicle assessment',
           'Support for individual sellers and businesses',

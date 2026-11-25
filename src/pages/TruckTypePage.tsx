@@ -21,6 +21,7 @@ export interface TruckTypeConfig {
   splitTitle: string;
   splitParagraphs: string[];
   splitImage: string;
+  splitGapClassName?: string;
   pills: string[];
   whyBadge?: string;
   whyTitle: string;
@@ -63,6 +64,7 @@ export default function TruckTypePage({ c }: { c: TruckTypeConfig }) {
         image={c.splitImage}
         pills={c.pills}
         cta={{ label: 'Appraise Your Truck' }}
+        gapClassName={c.splitGapClassName}
       />
 
       <FeatureGrid

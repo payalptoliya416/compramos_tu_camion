@@ -18,6 +18,7 @@ export default function TipperCraneTruckPage() {
           "Whether you're selling an individual vehicle or updating your commercial fleet, we help simplify the selling process with professional assessment and guidance on the required paperwork.",
         ],
         splitImage: '/images/tipper-left.png',
+        splitGapClassName: 'lg:gap-[35px]',
         pills: [
           'Professional vehicle and crane assessment',
           'Support for individual sellers and businesses',
