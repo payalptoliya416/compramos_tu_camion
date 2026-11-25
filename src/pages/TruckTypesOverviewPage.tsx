@@ -232,11 +232,11 @@ export default function TruckTypesOverviewPage() {
 
           {/* Interactive Tabs */}
           <div className="mt-8 sm:mt-10 flex justify-center px-4">
-            <div className="w-full max-w-[1012px] rounded-full border border-[#CECFD0] bg-white px-5 py-[15px] flex flex-wrap sm:flex-nowrap items-center justify-between gap-2.5 sm:gap-4">
+            <div className="w-full max-w-[1012px] rounded-[24px] md:rounded-full border border-[#CECFD0] bg-white p-2.5 md:px-5 md:py-[15px] flex flex-col md:flex-row items-center justify-between gap-2.5 md:gap-4">
               <button
                 type="button"
                 onClick={() => setActiveTab('lifting')}
-                className={`flex-1 w-full sm:w-[310px] sm:max-w-[310px] px-4 h-12 sm:h-14 flex items-center justify-center rounded-full text-sm sm:text-base font-medium transition-all cursor-pointer ${activeTab === 'lifting'
+                className={`w-full md:flex-1 lg:w-[310px] lg:max-w-[310px] px-4 h-12 md:h-14 flex items-center justify-center rounded-full text-sm md:text-base font-medium transition-all cursor-pointer whitespace-nowrap ${activeTab === 'lifting'
                   ? 'bg-brand-orange text-white'
                   : 'bg-[#F4F5F7] text-[#3B3F45] hover:bg-[#E9EBEF] hover:text-brand-navy'
                   }`}
@@ -246,7 +246,7 @@ export default function TruckTypesOverviewPage() {
               <button
                 type="button"
                 onClick={() => setActiveTab('construction')}
-                className={`flex-1 w-full sm:w-[310px] sm:max-w-[310px] px-4 h-12 sm:h-14 flex items-center justify-center rounded-full text-sm sm:text-base font-medium transition-all cursor-pointer ${activeTab === 'construction'
+                className={`w-full md:flex-1 lg:w-[310px] lg:max-w-[310px] px-4 h-12 md:h-14 flex items-center justify-center rounded-full text-sm md:text-base font-medium transition-all cursor-pointer whitespace-nowrap ${activeTab === 'construction'
                   ? 'bg-brand-orange text-white'
                   : 'bg-[#F4F5F7] text-[#3B3F45] hover:bg-[#E9EBEF] hover:text-brand-navy'
                   }`}
@@ -256,7 +256,7 @@ export default function TruckTypesOverviewPage() {
               <button
                 type="button"
                 onClick={() => setActiveTab('transport')}
-                className={`flex-1 w-full sm:w-[310px] sm:max-w-[310px] px-4 h-12 sm:h-14 flex items-center justify-center rounded-full text-sm sm:text-base font-medium transition-all cursor-pointer ${activeTab === 'transport'
+                className={`w-full md:flex-1 lg:w-[310px] lg:max-w-[310px] px-4 h-12 md:h-14 flex items-center justify-center rounded-full text-sm md:text-base font-medium transition-all cursor-pointer whitespace-nowrap ${activeTab === 'transport'
                   ? 'bg-brand-orange text-white'
                   : 'bg-[#F4F5F7] text-[#3B3F45] hover:bg-[#E9EBEF] hover:text-brand-navy'
                   }`}
@@ -289,10 +289,10 @@ export default function TruckTypesOverviewPage() {
                     {card.text}
                   </p>
                 </div>
-                <div className="mt-10">
+                <div className="mt-6 xl:mt-10">
                   <Link
                     to={card.to || '#valuation'}
-                    className="inline-flex w-fit items-center justify-center rounded-full border border-[#092B55] px-5 sm:px-[30px] py-3 text-sm font-medium text-[#092B55] transition-colors hover:bg-brand-navy hover:text-white"
+                    className="inline-flex w-fit items-center justify-center rounded-full border border-[#092B55] px-5 xl:px-[30px] py-3 text-sm font-medium text-[#092B55] transition-colors hover:bg-brand-navy hover:text-white text-center whitespace-nowrap"
                   >
                     {card.buttonText}
                   </Link>
@@ -307,7 +307,7 @@ export default function TruckTypesOverviewPage() {
       <section className="section-y">
         <div className="container-x">
           <SectionHeading badge="Find your vehicle" title="Explore Specific Truck Types" />
-          <ul className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 lg:gap-[24px]">
+          <ul className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 lg:gap-5 xl:gap-[24px]">
             {SPECIFIC_TRUCK_TYPES.map((s) => (
               <li key={s.title}>
                 <Link
