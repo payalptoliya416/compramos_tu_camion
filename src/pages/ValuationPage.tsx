@@ -56,7 +56,7 @@ export default function ValuationPage() {
       />
 
       <section className="section-y">
-        <div className="container-x grid items-center gap-8 lg:grid-cols-2 lg:gap-[53px]">
+        <div className="container-x grid items-center gap-8 lg:grid-cols-2 lg:gap-[35px]">
           <div className="overflow-hidden rounded-2xl">
             <img
               src="/images/valuationpage-about.png"
