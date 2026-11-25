@@ -57,7 +57,7 @@ const TAB_DATA: Record<'lifting' | 'construction' | 'transport', TruckCard[]> = 
       text: 'Sell your used dump truck with a professional valuation based on its mechanical condition, chassis and hydraulic tipping system.',
       image: '/images/construction01.png',
       buttonText: 'Sell Your Dump Truck',
-      to: '/truck-types/concrete-mixer-trucks',
+      to: '/truck-types/used-dump-trucks',
     },
     {
       title: 'Multilift Hook-Lift Truck',

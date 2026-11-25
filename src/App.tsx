@@ -16,6 +16,7 @@ import ConcreteMixerPage from '@/pages/truck-types/ConcreteMixerPage';
 import UrgentCraneTruckPage from '@/pages/truck-types/UrgentCraneTruckPage';
 import TruckMountedCranePage from '@/pages/truck-types/TruckMountedCranePage';
 import TipperCraneTruckPage from '@/pages/truck-types/TipperCraneTruckPage';
+import UsedDumpTruckPage from '@/pages/truck-types/UsedDumpTruckPage';
 import MultiliftPage from '@/pages/truck-types/MultiliftPage';
 import ParcelDeliveryPage from '@/pages/truck-types/ParcelDeliveryPage';
 import RefrigeratedPage from '@/pages/truck-types/RefrigeratedPage';
@@ -44,8 +45,10 @@ export default function App() {
         <Route path="/truck-types/tipper-trucks-with-crane" element={<TipperCraneTruckPage />} />
         <Route path="/truck-types/3500-kg-light-trucks" element={<Light3500Page />} />
 
-        <Route path="/truck-types/concrete-mixer-trucks" element={<ConcreteMixerPage />} />
+        <Route path="/truck-types/used-dump-trucks" element={<UsedDumpTruckPage />} />
         <Route path="/truck-types/multilift-hook-lift-trucks" element={<MultiliftPage />} />
+
+        <Route path="/truck-types/concrete-mixer-trucks" element={<ConcreteMixerPage />} />
         <Route path="/truck-types/parcel-delivery-trucks" element={<ParcelDeliveryPage />} />
         <Route path="/truck-types/refrigerated-trucks" element={<RefrigeratedPage />} />
         <Route path="/blog" element={<BlogPage />} />
