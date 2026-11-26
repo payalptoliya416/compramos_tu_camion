@@ -2,7 +2,6 @@ import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
-import { IMG } from '@/data/images';
 import Hero from '@/components/sections/Hero';
 import SplitSection from '@/components/sections/SplitSection';
 import CtaBanner from '@/components/sections/CtaBanner';
@@ -163,7 +162,7 @@ export default function MakeModelPage() {
         badge="Truck valuation by brand"
         title="Find the Right Starting Point for Your Truck"
         paragraphs={['Every truck has its own characteristics. The make, model, registration year, mileage, condition and configuration can all help inform its valuation.']}
-        image={IMG.brandsRenault}
+        image="/images/valuation-truck.png"
         cta={{ label: 'Request a Valuation' }}
       />
 

@@ -1,6 +1,4 @@
 import type { FaqItem } from '@/types';
-import { IMG } from './images';
-
 export const SITE = {
   name: 'Compramos Tu Camión',
   phone: '662 36 93 13',
@@ -47,40 +45,40 @@ export const TESTIMONIALS = [
     text: 'The process was very straightforward. They assessed my truck quickly and the whole transaction was handled professionally.',
     name: 'Annette Black',
     city: 'Valencia',
-    avatar: IMG.avatar1,
+    avatar: '/images/avatar-1.jpg',
   },
   {
     text: 'I needed to sell my refrigerated truck urgently and they helped me through the whole process efficiently. Highly recommended.',
     name: 'Leslie Alexander',
     city: 'Madrid',
-    avatar: IMG.avatar2,
+    avatar: '/images/avatar-2.jpg',
   },
   {
     text: 'The process is very simple. I entered the license plate number, received a valuation, and sold my car the same day. Very professional.',
     name: 'Esther Howard',
     city: 'Sevilla',
-    avatar: IMG.avatar3,
+    avatar: '/images/avatar-3.jpg',
   },
 ];
 
 export const CATEGORIES = [
-  { title: 'Tractor Units', text: 'Long-haul and regional tractor units from all major manufacturers.', image: IMG.catTractor, to: '/truck-types/tractor-units' },
-  { title: 'Rigid Trucks', text: 'Urban and regional rigid trucks in all configurations.', image: IMG.catRigid, to: '/truck-types/rigid-trucks' },
-  { title: 'Refrigerated Trucks', text: 'Temperature-controlled vehicles for food and pharmaceutical transport.', image: IMG.catRefrigerated, to: '/truck-types/refrigerated-trucks' },
-  { title: 'Tipper Trucks', text: 'Construction and aggregates tipper trucks of all capacities.', image: IMG.catTipper, to: '/truck-types/concrete-mixer-trucks' },
-  { title: 'Crane Trucks', text: 'Truck-mounted cranes and specialist lifting vehicles.', image: IMG.catCrane, to: '/truck-types/multilift-hook-lift-trucks' },
-  { title: 'Flatbed Trucks', text: 'Platform and flatbed trucks for oversize and general loads.', image: IMG.catFlatbed, to: '/truck-types/3500-kg-light-trucks' },
-  { title: 'Tanker Trucks', text: 'Fuel, chemical and liquid tanker vehicles.', image: IMG.catTanker, to: '/truck-types/tanker-trucks' },
-  { title: 'Other Commercial', text: 'Other heavy commercial vehicles and specialist equipment.', image: IMG.catOther, to: '/truck-types/parcel-delivery-trucks' },
+  { title: 'Tractor Units', text: 'Long-haul and regional tractor units from all major manufacturers.', image: '/images/truck01.png', to: '/truck-types/tractor-units' },
+  { title: 'Rigid Trucks', text: 'Urban and regional rigid trucks in all configurations.', image: '/images/truck02.png', to: '/truck-types/rigid-trucks' },
+  { title: 'Refrigerated Trucks', text: 'Temperature-controlled vehicles for food and pharmaceutical transport.', image: '/images/truck03.png', to: '/truck-types/refrigerated-trucks' },
+  { title: 'Tipper Trucks', text: 'Construction and aggregates tipper trucks of all capacities.', image: '/images/truck04.png', to: '/truck-types/concrete-mixer-trucks' },
+  { title: 'Crane Trucks', text: 'Truck-mounted cranes and specialist lifting vehicles.', image: '/images/truck05.png', to: '/truck-types/multilift-hook-lift-trucks' },
+  { title: 'Flatbed Trucks', text: 'Platform and flatbed trucks for oversize and general loads.', image: '/images/truck06.png', to: '/truck-types/3500-kg-light-trucks' },
+  { title: 'Tanker Trucks', text: 'Fuel, chemical and liquid tanker vehicles.', image: '/images/truck07.png', to: '/truck-types/tanker-trucks' },
+  { title: 'Other Commercial', text: 'Other heavy commercial vehicles and specialist equipment.', image: '/images/truck08.png', to: '/truck-types/parcel-delivery-trucks' },
 ];
 
 export const BRANDS = ['Mercedes-Benz', 'Scania', 'Volvo', 'DAF', 'MAN', 'IVECO', 'Renault'];
 
 export const RECENT_PURCHASES = [
-  { year: '2019', tag: 'Tractor Unit', title: 'R500 Tractor Unit', brand: 'Scania', place: 'Madrid, Spain', image: IMG.buyTractor },
-  { year: '2018', tag: 'Tractor Unit', title: 'Actros 1845', brand: 'Mercedes-Benz', place: 'Barcelona, Spain', image: IMG.buyActros },
-  { year: '2020', tag: 'Refrigerated', title: 'XF 460 Refrigerated', brand: 'DAF', place: 'Valencia, Spain', image: IMG.buyRefrigerated },
-  { year: '2017', tag: 'Tipper Truck', title: 'FH 500 Tipper', brand: 'Volvo', place: 'Sevilla, Spain', image: IMG.buyTipper },
+  { year: '2019', tag: 'Tractor Unit', title: 'R500 Tractor Unit', brand: 'Scania', place: 'Madrid, Spain', image: '/images/purchase01.png' },
+  { year: '2018', tag: 'Tractor Unit', title: 'Actros 1845', brand: 'Mercedes-Benz', place: 'Barcelona, Spain', image: '/images/purchase02.png' },
+  { year: '2020', tag: 'Refrigerated', title: 'XF 460 Refrigerated', brand: 'DAF', place: 'Valencia, Spain', image: '/images/purchase03.png' },
+  { year: '2017', tag: 'Tipper Truck', title: 'FH 500 Tipper', brand: 'Volvo', place: 'Sevilla, Spain', image: '/images/purchase04.png' },
 ];
 
 /** Default FAQ list used on most pages. */

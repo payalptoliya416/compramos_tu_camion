@@ -1,4 +1,3 @@
-import { IMG } from '@/data/images';
 import Hero from '@/components/sections/Hero';
 import SplitSection from '@/components/sections/SplitSection';
 import CtaBanner from '@/components/sections/CtaBanner';
@@ -44,7 +43,7 @@ export default function BusinessFleetPage() {
         badge="Business & fleet sales"
         title="Sell Your Business Fleet With Confidence"
         text="Selling company trucks or updating your fleet? Get a professional valuation and support tailored to your business."
-        image={IMG.heroBusiness}
+        image="/images/business-fleet-sales-banner.png"
         primary={{ label: 'Get a Free Valuation' }}
         checks={['Fleet Expertise', 'Fair Valuation', 'Professional Support']}
       />
@@ -54,7 +53,7 @@ export default function BusinessFleetPage() {
         badge="Business truck sales"
         title="A Straightforward Way to Sell Your Company Trucks"
         paragraphs={['Selling company vehicles can be part of fleet renewal, operational changes, or a decision to dispose of surplus trucks. Our team helps you understand the appraisal process and the steps involved in selling your vehicles.']}
-        image={IMG.truckBlueContainer}
+        image="/images/Straightforward.png"
         cta={{ label: 'Get a Fleet Valuation' }}
       />
 

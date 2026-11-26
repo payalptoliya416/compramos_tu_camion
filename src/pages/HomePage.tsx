@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { IMG } from "@/data/images";
 import { SITE } from "@/data/site";
 import Hero from "@/components/sections/Hero";
 import FeatureGrid from "@/components/sections/FeatureGrid";
@@ -38,17 +37,17 @@ const HELP_CARDS = [
   {
     title: "Looking to reduce your fleet?",
     text: "Whether you’re adjusting your business or have more trucks than you need, we help you sell one or several vehicles through a straightforward valuation and coordinated collection.",
-    image: IMG.helpFleet,
+    image: "/images/help01.png",
   },
   {
     title: "Want to sell a truck with a mechanical fault?",
     text: "Before committing to costly repairs, find out what your truck could be worth in its current condition. Tell us about the fault and we’ll assess your options.",
-    image: IMG.helpMechanical,
+    image: "/images/help02.png",
   },
   {
     title: "Inherited a truck and looking to sell it?",
     text: "We understand this can be a difficult time. We help you understand the paperwork and value the truck, so you can take the next step with confidence.",
-    image: IMG.helpInherited,
+    image: "/images/help03.png",
   },
 ];
 
@@ -90,7 +89,7 @@ export default function HomePage() {
           </>
         }
         text="Looking to sell your commercial truck? Get a professional valuation, straightforward support and a simple selling process from start to finish."
-        image={IMG.heroHome}
+        image="/images/home-hero-banner.png"
         primary={{ label: "Get a Free Valuation", to: "#valuation" }}
         secondary={{ label: "Call Us Today", href: SITE.phoneHref }}
         checks={[
