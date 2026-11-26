@@ -277,7 +277,7 @@ export default function HomePage() {
 
           <div className="container-x relative z-10 py-12 sm:py-16 lg:py-20">
             <div className="flex max-w-[630px] flex-col items-start gap-5 text-white">
-              <Badge light>Nationwide collection</Badge>
+              <Badge light bgImage="/images/label-bg.png">Nationwide collection</Badge>
               <h2 className="text-2xl font-medium leading-tight text-white sm:text-[34px] xl:text-[40px] sm:leading-[60px]">
                 We Collect Commercial Trucks Across Spain
               </h2>
@@ -295,8 +295,8 @@ export default function HomePage() {
                 ].map((t) => (
                   <li
                     key={t}
-                    className="inline-flex items-center gap-2.5 rounded-full border border-white/20
-                      bg-[linear-gradient(90deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.05)_100%)]
+                    className="inline-flex items-center gap-2.5 rounded-full border border-white/10
+                      bg-[linear-gradient(90deg,rgba(255,255,255,0.11)_0%,rgba(255,255,255,0.03)_100%)]
                      px-4 sm:px-5 py-2.5 text-sm sm:text-base font-normal text-white backdrop-blur-[2px]"
                   >
                     <img

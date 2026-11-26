@@ -63,7 +63,7 @@ export default function BrandLogos({
           >
             {SLIDES.map((b, i) => (
               <SwiperSlide key={`${b.name}-${i}`}>
-                <div className="flex h-24 sm:h-[142px] items-center justify-center rounded-[12px] border border-[#E7E7E8] bg-white p-4 transition-all hover:shadow-md">
+                <div className="flex h-24 sm:h-[142px] items-center justify-center rounded-[12px] border border-[#E7E7E8] bg-white p-4 transition-all">
                   <img
                     src={b.image}
                     alt={b.name}

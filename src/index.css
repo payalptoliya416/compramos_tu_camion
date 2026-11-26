@@ -269,6 +269,7 @@ body {
 }
 
 @utility btn {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -280,7 +281,9 @@ body {
   font-weight: 500;
   cursor: pointer;
   user-select: none;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  isolation: isolate;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   @media (min-width: 768px) {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -289,16 +292,40 @@ body {
   }
 }
 
+/* Glossy shimmer sweep animation across all buttons */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.btn:hover::before {
+  transform: translateX(360%) skewX(-25deg);
+}
+
 @utility btn-primary {
-  @apply btn bg-brand-orange text-white border border-brand-orange hover:bg-brand-orange-dark hover:-translate-y-0.5 hover:shadow-lg hover:shadow-orange-500/25 active:translate-y-0 active:scale-[0.98];
+  @apply btn bg-brand-orange text-white border border-brand-orange hover:bg-brand-orange-dark hover:-translate-y-1 hover:shadow-[0_10px_25px_-5px_rgba(241,118,18,0.5)] active:translate-y-0 active:scale-[0.98];
 }
 
 @utility btn-outline {
-  @apply btn border border-white/70 text-white hover:bg-white/15 hover:border-white hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/10 active:translate-y-0 active:scale-[0.98];
+  @apply btn border border-white/70 text-white hover:bg-white/15 hover:border-white hover:-translate-y-1 hover:shadow-[0_10px_25px_-5px_rgba(0,0,0,0.3)] active:translate-y-0 active:scale-[0.98];
 }
 
 @utility btn-whatsapp {
-  @apply btn bg-whatsapp text-white hover:bg-green-700 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-green-600/25 active:translate-y-0 active:scale-[0.98];
+  @apply btn bg-whatsapp text-white hover:bg-green-700 hover:-translate-y-1 hover:shadow-[0_10px_25px_-5px_rgba(37,211,102,0.5)] active:translate-y-0 active:scale-[0.98];
 }
 
 @utility badge {
