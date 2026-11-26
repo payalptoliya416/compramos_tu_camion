@@ -54,7 +54,7 @@ export default function Hero({ badge, title, text, image, primary, secondary, ch
 
             {/* Title */}
             <h1
-              className={`mt-3 sm:mt-[15px] text-[28px] xs:text-4xl sm:text-5xl font-medium leading-[1.18] sm:leading-[1.12] tracking-tight text-center sm:text-left ${
+              className={`mt-3 sm:mt-[15px] text-[28px] xs:text-4xl sm:text-5xl font-medium leading-[1.18] sm:leading-[56px] tracking-tight text-center sm:text-left ${
                 isHome ? 'text-white' : ''
               }`}
               style={
