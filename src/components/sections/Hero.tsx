@@ -107,11 +107,11 @@ export default function Hero({ badge, title, text, image, primary, secondary, ch
         <div className="mt-3 sm:mt-[15px]">
           <nav
             aria-label="Breadcrumb"
-            className="inline-flex flex-wrap items-center gap-2 sm:gap-2.5 rounded-[10px] bg-[#F3F3F3] px-4 sm:px-5 py-2 sm:py-[15px] text-sm lg:text-base lg:leading-[16px] text-[#3B3F45]"
+            className="inline-flex flex-wrap items-center gap-1 sm:gap-2.5 rounded-[10px] bg-[#F3F3F3] px-2 sm:px-5 py-2 sm:py-[15px] text-xs lg:text-base lg:leading-[16px] text-[#3B3F45]"
           >
             {breadcrumb.map((b, i) => (
-              <span key={b.label} className="inline-flex items-center gap-2 sm:gap-2.5">
-                {i > 0 && <span aria-hidden><img src="/images/gray-grater-errow.svg" alt="" /></span>}
+              <span key={b.label} className="inline-flex items-center gap-1 sm:gap-2.5">
+                {i > 0 && <span aria-hidden><img src="/images/gray-grater-errow.svg" alt="" className='w-full max-w-[10px] sm:max-w-[100%]' /></span>}
                 {b.to ? (
                   <Link to={b.to} className="transition-colors hover:text-brand-orange">
                     {b.label}
