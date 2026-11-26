@@ -57,9 +57,9 @@ export default function BlogPage() {
         checks={['Expert Truck Guides', 'Selling Tips', 'Industry Insights']}
       />
 
-      <section className="section-y !pb-0">
+      <section className="section-y !pb-0 overflow-hidden">
         <div className="container-x grid gap-5 lg:grid-cols-[1fr_300px] 2xl:gap-[36px] 2xl:grid-cols-[1fr_380px]">
-          <div className='order-2 lg:order-1'>
+          <div className='order-2 lg:order-1 min-w-0'>
             <Badge>Latest articles</Badge>
             <h2 className="mb-6 mt-3 text-2xl font-medium leading-tight text-brand-navy sm:text-[34px] xl:text-[40px] sm:leading-[40px]">Explore Our Latest Guides</h2>
 
@@ -93,7 +93,7 @@ export default function BlogPage() {
           </div>
 
           {/* Sidebar */}
-          <aside className="flex flex-col gap-5 order-1 lg:order-2">
+          <aside className="flex flex-col gap-5 order-1 lg:order-2 min-w-0">
             <div className="rounded-xl border border-[#E7E7E8] p-4 2xl:p-[25px]">
               <h3 className="mb-4 text-base font-semibold text-[#092B55]">Search</h3>
               <div className="flex overflow-hidden rounded-[80px] border border-[#E7E7E8]">
@@ -111,9 +111,9 @@ export default function BlogPage() {
               <h3 className="mb-4 text-base font-semibold text-[#092B55]">Recent Articles</h3>
               <ul className="flex flex-col gap-3">
                 {RECENT_ARTICLES.map((p) => (
-                  <li key={p.title} className="flex items-center gap-3">
-                    <Img src={p.image} alt="" className="h-[48px] w-[64px] shrink-0 rounded" />
-                    <span className="line-clamp-3 text-sm text-[#6C6F73]">{p.title}</span>
+                  <li key={p.title} className="flex items-center gap-3 min-w-0">
+                    <Img src={p.image} alt="" className="h-[48px] w-[64px] shrink-0 rounded object-cover" />
+                    <span className="line-clamp-3 text-sm text-[#6C6F73] min-w-0 flex-1">{p.title}</span>
                   </li>
                 ))}
               </ul>

@@ -32,15 +32,21 @@ export default function App() {
       <Route element={<Layout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/thank-you" element={<ThankYouPage />} />
+        
         <Route path="/private-truck-sellers" element={<PrivateSellersPage />} />
         <Route path="/business-fleet-sales" element={<BusinessFleetPage />} />
         <Route path="/special-selling-situations" element={<SpecialSellingSituationsPage />} />
         <Route path="/sell-by-make-and-model" element={<MakeModelPage />} />
         <Route path="/documents-required-to-sell-a-truck" element={<DocumentsPage />} />
+
         <Route path="/how-it-works" element={<HowItWorksPage />} />
+
         <Route path="/collection-across-spain" element={<CollectionPage />} />
+
         <Route path="/about-us" element={<AboutPage />} />
+
         <Route path="/get-a-free-valuation" element={<ValuationPage />} />
+
         <Route path="/truck-types" element={<TruckTypesOverviewPage />} />
 
         <Route path="/truck-types/urgent-crane-truck-sale" element={<UrgentCraneTruckPage />} />
@@ -59,7 +65,7 @@ export default function App() {
         <Route path="/truck-types/parcel-delivery-trucks" element={<ParcelDeliveryPage />} />
 
         <Route path="/blog" element={<BlogPage />} />
-        
+
         <Route path="*" element={<HomePage />} />
       </Route>
     </Routes>
