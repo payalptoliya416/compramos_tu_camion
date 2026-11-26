@@ -330,7 +330,7 @@ export default function ValuationForm({
                 <div className="flex justify-center pt-2 sm:pt-[15px] sm:col-span-2">
                   <button
                     type="submit"
-                    className="btn-primary !px-6 lg:!px-10 xl:!px-[54px] !py-4 text-sm sm:text-lg font-medium leading-[18px]"
+                    className="btn-primary !px-6 lg:!px-10 xl:!px-[54px] !py-3 sm:!py-4 text-sm sm:text-lg font-medium leading-[18px]"
                   >
                     Next Step
                   </button>

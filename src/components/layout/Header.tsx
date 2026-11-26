@@ -90,7 +90,7 @@ export default function Header() {
 
       {/* Left Sidebar Drawer */}
       <aside
-        className={`fixed inset-y-0 left-0 z-50 flex w-[300px] sm:w-[340px] max-w-[85vw] flex-col justify-between bg-white p-6 shadow-2xl transition-transform duration-300 ease-in-out min-[1200px]:hidden ${open ? 'translate-x-0' : '-translate-x-full'
+        className={`fixed inset-y-0 left-0 z-50 flex w-[300px] sm:w-[340px] max-w-[85vw] flex-col justify-between bg-white p-4 shadow-2xl transition-transform duration-300 ease-in-out min-[1200px]:hidden ${open ? 'translate-x-0' : '-translate-x-full'
           }`}
         aria-label="Mobile Navigation"
       >
