@@ -80,7 +80,7 @@ export default function RigidTractorTruckPage() {
             text: 'Once an offer is accepted, coordinate the required paperwork, payment and collection arrangements.',
           },
         ],
-        faqTitle: 'Frequently asked questions about selling tractor units',
+        faqTitle: 'Frequently Asked Questions About Selling Trucks',
         faq: [
           {
             q: 'Is it a problem if the tractor unit has over a million kilometers, serious breakdowns, or old Euro emissions standards?',

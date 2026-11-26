@@ -77,7 +77,7 @@ export default function MultiliftPage() {
             text: 'Once the offer is accepted, coordinate the required paperwork, payment and vehicle collection arrangements.',
           },
         ],
-        faqTitle: 'Frequently asked questions about selling a multilift truck',
+        faqTitle: 'Frequently Asked Questions About Selling Trucks',
         faq: [
           {
             q: 'Does the price include the boxes or containers that I have with the used multilift truck?',

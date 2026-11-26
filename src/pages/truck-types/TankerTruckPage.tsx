@@ -77,7 +77,7 @@ export default function TankerTruckPage() {
             text: 'Once the offer is accepted, coordinate the required paperwork, payment and vehicle collection arrangements.',
           },
         ],
-        faqTitle: 'Frequently asked questions about selling a tanker truck',
+        faqTitle: 'Frequently Asked Questions About Selling Trucks',
         faq: [
           {
             q: 'Can I sell a tanker truck if its leak tests or ADR certificate have expired?',

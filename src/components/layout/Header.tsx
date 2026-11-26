@@ -31,7 +31,7 @@ export default function Header() {
       <header
         className={`absolute inset-x-0 z-40 ${
           isThankYou
-            ? 'top-[20px] px-[20px]'
+            ? 'top-4 lg:top-5 px-4 lg:px-5'
             : 'top-3.5 px-3.5 sm:top-10 sm:px-6 lg:px-10'
         }`}
       >

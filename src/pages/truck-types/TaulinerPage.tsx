@@ -80,7 +80,7 @@ export default function TaulinerPage() {
             text: 'Once the offer is accepted, coordinate the required paperwork, payment and vehicle collection arrangements.',
           },
         ],
-        faqTitle: 'Frequently asked questions about selling curtainside trucks',
+        faqTitle: 'Frequently Asked Questions About Selling Trucks',
         faq: [
           {
             q: 'Can I sell a curtainside truck if the side tarpaulins are torn or the sunroof is damaged?',

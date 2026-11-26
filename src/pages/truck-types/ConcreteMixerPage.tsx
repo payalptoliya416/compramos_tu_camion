@@ -77,7 +77,7 @@ export default function ConcreteMixerPage() {
             text: 'Once the offer is accepted, coordinate the required paperwork, payment and vehicle collection arrangements.',
           },
         ],
-        faqTitle: 'Frequently asked questions about selling a concrete mixer truck',
+        faqTitle: 'Frequently Asked Questions About Selling Trucks',
         faq: [
           {
             q: 'Can I sell a concrete mixer truck if the drum has set or accumulated concrete inside?',

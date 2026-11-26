@@ -77,7 +77,7 @@ export default function Light3500Page() {
             text: 'Once the offer is accepted, coordinate the required paperwork, payment and vehicle collection arrangements.',
           },
         ],
-        faqTitle: 'Frequently Asked Questions About Selling a 3500 kg Truck',
+        faqTitle: 'Frequently Asked Questions About Selling Trucks',
         faq: [
           {
             q: 'How does the body type influence the sale of my 3500 kg truck?',
