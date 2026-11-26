@@ -77,7 +77,7 @@ export default function TipperCraneTruckPage() {
             text: 'Once the offer is accepted, coordinate the required paperwork, payment and vehicle collection arrangements.',
           },
         ],
-        faqTitle: 'Frequently Asked Questions About Selling a Tipper Truck with a Crane',
+        faqTitle: 'Frequently Asked Questions About Selling Trucks',
         faq: [
           {
             q: 'How do they rate the crane on dump trucks?',

@@ -10,7 +10,7 @@ interface Props {
   badge?: string;
   subtitle?: string;
   className?: string;
-}
+} 
 
 const TESTIMONIAL_ITEMS = [
   {

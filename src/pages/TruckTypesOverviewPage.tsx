@@ -210,6 +210,7 @@ export default function TruckTypesOverviewPage() {
         image="/images/trucktype-mainpage-banner.png"
         primary={{ label: 'Get a Truck Valuation', to: '#valuation' }}
         checks={['All Truck Types', 'Expert Valuation', 'Professional Support']}
+        breadcrumb={[{ label: 'Home', to: '/' }, { label: 'Truck Types' }]}
       />
 
       {/* 2. Split Section: Every Truck Has Its Own Category */}

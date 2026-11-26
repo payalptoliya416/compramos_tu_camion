@@ -36,7 +36,7 @@ export default function TruckCategories({
         ) : (
           <SectionHeading badge={badge} title={title} subtitle={subtitle} />
         )}
-        <ul className="mt-10 grid grid-cols-1 gap-3 sm:gap-[24px] sm:grid-cols-3 lg:grid-cols-4">
+        <ul className="mt-10 grid grid-cols-1 gap-3 sm:gap-[24px] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {CATEGORIES.map((c) => (
             <li key={c.title}>
               <Link to={c.to} className="group relative block aspect-[4/3] overflow-hidden rounded-[12px]">

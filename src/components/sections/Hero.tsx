@@ -104,20 +104,20 @@ export default function Hero({ badge, title, text, image, primary, secondary, ch
 
       {/* Breadcrumb if provided - placed below the hero section */}
       {breadcrumb && (
-        <div className="mt-4 px-3 sm:px-6 lg:px-10">
+        <div className="mt-3 sm:mt-[15px]">
           <nav
             aria-label="Breadcrumb"
-            className="inline-flex flex-wrap items-center gap-2 text-xs sm:text-sm text-[#6C6F73]"
+            className="inline-flex flex-wrap items-center gap-2 sm:gap-2.5 rounded-[10px] bg-[#F3F3F3] px-4 sm:px-5 py-2 sm:py-[15px] text-sm lg:text-base lg:leading-[16px] text-[#3B3F45]"
           >
             {breadcrumb.map((b, i) => (
-              <span key={b.label} className="flex items-center gap-2">
-                {i > 0 && <span aria-hidden className="text-[#9D9FA2]">›</span>}
+              <span key={b.label} className="inline-flex items-center gap-2 sm:gap-2.5">
+                {i > 0 && <span aria-hidden><img src="/images/gray-grater-errow.svg" alt="" /></span>}
                 {b.to ? (
                   <Link to={b.to} className="transition-colors hover:text-brand-orange">
                     {b.label}
                   </Link>
                 ) : (
-                  <span className="rounded-lg border border-[#E7E7E8] bg-white px-2.5 py-1 font-medium text-brand-orange shadow-sm">
+                  <span className="text-brand-orange">
                     {b.label}
                   </span>
                 )}

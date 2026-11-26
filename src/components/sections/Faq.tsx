@@ -16,7 +16,7 @@ export default function Faq({ items = FAQ_DEFAULT, title = 'Frequently Asked Que
 
   return (
     <section className={`section-y ${className}`.trim()}>
-      <div className="container-x grid gap-8 lg:grid-cols-[1fr_1.9fr] lg:gap-[64px]">
+      <div className="container-x grid items-start gap-8 lg:grid-cols-[1fr_1.9fr] lg:gap-[64px]">
         <div className="flex flex-col items-start gap-3">
           <Badge>FAQs</Badge>
           <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[34px] 2xl:text-[40px] 2xl:leading-[52px]">{title}</h2>
@@ -25,7 +25,7 @@ export default function Faq({ items = FAQ_DEFAULT, title = 'Frequently Asked Que
           </p>
         </div>
 
-        <div className="divide-y divide-[#E7E7E8] border-y border-[#E7E7E8]">
+        <div className="self-start h-fit divide-y divide-[#E7E7E8] border-y border-[#E7E7E8]">
           {items.map((it, i) => {
             const isOpen = open === i;
             return (
