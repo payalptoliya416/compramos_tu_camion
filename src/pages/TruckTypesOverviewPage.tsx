@@ -251,9 +251,9 @@ export default function TruckTypesOverviewPage() {
               <button
                 type="button"
                 onClick={() => setActiveTab('lifting')}
-                className={`w-full md:flex-1 lg:w-[310px] lg:max-w-[310px] px-4 h-12 md:h-14 flex items-center justify-center rounded-full text-sm md:text-base font-medium transition-all cursor-pointer whitespace-nowrap ${activeTab === 'lifting'
-                  ? 'bg-brand-orange text-white'
-                  : 'bg-[#F4F5F7] text-[#3B3F45] hover:bg-[#E9EBEF] hover:text-brand-navy'
+                className={`w-full md:flex-1 lg:w-[310px] lg:max-w-[310px] px-4 h-12 md:h-14 flex items-center justify-center rounded-full text-sm md:text-base font-medium transition-all duration-300 cursor-pointer whitespace-nowrap ${activeTab === 'lifting'
+                  ? 'bg-brand-orange text-white shadow-md shadow-orange-500/20 scale-[1.02]'
+                  : 'bg-[#F4F5F7] text-[#3B3F45] hover:bg-[#E9EBEF] hover:text-brand-navy hover:-translate-y-0.5 hover:shadow-sm'
                   }`}
               >
                 Lifting & Crane
@@ -261,9 +261,9 @@ export default function TruckTypesOverviewPage() {
               <button
                 type="button"
                 onClick={() => setActiveTab('construction')}
-                className={`w-full md:flex-1 lg:w-[310px] lg:max-w-[310px] px-4 h-12 md:h-14 flex items-center justify-center rounded-full text-sm md:text-base font-medium transition-all cursor-pointer whitespace-nowrap ${activeTab === 'construction'
-                  ? 'bg-brand-orange text-white'
-                  : 'bg-[#F4F5F7] text-[#3B3F45] hover:bg-[#E9EBEF] hover:text-brand-navy'
+                className={`w-full md:flex-1 lg:w-[310px] lg:max-w-[310px] px-4 h-12 md:h-14 flex items-center justify-center rounded-full text-sm md:text-base font-medium transition-all duration-300 cursor-pointer whitespace-nowrap ${activeTab === 'construction'
+                  ? 'bg-brand-orange text-white shadow-md shadow-orange-500/20 scale-[1.02]'
+                  : 'bg-[#F4F5F7] text-[#3B3F45] hover:bg-[#E9EBEF] hover:text-brand-navy hover:-translate-y-0.5 hover:shadow-sm'
                   }`}
               >
                 Construction & Industrial
@@ -271,9 +271,9 @@ export default function TruckTypesOverviewPage() {
               <button
                 type="button"
                 onClick={() => setActiveTab('transport')}
-                className={`w-full md:flex-1 lg:w-[310px] lg:max-w-[310px] px-4 h-12 md:h-14 flex items-center justify-center rounded-full text-sm md:text-base font-medium transition-all cursor-pointer whitespace-nowrap ${activeTab === 'transport'
-                  ? 'bg-brand-orange text-white'
-                  : 'bg-[#F4F5F7] text-[#3B3F45] hover:bg-[#E9EBEF] hover:text-brand-navy'
+                className={`w-full md:flex-1 lg:w-[310px] lg:max-w-[310px] px-4 h-12 md:h-14 flex items-center justify-center rounded-full text-sm md:text-base font-medium transition-all duration-300 cursor-pointer whitespace-nowrap ${activeTab === 'transport'
+                  ? 'bg-brand-orange text-white shadow-md shadow-orange-500/20 scale-[1.02]'
+                  : 'bg-[#F4F5F7] text-[#3B3F45] hover:bg-[#E9EBEF] hover:text-brand-navy hover:-translate-y-0.5 hover:shadow-sm'
                   }`}
               >
                 Transport & Distribution

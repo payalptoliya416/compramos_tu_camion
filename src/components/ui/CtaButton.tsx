@@ -10,7 +10,7 @@ interface Props {
 const VARIANT = {
   primary: 'btn-primary',
   outline: 'btn-outline',
-  'dark-outline': 'btn border border-[#092B55] text-brand-navy bg-transparent hover:bg-brand-navy hover:text-white transition-colors',
+  'dark-outline': 'btn border border-[#092B55] text-brand-navy bg-transparent hover:bg-brand-navy hover:text-white hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:scale-[0.98] transition-all duration-300',
   whatsapp: 'btn-whatsapp',
 } as const;
 

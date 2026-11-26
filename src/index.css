@@ -278,9 +278,9 @@ body {
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 500;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 200ms;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   @media (min-width: 768px) {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -290,15 +290,15 @@ body {
 }
 
 @utility btn-primary {
-  @apply btn bg-brand-orange text-white border border-brand-orange hover:bg-brand-orange-dark;
+  @apply btn bg-brand-orange text-white border border-brand-orange hover:bg-brand-orange-dark hover:-translate-y-0.5 hover:shadow-lg hover:shadow-orange-500/25 active:translate-y-0 active:scale-[0.98];
 }
 
 @utility btn-outline {
-  @apply btn border border-white/70 text-white hover:bg-white/10;
+  @apply btn border border-white/70 text-white hover:bg-white/15 hover:border-white hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/10 active:translate-y-0 active:scale-[0.98];
 }
 
 @utility btn-whatsapp {
-  @apply btn bg-whatsapp text-white hover:bg-green-700;
+  @apply btn bg-whatsapp text-white hover:bg-green-700 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-green-600/25 active:translate-y-0 active:scale-[0.98];
 }
 
 @utility badge {
