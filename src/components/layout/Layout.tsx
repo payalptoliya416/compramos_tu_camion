@@ -16,7 +16,7 @@ export default function Layout() {
     <div className="relative min-h-screen overflow-x-hidden">
       <ScrollToTop />
       <Header />
-      <main>
+      <main className="relative z-10">
         <Outlet />
       </main>
       <Footer />

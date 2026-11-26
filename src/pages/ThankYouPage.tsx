@@ -4,7 +4,7 @@ import { SITE } from '@/data/site';
 
 export default function ThankYouPage() {
   return (
-    <main className="w-full overflow-hidden pt-28 sm:pt-32">
+    <div className="w-full pt-28 sm:pt-32">
       <div className="container-x flex flex-col items-center text-center py-12 xl:pt-[130px] xl:pb-[229px]">
         {/* Scalloped Green Check Badge */}
         <div className="flex h-20 w-20 items-center justify-center">
@@ -51,6 +51,6 @@ export default function ThankYouPage() {
       </div>
 
       <FinalCta />
-    </main>
+    </div>
   );
 }
