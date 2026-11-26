@@ -5,7 +5,7 @@ import { SITE } from '@/data/site';
 export default function ThankYouPage() {
   return (
     <main className="w-full overflow-hidden pt-28 sm:pt-32">
-      <div className="container-x flex flex-col items-center text-center py-12 sm:py-[130px]">
+      <div className="container-x flex flex-col items-center text-center py-12 xl:pt-[130px] xl:pb-[229px]">
         {/* Scalloped Green Check Badge */}
         <div className="flex h-20 w-20 items-center justify-center">
          <img
@@ -15,7 +15,7 @@ export default function ThankYouPage() {
       />
         </div>
 
-        <h1 className="mt-[47px] text-2xl font-medium text-[#092B55] sm:text-[34px] xl:text-[40px]">
+        <h1 className="mt-5 xl:mt-[47px] text-2xl font-medium text-[#092B55] sm:text-[34px] xl:text-[40px]">
           One Step Closer To Selling Your Truck!
         </h1>
 
@@ -23,7 +23,7 @@ export default function ThankYouPage() {
           Your Truck Details Are Safely With Us. Our Team Will Review Your Information And Get Back To You With The Next Steps.
         </p>
 
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
+        <div className="mt-5 xl:mt-10 flex flex-wrap justify-center gap-4">
           <a
             href={SITE.whatsappHref}
             target="_blank"
