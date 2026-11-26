@@ -18,6 +18,7 @@ export default function ParcelDeliveryPage() {
           'Whether you are selling a light delivery truck or a larger distribution vehicle, we help simplify the process with clear communication and guidance on the required paperwork.',
         ],
         splitImage: '/images/parcel-delivery-banner-left.png',
+        splitGapClassName: 'lg:gap-[25px]',
         pills: [
           'Professional vehicle and cargo body assessment',
           'Support for individual trucks and commercial fleets',

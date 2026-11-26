@@ -56,9 +56,10 @@ export default function App() {
         <Route path="/truck-types/tractor-units" element={<RigidTractorTruckPage />} />
         <Route path="/truck-types/refrigerated-trucks" element={<RefrigeratedPage />} />
         <Route path="/truck-types/tauliner-and-curtainsider-trucks" element={<TaulinerPage />} />
-
         <Route path="/truck-types/parcel-delivery-trucks" element={<ParcelDeliveryPage />} />
+
         <Route path="/blog" element={<BlogPage />} />
+        
         <Route path="*" element={<HomePage />} />
       </Route>
     </Routes>

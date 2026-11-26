@@ -18,6 +18,7 @@ export default function RigidTractorTruckPage() {
           "We work with different commercial vehicle configurations, taking into account the truck's specifications, condition, equipment and relevant market factors.",
         ],
         splitImage: '/images/tractor-unit-left.png',
+        splitGapClassName: 'lg:gap-[25px]',
         pills: [
           'Professional vehicle assessment',
           'Support for individual sellers and businesses',
@@ -28,7 +29,7 @@ export default function RigidTractorTruckPage() {
         staggeredWhy: true,
         showCategoryDescription: true,
         categoriesBadge: 'Vehicle categories',
-        categoriesClassName: '!pt-0',
+        categoriesClassName: '!pt-[60px]',
         why: [
           {
             icon: '/images/professiona-valuation.svg',
