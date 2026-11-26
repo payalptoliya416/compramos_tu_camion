@@ -4,8 +4,8 @@ import { SITE } from '@/data/site';
 
 export default function ThankYouPage() {
   return (
-    <main className="w-full overflow-hidden pt-28 sm:pt-36">
-      <div className="container-x flex flex-col items-center text-center py-12 sm:py-20">
+    <main className="w-full overflow-hidden pt-28 sm:pt-32">
+      <div className="container-x flex flex-col items-center text-center py-12 sm:py-[130px]">
         {/* Scalloped Green Check Badge */}
         <div className="flex h-20 w-20 items-center justify-center">
          <img
