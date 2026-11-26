@@ -18,6 +18,7 @@ export default function TankerTruckPage() {
           'Whether you are selling a single tanker truck or updating your commercial fleet, we help simplify the selling process with clear communication and guidance on the required paperwork.',
         ],
         splitImage: '/images/tranker-left.png',
+        splitGapClassName: 'lg:gap-[35px]',
         pills: [
           'Professional vehicle and tank condition assessment',
           'Support for individual trucks and commercial fleets',

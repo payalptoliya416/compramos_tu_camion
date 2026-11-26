@@ -18,6 +18,7 @@ export default function ConcreteMixerPage() {
           'Whether you are selling a single concrete mixer truck or updating your construction fleet, we help simplify the selling process with clear communication and guidance on the required paperwork.',
         ],
         splitImage: '/images/concern-left.png',
+        splitGapClassName: 'lg:gap-[35px]',
         pills: [
           'Professional vehicle and mixing equipment assessment',
           'Support for individual trucks and commercial fleets',
@@ -27,7 +28,7 @@ export default function ConcreteMixerPage() {
         whyTitle: 'A Simpler Way to Sell Your Concrete Mixer Truck',
         staggeredWhy: true,
         showCategoryDescription: true,
-        categoriesClassName: '!pt-0',
+        categoriesClassName: '!pt-[60px]',
         why: [
           {
             icon: '/images/professiona-valuation.svg',

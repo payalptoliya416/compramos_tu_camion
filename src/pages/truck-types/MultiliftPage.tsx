@@ -18,6 +18,7 @@ export default function MultiliftPage() {
           'Whether you are selling an individual truck or updating your commercial fleet, we help simplify the process with clear communication and guidance on the required paperwork.',
         ],
         splitImage: '/images/multifit-left.png',
+        splitGapClassName: 'lg:gap-[35px]',
         pills: [
           'Professional hydraulic system and vehicle assessment',
           'Support for individual trucks and commercial fleets',

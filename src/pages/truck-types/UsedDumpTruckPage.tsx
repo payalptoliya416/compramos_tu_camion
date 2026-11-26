@@ -18,6 +18,7 @@ export default function UsedDumpTruckPage() {
           'Whether you are selling a single vehicle or updating your construction fleet, we help simplify the selling process with clear communication and guidance on the required paperwork.',
         ],
         splitImage: '/images/dump-left.png',
+        splitGapClassName: 'lg:gap-[35px]',
         pills: [
           'Professional mechanical and hydraulic system assessment',
           'Support for individual trucks and commercial fleets',
@@ -76,7 +77,7 @@ export default function UsedDumpTruckPage() {
             text: 'Once the offer is accepted, coordinate the required paperwork, payment and vehicle collection arrangements.',
           },
         ],
-        faqTitle: 'Frequently Asked Questions About Selling a Used Tipper Truck',
+        faqTitle: 'Frequently Asked Questions About Selling Trucks',
         faq: [
           {
             q: 'Do you buy dump trucks with liens, encumbrances, or retention of title?',

@@ -107,7 +107,7 @@ export default function Hero({ badge, title, text, image, primary, secondary, ch
         <div className="mt-3 sm:mt-[15px]">
           <nav
             aria-label="Breadcrumb"
-            className="inline-flex flex-wrap items-center gap-1 sm:gap-2.5 rounded-[10px] bg-[#F3F3F3] px-2 sm:px-5 py-2 sm:py-[15px] text-xs lg:text-base lg:leading-[16px] text-[#3B3F45]"
+            className="inline-flex flex-wrap items-center gap-1 sm:gap-2.5 rounded-[10px] bg-[#F3F3F3] px-2 sm:px-5 py-2 sm:py-[15px] text-xs sm:text-sm lg:text-base lg:leading-[16px] text-[#3B3F45]"
           >
             {breadcrumb.map((b, i) => (
               <span key={b.label} className="inline-flex items-center gap-1 sm:gap-2.5">
