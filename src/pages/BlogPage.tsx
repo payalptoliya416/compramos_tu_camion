@@ -58,7 +58,7 @@ export default function BlogPage() {
       />
 
       <section className="section-y !pb-0">
-        <div className="container-x grid gap-5 lg:grid-cols-[1fr_300px] lg:gap-[36px] 2xl:grid-cols-[1fr_380px]">
+        <div className="container-x grid gap-5 lg:grid-cols-[1fr_300px] 2xl:gap-[36px] 2xl:grid-cols-[1fr_380px]">
           <div className='order-2 lg:order-1'>
             <Badge>Latest articles</Badge>
             <h2 className="mb-6 mt-3 text-2xl font-medium leading-tight text-brand-navy sm:text-[34px] xl:text-[40px] sm:leading-[40px]">Explore Our Latest Guides</h2>
@@ -70,7 +70,7 @@ export default function BlogPage() {
                 {filtered.map((p) => (
                   <li key={p.title} className="flex flex-col overflow-hidden rounded-xl border border-[#E7E7E8] bg-white">
                     <Img src={p.image} alt={p.title} className="aspect-[326/183]" />
-                    <div className="flex flex-1 flex-col p-5">
+                    <div className="flex flex-1 flex-col p-3 2xl:p-5">
                       <span
                         className={`w-fit rounded px-3 py-2 text-xs ${
                           p.category === 'Tips & Guides'
@@ -94,7 +94,7 @@ export default function BlogPage() {
 
           {/* Sidebar */}
           <aside className="flex flex-col gap-5 order-1 lg:order-2">
-            <div className="rounded-xl border border-[#E7E7E8] p-4 xl:p-[25px]">
+            <div className="rounded-xl border border-[#E7E7E8] p-4 2xl:p-[25px]">
               <h3 className="mb-4 text-base font-semibold text-[#092B55]">Search</h3>
               <div className="flex overflow-hidden rounded-[80px] border border-[#E7E7E8]">
                 <input
@@ -107,7 +107,7 @@ export default function BlogPage() {
               </div>
             </div>
 
-            <div className="rounded-xl border border-[#E7E7E8]  bg-white p-4 xl:p-[25px]">
+            <div className="rounded-xl border border-[#E7E7E8]  bg-white p-4 2xl:p-[25px]">
               <h3 className="mb-4 text-base font-semibold text-[#092B55]">Recent Articles</h3>
               <ul className="flex flex-col gap-3">
                 {RECENT_ARTICLES.map((p) => (
@@ -119,7 +119,7 @@ export default function BlogPage() {
               </ul>
             </div>
 
-            <div className="rounded-xl border border-[#E7E7E8]  bg-white p-4 xl:p-[25px]">
+            <div className="rounded-xl border border-[#E7E7E8]  bg-white p-4 2xl:p-[25px]">
               <h3 className="mb-4 text-base font-semibold text-[#092B55]">Categories</h3>
               <ul className="flex flex-col gap-1 text-sm">
                 {[{ name: 'All Articles', count: POSTS.length }, ...CATEGORY_LIST].map((c) => (
@@ -139,7 +139,7 @@ export default function BlogPage() {
               </ul>
             </div>
 
-            <div className="rounded-xl bg-[#092B55] p-4 xl:p-[25px] text-white">
+            <div className="rounded-xl bg-[#092B55] p-4 2xl:p-[25px] text-white">
               <h3 className="text-base lg:text-lg font-semibold">Planning to Sell Your Truck?</h3>
               <p className="mb-5 mt-[10px] text-sm text-[#9CAABB]">Get started with a professional valuation from our team. Fast, free, and with no obligations.</p>
               <CtaButton cta={{ label: 'Appraise Your Truck' }} className="w-full" />
