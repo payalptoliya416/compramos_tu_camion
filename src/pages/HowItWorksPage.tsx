@@ -65,6 +65,7 @@ export default function HowItWorksPage() {
         pills={['Truck make and model', 'Registration year', 'Mileage', 'Vehicle condition', 'Mechanical issues, if any', 'Recent photographs', 'Your contact details']}
         cta={{ label: 'Get a Free Valuation' }}
         className="!pb-0"
+        gapClassName="lg:gap-[35px]"
       />
 
       <Faq items={FAQ} />

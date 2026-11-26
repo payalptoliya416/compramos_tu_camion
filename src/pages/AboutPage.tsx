@@ -112,7 +112,7 @@ export default function AboutPage() {
       </section>
 
       <section className="section-y !py-0">
-        <div className="container-x grid items-center gap-8 lg:grid-cols-2 lg:gap-[35px]">
+        <div className="container-x grid items-center gap-8 lg:grid-cols-2 lg:gap-[30px]">
           <div className="overflow-hidden rounded-2xl lg:order-2">
             <img
               src="/images/makieing-truck.png"

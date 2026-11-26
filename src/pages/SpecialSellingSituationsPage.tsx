@@ -103,6 +103,7 @@ export default function SpecialSellingSituationsPage() {
         ]}
         image="/images/cleare.png"
         cta={{ label: 'Get a truck appraisal now', to: '/get-a-free-valuation' }}
+        gapClassName="lg:gap-[69px]"
       />
 
       {/* 3. Solutions for Different Selling Situations (4 Cards) */}
@@ -155,6 +156,7 @@ export default function SpecialSellingSituationsPage() {
           'Understand the information needed for your valuation.',
           'Discuss the documentation and next steps for your situation.',
         ]}
+        gapClassName="lg:gap-[69px]"
       />
 
       {/* 5. CtaBanner */}

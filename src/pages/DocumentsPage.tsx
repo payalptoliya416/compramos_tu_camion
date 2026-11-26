@@ -106,13 +106,14 @@ export default function DocumentsPage() {
         paragraphs={['The documents required for a truck sale depend on the vehicle, ownership, seller type, and individual circumstances. Understanding the requirements early can help you prepare for the next steps.']}
         image="/images/prepare.png"
         cta={{ label: 'Start Your Valuation' }}
+        gapClassName="lg:gap-[69px]"
       />
 
       {/* Private sellers checklist */}
       <section className="section-y !pt-0">
         <div className="container-x">
           <SectionHeading badge="For individual owners" title="Documents You May Need as a Private Seller" />
-          <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:gap-5">
+          <div className="mt-10 grid gap-5 lg:grid-cols-2 lg:gap-5">
             <div className="flex flex-col justify-between rounded-[16px] border border-[#E7E7E8] bg-white py-5">
               <div>
                 <h3 className="text-lg sm:text-xl font-semibold text-brand-navy-dark px-4 md:px-5">Document Checklist</h3>

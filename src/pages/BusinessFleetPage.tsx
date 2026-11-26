@@ -55,6 +55,7 @@ export default function BusinessFleetPage() {
         paragraphs={['Selling company vehicles can be part of fleet renewal, operational changes, or a decision to dispose of surplus trucks. Our team helps you understand the appraisal process and the steps involved in selling your vehicles.']}
         image="/images/Straightforward.png"
         cta={{ label: 'Get a Fleet Valuation' }}
+        gapClassName="lg:gap-[69px]"
       />
 
       <section className="section-y !py-0">

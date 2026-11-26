@@ -164,6 +164,7 @@ export default function MakeModelPage() {
         paragraphs={['Every truck has its own characteristics. The make, model, registration year, mileage, condition and configuration can all help inform its valuation.']}
         image="/images/valuation-truck.png"
         cta={{ label: 'Request a Valuation' }}
+        gapClassName="lg:gap-[69px]"
       />
 
       {/* Brands */}

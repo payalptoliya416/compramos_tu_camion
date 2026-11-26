@@ -214,7 +214,7 @@ export default function TruckTypesOverviewPage() {
 
       {/* 2. Split Section: Every Truck Has Its Own Category */}
       <section className="section-y">
-        <div className="container-x grid items-center gap-8 lg:grid-cols-2 lg:gap-[35px]">
+        <div className="container-x grid items-center gap-8 lg:grid-cols-2 lg:gap-[69px]">
           <div className="overflow-hidden rounded-2xl">
             <Img
               src="/images/everytruck.png"
