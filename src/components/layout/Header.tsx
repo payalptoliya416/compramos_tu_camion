@@ -28,7 +28,13 @@ export default function Header() {
 
   return (
     <>
-      <header className="absolute inset-x-0 top-3.5 z-40 px-3.5 sm:top-10 sm:px-6 lg:px-10">
+      <header
+        className={`absolute inset-x-0 z-40 ${
+          isThankYou
+            ? 'top-[20px] px-[20px]'
+            : 'top-3.5 px-3.5 sm:top-10 sm:px-6 lg:px-10'
+        }`}
+      >
         <div className={`relative mx-auto w-full rounded-2xl sm:rounded-[20px] px-3 py-2.5 sm:px-[30px] sm:py-[25px] ${isThankYou ? 'bg-[#F3F3F3]' : 'bg-white'}`}>
           <div className="flex items-center justify-between gap-4">
             <Logo variant="header" />
