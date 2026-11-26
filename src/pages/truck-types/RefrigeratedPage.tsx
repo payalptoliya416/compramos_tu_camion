@@ -18,7 +18,7 @@ export default function RefrigeratedPage() {
           'Whether you are selling a single truck or updating your commercial fleet, we help simplify the process with clear communication and practical support.',
         ],
         splitImage: '/images/Refrigerated-banner-left.png',
-        splitGapClassName: 'lg:gap-[25px]',
+        splitGapClassName: 'lg:gap-[35px]',
         pills: [
           'Professional vehicle and refrigeration equipment assessment',
           'Support for individual sellers and commercial fleets',
@@ -80,7 +80,7 @@ export default function RefrigeratedPage() {
             text: 'Once the offer is accepted, coordinate the required paperwork, payment and vehicle collection arrangements.',
           },
         ],
-        faqTitle: 'Frequently asked questions about selling a refrigerated truck',
+        faqTitle: 'Frequently Asked Questions About Selling Trucks',
         faq: [
           {
             q: 'Can I sell a refrigerated truck if its ATP certificate has expired?',

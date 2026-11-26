@@ -18,7 +18,7 @@ export default function TaulinerPage() {
           'Whether you are selling an individual vehicle or updating your fleet, we help make the selling process straightforward with clear communication and guidance on the required paperwork.',
         ],
         splitImage: '/images/tauliner-banner-left.png',
-        splitGapClassName: 'lg:gap-[25px]',
+        splitGapClassName: 'lg:gap-[35px]',
         pills: [
           'Professional truck and body condition assessment',
           'Support for individual vehicles and commercial fleets',
@@ -29,7 +29,7 @@ export default function TaulinerPage() {
         staggeredWhy: true,
         showCategoryDescription: true,
         categoriesBadge: 'Explore our categories',
-        categoriesClassName: '!pt-0',
+        categoriesClassName: '!pt-[60px]',
         why: [
           {
             icon: '/images/professiona-valuation.svg',

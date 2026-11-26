@@ -34,7 +34,7 @@ export default function BlogPage() {
         checks={['Expert Truck Guides', 'Selling Tips', 'Industry Insights']}
       />
 
-      <section className="section-y">
+      <section className="section-y !pb-0">
         <div className="container-x grid gap-5 lg:grid-cols-[1fr_300px] lg:gap-[36px] 2xl:grid-cols-[1fr_380px]">
           <div className='order-2 lg:order-1'>
             <Badge>Latest articles</Badge>
@@ -58,8 +58,8 @@ export default function BlogPage() {
                         {p.category}
                       </span>
                       <h3 className="mt-[10px] text-base font-semibold text-[#092B55] w-full lg:max-w-[280px]">{p.title}</h3>
-                      <p className="mt-[15px] line-clamp-4 flex-1 text-base leading-relaxed text-[#3B3F45]">{p.excerpt}</p>
-                      <a href="#" className="mt-[30px] inline-flex items-center gap-1.5 text-sm font-medium text-brand-orange hover:underline">
+                      <p className="mt-[15px] line-clamp-4 flex-1 text-sm leading-relaxed text-[#3B3F45]">{p.excerpt}</p>
+                      <a href="#" className="mt-[30px] inline-flex items-center gap-1.5 text-sm font-medium text-brand-orange hover:underline leading-[14px]">
                         Read Article <img src="/images/right-errow-orange.svg" alt="" className="h-[9px] w-[11px] shrink-0" />
                       </a>
                     </div>
