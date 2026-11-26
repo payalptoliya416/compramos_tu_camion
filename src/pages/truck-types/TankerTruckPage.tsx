@@ -28,7 +28,7 @@ export default function TankerTruckPage() {
         whyTitle: 'A Simpler Way to Sell Your Tanker Truck',
         staggeredWhy: true,
         showCategoryDescription: true,
-        categoriesClassName: '!pt-0',
+        categoriesClassName: '!pt-[60px]',
         why: [
           {
             icon: '/images/professiona-valuation.svg',

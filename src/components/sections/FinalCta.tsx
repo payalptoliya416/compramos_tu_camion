@@ -16,7 +16,7 @@ export default function FinalCta() {
             aria-hidden
           />
           <div className="relative z-10 flex flex-col items-center gap-[15px]">
-            <Badge light>Get started today</Badge>
+            <Badge light bgImage="/images/label-white-bg-cta.png">Get started today</Badge>
             <h2 className="text-2xl font-medium leading-tight text-white sm:text-[34px] xl:text-[40px] sm:leading-[40px]">Ready to Sell Your Truck?</h2>
             <p className="max-w-3xl text-sm md:text-base leading-relaxed text-[#E7E7E8]">
               Tell us about your vehicle and request a free valuation. Our team is ready to assist you.
