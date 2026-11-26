@@ -8,6 +8,29 @@ import Img from '@/components/ui/Img';
 import { Badge } from '@/components/ui/SectionHeading';
 import CtaButton from '@/components/ui/CtaButton';
 
+const RECENT_ARTICLES = [
+  {
+    title: 'Low Emission Zones in Seville and Trucks: Restrictions and Sales Guide',
+    image: '/images/recent01.png',
+  },
+  {
+    title: 'New Low Emission Zone in Valencia: Best Time to Sell Your Truck?',
+    image: '/images/recent02.png',
+  },
+  {
+    title: 'How to Sell a Boom Crane or Truck Crane Quickly',
+    image: '/images/blog03.png',
+  },
+  {
+    title: 'Can You Deduct VAT When Buying a Used Truck?',
+    image: '/images/blog05.png',
+  },
+  {
+    title: 'Selling a Truck with a Lien in Spain: Legal Guide',
+    image: '/images/blog06.png',
+  },
+];
+
 export default function BlogPage() {
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState<string>('All Articles');
@@ -71,7 +94,7 @@ export default function BlogPage() {
 
           {/* Sidebar */}
           <aside className="flex flex-col gap-5 order-1 lg:order-2">
-            <div className="rounded-xl border border-[#CED5DD] p-4 xl:p-[25px]">
+            <div className="rounded-xl border border-[#E7E7E8] p-4 xl:p-[25px]">
               <h3 className="mb-4 text-base font-semibold text-[#092B55]">Search</h3>
               <div className="flex overflow-hidden rounded-[80px] border border-[#E7E7E8]">
                 <input
@@ -84,10 +107,10 @@ export default function BlogPage() {
               </div>
             </div>
 
-            <div className="rounded-xl border border-[#CED5DD]  bg-white p-4 xl:p-[25px]">
+            <div className="rounded-xl border border-[#E7E7E8]  bg-white p-4 xl:p-[25px]">
               <h3 className="mb-4 text-base font-semibold text-[#092B55]">Recent Articles</h3>
               <ul className="flex flex-col gap-3">
-                {POSTS.slice(0, 5).map((p) => (
+                {RECENT_ARTICLES.map((p) => (
                   <li key={p.title} className="flex items-center gap-3">
                     <Img src={p.image} alt="" className="h-[48px] w-[64px] shrink-0 rounded" />
                     <span className="line-clamp-3 text-sm text-[#6C6F73]">{p.title}</span>
@@ -96,7 +119,7 @@ export default function BlogPage() {
               </ul>
             </div>
 
-            <div className="rounded-xl border border-[#CED5DD]  bg-white p-4 xl:p-[25px]">
+            <div className="rounded-xl border border-[#E7E7E8]  bg-white p-4 xl:p-[25px]">
               <h3 className="mb-4 text-base font-semibold text-[#092B55]">Categories</h3>
               <ul className="flex flex-col gap-1 text-sm">
                 {[{ name: 'All Articles', count: POSTS.length }, ...CATEGORY_LIST].map((c) => (
