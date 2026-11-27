@@ -43,7 +43,7 @@ export default function TruckCategories({
                 <Img src={c.image} alt={c.title} className="h-full w-full" imgClassName="transition-transform duration-500 group-hover:scale-105" />
                 <div className={`absolute inset-0 bg-gradient-to-t ${showDescription ? 'from-black/90 via-black/40 to-transparent' : 'from-black/80 via-black/20 to-transparent'}`} />
                 <div className="absolute inset-x-0 bottom-0 p-3 lg:p-5">
-                  <h3 className="text-base font-semibold lg:font-bold text-white lg:text-lg">{c.title}</h3>
+                  <h3 className="text-base font-semibold text-white">{c.title}</h3>
                   {showDescription && c.text && (
                     <p className="mt-1 text-xs text-[#B6B7B9] sm:text-sm leading-snug">{c.text}</p>
                   )}

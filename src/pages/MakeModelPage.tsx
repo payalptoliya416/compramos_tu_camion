@@ -196,7 +196,7 @@ export default function MakeModelPage() {
                 <SwiperSlide key={m.name} className="h-auto">
                   <article className="flex h-full flex-col items-center justify-between rounded-[12px] bg-white py-5 sm:py-[35px] px-5 sm:px-[25px] text-center min-h-[352px] sm:min-h-[402px]">
                     <div className="flex flex-col items-center">
-                      <span className="flex h-[72px] w-[72px] sm:h-[110px] sm:w-[110px] items-center justify-center rounded-[14px] bg-[#F3F4F6]">
+                      <span className="flex h-[72px] w-[72px] sm:h-[100px] sm:w-[100px] items-center justify-center rounded-[14px] bg-[#F3F4F6] p-4">
                         <img src={m.logo} alt={m.name} className="sm:max-h-full w-[50px] sm:w-auto sm:max-w-full object-contain" />
                       </span>
                       <h3 className="mt-5 md:mt-[25px] text-lg sm:text-xl font-semibold text-brand-navy-dark leading-snug">{m.name}</h3>

@@ -77,7 +77,7 @@ export default function Hero({ badge, title, text, image, primary, secondary, ch
 
             {/* Actions */}
             <div className="mt-5 md:mt-[35px] flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-5">
-              <CtaButton cta={primary} className="px-4 lg:!px-[30px] !py-3 md:!py-4 text-sm md:text-[15px] md:leading-[16px] font-medium border border-brand-orange" />
+              <CtaButton cta={primary} className="px-4 lg:!px-[30px] !py-3 md:!py-[14px] text-sm md:text-[15px] md:leading-[16px] font-medium border border-brand-orange" />
               {secondary && (
                 <CtaButton
                   cta={secondary}

@@ -179,7 +179,7 @@ export default function ValuationForm({
               {POINTS.map((p) => (
                 <li
                   key={p}
-                  className="inline-flex h-[48px] items-center gap-2 rounded-[30px] px-5 py-2 text-sm sm:text-base font-normal text-white bg-[#FFFFFF0D] border border-[#FFFFFF1A]"
+                  className="inline-flex h-[44px] items-center gap-2 rounded-[30px] px-5 py-2 text-sm sm:text-base font-normal text-white bg-[#FFFFFF0D] border border-[#FFFFFF1A]"
                 >
                   <img src="/images/fill-checkmark.svg" alt="" className="shrink-0" />
                   <span>{p}</span>

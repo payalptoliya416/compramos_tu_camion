@@ -150,7 +150,7 @@ export default function DocumentsPage() {
         </div>
       </section>
 
-      <BrandLogos band />
+      <BrandLogos band noBorder />
 
       {/* Documentation for Company-Owned Trucks */}
       <section className="section-y">

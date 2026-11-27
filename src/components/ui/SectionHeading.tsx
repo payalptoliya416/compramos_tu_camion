@@ -13,7 +13,7 @@ export function Badge({ children, light, bgImage }: { children: string; light?: 
     return (
       <span
         style={{ backgroundImage: `url('${bgImage || '/images/label-white-bg.png'}')`, backgroundSize: '100% 100%' }}
-        className="inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-xs sm:text-sm leading-[14px] font-medium uppercase tracking-wider text-brand-orange bg-no-repeat bg-center"
+        className="inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-xs font-medium uppercase tracking-wider text-brand-orange bg-no-repeat bg-center"
       >
         <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-brand-orange" />
         <span>{children}</span>

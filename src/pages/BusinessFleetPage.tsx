@@ -84,7 +84,7 @@ export default function BusinessFleetPage() {
                 className="flex h-full flex-col gap-4 rounded-[18px] bg-surface p-6 sm:p-[30px]"
               >
                 <span className="flex h-[52px] w-[52px] items-center justify-center rounded-[12px] bg-white">
-                  <img src={icon} alt="" className="h-7 w-7 object-contain" />
+                  <img src={icon} alt="" className="h-6 w-6 object-contain" />
                 </span>
                 <h3 className="mt-2 text-base font-medium text-brand-navy-dark sm:text-xl">{title}</h3>
                 <p className="text-sm leading-relaxed text-[#6C6F73] sm:text-base">{text}</p>
