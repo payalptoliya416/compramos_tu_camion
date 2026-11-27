@@ -373,11 +373,16 @@ body {
   border-radius: 9999px !important;
 }
 
-/* Completely eradicate Google Translate top toolbar, banners, frames, and body shifting */
+/* Completely eradicate Google Translate top toolbar, banners, frames, top-left loaders, and body shifting */
+[class*="VIpgJd"],
+.goog-te-spinner,
+.goog-te-spinner-pos,
+.goog-te-spinner-animation,
 .goog-te-banner-frame,
 .goog-te-banner-frame.skiptranslate,
 iframe.goog-te-banner-frame,
 iframe[id^=":"][id$=".container"],
+iframe.skiptranslate,
 body > .skiptranslate,
 #goog-gt-tt,
 .goog-te-balloon-frame,
@@ -389,6 +394,9 @@ body > .skiptranslate,
   width: 0 !important;
   opacity: 0 !important;
   pointer-events: none !important;
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
 }
 
 html, body {

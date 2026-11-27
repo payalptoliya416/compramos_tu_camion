@@ -70,11 +70,16 @@
         to { transform: rotate(360deg); }
       }
 
-      /* Completely eradicate Google Translate top toolbar, banners, frames, popups */
+      /* Completely eradicate Google Translate top toolbar, banners, frames, popups, and top-left loaders */
+      [class*="VIpgJd"],
+      .goog-te-spinner,
+      .goog-te-spinner-pos,
+      .goog-te-spinner-animation,
       .goog-te-banner-frame,
       .goog-te-banner-frame.skiptranslate,
       iframe.goog-te-banner-frame,
       iframe[id^=":"][id$=".container"],
+      iframe.skiptranslate,
       body > .skiptranslate,
       #goog-gt-tt,
       .goog-te-balloon-frame,
@@ -86,6 +91,9 @@
         width: 0 !important;
         opacity: 0 !important;
         pointer-events: none !important;
+        position: absolute !important;
+        top: -9999px !important;
+        left: -9999px !important;
       }
 
       html, body {
@@ -194,11 +202,13 @@
               document.body.style.position = 'static';
             }
           }
-          var banners = document.querySelectorAll('.goog-te-banner-frame, iframe.goog-te-banner-frame, body > .skiptranslate');
+          var banners = document.querySelectorAll('.goog-te-banner-frame, iframe.goog-te-banner-frame, body > .skiptranslate, [class*="VIpgJd"], .goog-te-spinner-pos, iframe.skiptranslate');
           for (var i = 0; i < banners.length; i++) {
             banners[i].style.setProperty('display', 'none', 'important');
             banners[i].style.setProperty('visibility', 'hidden', 'important');
+            banners[i].style.setProperty('opacity', '0', 'important');
             banners[i].style.setProperty('height', '0', 'important');
+            banners[i].style.setProperty('pointer-events', 'none', 'important');
           }
         }
 
