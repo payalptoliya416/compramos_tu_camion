@@ -45,7 +45,7 @@ export default function Hero({ badge, title, text, image, primary, secondary, ch
             {/* Pill Badge */}
             <div
               style={{ backgroundImage: `url('/images/label-bg.png')`, backgroundSize: '100% 100%' }}
-              className="inline-flex items-center justify-center gap-2 rounded-full px-4 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm leading-[14px] font-medium uppercase tracking-wider text-brand-orange bg-no-repeat bg-center"
+              className="inline-flex items-center justify-center gap-2 rounded-full px-4 sm:px-5 py-1.5 sm:py-2 text-xs font-medium uppercase tracking-wider text-brand-orange bg-no-repeat bg-center"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-brand-orange" />
               <span>{badge}</span>
@@ -77,12 +77,12 @@ export default function Hero({ badge, title, text, image, primary, secondary, ch
 
             {/* Actions */}
             <div className="mt-5 md:mt-[35px] flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-5">
-              <CtaButton cta={primary} className="px-4 lg:!px-[30px] !py-3 md:!py-4 text-sm md:text-base md:leading-[18px] font-medium border border-brand-orange" />
+              <CtaButton cta={primary} className="px-4 lg:!px-[30px] !py-3 md:!py-4 text-sm md:text-[15px] md:leading-[16px] font-medium border border-brand-orange" />
               {secondary && (
                 <CtaButton
                   cta={secondary}
                   variant="outline"
-                  className="!border-white !text-white hover:!bg-white/15 px-4 lg:!px-[30px] !py-3 md:!py-4 text-sm md:text-base md:leading-[18px] font-medium"
+                  className="!border-white !text-white hover:!bg-white/15 px-4 lg:!px-[30px] !py-3 md:!py-4 text-sm md:text-[15px] md:leading-[16px] font-medium"
                 />
               )}
             </div>

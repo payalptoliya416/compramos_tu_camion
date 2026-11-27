@@ -225,7 +225,7 @@ export default function TruckTypesOverviewPage() {
           </div>
           <div className="flex flex-col items-start gap-4">
             <Badge>Find your truck category</Badge>
-            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[34px] xl:text-[40px] xl:leading-[40px]">
+            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[34px] xl:text-[38px] xl:leading-[38px]">
               Every Truck Has Its Own Category
             </h2>
             <p className="text-base leading-relaxed text-[#3B3F45]">
@@ -361,7 +361,7 @@ export default function TruckTypesOverviewPage() {
         <div className="container-x grid items-center gap-5 lg:grid-cols-2 lg:gap-[30px]">
           <div className="flex flex-col items-start gap-4">
             <Badge>Understanding your vehicle</Badge>
-            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[34px] xl:text-[40px] xl:leading-[40px]">
+            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[34px] xl:text-[38px] xl:leading-[38px]">
               How Do We Value Your Truck?
             </h2>
             <p className="text-base leading-relaxed text-[#3B3F45]">
@@ -413,15 +413,15 @@ export default function TruckTypesOverviewPage() {
                 {i < STRAIGHTFORWARD_STEPS.length - 1 && (
                   <div
                     aria-hidden
-                    className="absolute left-[calc(50%+29px)] top-[29px] -translate-y-1/2 hidden md:block h-[1.5px] w-[calc(100%-34px)] overflow-hidden"
+                    className="absolute left-[calc(50%+29px)] top-[29px] -translate-y-1/2 hidden md:block h-[1px] w-[calc(100%-34px)] overflow-hidden"
                     style={{
                       background:
                         'linear-gradient(90deg, #E7E7E8 0%, #F17612 48%, #E7E7E8 52%, #E7E7E8 100%)',
                     }}
                   />
                 )}
-                <span className="relative z-10 flex h-[58px] w-[58px] items-center justify-center rounded-[12px] border border-[#E7E7E8] bg-[#F3F3F3] text-brand-orange">
-                  <img src={icon} alt="" className="" />
+                <span className="relative z-10 flex h-[54px] w-[54px] items-center justify-center rounded-[12px] border border-[#E7E7E8] bg-[#F3F3F3] text-brand-orange">
+                  <img src={icon} alt="" className="w-5 h-5" />
                 </span>
                 <h3 className="mt-5 sm:mt-[25px] text-lg font-medium text-brand-navy-dark sm:text-xl">
                   {title}

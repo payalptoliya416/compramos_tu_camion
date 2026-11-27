@@ -112,7 +112,7 @@ export default function PrivateSellersPage() {
         <div className="container-x grid gap-8 lg:grid-cols-[1.1fr_2.4fr] lg:gap-5 xl:gap-8 items-start">
           <div className="flex flex-col items-start">
             <Badge>Why choose us</Badge>
-            <h2 className="mt-3 text-2xl font-medium text-brand-navy sm:text-[32px] xl:text-[40px] xl:leading-[60px]">
+            <h2 className="mt-3 text-2xl font-medium text-brand-navy sm:text-[32px] xl:text-[38px] xl:leading-[58px]">
               A More Straightforward Way to Sell Your Truck
             </h2>
             <p className="mt-4 text-base leading-relaxed text-[#6C6F73]">
@@ -123,8 +123,8 @@ export default function PrivateSellersPage() {
           <ul className="grid gap-3 sm:grid-cols-3 sm:gap-4 xl:gap-2">
             {WHY.map(({ icon, title, text }) => (
               <li key={title} className="flex flex-col items-start text-left sm:px-2 xl:px-[30px] py-4 sm:py-5 xl:py-[30px]">
-                <span className="flex h-[58px] w-[58px] items-center justify-center rounded-[14px] border border-[#E7E7E8] bg-[#F8F9FA]">
-                  <img src={icon} alt="" className="" />
+                <span className="flex h-[54px] w-[54px] items-center justify-center rounded-[14px] border border-[#E7E7E8] bg-[#F8F9FA]">
+                  <img src={icon} alt="" className="w-5 h-5" />
                 </span>
                 <h3 className="mt-5 text-base font-medium text-brand-navy-dark sm:text-lg">{title}</h3>
                 <p className="mt-2.5 text-sm sm:text-base leading-relaxed text-[#6C6F73]">{text}</p>

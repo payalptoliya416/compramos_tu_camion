@@ -285,8 +285,8 @@ body {
   isolation: isolate;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   @media (min-width: 768px) {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 14px;
+    padding-bottom: 14px;
     font-size: 1rem;
     line-height: 18px;
   }
@@ -334,8 +334,8 @@ body {
   gap: 8px;
   border-radius: 9999px;
   background-color: #F176120D;
-  padding: 10px 15px;
-  font-size: 14px;
+  padding: 8px 15px;
+  font-size: 13px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;

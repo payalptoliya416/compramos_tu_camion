@@ -122,8 +122,8 @@ export default function SpecialSellingSituationsPage() {
                 }`}
               >
                 <div>
-                  <span className="flex h-[58px] w-[58px] items-center justify-center rounded-[12px] bg-[#F3F3F3] border border-[#E7E7E8]">
-                    <img src={icon} alt="" className="" />
+                  <span className="flex h-[54px] w-[54px] items-center justify-center rounded-[12px] bg-[#F3F3F3] border border-[#E7E7E8]">
+                    <img src={icon} alt="" className="w-5 h-5" />
                   </span>
                   <h3 className="mt-5 text-base sm:text-lg font-semibold text-brand-navy-dark leading-snug">{title}</h3>
                   <p className="mt-[15px] text-sm md:text-base leading-relaxed text-[#3B3F45]">{text}</p>

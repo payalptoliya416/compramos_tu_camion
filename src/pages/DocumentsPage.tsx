@@ -135,8 +135,8 @@ export default function DocumentsPage() {
                 <img src="/images/inidividual.png" alt="Truck drivers" className="w-full h-auto object-cover" />
               </div>
               <div className="flex items-start gap-5 rounded-[12px] border border-[#E7E7E8] bg-white p-5">
-                <span className="flex h-[58px] w-[58px] shrink-0 items-center justify-center rounded-full bg-[#F17612] text-white">
-                  <img src='/images/info.svg' className='w-auto'/>
+                <span className="flex h-[54px] w-[54px] shrink-0 items-center justify-center rounded-full bg-[#F17612] text-white">
+                  <img src='/images/info.svg' className='w-5 h-5'/>
                 </span>
                 <div>
                   <h3 className="text-base sm:text-lg font-semibold text-brand-navy-dark">Not sure what applies to you?</h3>

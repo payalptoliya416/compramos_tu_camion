@@ -38,8 +38,8 @@ export default function RecentPurchases({
                 <span className="absolute right-[10px] top-[10px] rounded-full bg-brand-orange px-[10px] py-[6px] text-[10px] leading-[10px] text-white">{p.tag}</span>
               </div>
               <div className="p-3 md:p-5">
-                <p className="mb-[10px] text-xs text-[#6C6F73]">{p.brand}</p>
-                <h3 className="text-sm font-semibold text-brand-navy-dark">{p.title}</h3>
+                <p className="mb-[10px] text-xs leading-[12px] text-[#6C6F73]">{p.brand}</p>
+                <h3 className="text-sm font-semibold leading-[15px] text-brand-navy-dark">{p.title}</h3>
                 <p className="mt-1 flex items-center gap-1 text-xs text-[#6C6F73]">
                   <MapPin className="h-3 w-3 text-brand-orange" /> {p.place}
                 </p>

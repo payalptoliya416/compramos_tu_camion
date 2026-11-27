@@ -12,7 +12,7 @@ export default function Logo({ className = '', variant = 'header' }: LogoProps) 
       <img
         src={src}
         alt="Compramos Tu Camión"
-        className="w-full max-w-[140px] xs:max-w-[160px] md:max-w-[224px]"
+        className="w-full max-w-[140px] xs:max-w-[160px] md:max-w-[190px]"
       />
     </Link>
   );

@@ -35,13 +35,13 @@ export default function Header() {
             : 'top-3.5 px-3.5 sm:top-10 sm:px-6 lg:px-10'
         }`}
       >
-        <div className={`relative mx-auto w-full rounded-2xl sm:rounded-[20px] px-3 py-2.5 sm:px-[30px] sm:py-[25px] ${isThankYou ? 'bg-[#F3F3F3]' : 'bg-white'}`}>
+        <div className={`relative mx-auto w-full rounded-2xl sm:rounded-[20px] px-3 py-2.5 sm:px-7 sm:py-5 ${isThankYou ? 'bg-[#F3F3F3]' : 'bg-white'}`}>
           <div className="flex items-center justify-between gap-4">
             <Logo variant="header" />
 
             {/* Desktop Navigation - hidden on <= 1199px, visible on >= 1200px */}
             <nav
-              className="hidden items-center gap-5 text-lg text-[#0A0F16] min-[1200px]:flex xl:gap-[30px]"
+              className="hidden items-center gap-5 text-base text-[#0A0F16] min-[1200px]:flex xl:gap-[30px]"
               aria-label="Main"
             >
               {NAV.map((item) => (
@@ -61,7 +61,7 @@ export default function Header() {
             <div className="flex items-center gap-3">
               <Link
                 to="/get-a-free-valuation"
-                className="btn-primary hidden !px-6 !py-3 text-sm font-medium sm:inline-flex md:text-base"
+                className="btn-primary hidden !px-6 !py-3 text-sm font-medium sm:inline-flex md:text-[15px]"
               >
                 Get a free valuation
               </Link>

@@ -256,8 +256,8 @@ export default function MakeModelPage() {
                 key={title}
                 className="flex h-full flex-col rounded-[12px] bg-surface py-5 sm:py-[35px] px-5 sm:px-[25px]"
               >
-                <span className="flex h-[58px] w-[58px] items-center justify-center rounded-[12px] bg-white">
-                  <img src={icon} alt="" className="" />
+                <span className="flex h-[54px] w-[54px] items-center justify-center rounded-[12px] bg-white">
+                  <img src={icon} alt="" className="w-5 h-5" />
                 </span>
                 <h3 className="mt-5 text-base sm:text-lg font-semibold text-brand-navy-dark leading-snug">{title}</h3>
                 <p className="mt-[15px] text-sm md:text-base leading-relaxed text-[#3B3F45]">{text}</p>

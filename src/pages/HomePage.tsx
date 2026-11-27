@@ -104,7 +104,7 @@ export default function HomePage() {
         <div className="container-x grid items-center gap-8 lg:grid-cols-[1fr_1.6fr] xl:gap-[30px]">
           <div className="flex flex-col items-start gap-[15px]">
             <Badge>Our story</Badge>
-            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[34px] xl:text-[40px]">
+            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[34px] xl:text-[38px]">
               Over 20 Years of Experience in the Automotive Sector
             </h2>
             <p className="text-base leading-relaxed text-[#3B3F45]">
@@ -164,7 +164,7 @@ export default function HomePage() {
             text: "We coordinate the collection process with you, helping make the final stage of selling your truck straightforward.",
           },
         ]}
-        className="!pt-4"
+        className="!pt-0"
       />
 
       <Steps
@@ -277,7 +277,7 @@ export default function HomePage() {
           <div className="container-x relative z-10 py-12 sm:py-16 lg:py-20">
             <div className="flex max-w-[630px] flex-col items-start gap-5 text-white">
               <Badge light bgImage="/images/label-bg.png">Nationwide collection</Badge>
-              <h2 className="text-2xl font-medium leading-tight text-white sm:text-[34px] xl:text-[40px] sm:leading-[60px]">
+              <h2 className="text-2xl font-medium leading-tight text-white sm:text-[34px] xl:text-[38px] sm:leading-[58px]">
                 We Collect Commercial Trucks Across Spain
               </h2>
               <p className="text-sm sm:text-base leading-relaxed text-[#E7E7E8]">

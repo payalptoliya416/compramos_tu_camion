@@ -64,9 +64,9 @@ function Field({
         {info && (
           <span
             title={info}
-            className="inline-flex h-3.5 w-3.5 items-center justify-center rounded-full bg-slate-300 text-[10px] font-bold text-white cursor-help"
           >
-            i
+           <img src="/images/infor-form.svg" alt="" />
+
           </span>
         )}
       </span>
@@ -140,6 +140,7 @@ export default function ValuationForm({
     }
     if (!formData.phone.trim()) newErrors.phone = 'Please enter your phone number';
     if (!formData.city) newErrors.city = 'Please select your city';
+    if (filesCount === 0) newErrors.photos = 'Please upload at least one photo of the truck';
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -172,7 +173,7 @@ export default function ValuationForm({
           {/* Left Column: Info & Points */}
           <div className="flex flex-col items-start gap-4 text-white">
             <Badge light bgImage="/images/label-white-bg-form.png">{badge}</Badge>
-            <h2 className="text-2xl font-medium leading-tight sm:text-[32px] sm:leading-[44px] xl:text-[40px] xl:leading-[56px]">{title}</h2>
+            <h2 className="text-2xl font-medium leading-tight sm:text-[32px] sm:leading-[44px] xl:text-[38px] xl:leading-[54px]">{title}</h2>
             <p className="text-sm lg:text-base leading-relaxed text-[#E7E7E8]">{text}</p>
             <ul className="mt-2 flex flex-col items-start gap-3">
               {POINTS.map((p) => (
@@ -393,12 +394,31 @@ export default function ValuationForm({
                   />
                 </Field>
 
-                <div className="flex flex-col gap-1.5 text-xs font-semibold text-brand-navy">
-                  <span>Photo upload</span>
-                  <div className="flex flex-1 rounded-xl border border-[#E6E9ED] bg-white p-2.5 sm:p-3">
+                <Field label="Photo upload" required error={errors.photos}>
+                  <div
+                    className={`flex flex-1 rounded-xl border bg-white p-2.5 sm:p-3 transition-colors ${
+                      errors.photos ? 'border-red-500 bg-red-50/20' : 'border-[#E6E9ED]'
+                    }`}
+                  >
                     <div
                       onClick={() => fileInputRef.current?.click()}
-                      className="flex min-h-[168px] w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-[#D1D5DB] bg-[#F9FAFB] p-5 text-center transition-colors hover:border-brand-orange hover:bg-white"
+                      onDragOver={(e) => e.preventDefault()}
+                      onDrop={(e) => {
+                        e.preventDefault();
+                        if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+                          setFilesCount(e.dataTransfer.files.length);
+                          if (errors.photos) {
+                            setErrors((prev) => {
+                              const copy = { ...prev };
+                              delete copy.photos;
+                              return copy;
+                            });
+                          }
+                        }
+                      }}
+                      className={`flex min-h-[168px] w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed p-5 text-center transition-colors hover:border-brand-orange hover:bg-white ${
+                        errors.photos ? 'border-red-400 bg-red-50/20' : 'border-[#D1D5DB] bg-[#F9FAFB]'
+                      }`}
                     >
                       <input
                         ref={fileInputRef}
@@ -409,6 +429,13 @@ export default function ValuationForm({
                         onChange={(e) => {
                           if (e.target.files && e.target.files.length > 0) {
                             setFilesCount(e.target.files.length);
+                            if (errors.photos) {
+                              setErrors((prev) => {
+                                const copy = { ...prev };
+                                delete copy.photos;
+                                return copy;
+                              });
+                            }
                           }
                         }}
                       />
@@ -439,7 +466,7 @@ export default function ValuationForm({
                       </button>
                     </div>
                   </div>
-                </div>
+                </Field>
 
                 <div className="flex flex-col gap-1.5 text-xs font-semibold text-brand-navy">
                   <span>Any damages?</span>

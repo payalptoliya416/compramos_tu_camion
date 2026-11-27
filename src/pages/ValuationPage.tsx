@@ -66,7 +66,7 @@ export default function ValuationPage() {
           </div>
           <div className="flex flex-col items-start gap-4">
             <Badge>Used truck valuation</Badge>
-            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[34px] xl:text-[40px] xl:leading-[60px]">
+            <h2 className="text-2xl font-medium leading-tight text-brand-navy sm:text-[34px] xl:text-[38px] xl:leading-[58px]">
               Find Out How Much Your Truck Is Worth
             </h2>
             <p className="text-base leading-relaxed text-[#3B3F45]">

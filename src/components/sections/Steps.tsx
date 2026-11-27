@@ -34,16 +34,16 @@ export default function Steps({ badge, title, subtitle, steps, action, className
               {i < steps.length - 1 && (
                 <div
                   aria-hidden
-                  className={`absolute left-[calc(50%+29px)] top-[29px] -translate-y-1/2 ${lineDisplayCls} h-[1.5px] w-[calc(100%-34px)] overflow-hidden`}
+                  className={`absolute left-[calc(50%+29px)] top-[29px] -translate-y-1/2 ${lineDisplayCls} h-[1px] w-[calc(100%-34px)] overflow-hidden`}
                   style={{
                     background:
                       'linear-gradient(90deg, #E7E7E8 0%, #F17612 48%, #E7E7E8 52%, #E7E7E8 100%)',
                   }}
                 />
               )}
-              <span className="relative z-10 flex h-[58px] w-[58px] items-center justify-center rounded-[12px] border border-[#E7E7E8] bg-[#F8F9FA] text-brand-orange">
+              <span className="relative z-10 flex h-[54px] w-[54px] items-center justify-center rounded-[12px] border border-[#E7E7E8] bg-[#F8F9FA] text-brand-orange">
                 {typeof Icon === 'string' ? (
-                  <img src={Icon} alt="" className="" />
+                  <img src={Icon} alt="" className="w-5 h-5" />
                 ) : (
                   <Icon className="h-6 w-6" />
                 )}
