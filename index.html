@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/favicon.png" />
@@ -12,9 +12,207 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <script>
+      /* Initialize Default Language: Spanish ('es') */
+      (function() {
+        var lang = localStorage.getItem('site_lang');
+        if (!lang) {
+          lang = 'es';
+          try {
+            localStorage.setItem('site_lang', 'es');
+          } catch(e) {}
+        }
+        var cookieVal = lang === 'en' ? '/en/en' : '/en/es';
+        document.cookie = 'googtrans=' + cookieVal + '; path=/;';
+        if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+          document.cookie = 'googtrans=' + cookieVal + '; domain=' + location.hostname + '; path=/;';
+          document.cookie = 'googtrans=' + cookieVal + '; domain=.' + location.hostname + '; path=/;';
+        }
+
+        if (lang !== 'en') {
+          document.documentElement.classList.add('translating');
+        }
+      })();
+    </script>
+
+    <style>
+      /* Prevent flash of untranslated English text (FOUT) */
+      html.translating #root {
+        opacity: 0 !important;
+        visibility: hidden !important;
+      }
+      #lang-preloader {
+        position: fixed;
+        inset: 0;
+        z-index: 9999999;
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+      }
+      #lang-preloader.done {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+      }
+      .lang-spinner {
+        width: 40px;
+        height: 40px;
+        border: 3.5px solid #E2E8F0;
+        border-top-color: #F17612;
+        border-radius: 50%;
+        animation: lang-spin 0.8s linear infinite;
+      }
+      @keyframes lang-spin {
+        to { transform: rotate(360deg); }
+      }
+
+      /* Completely eradicate Google Translate top toolbar, banners, frames, popups */
+      .goog-te-banner-frame,
+      .goog-te-banner-frame.skiptranslate,
+      iframe.goog-te-banner-frame,
+      iframe[id^=":"][id$=".container"],
+      body > .skiptranslate,
+      #goog-gt-tt,
+      .goog-te-balloon-frame,
+      .goog-tooltip,
+      .goog-tooltip:hover {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        width: 0 !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+
+      html, body {
+        top: 0px !important;
+        position: static !important;
+        margin-top: 0px !important;
+        padding-top: 0px !important;
+      }
+
+      body {
+        top: 0px !important;
+      }
+
+      .goog-text-highlight {
+        background-color: transparent !important;
+        box-shadow: none !important;
+      }
+      #google_translate_element {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+      }
+    </style>
   </head>
   <body>
+    <!-- Hidden Google Translate Element -->
+    <div id="google_translate_element"></div>
+
+    <!-- Preloader preventing any flash of English -->
+    <div id="lang-preloader">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+        <img
+          src="/images/header-logo.png"
+          alt="Compramos Tu Camión"
+          style="height: 52px; width: auto; object-fit: contain;"
+        />
+        <div class="lang-spinner"></div>
+      </div>
+    </div>
+
     <div id="root"></div>
+
+    <script>
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'en,es',
+          autoDisplay: false,
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+      }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+      (function() {
+        var lang = localStorage.getItem('site_lang') || 'es';
+        var preloader = document.getElementById('lang-preloader');
+
+        if (lang === 'en') {
+          if (preloader) preloader.classList.add('done');
+          document.documentElement.classList.remove('translating');
+        } else {
+          var dismissed = false;
+          function dismiss() {
+            if (dismissed) return;
+            dismissed = true;
+            if (preloader) {
+              preloader.classList.add('done');
+              setTimeout(function() {
+                if (preloader.parentNode) preloader.parentNode.removeChild(preloader);
+              }, 350);
+            }
+            document.documentElement.classList.remove('translating');
+          }
+
+          var checkInterval = setInterval(function() {
+            var isTranslated = document.documentElement.classList.contains('translated-ltr') ||
+              document.documentElement.classList.contains('translated-rtl') ||
+              (document.querySelector('.goog-te-combo') !== null && (
+                document.querySelector('font font') !== null ||
+                document.documentElement.getAttribute('lang') === 'es'
+              ));
+            if (isTranslated) {
+              clearInterval(checkInterval);
+              setTimeout(dismiss, 60);
+            }
+          }, 50);
+
+          setTimeout(function() {
+            clearInterval(checkInterval);
+            dismiss();
+          }, 1200);
+        }
+
+        // Active MutationObserver to ensure Google Translate never pushes body down or shows banner
+        function suppressBanner() {
+          if (document.body) {
+            if (document.body.style.top && document.body.style.top !== '0px') {
+              document.body.style.top = '0px';
+            }
+            if (document.body.style.position === 'relative') {
+              document.body.style.position = 'static';
+            }
+          }
+          var banners = document.querySelectorAll('.goog-te-banner-frame, iframe.goog-te-banner-frame, body > .skiptranslate');
+          for (var i = 0; i < banners.length; i++) {
+            banners[i].style.setProperty('display', 'none', 'important');
+            banners[i].style.setProperty('visibility', 'hidden', 'important');
+            banners[i].style.setProperty('height', '0', 'important');
+          }
+        }
+
+        var observer = new MutationObserver(suppressBanner);
+        if (document.body) {
+          observer.observe(document.body, { attributes: true, childList: true });
+        } else {
+          document.addEventListener('DOMContentLoaded', function() {
+            observer.observe(document.body, { attributes: true, childList: true });
+          });
+        }
+      })();
+    </script>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

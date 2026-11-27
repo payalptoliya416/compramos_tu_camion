@@ -11,10 +11,26 @@ function ScrollToTop() {
   return null;
 }
 
+function TranslationWatcher() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    const lang = localStorage.getItem('site_lang') || 'es';
+    if (lang === 'es') {
+      const combo = document.querySelector<HTMLSelectElement>('.goog-te-combo');
+      if (combo && combo.value !== 'es') {
+        combo.value = 'es';
+        combo.dispatchEvent(new Event('change'));
+      }
+    }
+  }, [pathname]);
+  return null;
+}
+
 export default function Layout() {
   return (
     <div className="relative min-h-screen overflow-x-hidden">
       <ScrollToTop />
+      <TranslationWatcher />
       <Header />
       <main className="relative z-10">
         <Outlet />

@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { NAV } from '@/data/site';
 import Logo from './Logo';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -58,7 +59,9 @@ export default function Header() {
               ))}
             </nav>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <LanguageSwitcher />
+
               <Link
                 to="/get-a-free-valuation"
                 className="btn-primary hidden !px-6 !py-3 text-sm font-medium sm:inline-flex md:text-[15px]"
@@ -97,14 +100,17 @@ export default function Header() {
         <div>
           <div className="flex items-center justify-between border-b border-slate-100 pb-5">
             <Logo variant="header" />
-            <button
-              type="button"
-              className="rounded-full p-2 text-slate-500 hover:bg-slate-100 hover:text-slate-800 transition-colors"
-              aria-label="Close menu"
-              onClick={() => setOpen(false)}
-            >
-              <X className="h-6 w-6" />
-            </button>
+            <div className="flex items-center gap-2">
+              <LanguageSwitcher isMobile />
+              <button
+                type="button"
+                className="rounded-full p-2 text-slate-500 hover:bg-slate-100 hover:text-slate-800 transition-colors"
+                aria-label="Close menu"
+                onClick={() => setOpen(false)}
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
           </div>
 
           <nav className="mt-6 flex flex-col gap-2">
