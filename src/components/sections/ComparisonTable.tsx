@@ -76,14 +76,14 @@ export default function ComparisonTable() {
               
               {/* Column 1: Factors */}
               <div className="flex flex-col overflow-hidden rounded-[14px] border border-[#092B55] bg-white">
-                <div className="flex py-4 xl:py-5 items-center rounded-[14px] justify-center bg-[#092B55] text-base font-semibold text-white xl:text-lg">
+                <div className="flex py-4 xl:py-4 items-center rounded-[14px] justify-center bg-[#092B55] text-base font-semibold text-white xl:text-lg">
                   Factors
                 </div>
                 <div className="divide-y divide-[#E7E7E8]">
                   {FACTORS.map((f) => (
                     <div
                       key={f}
-                      className="flex py-5 xl:py-[24px] items-center px-2 xl:px-4 text-sm font-medium text-[#092B55] sxlm:text-base"
+                      className="flex py-5 xl:py-5 items-center px-2 xl:px-4 text-sm font-medium text-[#092B55] sxlm:text-base"
                     >
                       {f}
                     </div>
@@ -93,14 +93,14 @@ export default function ComparisonTable() {
 
               {/* Column 2: We Buy Your Truck (Overlapping Top & Bottom) */}
               <div className="-mt-9 -mb-9 z-10 flex flex-col rounded-[16px] bg-[#092B55] p-2.5 pb-6 border border-[#092B55]">
-                <div className="flex py-5 xl:py-[22px] items-center justify-center rounded-[12px] bg-[#F17612] text-lg font-semibold text-white xl:text-xl">
+                <div className="flex py-5 xl:py-5 items-center justify-center rounded-[12px] bg-[#F17612] text-lg font-semibold text-white xl:text-xl">
                   We Buy Your Truck
                 </div>
                 <div className="divide-y divide-white/20">
                   {US.map((text) => (
                     <div
                       key={text}
-                      className="flex py-6 xl:py-[28px] last:pb-0 xl:last:pb-[35px] items-center gap-2.5 px-1 xl:px-3.5 text-sm font-medium text-white xl:text-base"
+                      className="flex py-6 xl:py-[28px] last:pb-0 xl:last:pb-[5px] items-center gap-2.5 px-1 xl:px-3.5 text-sm font-medium text-white xl:text-base"
                     >
                       <GreenCheck />
                       {renderCellText(text, true)}
@@ -111,14 +111,14 @@ export default function ComparisonTable() {
 
               {/* Column 3: Concessionaire */}
               <div className="flex flex-col">
-                <div className="flex py-4 xl:py-5 items-center justify-center rounded-[14px] bg-[#F3F3F3] text-base font-semibold text-[#0A0F16] xl:text-lg">
+                <div className="flex py-4 xl:py-4 items-center justify-center rounded-[14px] bg-[#F3F3F3] text-base font-semibold text-[#0A0F16] xl:text-lg">
                   Concessionaire
                 </div>
                 <div className="divide-y divide-[#E7E7E8]">
                   {DEALER.map((text) => (
                     <div
                       key={text}
-                      className="flex py-5 xl:py-[24px] last:pb-0 items-center gap-2.5 px-1 xl:px-3 text-sm font-medium text-[#092B55] xl:text-base"
+                      className="flex py-5 xl:py-5 last:pb-0 items-center gap-2.5 px-1 xl:px-3 text-sm font-medium text-[#092B55] xl:text-base"
                     >
                       <GreenCheck />
                       {renderCellText(text)}
@@ -129,14 +129,14 @@ export default function ComparisonTable() {
 
               {/* Column 4: Individuals */}
               <div className="flex flex-col">
-                <div className="flex py-4 xl:py-5 items-center justify-center rounded-[14px] bg-[#F3F3F3] text-base font-semibold text-[#0A0F16] xl:text-lg">
+                <div className="flex py-4 xl:py-4 items-center justify-center rounded-[14px] bg-[#F3F3F3] text-base font-semibold text-[#0A0F16] xl:text-lg">
                   Individuals
                 </div>
                 <div className="divide-y divide-[#E7E7E8]">
                   {PRIVATE.map((text) => (
                     <div
                       key={text}
-                      className="flex py-5 xl:py-[24px] last:pb-0 items-center gap-2.5 px-1 xl:px-3 text-sm font-medium text-[#092B55] xl:text-base"
+                      className="flex py-5 xl:py-5 last:pb-0 items-center gap-2.5 px-1 xl:px-3 text-sm font-medium text-[#092B55] xl:text-base"
                     >
                       <GreenCheck />
                       {renderCellText(text)}
