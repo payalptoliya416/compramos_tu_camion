@@ -99,7 +99,7 @@ export default function Testimonials({
                     </div>
 
                     {/* Review Text */}
-                    <p className="mt-6 text-sm lg:text-base xl:text-lg leading-relaxed text-[#6C6F73] italic">
+                    <p className="mt-6 text-sm lg:text-base leading-relaxed text-[#6C6F73] italic">
                       “{t.text}”
                     </p>
                   </div>
@@ -112,8 +112,8 @@ export default function Testimonials({
                       className="h-11 w-11 rounded-full object-cover"
                     />
                     <div>
-                      <h4 className="text-base xl:text-xl text-[#092B55]">{t.name}</h4>
-                      <p className="text-base xl:text-lg text-[#6C6F73]">{t.city}</p>
+                      <h4 className="text-base xl:text-lg text-[#092B55]">{t.name}</h4>
+                      <p className="text-sm xl:text-base text-[#6C6F73]">{t.city}</p>
                     </div>
                   </div>
                 </article>
