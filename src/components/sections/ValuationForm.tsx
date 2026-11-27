@@ -1,6 +1,9 @@
-import { useState, useRef, type FormEvent } from 'react';
+import { useState, useRef, useEffect, type FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { X } from 'lucide-react';
 import { Badge } from '@/components/ui/SectionHeading';
+import SearchableSelect from '@/components/ui/SearchableSelect';
+import { submitValuation } from '@/api/valuation';
 
 interface Props {
   badge?: string;
@@ -9,6 +12,29 @@ interface Props {
 }
 
 const POINTS = ['Fair and transparent truck valuation', 'Quick collection across Spain', 'We handle the paperwork for you'];
+
+export const TRUCK_MAKES = [
+  'Mercedes-Benz',
+  'Volvo',
+  'Scania',
+  'MAN',
+  'DAF',
+  'Iveco',
+  'Renault Trucks',
+  'Ford Trucks',
+  'Isuzu',
+  'Mitsubishi Fuso',
+  'Nissan',
+  'Pegaso',
+  'Astra',
+  'Volkswagen',
+  'BMC',
+  'Kamaz',
+  'Terberg',
+  'Magirus-Deutz',
+  'Other',
+];
+
 const YEARS = Array.from({ length: 26 }, (_, i) => String(2025 - i));
 const CITIES = [
   'Madrid',
@@ -31,13 +57,6 @@ const CITIES = [
 
 const getInputClass = (hasError?: boolean) =>
   `w-full rounded-[8px] border bg-white px-[15px] py-[15px] text-xs text-[#6B8098] placeholder:text-[#6B8098] focus:outline-none focus:ring-1 transition-colors ${
-    hasError
-      ? 'border-red-500 focus:border-red-500 focus:ring-red-500 bg-red-50/20'
-      : 'border-[#E6E9ED] focus:border-brand-orange focus:ring-brand-orange'
-  }`;
-
-const getSelectClass = (hasError?: boolean) =>
-  `w-full appearance-none rounded-[8px] border bg-white px-[15px] py-[15px] pr-10 text-xs text-[#6B8098] placeholder:text-slate-400 focus:outline-none focus:ring-1 bg-[url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2364748B%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22m6%209%206%206%206-6%22%2F%3E%3C%2Fsvg%3E")] bg-[length:14px_14px] bg-[right_14px_center] bg-no-repeat cursor-pointer transition-colors ${
     hasError
       ? 'border-red-500 focus:border-red-500 focus:ring-red-500 bg-red-50/20'
       : 'border-[#E6E9ED] focus:border-brand-orange focus:ring-brand-orange'
@@ -83,9 +102,36 @@ export default function ValuationForm({
   text = 'Get A Fair Offer For Your Truck With Our Quick And Simple Valuation Process. Share A Few Details About Your Vehicle, And Our Team Will Assess Its Value And Guide You Through The Next Steps. Selling Your Truck Is Easy, Transparent, And Hassle-Free.',
 }: Props) {
   const [step, setStep] = useState<1 | 2>(1);
-  const [filesCount, setFilesCount] = useState<number>(0);
+  const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
+  const [photoPreviews, setPhotoPreviews] = useState<{ file: File; url: string }[]>([]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [apiError, setApiError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const previews = selectedFiles.map((file) => ({
+      file,
+      url: URL.createObjectURL(file),
+    }));
+    setPhotoPreviews(previews);
+
+    return () => {
+      previews.forEach((p) => URL.revokeObjectURL(p.url));
+    };
+  }, [selectedFiles]);
+
+  const removePhoto = (indexToRemove: number) => {
+    setSelectedFiles((prev) => prev.filter((_, idx) => idx !== indexToRemove));
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
+    setErrors((prev) => {
+      const copy = { ...prev };
+      delete copy.photos;
+      return copy;
+    });
+  };
 
   const [formData, setFormData] = useState({
     // Step 1
@@ -117,12 +163,116 @@ export default function ValuationForm({
     }
   };
 
+  const handleFilesChange = (incoming: FileList | File[]) => {
+    const fileArray = Array.from(incoming);
+    if (fileArray.length === 0) return;
+
+    // Check if already reached maximum 10 photos
+    if (selectedFiles.length >= 10) {
+      setErrors((prev) => ({
+        ...prev,
+        photos: 'Maximum 10 photos limit reached. Please remove a photo to upload a new one.',
+      }));
+      if (fileInputRef.current) fileInputRef.current.value = '';
+      return;
+    }
+
+    // Filter duplicates
+    const newFiles = fileArray.filter(
+      (newFile) =>
+        !selectedFiles.some(
+          (f) =>
+            f.name === newFile.name &&
+            f.size === newFile.size &&
+            f.lastModified === newFile.lastModified
+        )
+    );
+
+    if (newFiles.length === 0) {
+      setErrors((prev) => ({
+        ...prev,
+        photos: 'The selected photo(s) have already been added.',
+      }));
+      if (fileInputRef.current) fileInputRef.current.value = '';
+      return;
+    }
+
+    // Check if adding exceeds 10 photos total
+    if (selectedFiles.length + newFiles.length > 10) {
+      const remainingSlots = 10 - selectedFiles.length;
+      setErrors((prev) => ({
+        ...prev,
+        photos: `You can only add ${remainingSlots} more photo${
+          remainingSlots > 1 ? 's' : ''
+        }. Maximum 10 photos allowed. Remove a photo to add a new one.`,
+      }));
+      if (fileInputRef.current) fileInputRef.current.value = '';
+      return;
+    }
+
+    // Max 5MB per image
+    const MAX_PER_FILE = 5 * 1024 * 1024; // 5 MB
+    const oversizedFile = newFiles.find((f) => f.size > MAX_PER_FILE);
+    if (oversizedFile) {
+      setErrors((prev) => ({
+        ...prev,
+        photos: `"${oversizedFile.name}" exceeds 5MB. Each image must be 5MB or less.`,
+      }));
+      if (fileInputRef.current) fileInputRef.current.value = '';
+      return;
+    }
+
+    // Max 50MB combined total
+    const MAX_TOTAL = 50 * 1024 * 1024; // 50 MB
+    const combinedFiles = [...selectedFiles, ...newFiles];
+    const totalSize = combinedFiles.reduce((acc, f) => acc + f.size, 0);
+    if (totalSize > MAX_TOTAL) {
+      setErrors((prev) => ({
+        ...prev,
+        photos: `Total size (${(totalSize / (1024 * 1024)).toFixed(1)}MB) exceeds the 50MB limit.`,
+      }));
+      if (fileInputRef.current) fileInputRef.current.value = '';
+      return;
+    }
+
+    // Allowed formats: JPG, PNG, WEBP
+    const validExtensions = ['image/jpeg', 'image/png', 'image/jpg', 'image/webp'];
+    const invalidFile = newFiles.find(
+      (f) =>
+        !validExtensions.includes(f.type.toLowerCase()) &&
+        !/\.(jpe?g|png|webp)$/i.test(f.name)
+    );
+    if (invalidFile) {
+      setErrors((prev) => ({
+        ...prev,
+        photos: `"${invalidFile.name}" is not supported. Please upload JPG, PNG, or WEBP images only.`,
+      }));
+      if (fileInputRef.current) fileInputRef.current.value = '';
+      return;
+    }
+
+    // Append new files without removing existing ones
+    setSelectedFiles(combinedFiles);
+    setErrors((prev) => {
+      const copy = { ...prev };
+      delete copy.photos;
+      return copy;
+    });
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
+  };
+
   const validateStep1 = () => {
     const newErrors: Record<string, string> = {};
     if (!formData.make) newErrors.make = 'Please select a truck brand';
     if (!formData.model.trim()) newErrors.model = 'Please enter truck model';
     if (!formData.year) newErrors.year = 'Please select registration year';
-    if (!formData.mileage.trim()) newErrors.mileage = 'Please enter mileage';
+    if (!formData.mileage.trim()) {
+      newErrors.mileage = 'Please enter mileage';
+    } else if (!/^\d+$/.test(formData.mileage.trim())) {
+      newErrors.mileage = 'Mileage must contain only numbers';
+    }
     if (!formData.transmission) newErrors.transmission = 'Please select transmission';
     if (!formData.basculante) newErrors.basculante = 'Please select an option';
 
@@ -140,7 +290,14 @@ export default function ValuationForm({
     }
     if (!formData.phone.trim()) newErrors.phone = 'Please enter your phone number';
     if (!formData.city) newErrors.city = 'Please select your city';
-    if (filesCount === 0) newErrors.photos = 'Please upload at least one photo of the truck';
+    if (formData.minPrice.trim() && !/^\d+$/.test(formData.minPrice.trim())) {
+      newErrors.minPrice = 'Minimum price must contain only numbers';
+    }
+    if (selectedFiles.length === 0) {
+      newErrors.photos = 'Please upload at least one photo of the truck';
+    } else if (selectedFiles.length > 10) {
+      newErrors.photos = 'You can upload a maximum of 10 photos';
+    }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -153,10 +310,43 @@ export default function ValuationForm({
     }
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (validateStep2()) {
-      navigate('/thank-you');
+    if (!validateStep2()) return;
+
+    setIsSubmitting(true);
+    setApiError(null);
+
+    try {
+      const response = await submitValuation({
+        make: formData.make,
+        model: formData.model,
+        registration_year: formData.year,
+        mileage: formData.mileage,
+        transmission: formData.transmission,
+        basculante: formData.basculante,
+        full_name: formData.fullName,
+        email: formData.email,
+        phone_number: formData.phone,
+        city: formData.city,
+        minimum_price: formData.minPrice,
+        any_damages: formData.damages,
+        photos: selectedFiles,
+      });
+
+      if (response && response.success) {
+        navigate('/thank-you');
+      } else {
+        setApiError(response.message || 'Failed to submit valuation request. Please check your data.');
+      }
+    } catch (err: any) {
+      console.error('API submission error:', err);
+      if (err.errors) {
+        setErrors((prev) => ({ ...prev, ...err.errors }));
+      }
+      setApiError(err.message || 'Failed to connect to the valuation server. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -253,21 +443,15 @@ export default function ValuationForm({
             {step === 1 ? (
               <form onSubmit={handleNext} noValidate className="mt-10 grid gap-5 sm:grid-cols-2">
                 <Field label="Make" required error={errors.make}>
-                  <select
+                  <SearchableSelect
                     value={formData.make}
-                    onChange={(e) => handleChange('make', e.target.value)}
-                    className={getSelectClass(Boolean(errors.make))}
-                  >
-                    <option value="" disabled>Enter truck brand (e.g., Volvo, Scania)</option>
-                    <option value="Volvo">Volvo</option>
-                    <option value="Scania">Scania</option>
-                    <option value="Mercedes-Benz">Mercedes-Benz</option>
-                    <option value="MAN">MAN</option>
-                    <option value="DAF">DAF</option>
-                    <option value="Iveco">Iveco</option>
-                    <option value="Renault">Renault</option>
-                    <option value="Other">Other</option>
-                  </select>
+                    onChange={(val) => handleChange('make', val)}
+                    options={TRUCK_MAKES}
+                    placeholder="Enter truck brand (e.g., Volvo, Scania)"
+                    searchPlaceholder="Search truck brand..."
+                    hasError={Boolean(errors.make)}
+                    searchable={true}
+                  />
                 </Field>
 
                 <Field label="Model" required error={errors.model}>
@@ -281,51 +465,52 @@ export default function ValuationForm({
                 </Field>
 
                 <Field label="Registration Year" required error={errors.year}>
-                  <select
+                  <SearchableSelect
                     value={formData.year}
-                    onChange={(e) => handleChange('year', e.target.value)}
-                    className={getSelectClass(Boolean(errors.year))}
-                  >
-                    <option value="" disabled>e.g., 2022</option>
-                    {YEARS.map((y) => (
-                      <option key={y} value={y}>{y}</option>
-                    ))}
-                  </select>
+                    onChange={(val) => handleChange('year', val)}
+                    options={YEARS}
+                    placeholder="e.g., 2022"
+                    searchPlaceholder="Search year..."
+                    hasError={Boolean(errors.year)}
+                    searchable={true}
+                  />
                 </Field>
 
                 <Field label="Mileage (km)" required error={errors.mileage}>
                   <input
                     type="text"
                     inputMode="numeric"
+                    pattern="[0-9]*"
                     value={formData.mileage}
-                    onChange={(e) => handleChange('mileage', e.target.value)}
+                    onChange={(e) => {
+                      const onlyNums = e.target.value.replace(/\D/g, '');
+                      handleChange('mileage', onlyNums);
+                    }}
                     className={getInputClass(Boolean(errors.mileage))}
-                    placeholder="e.g., 150,000 km"
+                    placeholder="e.g., 150000"
                   />
                 </Field>
 
                 <Field label="Transmission" required error={errors.transmission}>
-                  <select
+                  <SearchableSelect
                     value={formData.transmission}
-                    onChange={(e) => handleChange('transmission', e.target.value)}
-                    className={getSelectClass(Boolean(errors.transmission))}
-                  >
-                    <option value="" disabled>Select option</option>
-                    <option value="Manual">Manual</option>
-                    <option value="Automatic">Automatic</option>
-                  </select>
+                    onChange={(val) => handleChange('transmission', val)}
+                    options={['Manual', 'Automatic']}
+                    placeholder="Select option"
+                    hasError={Boolean(errors.transmission)}
+                    searchable={false}
+                  />
                 </Field>
 
                 <Field label="Basculante (Tipper)" required error={errors.basculante}>
-                  <select
+                  <SearchableSelect
                     value={formData.basculante}
-                    onChange={(e) => handleChange('basculante', e.target.value)}
-                    className={getSelectClass(Boolean(errors.basculante))}
-                  >
-                    <option value="" disabled>Select option</option>
-                    <option value="Sí">Sí</option>
-                    <option value="No">No</option>
-                  </select>
+                    onChange={(val) => handleChange('basculante', val)}
+                    options={['Sí', 'No']}
+                    placeholder="Select option"
+                    hasError={Boolean(errors.basculante)}
+                    searchable={false}
+                  />
                 </Field>
 
                 <div className="flex justify-center pt-2 sm:pt-[15px] sm:col-span-2">
@@ -372,51 +557,57 @@ export default function ValuationForm({
                 </Field>
 
                 <Field label="City" required error={errors.city}>
-                  <select
+                  <SearchableSelect
                     value={formData.city}
-                    onChange={(e) => handleChange('city', e.target.value)}
-                    className={getSelectClass(Boolean(errors.city))}
-                  >
-                    <option value="" disabled>Select your city</option>
-                    {CITIES.map((c) => (
-                      <option key={c} value={c}>{c}</option>
-                    ))}
-                  </select>
+                    onChange={(val) => handleChange('city', val)}
+                    options={CITIES}
+                    placeholder="Select your city"
+                    searchPlaceholder="Search city..."
+                    hasError={Boolean(errors.city)}
+                    searchable={true}
+                  />
                 </Field>
 
-                <Field label="Minimum price" info="Estimated minimum price in EUR">
+                <Field label="Minimum price" info="Estimated minimum price in EUR" error={errors.minPrice}>
                   <input
                     type="text"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
                     value={formData.minPrice}
-                    onChange={(e) => handleChange('minPrice', e.target.value)}
-                    className={getInputClass(false)}
-                    placeholder="Enter minimum price"
+                    onChange={(e) => {
+                      const onlyNums = e.target.value.replace(/\D/g, '');
+                      handleChange('minPrice', onlyNums);
+                    }}
+                    className={getInputClass(Boolean(errors.minPrice))}
+                    placeholder="e.g., 25000"
                   />
                 </Field>
 
                 <Field label="Photo upload" required error={errors.photos}>
                   <div
-                    className={`flex flex-1 rounded-xl border bg-white p-2.5 sm:p-3 transition-colors ${
+                    className={`flex flex-col flex-1 rounded-xl border bg-white p-2.5 sm:p-3 transition-colors ${
                       errors.photos ? 'border-red-500 bg-red-50/20' : 'border-[#E6E9ED]'
                     }`}
                   >
                     <div
-                      onClick={() => fileInputRef.current?.click()}
+                      onClick={() => {
+                        if (selectedFiles.length >= 10) {
+                          setErrors((prev) => ({
+                            ...prev,
+                            photos: 'Maximum 10 photos limit reached. Please remove a photo to upload a new one.',
+                          }));
+                          return;
+                        }
+                        fileInputRef.current?.click();
+                      }}
                       onDragOver={(e) => e.preventDefault()}
                       onDrop={(e) => {
                         e.preventDefault();
                         if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-                          setFilesCount(e.dataTransfer.files.length);
-                          if (errors.photos) {
-                            setErrors((prev) => {
-                              const copy = { ...prev };
-                              delete copy.photos;
-                              return copy;
-                            });
-                          }
+                          handleFilesChange(e.dataTransfer.files);
                         }
                       }}
-                      className={`flex min-h-[168px] w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed p-5 text-center transition-colors hover:border-brand-orange hover:bg-white ${
+                      className={`flex min-h-[148px] w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed p-4 text-center transition-colors hover:border-brand-orange hover:bg-white ${
                         errors.photos ? 'border-red-400 bg-red-50/20' : 'border-[#D1D5DB] bg-[#F9FAFB]'
                       }`}
                     >
@@ -424,24 +615,18 @@ export default function ValuationForm({
                         ref={fileInputRef}
                         type="file"
                         multiple
-                        accept="image/png,image/jpeg"
+                        accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"
                         className="hidden"
                         onChange={(e) => {
                           if (e.target.files && e.target.files.length > 0) {
-                            setFilesCount(e.target.files.length);
-                            if (errors.photos) {
-                              setErrors((prev) => {
-                                const copy = { ...prev };
-                                delete copy.photos;
-                                return copy;
-                              });
-                            }
+                            handleFilesChange(e.target.files);
                           }
+                          e.target.value = '';
                         }}
                       />
                       <svg
-                        width="28"
-                        height="28"
+                        width="26"
+                        height="26"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -454,17 +639,68 @@ export default function ValuationForm({
                         <path d="M12 12v9" />
                         <path d="m16 16-4-4-4 4" />
                       </svg>
-                      <p className="mt-[11px] text-xs font-semibold text-[#0A0F16]">
-                        {filesCount > 0 ? `${filesCount} file(s) selected` : 'Choose a file or drag & drop it here'}
+                      <p className="mt-2 text-xs font-semibold text-[#0A0F16]">
+                        {selectedFiles.length > 0
+                          ? `${selectedFiles.length}/10 photo(s) selected (${(selectedFiles.reduce((acc, f) => acc + f.size, 0) / (1024 * 1024)).toFixed(1)} MB)`
+                          : 'Choose a file or drag & drop it here'}
                       </p>
-                      <p className="mt-1 text-[10px] text-[#9D9FA2]">JPEG, and PNG formats, up to 50MB</p>
+                      <p className="mt-1 text-[10px] text-[#9D9FA2]">
+                        Up to 10 photos, max 5MB each (total 50MB) - JPG, PNG, WEBP
+                      </p>
                       <button
                         type="button"
-                        className="mt-[15px] rounded-full border border-brand-orange px-5 py-2 text-xs font-medium text-brand-orange hover:bg-brand-orange/5"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          if (selectedFiles.length >= 10) {
+                            setErrors((prev) => ({
+                              ...prev,
+                              photos: 'Maximum 10 photos limit reached. Please remove a photo to upload a new one.',
+                            }));
+                            return;
+                          }
+                          fileInputRef.current?.click();
+                        }}
+                        className="mt-3 rounded-full border border-brand-orange px-4 py-1.5 text-xs font-medium text-brand-orange hover:bg-brand-orange/5 cursor-pointer"
                       >
-                        Browse File
+                        {selectedFiles.length >= 10
+                          ? '10 Photos Limit Reached'
+                          : selectedFiles.length > 0
+                            ? `Add More Photos (${selectedFiles.length}/10)`
+                            : 'Browse File'}
                       </button>
                     </div>
+
+                    {/* Uploaded photo thumbnails: 5 per row (fits 10 in 2 rows) with remove cross */}
+                    {photoPreviews.length > 0 && (
+                      <div className="mt-2.5 pt-2.5 border-t border-slate-100">
+                        <div className="grid grid-cols-3 sm:grid-cols-5 gap-1.5 sm:gap-2">
+                          {photoPreviews.map((item, idx) => (
+                            <div
+                              key={`${item.file.name}-${idx}`}
+                              className="relative group aspect-square rounded-[6px] sm:rounded-[8px] overflow-hidden border border-[#E2E8F0] bg-slate-50 shadow-2xs"
+                            >
+                              <img
+                                src={item.url}
+                                alt={item.file.name}
+                                className="h-full w-full object-cover"
+                              />
+                              <button
+                                type="button"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  removePhoto(idx);
+                                }}
+                                className="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-black/75 text-white hover:bg-red-500 hover:scale-110 transition-all cursor-pointer shadow-xs"
+                                title="Remove photo"
+                                aria-label="Remove photo"
+                              >
+                                <X className="h-2.5 w-2.5" />
+                              </button>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </Field>
 
@@ -479,12 +715,27 @@ export default function ValuationForm({
                   />
                 </div>
 
+                {apiError && (
+                  <div className="rounded-xl border border-red-200 bg-red-50 p-3.5 text-xs text-red-600 sm:col-span-2">
+                    {apiError}
+                  </div>
+                )}
+
                 <div className="flex justify-center pt-4 sm:col-span-2">
                   <button
                     type="submit"
-                    className="btn-primary !px-6 lg:!px-10 xl:!px-[54px] !py-4 text-sm sm:text-lg leading-[18px] font-medium"
+                    disabled={isSubmitting}
+                    className={`btn-primary !px-6 lg:!px-10 xl:!px-[54px] !py-4 text-sm sm:text-lg leading-[18px] font-medium flex items-center justify-center gap-2 ${
+                      isSubmitting ? 'opacity-70 cursor-not-allowed pointer-events-none' : ''
+                    }`}
                   >
-                    Request My Valuation
+                    {isSubmitting && (
+                      <svg className="h-5 w-5 animate-spin text-white" viewBox="0 0 24 24" fill="none">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
+                      </svg>
+                    )}
+                    <span>{isSubmitting ? 'Submitting Valuation...' : 'Request My Valuation'}</span>
                   </button>
                 </div>
               </form>
