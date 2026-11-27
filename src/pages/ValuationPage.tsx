@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import type { FaqItem } from '@/types';
 import Hero from '@/components/sections/Hero';
 import RecentPurchases from '@/components/sections/RecentPurchases';
@@ -44,15 +45,19 @@ const VALUATION_FAQS: FaqItem[] = [
 ];
 
 export default function ValuationPage() {
+  const { hash } = useLocation();
+
   useEffect(() => {
-    // Automatically scroll directly to the valuation form section
-    const el = document.getElementById('valuation');
-    if (el) {
-      setTimeout(() => {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }, 120);
+    // Only scroll directly to the valuation form if navigating via button click (#valuation)
+    if (hash === '#valuation') {
+      const el = document.getElementById('valuation');
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }, 120);
+      }
     }
-  }, []);
+  }, [hash]);
 
   return (
     <>

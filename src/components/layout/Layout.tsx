@@ -6,7 +6,7 @@ import Footer from './Footer';
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
   useEffect(() => {
-    if (pathname === '/get-a-free-valuation' || hash === '#valuation') {
+    if (hash === '#valuation') {
       const el = document.getElementById('valuation');
       if (el) {
         setTimeout(() => {

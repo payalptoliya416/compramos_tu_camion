@@ -24,8 +24,39 @@ export default function CtaButton({ cta, variant = 'primary', className = '' }: 
       </a>
     );
   }
+
+  let targetTo = cta.to ?? '/get-a-free-valuation#valuation';
+  if (targetTo === '/get-a-free-valuation') {
+    targetTo = '/get-a-free-valuation#valuation';
+  }
+
+  if (targetTo.startsWith('#')) {
+    const handleAnchor = (e: React.MouseEvent) => {
+      const targetId = targetTo.replace('#', '');
+      const el = document.getElementById(targetId);
+      if (el) {
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+    return (
+      <a href={targetTo} onClick={handleAnchor} className={cls}>
+        {cta.label}
+      </a>
+    );
+  }
+
+  const handleClick = () => {
+    if (targetTo.includes('#valuation') && window.location.pathname === '/get-a-free-valuation') {
+      const el = document.getElementById('valuation');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
-    <Link to={cta.to ?? '/get-a-free-valuation'} className={cls}>
+    <Link to={targetTo} onClick={handleClick} className={cls}>
       {cta.label}
     </Link>
   );

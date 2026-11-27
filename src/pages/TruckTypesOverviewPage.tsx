@@ -250,7 +250,7 @@ export default function TruckTypesOverviewPage() {
               <button
                 type="button"
                 onClick={() => setActiveTab('lifting')}
-                className={`w-full md:flex-1 lg:w-[310px] lg:max-w-[310px] px-4 h-12 md:h-14 flex items-center justify-center rounded-full text-sm md:text-base font-medium transition-all duration-300 cursor-pointer whitespace-nowrap ${activeTab === 'lifting'
+                className={`w-full md:flex-1 lg:w-[310px] lg:max-w-[310px] px-4 h-12 md:h-13 flex items-center justify-center rounded-full text-sm md:text-base font-medium transition-all duration-300 cursor-pointer whitespace-nowrap ${activeTab === 'lifting'
                   ? 'bg-brand-orange text-white shadow-md shadow-orange-500/20 scale-[1.02]'
                   : 'bg-[#F4F5F7] text-[#3B3F45] hover:bg-[#E9EBEF] hover:text-brand-navy hover:-translate-y-0.5 hover:shadow-sm'
                   }`}
@@ -260,7 +260,7 @@ export default function TruckTypesOverviewPage() {
               <button
                 type="button"
                 onClick={() => setActiveTab('construction')}
-                className={`w-full md:flex-1 lg:w-[310px] lg:max-w-[310px] px-4 h-12 md:h-14 flex items-center justify-center rounded-full text-sm md:text-base font-medium transition-all duration-300 cursor-pointer whitespace-nowrap ${activeTab === 'construction'
+                className={`w-full md:flex-1 lg:w-[310px] lg:max-w-[310px] px-4 h-12 md:h-13 flex items-center justify-center rounded-full text-sm md:text-base font-medium transition-all duration-300 cursor-pointer whitespace-nowrap ${activeTab === 'construction'
                   ? 'bg-brand-orange text-white shadow-md shadow-orange-500/20 scale-[1.02]'
                   : 'bg-[#F4F5F7] text-[#3B3F45] hover:bg-[#E9EBEF] hover:text-brand-navy hover:-translate-y-0.5 hover:shadow-sm'
                   }`}
@@ -270,7 +270,7 @@ export default function TruckTypesOverviewPage() {
               <button
                 type="button"
                 onClick={() => setActiveTab('transport')}
-                className={`w-full md:flex-1 lg:w-[310px] lg:max-w-[310px] px-4 h-12 md:h-14 flex items-center justify-center rounded-full text-sm md:text-base font-medium transition-all duration-300 cursor-pointer whitespace-nowrap ${activeTab === 'transport'
+                className={`w-full md:flex-1 lg:w-[310px] lg:max-w-[310px] px-4 h-12 md:h-13 flex items-center justify-center rounded-full text-sm md:text-base font-medium transition-all duration-300 cursor-pointer whitespace-nowrap ${activeTab === 'transport'
                   ? 'bg-brand-orange text-white shadow-md shadow-orange-500/20 scale-[1.02]'
                   : 'bg-[#F4F5F7] text-[#3B3F45] hover:bg-[#E9EBEF] hover:text-brand-navy hover:-translate-y-0.5 hover:shadow-sm'
                   }`}
@@ -384,13 +384,13 @@ export default function TruckTypesOverviewPage() {
                 className="flex items-start gap-4 sm:gap-5 rounded-[12px] bg-[#F3F3F3] p-5 transition-all hover:shadow-sm"
               >
                 <span className="flex h-12 w-12 sm:h-[58px] sm:w-[58px] shrink-0 items-center justify-center rounded-full bg-brand-orange text-white">
-                  <img src={f.icon} alt="" className="" />
+                  <img src={f.icon} alt="" className="w-5 h-5" />
                 </span>
                 <div>
-                  <h3 className="text-lg sm:text-xl font-medium text-brand-navy-dark leading-snug">
+                  <h3 className="text-lg font-medium text-brand-navy-dark leading-snug">
                     {f.title}
                   </h3>
-                  <p className="mt-5 text-sm sm:text-base leading-relaxed text-[#3B3F45]">
+                  <p className="mt-[18px] text-sm sm:text-base leading-relaxed text-[#3B3F45]">
                     {f.text}
                   </p>
                 </div>
