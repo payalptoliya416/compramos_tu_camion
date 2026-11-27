@@ -99,7 +99,7 @@ export default function AboutPage() {
               ].map((pill) => (
                 <div
                   key={pill}
-                  className="inline-flex items-center gap-2.5 rounded-full bg-[#F3F3F3] px-4 py-2 text-sm text-[#3B3F45] sm:text-base"
+                  className="inline-flex items-center gap-2.5 rounded-full bg-[#F3F3F3] px-4 py-2.5 text-sm text-[#3B3F45] sm:text-base"
                 >
                   <img src="/images/fill-checkmark.svg" alt="" className="h-4 w-4 shrink-0 sm:h-5 sm:w-5" />
                   <span>{pill}</span>
@@ -176,6 +176,7 @@ export default function AboutPage() {
         badge="What guides us"
         title="The Values Behind Every Truck Purchase"
         variant="surface"
+        noIconBorder
         items={[
           { icon: '/images/eye01.svg', title: 'Absolute Transparency', text: 'We explain our valuation approach and communicate the relevant conditions clearly, helping sellers make informed decisions without surprises.' },
           { icon: '/images/speed.svg', title: 'Speed and Agility', text: 'We aim to make the process efficient, coordinating communication, valuation and the next steps without unnecessary complexity or delay.' },
