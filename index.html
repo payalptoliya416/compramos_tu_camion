@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/favicon.png" />
@@ -23,14 +23,22 @@
             localStorage.setItem('site_lang', 'es');
           } catch(e) {}
         }
-        var cookieVal = lang === 'en' ? '/en/en' : '/en/es';
-        document.cookie = 'googtrans=' + cookieVal + '; path=/;';
-        if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
-          document.cookie = 'googtrans=' + cookieVal + '; domain=' + location.hostname + '; path=/;';
-          document.cookie = 'googtrans=' + cookieVal + '; domain=.' + location.hostname + '; path=/;';
-        }
+        document.documentElement.lang = lang;
 
-        if (lang !== 'en') {
+        if (lang === 'en') {
+          // Clear any Google Translate cookies so English is always 100% original code text
+          var domains = ['', location.hostname, '.' + location.hostname];
+          for (var i = 0; i < domains.length; i++) {
+            var d = domains[i] ? '; domain=' + domains[i] : '';
+            document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC' + d + '; path=/;';
+          }
+        } else {
+          var cookieVal = '/en/es';
+          document.cookie = 'googtrans=' + cookieVal + '; path=/;';
+          if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+            document.cookie = 'googtrans=' + cookieVal + '; domain=' + location.hostname + '; path=/;';
+            document.cookie = 'googtrans=' + cookieVal + '; domain=.' + location.hostname + '; path=/;';
+          }
           document.documentElement.classList.add('translating');
         }
       })();
@@ -152,6 +160,8 @@
 
     <script>
       function googleTranslateElementInit() {
+        var lang = localStorage.getItem('site_lang') || 'es';
+        if (lang === 'en') return;
         new google.translate.TranslateElement({
           pageLanguage: 'en',
           includedLanguages: 'en,es',

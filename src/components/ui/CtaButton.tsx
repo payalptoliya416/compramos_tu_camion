@@ -46,9 +46,11 @@ export default function CtaButton({ cta, variant = 'primary', className = '' }: 
     );
   }
 
+  const isValuationTarget = targetTo.includes('/get-a-free-valuation') || targetTo.includes('#valuation');
+
   const handleClick = (e: React.MouseEvent) => {
     if (
-      (targetTo.includes('/get-a-free-valuation') || targetTo.includes('#valuation')) &&
+      isValuationTarget &&
       window.location.pathname === '/get-a-free-valuation'
     ) {
       e.preventDefault();
@@ -60,7 +62,12 @@ export default function CtaButton({ cta, variant = 'primary', className = '' }: 
   };
 
   return (
-    <Link to={targetTo} state={{ scrollToForm: true }} onClick={handleClick} className={cls}>
+    <Link
+      to={targetTo}
+      state={isValuationTarget ? { scrollToForm: true } : undefined}
+      onClick={handleClick}
+      className={cls}
+    >
       {cta.label}
     </Link>
   );
