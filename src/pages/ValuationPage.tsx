@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import type { FaqItem } from '@/types';
 import Hero from '@/components/sections/Hero';
 import RecentPurchases from '@/components/sections/RecentPurchases';
@@ -43,6 +44,16 @@ const VALUATION_FAQS: FaqItem[] = [
 ];
 
 export default function ValuationPage() {
+  useEffect(() => {
+    // Automatically scroll directly to the valuation form section
+    const el = document.getElementById('valuation');
+    if (el) {
+      setTimeout(() => {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }, 120);
+    }
+  }, []);
+
   return (
     <>
       <Hero
@@ -50,7 +61,7 @@ export default function ValuationPage() {
         title="How Much Is Your Truck Worth?"
         text="Get a professional valuation for your used truck and take the next step towards selling it with confidence."
         image="/images/get-free-valuation-banner.png"
-        primary={{ label: 'Get a Free Valuation' }}
+        primary={{ label: 'Get a Free Valuation', to: '#valuation' }}
         secondary={{ label: 'How It Works', to: '/how-it-works' }}
         checks={['Professional Valuation', 'No Obligation', 'Secure Selling Process']}
       />
@@ -90,7 +101,7 @@ export default function ValuationPage() {
                 </div>
               ))}
             </div>
-            <CtaButton cta={{ label: 'Start Your Valuation' }} className="mt-2" />
+            <CtaButton cta={{ label: 'Start Your Valuation', to: '#valuation' }} className="mt-2" />
           </div>
         </div>
       </section>

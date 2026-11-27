@@ -4,10 +4,21 @@ import Header from './Header';
 import Footer from './Footer';
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (pathname === '/get-a-free-valuation' || hash === '#valuation') {
+      const el = document.getElementById('valuation');
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }, 120);
+        return;
+      }
+    }
+    if (!hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
   return null;
 }
 

@@ -161,7 +161,7 @@ export default function ValuationForm({
   };
 
   return (
-    <section id="valuation" className="px-3 sm:px-5">
+    <section id="valuation" className="px-3 sm:px-5 scroll-mt-6 sm:scroll-mt-10">
       <div className="relative overflow-hidden rounded-3xl bg-brand-navy">
         <img
           src="/images/valuation-bg.png"
