@@ -119,7 +119,7 @@ export default function BlogPage() {
               </ul>
             </div>
 
-            <div className="rounded-xl border border-[#E7E7E8]  bg-white p-4 2xl:p-[25px]">
+            <div className="rounded-xl border border-[#E7E7E8] bg-white p-4 2xl:p-[25px]">
               <h3 className="mb-4 text-base font-semibold text-[#092B55]">Categories</h3>
               <ul className="flex flex-col gap-1 text-sm">
                 {[{ name: 'All Articles', count: POSTS.length }, ...CATEGORY_LIST].map((c) => (
@@ -127,12 +127,14 @@ export default function BlogPage() {
                     <button
                       type="button"
                       onClick={() => setCategory(c.name)}
-                      className={`flex w-full items-center justify-between rounded-full px-[15px] text-left transition-colors cursor-pointer ${
+                      className={`flex w-full items-center justify-between gap-3 rounded-full px-[15px] text-left transition-colors cursor-pointer ${
                         category === c.name ? 'bg-brand-orange text-white py-[10px]' : 'py-[5px] text-[#092B55] hover:bg-slate-50'
                       }`}
                     >
-                      {c.name}
-                      <span>({c.count})</span>
+                      <span className="min-w-0 flex-1 leading-snug">{c.name}</span>
+                      <span className="shrink-0 whitespace-nowrap font-medium notranslate tabular-nums" translate="no">
+                        ({c.count})
+                      </span>
                     </button>
                   </li>
                 ))}
