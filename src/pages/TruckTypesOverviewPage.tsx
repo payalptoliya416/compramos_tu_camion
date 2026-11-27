@@ -231,7 +231,7 @@ export default function TruckTypesOverviewPage() {
             <p className="text-base leading-relaxed text-[#3B3F45]">
               Truck configuration, intended use, equipment, and condition can help determine the right starting point for a valuation. Explore the categories below to find the type that best matches your vehicle.
             </p>
-            <CtaButton cta={{ label: 'Explore Truck Types', to: '#explore-categories' }} className="mt-2" />
+            <CtaButton cta={{ label: 'Explore Truck Types', to: '/truck-types/refrigerated-trucks' }} className="mt-2" />
           </div>
         </div>
       </section>
