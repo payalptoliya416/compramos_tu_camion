@@ -288,7 +288,11 @@ export default function ValuationForm({
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'Please enter a valid email address';
     }
-    if (!formData.phone.trim()) newErrors.phone = 'Please enter your phone number';
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Please enter your phone number';
+    } else if (!/^\+?[0-9]{7,15}$/.test(formData.phone.trim())) {
+      newErrors.phone = 'Please enter a valid phone number (at least 7 digits)';
+    }
     if (!formData.city) newErrors.city = 'Please select your city';
     if (formData.minPrice.trim() && !/^\d+$/.test(formData.minPrice.trim())) {
       newErrors.minPrice = 'Minimum price must contain only numbers';
@@ -506,7 +510,7 @@ export default function ValuationForm({
                   <SearchableSelect
                     value={formData.basculante}
                     onChange={(val) => handleChange('basculante', val)}
-                    options={['Sí', 'No']}
+                    options={['Yes', 'No']}
                     placeholder="Select option"
                     hasError={Boolean(errors.basculante)}
                     searchable={false}
@@ -549,10 +553,15 @@ export default function ValuationForm({
                 <Field label="Phone Number" required error={errors.phone}>
                   <input
                     type="tel"
+                    inputMode="tel"
                     value={formData.phone}
-                    onChange={(e) => handleChange('phone', e.target.value)}
+                    onChange={(e) => {
+                      // Allow only digits and an optional single leading '+'
+                      const val = e.target.value.replace(/[^\d+]/g, '').replace(/(?!^)\+/g, '');
+                      handleChange('phone', val);
+                    }}
                     className={getInputClass(Boolean(errors.phone))}
-                    placeholder="Enter your phone number"
+                    placeholder="Enter your phone number (e.g., +34 600 000 000)"
                   />
                 </Field>
 

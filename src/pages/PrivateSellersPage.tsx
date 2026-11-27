@@ -118,7 +118,7 @@ export default function PrivateSellersPage() {
             <p className="mt-4 text-base leading-relaxed text-[#6C6F73]">
               Selling a commercial vehicle can involve several steps. Our team helps you understand the process and guides you through the valuation and sale.
             </p>
-            <CtaButton cta={{ label: 'Get a Free Valuation', to: '/get-a-free-valuation' }} className="mt-6 self-start" />
+            <CtaButton cta={{ label: 'Get a Free Valuation', to: '/get-a-free-valuation#valuation' }} className="mt-6 self-start" />
           </div>
           <ul className="grid gap-3 sm:grid-cols-3 sm:gap-4 xl:gap-2">
             {WHY.map(({ icon, title, text }) => (

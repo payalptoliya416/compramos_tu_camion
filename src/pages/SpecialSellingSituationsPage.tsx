@@ -102,7 +102,7 @@ export default function SpecialSellingSituationsPage() {
           'Selling a commercial vehicle can become more complicated when personal circumstances or business changes are involved. We help you understand the process, review your truck details, and discuss the next steps based on your situation.',
         ]}
         image="/images/cleare.png"
-        cta={{ label: 'Get a truck appraisal now', to: '/get-a-free-valuation' }}
+        cta={{ label: 'Get a truck appraisal now', to: '/get-a-free-valuation#valuation' }}
         gapClassName="lg:gap-[69px]"
       />
 
@@ -130,7 +130,8 @@ export default function SpecialSellingSituationsPage() {
                 </div>
                 <div className="mt-8">
                   <Link
-                    to="/get-a-free-valuation"
+                    to="/get-a-free-valuation#valuation"
+                    state={{ scrollToForm: true }}
                     className="inline-flex items-center justify-center rounded-full border border-brand-navy px-[30px] py-[14px] text-sm sm:text-base leading-[16px] font-medium text-brand-navy transition-colors hover:bg-brand-navy hover:text-white"
                   >
                     {btnText}

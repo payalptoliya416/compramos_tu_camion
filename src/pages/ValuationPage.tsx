@@ -45,19 +45,28 @@ const VALUATION_FAQS: FaqItem[] = [
 ];
 
 export default function ValuationPage() {
-  const { hash } = useLocation();
+  const { hash, state } = useLocation();
 
   useEffect(() => {
-    // Only scroll directly to the valuation form if navigating via button click (#valuation)
-    if (hash === '#valuation') {
-      const el = document.getElementById('valuation');
-      if (el) {
-        setTimeout(() => {
-          el.scrollIntoView({ behavior: 'smooth' });
-        }, 120);
-      }
+    // Only scroll directly to the valuation form if navigating via button click (#valuation or state.scrollToForm)
+    if (hash === '#valuation' || (state as any)?.scrollToForm) {
+      const scroll = () => {
+        const el = document.getElementById('valuation');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      };
+
+      scroll();
+      const timers = [50, 150, 300, 500, 800].map((ms) => setTimeout(scroll, ms));
+      return () => {
+        timers.forEach(clearTimeout);
+      };
+    } else {
+      // Direct URL entry or reload without hash -> start at the top
+      window.scrollTo(0, 0);
     }
-  }, [hash]);
+  }, [hash, state]);
 
   return (
     <>

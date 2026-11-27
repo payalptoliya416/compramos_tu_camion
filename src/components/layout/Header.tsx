@@ -64,9 +64,10 @@ export default function Header() {
 
               <Link
                 to="/get-a-free-valuation#valuation"
+                state={{ scrollToForm: true }}
                 onClick={() => {
                   if (pathname === '/get-a-free-valuation') {
-                    document.getElementById('valuation')?.scrollIntoView({ behavior: 'smooth' });
+                    document.getElementById('valuation')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }
                 }}
                 className="btn-primary hidden !px-6 !py-3 text-sm font-medium sm:inline-flex md:text-[15px]"
@@ -106,7 +107,6 @@ export default function Header() {
           <div className="flex items-center justify-between border-b border-slate-100 pb-5">
             <Logo variant="header" />
             <div className="flex items-center gap-2">
-              <LanguageSwitcher isMobile />
               <button
                 type="button"
                 className="rounded-full p-2 text-slate-500 hover:bg-slate-100 hover:text-slate-800 transition-colors"
@@ -141,10 +141,11 @@ export default function Header() {
         <div className="border-t border-slate-100 pt-5">
           <Link
             to="/get-a-free-valuation#valuation"
+            state={{ scrollToForm: true }}
             onClick={() => {
               setOpen(false);
               if (pathname === '/get-a-free-valuation') {
-                document.getElementById('valuation')?.scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('valuation')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }
             }}
             className="btn-primary w-full text-center !py-3 text-sm font-semibold"

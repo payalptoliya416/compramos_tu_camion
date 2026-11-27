@@ -204,7 +204,8 @@ export default function MakeModelPage() {
                     </div>
                     <div className="mt-6 w-full">
                       <Link
-                        to="/get-a-free-valuation"
+                        to="/get-a-free-valuation#valuation"
+                        state={{ scrollToForm: true }}
                         className="inline-flex items-center justify-center rounded-full border border-brand-navy px-4 sm:px-[30px] py-3 sm:py-[16px] text-sm sm:text-base sm:leading-[16px] font-medium text-brand-navy transition-colors hover:bg-brand-navy hover:text-white text-center"
                       >
                         {m.cta}

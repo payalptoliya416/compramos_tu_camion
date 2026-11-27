@@ -233,7 +233,7 @@ export default function HomePage() {
             <CtaButton
               cta={{
                 label: "I Want to Sell My Truck",
-                to: "/get-a-free-valuation",
+                to: "/get-a-free-valuation#valuation",
               }}
             />
           </div>

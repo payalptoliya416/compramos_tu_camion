@@ -374,7 +374,8 @@ body {
 }
 
 /* Completely eradicate Google Translate top toolbar, banners, frames, top-left loaders, and body shifting */
-[class*="VIpgJd"],
+body > [class*="VIpgJd"],
+iframe[class*="VIpgJd"],
 .goog-te-spinner,
 .goog-te-spinner-pos,
 .goog-te-spinner-animation,
@@ -410,7 +411,17 @@ body {
   top: 0px !important;
 }
 
+/* Ensure translated text font tags and spans are always visible on hover and double-click */
+#root font,
+#root [class*="VIpgJd"],
 .goog-text-highlight {
+  display: inline !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: static !important;
   background-color: transparent !important;
+  background: transparent !important;
   box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
 }

@@ -71,7 +71,8 @@
       }
 
       /* Completely eradicate Google Translate top toolbar, banners, frames, popups, and top-left loaders */
-      [class*="VIpgJd"],
+      body > [class*="VIpgJd"],
+      iframe[class*="VIpgJd"],
       .goog-te-spinner,
       .goog-te-spinner-pos,
       .goog-te-spinner-animation,
@@ -107,9 +108,19 @@
         top: 0px !important;
       }
 
+      /* Ensure translated text font tags and spans are always visible on hover and double-click */
+      #root font,
+      #root [class*="VIpgJd"],
       .goog-text-highlight {
+        display: inline !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: static !important;
         background-color: transparent !important;
+        background: transparent !important;
         box-shadow: none !important;
+        border: none !important;
+        outline: none !important;
       }
       #google_translate_element {
         position: absolute;
@@ -202,7 +213,7 @@
               document.body.style.position = 'static';
             }
           }
-          var banners = document.querySelectorAll('.goog-te-banner-frame, iframe.goog-te-banner-frame, body > .skiptranslate, [class*="VIpgJd"], .goog-te-spinner-pos, iframe.skiptranslate');
+          var banners = document.querySelectorAll('.goog-te-banner-frame, iframe.goog-te-banner-frame, body > .skiptranslate, body > [class*="VIpgJd"], iframe[class*="VIpgJd"], .goog-te-spinner-pos, iframe.skiptranslate');
           for (var i = 0; i < banners.length; i++) {
             banners[i].style.setProperty('display', 'none', 'important');
             banners[i].style.setProperty('visibility', 'hidden', 'important');

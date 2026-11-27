@@ -36,7 +36,7 @@ export default function CtaButton({ cta, variant = 'primary', className = '' }: 
       const el = document.getElementById(targetId);
       if (el) {
         e.preventDefault();
-        el.scrollIntoView({ behavior: 'smooth' });
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     };
     return (
@@ -46,17 +46,21 @@ export default function CtaButton({ cta, variant = 'primary', className = '' }: 
     );
   }
 
-  const handleClick = () => {
-    if (targetTo.includes('#valuation') && window.location.pathname === '/get-a-free-valuation') {
+  const handleClick = (e: React.MouseEvent) => {
+    if (
+      (targetTo.includes('/get-a-free-valuation') || targetTo.includes('#valuation')) &&
+      window.location.pathname === '/get-a-free-valuation'
+    ) {
+      e.preventDefault();
       const el = document.getElementById('valuation');
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
   };
 
   return (
-    <Link to={targetTo} onClick={handleClick} className={cls}>
+    <Link to={targetTo} state={{ scrollToForm: true }} onClick={handleClick} className={cls}>
       {cta.label}
     </Link>
   );
